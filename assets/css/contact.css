@@ -1,0 +1,208 @@
+section.contact {
+	padding:100px 0;
+}
+section.contact h3.head1 {
+    font-size: 27px;
+    font-weight: normal;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 60px;
+    position: relative;
+    color: #FA5C59;
+}
+section.contact h3.head1:before {
+	content:'';
+	background-color:#dcdcdc;
+	height:3px;
+	width: 26%;
+    left: 0%;
+	bottom:40px;
+	display:block;
+	position:absolute;
+}
+section.contact h3.head1:after {
+	content:'';
+	background-color:#24e8ff;
+	height:3px;
+	width:10%;
+	left:0%;
+	bottom:40px;
+	display:block;
+	position:absolute;
+}
+ section.contact h3.head2 {
+    font-size: 27px;
+    font-weight: normal;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 60px;
+    position: relative;
+    color: #FA5C59;
+}
+section.contact h3.head2:before {
+	content:'';
+	background-color:#dcdcdc;
+	height:3px;
+	width: 33%;
+    left: 0%;
+	bottom:40px;
+	display:block;
+	position:absolute;
+}
+section.contact h3.head2:after {
+	content:'';
+	background-color:#24e8ff;
+	height:3px;
+	width:10%;
+	left:0%;
+	bottom:40px;
+	display:block;
+	position:absolute;
+}
+section.contact .contact-w3ls .row {
+	padding-bottom:30px;
+	text-align:center;
+}
+section.contact i.fa {
+    color:#525252;
+    vertical-align: middle;
+    text-align: center;
+}
+section.contact i.fa.fa-map-marker {
+	font-weight:normal;
+	font-size:40px;	
+	line-height:55px;
+}
+section.contact i.fa.fa-envelope-o {
+	font-weight:normal;
+	font-size:30px;
+	line-height:55px;	
+}
+section.contact i.fa.fa-mobile {
+	font-weight:normal;
+	font-size:55px;
+	line-height:55px;	
+}
+section.contact i.fa.fa-clock-o {
+	font-weight:normal;
+	font-size:40px;
+	line-height:55px;	
+}
+section.contact .contact-w3ls .address {
+	text-align:justify;
+	margin-left:-40px;
+}
+section.contact .contact-w3ls h4 {
+	color:#525252;
+	font-size:17px;
+	font-weight:normal;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	padding-bottom:20px;
+	text-transform:uppercase;
+}
+section.contact .contact-w3ls p {
+	color:#525252;
+	font-size:15px;
+	font-weight:normal;
+}
+section.contact .contact-w3ls p a {
+	color:#525252;
+}	
+section.contact .contact-w3ls p a:hover {
+	color:#1d76f6;
+}
+input.form-control.first-name,input.form-control.last-name,input.form-control.mail,input.form-control.pno,textarea.form-control {
+	font-size:15px;
+	font-weight:400;
+	color:#525252;
+	padding:20px;
+	border-radius:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	-o-border-radius:0;
+	-ms-border-radius:0;
+	border-color:#525252;
+}
+input.form-control.first-name,input.form-control.last-name,input.form-control.mail,input.form-control.pno {
+	height:55px;
+}
+ .form-control:focus {
+    border: 1px solid #FA5C59;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: none;
+}
+ .form-control:focus {
+    border: 1px solid #FA5C59;
+    outline: 0;
+    box-shadow: none;
+}
+button.btn.btn-lg.btn-outline {
+    font-size: 17px;
+    font-weight: normal;
+	font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 12px 70px;
+    border-radius: 0;
+    color: #fff;
+    background-color: #000;
+}
+button.btn.btn-lg.btn-outline:hover,button.btn.btn-lg.btn-outline:focus  {
+	background-color: #FA5C59;
+	outline: none;
+}
+input::-webkit-input-placeholder {
+color: #525252!important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color:#525252!important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #525252 !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: #525252 !important;  
+}
+textarea::-webkit-input-placeholder {
+color: #525252 !important;
+}
+ 
+textarea::-moz-placeholder { /* Firefox 18- */
+color: #525252 !important;  
+}
+ 
+textarea::-moz-placeholder {  /* Firefox 19+ */
+color: #525252 !important;  
+}
+ 
+textarea::-ms-input-placeholder {  
+color: #525252 !important;  
+}
+section.contact {
+    padding: 15px 0;
+}
+
+section.contact h3.head1 {
+    font-size: 27px;
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    padding-bottom: 60px;
+    position: relative;
+    color: #FA5C59;
+}
+
+section.contact h3.head2 {
+    font-size: 27px;
+    font-weight: normal;
+    font-family: 'Oswald', sans-serif;
+    padding-bottom: 60px;
+    position: relative;
+    color: #FA5C59;
+}
+
+.col-xs-4{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 0px;
+}
