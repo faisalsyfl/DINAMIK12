@@ -104,6 +104,8 @@ CREATE TABLE IF NOT EXISTS `tb_event` (
   `event_id` varchar(10) NOT NULL DEFAULT '',
   `event_category` varchar(10) NOT NULL,
   `event_name` varchar(255) NOT NULL,
+  `event_status` tinyint(1) NOT NULL,
+  `event_capacity` int(5) NOT NULL,
   `event_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -166,7 +168,8 @@ CREATE TABLE IF NOT EXISTS `tb_payment` (
   `payment_id` varchar(10) NOT NULL DEFAULT '',
   `payment_amount` double NOT NULL,
   `payment_document` varchar(255) NOT NULL,
-  `payment_status` tinyint(1) NOT NULL
+  `payment_status` tinyint(1) NOT NULL,
+  `payment_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
