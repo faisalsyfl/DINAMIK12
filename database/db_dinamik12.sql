@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 13, 2016 at 07:02 AM
--- Server version: 5.6.26
--- PHP Version: 5.6.12
+-- Host: localhost
+-- Generation Time: Nov 16, 2016 at 07:08 PM
+-- Server version: 5.5.53-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,16 +14,14 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `db_dinamik12`
 --
-
 DROP DATABASE IF EXISTS `db_dinamik12`;
 CREATE DATABASE `db_dinamik12` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `db_dinamik12`;
-
 -- --------------------------------------------------------
 
 --
@@ -36,7 +34,9 @@ CREATE TABLE IF NOT EXISTS `tb_account` (
   `account_username` varchar(16) NOT NULL,
   `account_password` varchar(255) NOT NULL,
   `account_log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `account_category` varchar(10) NOT NULL
+  `account_category` varchar(10) NOT NULL,
+  PRIMARY KEY (`account_id`),
+  KEY `account_category` (`account_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -51,8 +51,27 @@ CREATE TABLE IF NOT EXISTS `tb_bazaar` (
   `bazaar_type` varchar(20) NOT NULL,
   `bazaar_description` text NOT NULL,
   `bazaar_address` text NOT NULL,
-  `bazaar_contact` varchar(20) NOT NULL
+  `bazaar_contact` varchar(20) NOT NULL,
+  PRIMARY KEY (`bazaar_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_calendar`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_calendar` (
+  `calendar_id` int(11) NOT NULL AUTO_INCREMENT,
+  `calendar_event_id` varchar(10) NOT NULL,
+  `calendar_start_date` date NOT NULL,
+  `calendar_end_date` date NOT NULL,
+  `calendar_start_time` time NOT NULL,
+  `calendar_end_time` time NOT NULL,
+  `calendar_event_name` varchar(255) NOT NULL,
+  `calendar_event_description` text NOT NULL,
+  PRIMARY KEY (`calendar_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabel daftar acara buat kalender' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -62,343 +81,14 @@ CREATE TABLE IF NOT EXISTS `tb_bazaar` (
 
 CREATE TABLE IF NOT EXISTS `tb_city` (
   `city_id` int(11) NOT NULL,
-  `city_name` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_contact`
---
-
-CREATE TABLE IF NOT EXISTS `tb_contact` (
-  `contact_id` varchar(10) NOT NULL,
-  `contact_name` varchar(255) NOT NULL,
-  `contact_email` varchar(255) NOT NULL,
-  `contact_message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_coordinator`
---
-
-CREATE TABLE IF NOT EXISTS `tb_coordinator` (
-  `coordinator_id` varchar(10) NOT NULL DEFAULT '',
-  `coordinator_name` varchar(255) NOT NULL,
-  `coordinator_contact` varchar(20) NOT NULL,
-  `coordinator_address` text NOT NULL,
-  `coordinator_email` varchar(255) NOT NULL,
-  `coordinator_event_id` varchar(10) NOT NULL,
-  `coordinator_account_id` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_event`
---
-
-CREATE TABLE IF NOT EXISTS `tb_event` (
-  `event_id` varchar(10) NOT NULL DEFAULT '',
-  `event_category` varchar(10) NOT NULL,
-  `event_name` varchar(255) NOT NULL,
-  `event_status` tinyint(1) NOT NULL,
-  `event_capacity` int(5) NOT NULL,
-  `event_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_judge`
---
-
-CREATE TABLE IF NOT EXISTS `tb_judge` (
-  `judge_id` varchar(10) NOT NULL DEFAULT '',
-  `judge_name` varchar(255) NOT NULL,
-  `judge_affiliation` varchar(255) NOT NULL,
-  `judge_contact` varchar(20) NOT NULL,
-  `judge_address` text NOT NULL,
-  `judge_cv` varchar(255) NOT NULL,
-  `judge_event_id` varchar(10) NOT NULL,
-  `judge_account_id` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_news`
---
-
-CREATE TABLE IF NOT EXISTS `tb_news` (
-  `news_id` varchar(10) NOT NULL,
-  `news_category` varchar(20) NOT NULL,
-  `news_title` varchar(255) NOT NULL,
-  `news_headline` varchar(255) NOT NULL,
-  `news_content` text NOT NULL,
-  `news_event_id` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_participant`
---
-
-CREATE TABLE IF NOT EXISTS `tb_participant` (
-  `participant_id` varchar(10) NOT NULL DEFAULT '',
-  `participant_name` varchar(255) NOT NULL,
-  `participant_nisn` varchar(20) NOT NULL,
-  `participant_birth` date NOT NULL,
-  `participant_gender` char(1) NOT NULL,
-  `participant_contact` varchar(20) NOT NULL,
-  `participant_address` text NOT NULL,
-  `participant_team_id` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_payment`
---
-
-CREATE TABLE IF NOT EXISTS `tb_payment` (
-  `payment_id` varchar(10) NOT NULL DEFAULT '',
-  `payment_amount` double NOT NULL,
-  `payment_document` varchar(255) NOT NULL,
-  `payment_status` tinyint(1) NOT NULL,
-  `payment_description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_school`
---
-
-CREATE TABLE IF NOT EXISTS `tb_school` (
-  `school_id` varchar(10) NOT NULL DEFAULT '',
-  `school_name` varchar(255) NOT NULL,
-  `school_address` text NOT NULL,
-  `school_contact` varchar(20) NOT NULL,
-  `school_email` varchar(255) NOT NULL,
-  `school_city_id` int(11) NOT NULL,
-  `school_account_id` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_score`
---
-
-CREATE TABLE IF NOT EXISTS `tb_score` (
-  `score_id` varchar(10) NOT NULL,
-  `score_score` int(11) NOT NULL,
-  `score_judge_id` varchar(10) NOT NULL,
-  `score_event_id` varchar(10) NOT NULL,
-  `score_team_id` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_sponsor`
---
-
-CREATE TABLE IF NOT EXISTS `tb_sponsor` (
-  `sponsor_id` varchar(10) NOT NULL DEFAULT '',
-  `sponsor_name` varchar(255) NOT NULL,
-  `sponsor_address` text NOT NULL,
-  `sponsor_contact` varchar(20) NOT NULL,
-  `sponsor_image` varchar(255) NOT NULL,
-  `sponsor_type` varchar(20) NOT NULL,
-  `sponsor_link` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_team`
---
-
-CREATE TABLE IF NOT EXISTS `tb_team` (
-  `team_id` varchar(10) NOT NULL DEFAULT '',
-  `team_name` varchar(255) NOT NULL,
-  `team_coach_name` varchar(255) DEFAULT NULL,
-  `team_coach_contact` varchar(20) DEFAULT NULL,
-  `team_school_id` varchar(10) NOT NULL,
-  `team_event_id` varchar(10) NOT NULL,
-  `team_payment_id` varchar(10) NOT NULL,
-  `team_account_id` varchar(10) NOT NULL
+  `city_name` varchar(40) NOT NULL,
+  PRIMARY KEY (`city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `tb_city`
 --
 
---
--- Indexes for table `tb_account`
---
-ALTER TABLE `tb_account`
-  ADD PRIMARY KEY (`account_id`),
-  ADD KEY `account_category` (`account_category`);
-
---
--- Indexes for table `tb_bazaar`
---
-ALTER TABLE `tb_bazaar`
-  ADD PRIMARY KEY (`bazaar_id`);
-
---
--- Indexes for table `tb_city`
---
-ALTER TABLE `tb_city`
-  ADD PRIMARY KEY (`city_id`);
-
---
--- Indexes for table `tb_contact`
---
-ALTER TABLE `tb_contact`
-  ADD PRIMARY KEY (`contact_id`);
-
---
--- Indexes for table `tb_coordinator`
---
-ALTER TABLE `tb_coordinator`
-  ADD PRIMARY KEY (`coordinator_id`),
-  ADD KEY `coordinator_event_id` (`coordinator_event_id`),
-  ADD KEY `tb_coordinator_ibfk_2` (`coordinator_account_id`);
-
---
--- Indexes for table `tb_event`
---
-ALTER TABLE `tb_event`
-  ADD PRIMARY KEY (`event_id`);
-
---
--- Indexes for table `tb_judge`
---
-ALTER TABLE `tb_judge`
-  ADD PRIMARY KEY (`judge_id`),
-  ADD KEY `judge_event_id` (`judge_event_id`),
-  ADD KEY `tb_judge_ibfk_2` (`judge_account_id`);
-
---
--- Indexes for table `tb_news`
---
-ALTER TABLE `tb_news`
-  ADD PRIMARY KEY (`news_id`),
-  ADD KEY `news_event_id` (`news_event_id`);
-
---
--- Indexes for table `tb_participant`
---
-ALTER TABLE `tb_participant`
-  ADD PRIMARY KEY (`participant_id`),
-  ADD KEY `participant_team_id` (`participant_team_id`);
-
---
--- Indexes for table `tb_payment`
---
-ALTER TABLE `tb_payment`
-  ADD PRIMARY KEY (`payment_id`);
-
---
--- Indexes for table `tb_school`
---
-ALTER TABLE `tb_school`
-  ADD PRIMARY KEY (`school_id`),
-  ADD KEY `school_city_id` (`school_city_id`),
-  ADD KEY `tb_school_ibfk_2` (`school_account_id`);
-
---
--- Indexes for table `tb_score`
---
-ALTER TABLE `tb_score`
-  ADD PRIMARY KEY (`score_id`),
-  ADD KEY `score_judge_id` (`score_judge_id`),
-  ADD KEY `score_event_id` (`score_event_id`),
-  ADD KEY `score_team_id` (`score_team_id`);
-
---
--- Indexes for table `tb_sponsor`
---
-ALTER TABLE `tb_sponsor`
-  ADD PRIMARY KEY (`sponsor_id`);
-
---
--- Indexes for table `tb_team`
---
-ALTER TABLE `tb_team`
-  ADD PRIMARY KEY (`team_id`),
-  ADD KEY `team_school_id` (`team_school_id`),
-  ADD KEY `team_school_id_2` (`team_school_id`,`team_event_id`,`team_payment_id`),
-  ADD KEY `team_school_id_3` (`team_school_id`,`team_event_id`,`team_payment_id`),
-  ADD KEY `team_payment_id` (`team_payment_id`),
-  ADD KEY `team_event_id` (`team_event_id`),
-  ADD KEY `tb_team_ibfk_4` (`team_account_id`);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tb_coordinator`
---
-ALTER TABLE `tb_coordinator`
-  ADD CONSTRAINT `tb_coordinator_ibfk_1` FOREIGN KEY (`coordinator_event_id`) REFERENCES `tb_event` (`event_id`),
-  ADD CONSTRAINT `tb_coordinator_ibfk_2` FOREIGN KEY (`coordinator_account_id`) REFERENCES `tb_account` (`account_id`);
-
---
--- Constraints for table `tb_judge`
---
-ALTER TABLE `tb_judge`
-  ADD CONSTRAINT `tb_judge_ibfk_1` FOREIGN KEY (`judge_event_id`) REFERENCES `tb_event` (`event_id`),
-  ADD CONSTRAINT `tb_judge_ibfk_2` FOREIGN KEY (`judge_account_id`) REFERENCES `tb_account` (`account_id`);
-
---
--- Constraints for table `tb_news`
---
-ALTER TABLE `tb_news`
-  ADD CONSTRAINT `tb_news_ibfk_1` FOREIGN KEY (`news_event_id`) REFERENCES `tb_event` (`event_id`);
-
---
--- Constraints for table `tb_participant`
---
-ALTER TABLE `tb_participant`
-  ADD CONSTRAINT `tb_participant_ibfk_1` FOREIGN KEY (`participant_team_id`) REFERENCES `tb_team` (`team_id`);
-
---
--- Constraints for table `tb_school`
---
-ALTER TABLE `tb_school`
-  ADD CONSTRAINT `tb_school_ibfk_1` FOREIGN KEY (`school_city_id`) REFERENCES `tb_city` (`city_id`),
-  ADD CONSTRAINT `tb_school_ibfk_2` FOREIGN KEY (`school_account_id`) REFERENCES `tb_account` (`account_id`);
-
---
--- Constraints for table `tb_score`
---
-ALTER TABLE `tb_score`
-  ADD CONSTRAINT `tb_score_ibfk_1` FOREIGN KEY (`score_judge_id`) REFERENCES `tb_judge` (`judge_id`),
-  ADD CONSTRAINT `tb_score_ibfk_2` FOREIGN KEY (`score_event_id`) REFERENCES `tb_event` (`event_id`),
-  ADD CONSTRAINT `tb_score_ibfk_3` FOREIGN KEY (`score_team_id`) REFERENCES `tb_team` (`team_id`);
-
---
--- Constraints for table `tb_team`
---
-ALTER TABLE `tb_team`
-  ADD CONSTRAINT `tb_team_ibfk_1` FOREIGN KEY (`team_school_id`) REFERENCES `tb_school` (`school_id`),
-  ADD CONSTRAINT `tb_team_ibfk_2` FOREIGN KEY (`team_payment_id`) REFERENCES `tb_payment` (`payment_id`),
-  ADD CONSTRAINT `tb_team_ibfk_3` FOREIGN KEY (`team_event_id`) REFERENCES `tb_event` (`event_id`),
-  ADD CONSTRAINT `tb_team_ibfk_4` FOREIGN KEY (`team_account_id`) REFERENCES `tb_account` (`account_id`);
-
---
--- Insert into table `tb_city`
---
-  
 INSERT INTO `tb_city` (`city_id`, `city_name`) VALUES
 (1, 'Kabupaten Aceh Barat'),
 (2, 'Kabupaten Aceh Barat Daya'),
@@ -902,6 +592,302 @@ INSERT INTO `tb_city` (`city_id`, `city_name`) VALUES
 (500, 'Kabupaten Nunukan'),
 (501, 'Kabupaten Tana Tidung'),
 (502, 'Kota Tarakan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_contact`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_contact` (
+  `contact_id` varchar(10) NOT NULL,
+  `contact_name` varchar(255) NOT NULL,
+  `contact_email` varchar(255) NOT NULL,
+  `contact_message` text NOT NULL,
+  PRIMARY KEY (`contact_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_coordinator`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_coordinator` (
+  `coordinator_id` varchar(10) NOT NULL DEFAULT '',
+  `coordinator_name` varchar(255) NOT NULL,
+  `coordinator_contact` varchar(20) NOT NULL,
+  `coordinator_address` text NOT NULL,
+  `coordinator_email` varchar(255) NOT NULL,
+  `coordinator_event_id` varchar(10) NOT NULL,
+  `coordinator_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`coordinator_id`),
+  KEY `coordinator_event_id` (`coordinator_event_id`),
+  KEY `tb_coordinator_ibfk_2` (`coordinator_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_event`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_event` (
+  `event_id` varchar(10) NOT NULL DEFAULT '',
+  `event_code` varchar(10) NOT NULL,
+  `event_name` varchar(255) NOT NULL,
+  `event_status` tinyint(1) NOT NULL,
+  `event_capacity` int(5) NOT NULL,
+  `event_description` text NOT NULL,
+  PRIMARY KEY (`event_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_judge`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_judge` (
+  `judge_id` varchar(10) NOT NULL DEFAULT '',
+  `judge_name` varchar(255) NOT NULL,
+  `judge_affiliation` varchar(255) NOT NULL,
+  `judge_contact` varchar(20) NOT NULL,
+  `judge_address` text NOT NULL,
+  `judge_cv` varchar(255) NOT NULL,
+  `judge_event_id` varchar(10) NOT NULL,
+  `judge_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`judge_id`),
+  KEY `judge_event_id` (`judge_event_id`),
+  KEY `tb_judge_ibfk_2` (`judge_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_news`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_news` (
+  `news_id` varchar(10) NOT NULL,
+  `news_category` varchar(20) NOT NULL,
+  `news_title` varchar(255) NOT NULL,
+  `news_headline` varchar(255) NOT NULL,
+  `news_content` text NOT NULL,
+  `news_event_id` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`news_id`),
+  KEY `news_event_id` (`news_event_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_participant`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_participant` (
+  `participant_id` varchar(10) NOT NULL DEFAULT '',
+  `participant_name` varchar(255) NOT NULL,
+  `participant_nisn` varchar(20) NOT NULL,
+  `participant_birth` date NOT NULL,
+  `participant_gender` char(1) NOT NULL,
+  `participant_contact` varchar(20) NOT NULL,
+  `participant_address` text NOT NULL,
+  `participant_team_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`participant_id`),
+  KEY `participant_team_id` (`participant_team_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_payment`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_payment` (
+  `payment_id` varchar(10) NOT NULL DEFAULT '',
+  `payment_amount` double NOT NULL,
+  `payment_document` varchar(255) NOT NULL,
+  `payment_status` tinyint(1) NOT NULL,
+  `payment_description` text NOT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_public`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_public` (
+  `public_id` varchar(10) NOT NULL DEFAULT '',
+  `public_name` varchar(255) NOT NULL,
+  `public_address` text NOT NULL,
+  `public_contact` varchar(20) NOT NULL,
+  `public_email` varchar(255) NOT NULL,
+  `public_city_id` int(11) NOT NULL,
+  `public_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`public_id`),
+  KEY `school_city_id` (`public_city_id`),
+  KEY `tb_school_ibfk_2` (`public_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_pubteam`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_pubteam` (
+  `pubteam_id` varchar(10) NOT NULL DEFAULT '',
+  `pubteam_name` varchar(255) NOT NULL,
+  `pubteam_coach_name` varchar(255) DEFAULT NULL,
+  `pubteam_coach_contact` varchar(20) DEFAULT NULL,
+  `pubteam_public_id` varchar(10) NOT NULL,
+  `pubteam_event_id` varchar(10) NOT NULL,
+  `pubteam_payment_id` varchar(10) NOT NULL,
+  `pubteam_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`pubteam_id`),
+  KEY `team_school_id` (`pubteam_public_id`),
+  KEY `team_school_id_2` (`pubteam_public_id`,`pubteam_event_id`,`pubteam_payment_id`),
+  KEY `team_school_id_3` (`pubteam_public_id`,`pubteam_event_id`,`pubteam_payment_id`),
+  KEY `team_payment_id` (`pubteam_payment_id`),
+  KEY `team_event_id` (`pubteam_event_id`),
+  KEY `tb_team_ibfk_4` (`pubteam_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_school`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_school` (
+  `school_id` varchar(10) NOT NULL DEFAULT '',
+  `school_name` varchar(255) NOT NULL,
+  `school_address` text NOT NULL,
+  `school_image` text,
+  `school_contact` varchar(20) NOT NULL,
+  `school_email` varchar(255) NOT NULL,
+  `school_city_id` int(11) NOT NULL,
+  `school_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`school_id`),
+  KEY `school_city_id` (`school_city_id`),
+  KEY `tb_school_ibfk_2` (`school_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_schteam`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_schteam` (
+  `team_id` varchar(10) NOT NULL DEFAULT '',
+  `team_name` varchar(255) NOT NULL,
+  `team_coach_name` varchar(255) DEFAULT NULL,
+  `team_coach_contact` varchar(20) DEFAULT NULL,
+  `team_school_id` varchar(10) NOT NULL,
+  `team_event_id` varchar(10) NOT NULL,
+  `team_payment_id` varchar(10) NOT NULL,
+  `team_account_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`team_id`),
+  KEY `team_school_id` (`team_school_id`),
+  KEY `team_school_id_2` (`team_school_id`,`team_event_id`,`team_payment_id`),
+  KEY `team_school_id_3` (`team_school_id`,`team_event_id`,`team_payment_id`),
+  KEY `team_payment_id` (`team_payment_id`),
+  KEY `team_event_id` (`team_event_id`),
+  KEY `tb_team_ibfk_4` (`team_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_score`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_score` (
+  `score_id` varchar(10) NOT NULL,
+  `score_score` int(11) NOT NULL,
+  `score_judge_id` varchar(10) NOT NULL,
+  `score_event_id` varchar(10) NOT NULL,
+  `score_team_id` varchar(10) NOT NULL,
+  PRIMARY KEY (`score_id`),
+  KEY `score_judge_id` (`score_judge_id`),
+  KEY `score_event_id` (`score_event_id`),
+  KEY `score_team_id` (`score_team_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_sponsor`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_sponsor` (
+  `sponsor_id` varchar(10) NOT NULL DEFAULT '',
+  `sponsor_name` varchar(255) NOT NULL,
+  `sponsor_address` text NOT NULL,
+  `sponsor_contact` varchar(20) NOT NULL,
+  `sponsor_image` varchar(255) NOT NULL,
+  `sponsor_type` varchar(20) NOT NULL,
+  `sponsor_link` varchar(255) NOT NULL,
+  PRIMARY KEY (`sponsor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tb_coordinator`
+--
+ALTER TABLE `tb_coordinator`
+  ADD CONSTRAINT `tb_coordinator_ibfk_1` FOREIGN KEY (`coordinator_event_id`) REFERENCES `tb_event` (`event_id`),
+  ADD CONSTRAINT `tb_coordinator_ibfk_2` FOREIGN KEY (`coordinator_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_judge`
+--
+ALTER TABLE `tb_judge`
+  ADD CONSTRAINT `tb_judge_ibfk_1` FOREIGN KEY (`judge_event_id`) REFERENCES `tb_event` (`event_id`),
+  ADD CONSTRAINT `tb_judge_ibfk_2` FOREIGN KEY (`judge_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_news`
+--
+ALTER TABLE `tb_news`
+  ADD CONSTRAINT `tb_news_ibfk_1` FOREIGN KEY (`news_event_id`) REFERENCES `tb_event` (`event_id`);
+
+--
+-- Constraints for table `tb_participant`
+--
+ALTER TABLE `tb_participant`
+  ADD CONSTRAINT `tb_participant_ibfk_1` FOREIGN KEY (`participant_team_id`) REFERENCES `tb_schteam` (`team_id`);
+
+--
+-- Constraints for table `tb_school`
+--
+ALTER TABLE `tb_school`
+  ADD CONSTRAINT `tb_school_ibfk_1` FOREIGN KEY (`school_city_id`) REFERENCES `tb_city` (`city_id`),
+  ADD CONSTRAINT `tb_school_ibfk_2` FOREIGN KEY (`school_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_schteam`
+--
+ALTER TABLE `tb_schteam`
+  ADD CONSTRAINT `tb_schteam_ibfk_1` FOREIGN KEY (`team_school_id`) REFERENCES `tb_school` (`school_id`),
+  ADD CONSTRAINT `tb_schteam_ibfk_2` FOREIGN KEY (`team_payment_id`) REFERENCES `tb_payment` (`payment_id`),
+  ADD CONSTRAINT `tb_schteam_ibfk_3` FOREIGN KEY (`team_event_id`) REFERENCES `tb_event` (`event_id`),
+  ADD CONSTRAINT `tb_schteam_ibfk_4` FOREIGN KEY (`team_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_score`
+--
+ALTER TABLE `tb_score`
+  ADD CONSTRAINT `tb_score_ibfk_1` FOREIGN KEY (`score_judge_id`) REFERENCES `tb_judge` (`judge_id`),
+  ADD CONSTRAINT `tb_score_ibfk_2` FOREIGN KEY (`score_event_id`) REFERENCES `tb_event` (`event_id`),
+  ADD CONSTRAINT `tb_score_ibfk_3` FOREIGN KEY (`score_team_id`) REFERENCES `tb_schteam` (`team_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
