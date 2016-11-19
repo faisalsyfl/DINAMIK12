@@ -22,7 +22,7 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="<?php echo base_url("assets/js/ie-emulation-modes-warning.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/js/main.js"); ?>"></script>	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,8 +32,10 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top nav">
+    <nav class="navbar navbar-inverse navbar-fixed-top nav" style="">
+        <div class="collapse navbar-collapse head">
+			<img class="img" src="<?php echo base_url("assets/img/head.png"); ?>">
+        </div>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -45,54 +47,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#">BERANDA</a></li>
+            <li><a href="#about">AKUN</a></li>
+            <li><a href="#about">LOMBA</a></li>
+            <li><a href="#contact">ACARA</a></li>
+            <li><a href="#about">GALLERY</a></li>
+            <li><a href="#contact">BERITA</a></li>
+            <li><a href="#contact">UNDUHAN</a></li>
+            <li><a href="#contact">FAQ</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-		<br><br><br>
-      </div>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<?php echo base_url("assets/js/vendor/jquery.min.js")?>"><\/script>')</script>
-    <script src="<?php echo base_url("assets/js/bootstrap.min.js");?>"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="<?php echo base_url("assets/js/ie10-viewport-bug-workaround.js");?>"></script>
-  </body>
-</html>

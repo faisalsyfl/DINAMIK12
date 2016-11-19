@@ -2,11 +2,95 @@ body {
   padding-top: 50px;
 }
 
-.starter-template {
-  padding: 40px 15px;
+.center {
+	display: inline-block;
+	text-align: center;
+}
+
+.menu {
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu:hover {
+	color: #red;
+}
+
+.navbar .navbar-nav {
+  font-family: 'century gothic';
+  font-weight: bold;
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
   text-align: center;
 }
 
-.nav {
-  background-color: #002672;
+.img {
+  margin: 5px 0px 5px 0px;
+  width: 200px;
+  text-align: center;
+}
+
+.head {
+  background-color: #274f9f;
+  width: 100%;
+}
+
+.first-section {
+  width:100%;
+  height: auto;
+  background: #0a337f;
+  padding-top: 95px;
+  padding-bottom: 40px;
+  display: inline-block;
+  text-align: center;
+  font-family: "Helvetica";
+  color: #fff;
+}
+
+.fs-ornament {
+  width: 280px;
+  margin-bottom: -5px;
+}
+
+.btn-daftar {
+	font-family: "Helvetica";
+	font-weight: bold;
+	padding: 10px 30px 10px 30px;
+	border-radius: 0px;
+	background: transparent;
+	border: 2px solid #fff;
+}
+
+.btn-daftar:hover {
+	background: #fff;
+	color: #002672;
+}
+
+.title {
+	font-size: 24px;
+}
+
+.second-section {
+  width:100%;
+  height: auto;
+  background: #fff;
+  padding-top: 50px;
+  padding: 40px 15px;
+  display: inline-block;
+  text-align: center;
+  font-family: "Helvetica";
+  color: #000;
+}
+
+.ss-ornament {
+	width: 30px;
+}
+
+.ss-text {
+	font-size: 16px;
+	font-weight: bold;
 }
