@@ -54,23 +54,23 @@
 		    </div>
 		</div>
     </div><!-- /.container -->
-	<div id="tentang" class="container">
+
+	<div id="aboutdinamik" class="container parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/tentang.jpg"); ?>">
 		<div class="row">
-			<div class="col-md-4 col-md-offset-1 home-text">
-				<h3 class="title">
-					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
-					<b>TENTANG DINAMIK</b>
-					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
-				</h3>
-				<br>
-				<p class="tentang-text">
-					<b>DINAMIK</b><br>
-					Dies Natalis Mahasiswa Ilmu Komputer<br>
-					merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer (KEMAKOM)<br>
-					Pada tahun ini DINAMIK akan menginjak angka ke-12
-				</p>
-				<br>
-				<button type="button" class="btn-tentang">SELENGKAPNYA</button>
+			<div class="col-md-5 col-md-offset-1">
+				<div class="about-bg">
+					<h3 class="title">
+						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
+						<b>TENTANG DINAMIK</b>
+						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
+					</h3>
+					<br>
+					<p class="tentang-text">
+						Dies Natalis Mahasiswa Ilmu Komputer merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer pada tahun ini DINAMIK akan menginjak angka ke-12
+					</p>
+					<br>
+					<button type="button" class="btn-tentang">SELENGKAPNYA</button>
+				</div>
 			</div>
 		</div>
     </div><!-- /.container -->
