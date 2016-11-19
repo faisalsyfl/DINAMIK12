@@ -1,31 +1,71 @@
 body {
+  font-family: 'Lato';
   padding-top: 50px;
 }
-
-.center {
-	display: inline-block;
-	text-align: center;
-}
-
-.menu {
-	color: #fff;
-	text-decoration: none;
-}
-
-.menu:hover {
-	color: #red;
-}
-
+/*===== Navbar =====*/
 .navbar .navbar-nav {
-  font-family: 'century gothic';
-  font-weight: bold;
-  display: inline-block;
+  font-weight: 900;
+  font-size: 0.9em;
   float: none;
   vertical-align: top;
+  display: inline-block;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  .navbar .navbar-nav {
+    display: block;
+  }
+
+  .navbar-brand {
+    display: block;
+    width: 170px;
+  }
+}
+.nav .navbar-nav li a {
+  transition: all 0.5s;
+}
+
+.nav .navbar-nav li a:hover {
+  background-color: #001b52;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #001b52; 
 }
 
 .navbar .navbar-collapse {
   text-align: center;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background: #0a337f;
+}
+
+.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
+  background-color:#0a337f
+}
+/*===== Home =====*/
+.center {
+  display: inline-block;
+  text-align: center;
+}
+
+.menu {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu:hover {
+  color: #red;
 }
 
 .img {
@@ -39,7 +79,7 @@ body {
   width: 100%;
 }
 
-.first-section {
+#home {
   width:100%;
   height: auto;
   background: #0a337f;
@@ -47,7 +87,6 @@ body {
   padding-bottom: 40px;
   display: inline-block;
   text-align: center;
-  font-family: "Helvetica";
   color: #fff;
 }
 
@@ -57,24 +96,31 @@ body {
 }
 
 .btn-daftar {
-	font-family: "Helvetica";
-	font-weight: bold;
-	padding: 10px 30px 10px 30px;
-	border-radius: 0px;
-	background: transparent;
-	border: 2px solid #fff;
+  font-weight: 900;
+  padding: 10px 30px 10px 30px;
+  border-radius: 0px;
+  font-size: 1.2em;
+  background: transparent;
+  border: 2px solid #fff;
+  transition: all 0.5s;
+  margin: 40px 0;
 }
-
+.home-text h2 {
+  text-transform: uppercase;
+}
 .btn-daftar:hover {
-	background: #fff;
-	color: #002672;
+  background: #fff;
+  color: #002672;
 }
-
+/*===== Contest =====*/
 .title {
-	font-size: 24px;
+  font-size: 24px;
 }
-
-.second-section {
+.title b {
+  margin-left: 5px; 
+  margin-right: 5px;
+}
+#contest {
   width:100%;
   height: auto;
   background: #fff;
@@ -82,15 +128,15 @@ body {
   padding: 40px 15px;
   display: inline-block;
   text-align: center;
-  font-family: "Helvetica";
   color: #000;
 }
 
 .ss-ornament {
-	width: 30px;
+  width: 30px;
 }
 
 .ss-text {
-	font-size: 16px;
-	font-weight: bold;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: bold;
 }
