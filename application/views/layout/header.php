@@ -4,26 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="<?php echo base_url("assets/img/favicon.png"); ?>">
 	
     <title>Dinamik 12</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="<?php echo base_url("assets/css/ie10-viewport-bug-workaround.css"); ?>" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo base_url("assets/css/main.css"); ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="<?php echo base_url("assets/js/main.js"); ?>"></script>	
+    <link href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/ie10-viewport-bug-workaround.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/main.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/owl.carousel.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("assets/css/owl.theme.css"); ?>" rel="stylesheet">
+    <script src="<?php echo base_url("assets/js/main.js"); ?>"></script>	 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,7 +29,7 @@
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top nav" style="">
         <div class="collapse navbar-collapse head">
-			<img class="img" src="<?php echo base_url("assets/img/head.png"); ?>">
+          <img class="img" src="<?php echo base_url("assets/img/logo-white.png"); ?>">
         </div>
       <div class="container">
         <div class="navbar-header">
@@ -45,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class=navbar-brand><img class=img-responsive src="<?php echo base_url("assets/img/head.png"); ?>"></a>
+          <a class="navbar-brand"><img class="img-responsive" src="<?php echo base_url("assets/img/logo-white.png"); ?>"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

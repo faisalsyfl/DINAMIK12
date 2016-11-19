@@ -23,7 +23,7 @@ body {
 
   .navbar-brand {
     display: block;
-    width: 170px;
+    width: 150px;
   }
 }
 .nav .navbar-nav li a {
@@ -68,17 +68,16 @@ body {
   color: #red;
 }
 
-.img {
-  margin: 5px 0px 5px 0px;
-  width: 200px;
-  text-align: center;
-}
-
 .head {
-  background-color: #274f9f;
+  background: url(../img/pattern.png) repeat #274f9f;
   width: 100%;
 }
 
+.head .img {
+  margin: 10px 0;
+  width: 200px;
+  text-align: center;
+}
 #home {
   width:100%;
   height: auto;
@@ -90,18 +89,22 @@ body {
   color: #fff;
 }
 
-.fs-ornament {
-  width: 280px;
-  margin-bottom: -5px;
+.ornament-top {
+  width: 300px;
+  margin-top: 20px;
+}
+.ornament-bottom {
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .btn-daftar {
   font-weight: 900;
   padding: 10px 30px 10px 30px;
   border-radius: 0px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background: transparent;
-  border: 2px solid #fff;
+  border: 4px solid #fff;
   transition: all 0.5s;
   margin: 40px 0;
 }
@@ -117,8 +120,10 @@ body {
   font-size: 24px;
 }
 .title b {
+  font-weight: 900;
   margin-left: 5px; 
   margin-right: 5px;
+  font-size: 0.8em;
 }
 #contest {
   width:100%;
@@ -139,4 +144,14 @@ body {
   margin-top: 40px;
   font-size: 18px;
   font-weight: bold;
+}
+.img-contest {
+  width: 140px;
+}
+.title-contest {
+  font-weight: 900;
+  font-size: 1.2em;
+  color: #002672;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
