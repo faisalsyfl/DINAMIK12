@@ -136,6 +136,16 @@ body {
   text-align: center;
   color: #000;
 }
+#event {
+  width:100%;
+  height: auto;
+  background: #fff;
+  padding-top: 50px;
+  padding: 40px 15px;
+  display: inline-block;
+  text-align: center;
+  color: #000;
+}
 
 .ss-ornament {
   width: 30px;

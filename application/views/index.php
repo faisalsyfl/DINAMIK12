@@ -74,3 +74,44 @@
 			</div>
 		</div>
     </div><!-- /.container -->
+
+	<div id="event" class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="title">
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
+					<b>ACARA</b>
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
+				</h3>
+				<p class="ss-text">
+					Pagelaran Mahasiswa Nasional Bidang Teknologi Informasi dan Komunikasi yang ke-12 memiliki 5 acara
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div id="event-list">
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/semnas1.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Talkshow Inspiratif</p>
+		          </div>
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/semnas_2.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Seminar Nasional</p>
+		          </div>
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/lct.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Festival Teknology dan Seni </p>
+		          </div>
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/donordarah_2.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Donor Darah</p>
+		          </div>
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/lcw.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Workshop Digitalisasi Guru</p>
+		          </div>
+		        </div>
+		    </div>
+		</div>
+    </div><!-- /.container -->
