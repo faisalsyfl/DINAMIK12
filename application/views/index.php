@@ -1,3 +1,4 @@
+	<!-- Home -->
 	<div id="home" class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 home-text">
@@ -10,6 +11,8 @@
 			<button type="button" class="btn-daftar">DAFTAR</button>
 		</div>
     </div><!-- /.container -->
+	
+	<!-- Lomba -->
 	<div id="contest" class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -54,7 +57,8 @@
 		    </div>
 		</div>
     </div><!-- /.container -->
-
+	
+	<!-- Tentang -->
 	<div id="aboutdinamik" class="container parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/tentang.jpg"); ?>">
 		<div class="row">
 			<div class="col-md-5 col-md-offset-1">
@@ -74,7 +78,8 @@
 			</div>
 		</div>
     </div><!-- /.container -->
-
+	
+	<!-- Acara -->
 	<div id="event" class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -119,3 +124,113 @@
 		    </div>
 		</div>
     </div><!-- /.container -->
+	
+	<!-- Kegiatan -->
+	<div id="activitydinamik" class="container parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/kegiatan.jpg"); ?>">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-1 activity-pos">
+				<div class="activity-bg">
+					<h3 class="title">
+						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
+						<b>KEGIATAN DINAMIK</b>
+						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
+					</h3>
+					<br>
+					<h4 class="activity-title">SYUKURAN DINAMIK</h4>
+					<h5 class="activity-date">14 DES 2016</h5>
+					<p class="activity-text">
+						GYMNASIUM UPI<br>
+						10.00 - 18.00
+					</p>
+					<br>
+					<h4 class="activity-title">OPENING DINAMIK</h4>
+					<h5 class="activity-date">20 DES 2016</h5>
+					<p class="activity-text">
+						GYMNASIUM UPI<br>
+						08.00 - 15.00
+					</p>
+					<br>
+					<button type="button" class="btn-activity">SELENGKAPNYA</button>
+				</div>
+			</div>
+		</div>
+    </div><!-- /.container -->
+	
+	<!-- Berita -->
+	<div id="news" class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="title">
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
+					<b>BERITA</b>
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 news-list">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail news-item">
+					  <img src="<?php echo base_url("assets/img/kegiatan.jpg"); ?>" alt="...">
+					  <div class="caption">
+						<h4 class="news-title">APA ITU DINAMIK?</h4>
+						<p class="news-date">
+							<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 14 DES 2016
+						</p>
+						<button class="btn-news">SELENGKAPNYA</button>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail news-item">
+					  <img src="<?php echo base_url("assets/img/kegiatan.jpg"); ?>" alt="...">
+					  <div class="caption">
+						<h4 class="news-title">KENAPA HARUS ADA DINAMIK?</h4>
+						<p class="news-date">
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 14 DES 2016
+						</p>
+						<button class="btn-news">SELENGKAPNYA</button>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail news-item">
+					  <img src="<?php echo base_url("assets/img/kegiatan.jpg"); ?>" alt="...">
+					  <div class="caption">
+						<h4 class="news-title">KENAPA DIKEJAR DEADLINE?</h4>
+						<p class="news-date">
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 14 DES 2016
+						</p>
+						<button class="btn-news">SELENGKAPNYA</button>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<a class="news-link" href="#">BERITA LAINNYA</a>
+		</div>
+	</div>
+	
+	<!-- Kalender -->
+	<div id="calendar" class="container">
+		<div class="row">
+			<h3 class="title">
+				<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
+				<b>KALENDER</b>
+				<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
+			</h3>
+		</div>
+    </div><!-- /.container -->
+	
+	<div id="last" class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 home-text">
+				<h2>Ikutilah Semua Kegiatan Dinamik</h2>
+			</div>
+		</div>
+		<div class="row">
+			<button type="button" class="btn-daftar">DAFTAR</button>
+		</div>
+    </div><!-- /.container -->
+	

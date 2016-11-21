@@ -28,7 +28,7 @@
 
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top nav" style="">
-        <div class="collapse navbar-collapse head">
+        <div class="collapse navbar-collapse head" style="">
           <img class="img" src="<?php echo base_url("assets/img/logo-white.png"); ?>">
         </div>
       <div class="container">
