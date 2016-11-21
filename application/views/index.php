@@ -111,6 +111,10 @@
 		            <img src="<?php echo base_url("assets/img/lcw.png"); ?>" class="img-contest" align="center"><br>
 		            <p class="title-contest" align="center">Workshop Digitalisasi Guru</p>
 		          </div>
+		          <div class="item">
+		            <img src="<?php echo base_url("assets/img/dinamikstar.png"); ?>" class="img-contest" align="center"><br>
+		            <p class="title-contest" align="center">Dinamik Star</p>
+		          </div>
 		        </div>
 		    </div>
 		</div>
