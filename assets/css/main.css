@@ -485,3 +485,28 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.countdown-box {
+  font-family: 'Lato';
+  font-weight: 900;
+  width:100%;
+  height: auto;
+  background: #ddd;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: inline-block;
+  text-align: center;
+  color: #000;
+}
+
+.countdown-box h2 {
+  font-size: 5em;
+  font-weight: bold;
+  color: #0a337f;
+}
+
+.countdown-box span {
+  font-size: 1.7em;
+  font-weight: 900;
+  color: #424242;
+}

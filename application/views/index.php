@@ -12,6 +12,30 @@
 		</div>
     </div><!-- /.container -->
 	
+    <div class="countdown-box text-center">
+    	<div class="row">
+    		<div class="col-md-8 col-md-offset-2">
+    			<div class="col-md-3 col-xs-3">
+	    			<h2 class="countdown" id="day">00</h2>
+	    			<span class="countdown-title">Days</span>
+	    		</div>
+	    		<div class="col-md-3 col-xs-3">
+	    			<h2 class="countdown" id="hour">00</h2>
+	    			<span class="countdown-title">Hours</span>
+	    		</div>
+	    		<div class="col-md-3 col-xs-3">
+	    			<h2 class="countdown" id="minute">00</h2>
+	    			<span class="countdown-title">Minutes</span>
+	    		</div>
+	    		<div class="col-md-3 col-xs-3">
+	    			<h2 class="countdown" id="second">00</h2>
+	    			<span class="countdown-title">Seconds</span>
+	    		</div>
+    		</div>
+    		
+    	</div>
+    </div>
+
 	<!-- Lomba -->
 	<div id="contest" class="container">
 		<div class="row">
