@@ -8,7 +8,7 @@
 			<div class="col-md-10 col-md-offset-1 foot-list">
 				<div class="col-sm-6 col-md-4 lokasi">
 					<h4><b>LOKASI</b></h4>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2460755780944!2d107.59213921419189!3d-6.861084495041789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b943c2c5ff%3A0xee36226510a79e76!2sUniversitas+Pendidikan+Indonesia+(UPI)!5e0!3m2!1sen!2sid!4v1479745205796" width="300px" height="200px" frameborder="0" style="border:0"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2460755780944!2d107.59213921419189!3d-6.861084495041789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b943c2c5ff%3A0xee36226510a79e76!2sUniversitas+Pendidikan+Indonesia+(UPI)!5e0!3m2!1sen!2sid!4v1479745205796" width="100%" height="auto" frameborder="0" style="border:0"></iframe>
 				</div>
 				<div class="col-sm-6 col-md-4 kontak">
 					<h4><b>KONTAK</b></h4>
@@ -117,22 +117,22 @@
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%w</h2>'
-		    + '<span class="countdown-title">Week%!w</span>'
+		    + '<span class="countdown-title">Minggu</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%d</h2>'
-		    + '<span class="countdown-title">Day%!d</span>'
+		    + '<span class="countdown-title">Hari</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%H</h2>'
-		    + '<span class="countdown-title">Hour</span>'
+		    + '<span class="countdown-title">Jam</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%S</h2>'
-		    + '<span class="countdown-title">Sec</span>'
+		    + '<span class="countdown-title">Detik</span>'
 		    + '</div>'
 
 		    + '</div>'
