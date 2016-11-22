@@ -85,6 +85,7 @@
     <script src="<?php echo base_url("assets/js/owl.carousel.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/parallax.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/ie10-viewport-bug-workaround.js");?>"></script>
+    <script src="<?php echo base_url("assets/js/jquery.countdown.min.js"); ?>"></script> 
     <script type="text/javascript">
       $(document).ready(function() {
         $("#contest-list").owlCarousel({
@@ -108,6 +109,35 @@
             itemsMobile : [479,1]
         });
       });
+
+      $('#clock').countdown('2017/04/01').on('update.countdown', function(event) {
+		  var $this = $(this).html(event.strftime(
+		  	'<div class="row">'
+		  	+ '<div class="col-md-8 col-md-offset-2">'
+
+		    + '<div class="col-md-3 col-xs-3">'
+		    + '<h2 class="countdown" id="day">%w</h2>'
+		    + '<span class="countdown-title">Week%!w</span>'
+		    + '</div>'
+
+		    + '<div class="col-md-3 col-xs-3">'
+		    + '<h2 class="countdown" id="day">%d</h2>'
+		    + '<span class="countdown-title">Day%!d</span>'
+		    + '</div>'
+
+		    + '<div class="col-md-3 col-xs-3">'
+		    + '<h2 class="countdown" id="day">%H</h2>'
+		    + '<span class="countdown-title">Hour</span>'
+		    + '</div>'
+
+		    + '<div class="col-md-3 col-xs-3">'
+		    + '<h2 class="countdown" id="day">%S</h2>'
+		    + '<span class="countdown-title">Sec</span>'
+		    + '</div>'
+
+		    + '</div>'
+		    + '</div>'));
+		});
     </script>
   </body>
 </html>

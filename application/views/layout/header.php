@@ -17,7 +17,7 @@
     <link href="<?php echo base_url("assets/css/font-awesome.min.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/owl.carousel.css"); ?>" rel="stylesheet">
     <link href="<?php echo base_url("assets/css/owl.theme.css"); ?>" rel="stylesheet">
-    <script src="<?php echo base_url("assets/js/main.js"); ?>"></script>	 
+    <script src="<?php echo base_url("assets/js/main.js"); ?>"></script>	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

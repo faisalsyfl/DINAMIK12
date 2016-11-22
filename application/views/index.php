@@ -12,7 +12,7 @@
 		</div>
     </div><!-- /.container -->
 	
-    <div class="countdown-box text-center">
+    <div id="clock" class="container countdown-box text-center">
     	<div class="row">
     		<div class="col-md-8 col-md-offset-2">
     			<div class="col-md-3 col-xs-3">
@@ -32,7 +32,6 @@
 	    			<span class="countdown-title">Seconds</span>
 	    		</div>
     		</div>
-    		
     	</div>
     </div>
 
