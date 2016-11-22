@@ -42,7 +42,7 @@
 						  <b>LINE</b>
 						</td>
 						<td>
-						  @anonymous
+						  @urijaalul
 						</td>
 					  </tr>
 					</table>
@@ -85,7 +85,7 @@
     <script src="<?php echo base_url("assets/js/owl.carousel.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/parallax.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/ie10-viewport-bug-workaround.js");?>"></script>
-    <script src="<?php echo base_url("assets/js/jquery.countdown.min.js"); ?>"></script> 
+	<script src="<?php echo base_url("assets/js/jquery.countdown.min.js"); ?>"></script> 
     <script type="text/javascript">
       $(document).ready(function() {
         $("#contest-list").owlCarousel({
@@ -109,8 +109,8 @@
             itemsMobile : [479,1]
         });
       });
-
-      $('#clock').countdown('2017/04/01').on('update.countdown', function(event) {
+	  
+	  $('#clock').countdown('2017/04/01').on('update.countdown', function(event) {
 		  var $this = $(this).html(event.strftime(
 		  	'<div class="row">'
 		  	+ '<div class="col-md-8 col-md-offset-2">'
