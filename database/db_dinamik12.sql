@@ -14,16 +14,14 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `db_dinamik12`
 --
-
 DROP DATABASE IF EXISTS `db_dinamik12`;
 CREATE DATABASE `db_dinamik12` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `db_dinamik12`;
-
 -- --------------------------------------------------------
 
 --
@@ -36,7 +34,9 @@ CREATE TABLE IF NOT EXISTS `tb_account` (
   `account_username` varchar(16) NOT NULL,
   `account_password` varchar(255) NOT NULL,
   `account_log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `account_category` varchar(10) NOT NULL
+  `account_category` varchar(10) NOT NULL,
+  PRIMARY KEY (`account_id`),
+  KEY `account_category` (`account_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
