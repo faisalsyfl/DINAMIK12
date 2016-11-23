@@ -14,7 +14,7 @@
 				<ul class="nav nav-tabs event-tabs">
 					<li class="active"><a data-toggle="tab" href="#ldg">LDG</a></li>
 					<li><a data-toggle="tab" href="#lcw">LCW</a></li>
-					<li><a data-toggle="tab" href="#ocs">OCS</a></li>
+					<li><a data-toggle="tab" href="#ocs">OTIK</a></li>
 					<li><a data-toggle="tab" href="#pca">PCA</a></li>
 					<li><a data-toggle="tab" href="#cspc">CSPC</a></li>
 					<li><a data-toggle="tab" href="#lca">LCA</a></li>
@@ -56,7 +56,7 @@
 					<!-- ocs -->
 					<div id="ocs" class="tab-pane fade in">
 					  <img src="<?php echo base_url("assets/img/icon_white/opk.png"); ?>" class="img-contest brightness" align="center"><br><br>
-					  <h3 class="event-detail-title">OLIMPIADE COMPUTER SCIENCE</h3>
+					  <h3 class="event-detail-title">OLIMPIADE TIK</h3>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at, 07 April 2017
 					  </p>
@@ -64,7 +64,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA C, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Olimpiade Computer Science merupakan salah satu cabang lomba dalam rangkaian acara DINAMIK 12. Pada perlombaan ini para peserta akan diuji dengan soal-soal logika matematika dan TIK dan harus diselesaikan dengan tepat dan cepat selama waktu yang ditentukan. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/SMK/ sederajat se-Jawa Barat.	
+					  Olimpiade TIK merupakan salah satu cabang lomba dalam rangkaian acara DINAMIK 12. Pada perlombaan ini para peserta akan diuji dengan soal-soal logika matematika dan TIK dan harus diselesaikan dengan tepat dan cepat selama waktu yang ditentukan. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/SMK/ sederajat se-Jawa Barat.	
 					  </p>
 					</div>
 					

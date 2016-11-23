@@ -68,7 +68,7 @@
 	<div id="copyright" class="container">
 		<div class="row">
 			<div class="col-md-6 copy-left">
-				<p>Copyright &copy DINAMIK12 2016</p>
+				<p>Copyright &copyDINAMIK12 2016</p>
 			</div>
 			<div class="col-md-6 copy-right">
 				<a href="#" class="copy-link">Site Map</a>

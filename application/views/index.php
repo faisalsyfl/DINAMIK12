@@ -28,7 +28,7 @@
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-right-or.png"); ?>">
 				</h3>
 				<p class="ss-text">
-					Pagelaran Mahasiswa Nasional Bidang Teknologi Informasi dan Komunikasi yang ke-12 memiliki 10 bidang yang dilombakan dengan tema utama "Enabling Smart Society through ICT"
+					Pagelaran Mahasiswa Nasional Bidang Teknologi Informasi dan Komunikasi yang ke-12 memiliki 8 bidang yang dilombakan dengan tema utama<br>"Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia"
 				</p>
 				
 			</div>
@@ -96,7 +96,7 @@
 					</h3>
 					<br>
 					<p class="tentang-text">
-						Dies Natalis Mahasiswa Ilmu Komputer merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer pada tahun ini DINAMIK akan menginjak angka ke-12
+						Dies Natalis Keluarga Besar Ilmu Komputer merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer pada tahun ini DINAMIK akan menginjak angka ke-12
 					</p>
 					<br>
 					<a href="<?php echo site_url('Maintenance/'); ?>">
