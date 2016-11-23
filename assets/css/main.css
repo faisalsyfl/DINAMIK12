@@ -32,6 +32,11 @@ body {
   color: #0a337f;
 }
 
+.countdown-box h3 {
+  font-weight: bold;
+  color: #424242;
+}
+
 .countdown-box span {
   font-size: 1.7em;
   font-weight: 900;
@@ -226,12 +231,30 @@ body {
 .img-contest {
   width: 140px;
 }
+
 .title-contest {
   font-weight: 900;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #424242;
   text-transform: uppercase;
   margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.title-event {
+  font-weight: 900;
+  font-size: 1em;
+  color: #424242;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.desc-contest{
+  font-weight: 900;
+  font-size: 0.9em;
+  color: #424242;
+  text-transform: uppercase;
 }
 
 #contest-list, #event-list{
@@ -638,6 +661,12 @@ body {
   font-size: 1.2em;
 }
 
-#talkshow {
-  
+::-moz-selection{
+  color: #fff;
+  background-color: #e48e13; 
+}
+
+::selection{
+  color: #fff;
+  background-color: #e48e13;
 }

@@ -14,6 +14,7 @@
     </div><!-- /.container -->
 	
 	<div class="container countdown-box text-center">
+		<h3>Nantikan! Sesuatu yang luar biasa akan segera hadir.</h3>
 		<div id="clock"></div>
     </div>
 	
@@ -37,27 +38,33 @@
 				<div id="contest-list">
 				  <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/ldg.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">LDG<br>(Lomba Design Grafis)</p>
+		            <p class="title-contest" align="center">LDG</p>
+		            <p class="desc-contest">(Lomba Design Grafis)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/lcw.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">LCW<br>(Lomba Cipta Web)</p>
+		            <p class="title-contest" align="center">LCW</p>
+		            <p class="desc-contest">(Lomba Cipta Web)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/opk.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">OCS<br>(Olimpiade Computer Science)</p>
+		            <p class="title-contest" align="center">OCS</p>
+		            <p class="desc-contest">(Olimpiade Computer Science)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/pca.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">PCA<br>(PC Assembling)</p>
+		            <p class="title-contest" align="center">PCA</p>
+		            <p class="desc-contest">(PC Assembling)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/cspc.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">CSPC<br>(Computer Science Programming Contest)</p>
+		            <p class="title-contest" align="center">CSPC</p>
+		            <p class="desc-contest">(Computer Science Programming Contest)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/lca.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">LCA<br>(Lomba Cipta Animasi)</p>
+		            <p class="title-contest" align="center">LCA</p>
+		            <p class="desc-contest">(Lomba Cipta Animasi)</p>
 		          </div>
 				  <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/lf.png"); ?>" class="img-contest" align="center"><br>
@@ -118,27 +125,27 @@
 				<div id="event-list">
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/talkshow.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Talkshow Inspiratif</p>
+		            <p class="title-event" align="center">Talkshow Inspiratif</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/semnas.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Seminar Nasional</p>
+		            <p class="title-event" align="center">Seminar Nasional</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/felose.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Festival Teknologi dan Seni </p>
+		            <p class="title-event" align="center">Festival Teknologi dan Seni </p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/donor.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Donor Darah</p>
+		            <p class="title-event" align="center">Donor Darah</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/workshop.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Workshop Digitalisasi Guru</p>
+		            <p class="title-event" align="center">Workshop Digitalisasi Guru</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/d-star.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">Dinamik Star</p>
+		            <p class="title-event" align="center">Dinamik Star</p>
 		          </div>
 		        </div>
 		    </div>
