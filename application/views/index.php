@@ -1,15 +1,15 @@
 	<!-- Home -->
 	<div id="home" class="container">
-		<div class="row homeindex">
+		<div class="row">
 			<div class="col-md-6 col-md-offset-3 home-text">
 				<img class="ornament-top" src="<?php echo base_url("assets/img/top.png"); ?>">
 				<h2>Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia</h2>
 				<img class="ornament-bottom" src="<?php echo base_url("assets/img/bottom.png"); ?>">
 			</div>
 		</div>
-		<div class="row homeindex">
+		<div class="row">
 			<a href="<?php echo site_url('Pendaftaran/'); ?>">
-			<button type="button" class="btn-daftar">DAFTAR</button></a>
+			<button type="button" class="btn-daftar homeindex">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
 	
@@ -80,7 +80,7 @@
 	<!-- Tentang -->
 	<div id="aboutdinamik" class="container parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/tentang.jpg"); ?>">
 		<div class="row">
-			<div class="col-md-5 col-md-offset-1">
+			<div class="col-md-5">
 				<div class="about-bg">
 					<h3 class="title">
 						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">
