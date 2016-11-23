@@ -26,10 +26,10 @@
   </head>
   
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top nav" style="">
-        <div class="collapse navbar-collapse head" style="">
-          <img class="img" src="<?php echo base_url("assets/img/logo.png"); ?>">
-        </div>
+    <nav class="headroom headroom--unpinned navbar navbar-inverse navbar-fixed-top nav" style="">
+      <div class="collapse navbar-collapse head" style="">
+        <img class="img" src="<?php echo base_url("assets/img/logo.png"); ?>">
+      </div>
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

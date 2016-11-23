@@ -1,7 +1,7 @@
 	<!-- Home -->
 	<div id="home" class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2 home-text">
+			<div class="col-md-6 col-md-offset-3 home-text">
 				<img class="ornament-top" src="<?php echo base_url("assets/img/top.png"); ?>">
 				<h2>Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia</h2>
 				<img class="ornament-bottom" src="<?php echo base_url("assets/img/bottom.png"); ?>">
@@ -13,27 +13,8 @@
 		</div>
     </div><!-- /.container -->
 	
-	 <div id="clock" class="container countdown-box text-center">
-    	<div class="row">
-    		<div class="col-md-8 col-md-offset-2">
-    			<div class="col-md-3 col-xs-3">
-	    			<h2 class="countdown" id="day">00</h2>
-	    			<span class="countdown-title">Days</span>
-	    		</div>
-	    		<div class="col-md-3 col-xs-3">
-	    			<h2 class="countdown" id="hour">00</h2>
-	    			<span class="countdown-title">Hours</span>
-	    		</div>
-	    		<div class="col-md-3 col-xs-3">
-	    			<h2 class="countdown" id="minute">00</h2>
-	    			<span class="countdown-title">Minutes</span>
-	    		</div>
-	    		<div class="col-md-3 col-xs-3">
-	    			<h2 class="countdown" id="second">00</h2>
-	    			<span class="countdown-title">Seconds</span>
-	    		</div>
-    		</div>
-    	</div>
+	<div class="container countdown-box text-center">
+		<div id="clock"></div>
     </div>
 	
 	<!-- Lomba -->
@@ -172,7 +153,7 @@
 	<!-- Kegiatan -->
 	<div id="activitydinamik" class="container parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/kegiatan.jpg"); ?>">
 		<div class="row">
-			<div class="col-md-5 col-md-offset-1 activity-pos">
+			<div class="col-md-5 col-md-offset-7">
 				<div class="activity-bg">
 					<h3 class="title">
 						<img class="ss-ornament" src="<?php echo base_url("assets/img/ss-left-or.png"); ?>">

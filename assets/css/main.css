@@ -14,9 +14,63 @@ body {
 .navbar-brand {
   display: none;
 }
+.countdown-box {
+  font-family: 'Lato';
+  font-weight: 900;
+  width:100%;
+  height: auto;
+  background: url(../img/pattern.png) repeat #ddd;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: inline-block;
+  text-align: center;
+  color: #000;
+}
+.countdown-box h2 {
+  font-size: 5em;
+  font-weight: bold;
+  color: #0a337f;
+}
 
+.countdown-box span {
+  font-size: 1.7em;
+  font-weight: 900;
+  color: #424242;
+}
 @media (max-width: 767px) {
+  .countdown-box h2 {
+    font-size: 4em;
+    font-weight: bold;
+    color: #0a337f;
+  }
 
+  .countdown-box span {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #424242;
+  }
+  .navbar .navbar-nav {
+    display: block;
+  }
+
+  .navbar-brand {
+    display: block;
+    width: 150px;
+  }
+}
+
+@media (max-width: 467px) {
+  .countdown-box h2 {
+    font-size: 2.7em;
+    font-weight: bold;
+    color: #0a337f;
+  }
+
+  .countdown-box span {
+    font-size: 1em;
+    font-weight: 900;
+    color: #424242;
+  }
   .navbar .navbar-nav {
     display: block;
   }
@@ -64,12 +118,18 @@ body {
   text-decoration: none;
 }
 
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .menu:hover {
   color: #red;
 }
 
 .head {
-  background: url(../img/pattern.png) repeat #2c50aa;
+  background: url(../img/pattern.png) repeat #ddd;
   width: 100%;
 }
 
@@ -165,7 +225,7 @@ body {
 .title-contest {
   font-weight: 900;
   font-size: 1.2em;
-  color: #002672;
+  color: #424242;
   text-transform: uppercase;
   margin-top: 10px;
 }
@@ -182,9 +242,6 @@ body {
   display: inline-block;
   text-align: center;
   color: #fff;
-}
-.about-bg {
-  padding-right: 50px;
 }
 .about-bg .title {
   text-align: right;
@@ -229,14 +286,6 @@ body {
   display: inline-block;
   text-align: center;
   color: #fff;
-}
-.activity-bg {
-  padding-right: 50px;
-  margin-left: -60px;
-}
-
-.activity-pos {
-  float: right;
 }
 
 @media (max-width: 991px) {
@@ -500,30 +549,17 @@ body {
   color: #fff;
   text-decoration: none;
 }
-
-.countdown-box {
-  font-family: 'Lato';
-  font-weight: 900;
-  width:100%;
-  height: auto;
-  background: #ddd;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: inline-block;
-  text-align: center;
-  color: #000;
-}
-
-.countdown-box h2 {
-  font-size: 5em;
-  font-weight: bold;
-  color: #0a337f;
-}
-
-.countdown-box span {
-  font-size: 1.7em;
-  font-weight: 900;
-  color: #424242;
+@media (min-width: 768px) {
+  .headroom {
+      will-change: transform;
+      transition: transform 200ms linear;
+  }
+  .headroom--pinned {
+      transform: translateY(0%);
+  }
+  .headroom--unpinned {
+      transform: translateY(-55%);
+  }
 }
 
 #register {

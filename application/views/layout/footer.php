@@ -26,7 +26,7 @@
 						  <span class="glyphicon glyphicon-earphone"></span>
 						</td>
 						<td>
-						  Rijaalul Umam H (0821-1691-6999)
+						  Anita Dyah Pertiwi (0822-1485-6123)
 						</td>
 					  </tr>
 					  <tr>
@@ -85,7 +85,10 @@
     <script src="<?php echo base_url("assets/js/owl.carousel.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/parallax.min.js"); ?>"></script> 
     <script src="<?php echo base_url("assets/js/ie10-viewport-bug-workaround.js");?>"></script>
-	<script src="<?php echo base_url("assets/js/jquery.countdown.min.js"); ?>"></script> 
+	<script src="<?php echo base_url("assets/js/jquery.countdown.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/js/headroom.js"); ?>"></script> 
+	<script src="<?php echo base_url("assets/js/ziterz.min.js"); ?>"></script> 
+	<script src="<?php echo base_url("assets/js/app.js"); ?>"></script> 
     <script type="text/javascript">
       $(document).ready(function() {
         $("#contest-list").owlCarousel({
@@ -138,6 +141,12 @@
 		    + '</div>'
 		    + '</div>'));
 		});
+	  	// grab an element
+		var myElement = document.querySelector("nav");
+		// construct an instance of Headroom, passing the element
+		var headroom  = new Headroom(myElement);
+		// initialise
+		headroom.init(); 
     </script>
   </body>
 </html>
