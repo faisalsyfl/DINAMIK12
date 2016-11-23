@@ -48,8 +48,8 @@
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/opk.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">OCS</p>
-		            <p class="desc-contest">(Olimpiade Computer Science)</p>
+		            <p class="title-contest" align="center">OTIK</p>
+		            <p class="desc-contest">(Olimpiade Teknologi Informasi & Komunikasi)</p>
 		          </div>
 		          <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/pca.png"); ?>" class="img-contest" align="center"><br>
