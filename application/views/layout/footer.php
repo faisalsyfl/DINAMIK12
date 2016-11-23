@@ -42,7 +42,7 @@
 						  <b>LINE</b>
 						</td>
 						<td>
-						  @urijaalul
+						  @anitapertiwi
 						</td>
 					  </tr>
 					</table>
