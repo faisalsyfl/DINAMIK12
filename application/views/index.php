@@ -68,11 +68,13 @@
 		          </div>
 				  <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/lf.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">LINE FOLLOWER</p>
+		            <p class="title-contest" align="center">LF</p>
+		            <p class="desc-contest">(Line Follower)</p>
 		          </div>
 				  <div class="item">
 		            <img src="<?php echo base_url("assets/img/icon_blue/network.png"); ?>" class="img-contest" align="center"><br>
-		            <p class="title-contest" align="center">KOMPETISI JARINGAN</p>
+		            <p class="title-contest" align="center">KJ</p>
+		            <p class="desc-contest">(Kompetisi Jaringan)</p>
 		          </div>
 		        </div>
 		    </div>

@@ -18,8 +18,8 @@
 					<li><a data-toggle="tab" href="#pca">PCA</a></li>
 					<li><a data-toggle="tab" href="#cspc">CSPC</a></li>
 					<li><a data-toggle="tab" href="#lca">LCA</a></li>
-					<li><a data-toggle="tab" href="#linefollower">LINE FOLLOWER</a></li>
-					<li><a data-toggle="tab" href="#kompetisijaringan">JARINGAN</a></li>
+					<li><a data-toggle="tab" href="#linefollower">LF</a></li>
+					<li><a data-toggle="tab" href="#kompetisijaringan">KJ</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
