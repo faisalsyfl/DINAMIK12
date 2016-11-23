@@ -117,11 +117,15 @@ body {
   color: #fff;
   text-decoration: none;
 }
-
+.homeindex {
+  position: relative;
+  z-index: 2;
+}
 .particles-js-canvas-el {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .menu:hover {

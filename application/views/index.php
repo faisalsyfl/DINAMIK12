@@ -1,13 +1,13 @@
 	<!-- Home -->
 	<div id="home" class="container">
-		<div class="row">
+		<div class="row homeindex">
 			<div class="col-md-6 col-md-offset-3 home-text">
 				<img class="ornament-top" src="<?php echo base_url("assets/img/top.png"); ?>">
 				<h2>Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia</h2>
 				<img class="ornament-bottom" src="<?php echo base_url("assets/img/bottom.png"); ?>">
 			</div>
 		</div>
-		<div class="row">
+		<div class="row homeindex">
 			<a href="<?php echo site_url('Pendaftaran/'); ?>">
 			<button type="button" class="btn-daftar">DAFTAR</button></a>
 		</div>
