@@ -1,0 +1,8 @@
+Catatan :
+	Setiap kategori view harap dibuat folder masing-masing
+	
+	admin			-	folder view kategori admin 
+	home			-	folder view untuk halaman depan
+	layout			-	folder view header & footer non-dashboard
+	msg				-	folder view pesan website
+	

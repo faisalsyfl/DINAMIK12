@@ -1,0 +1,6 @@
+Catatan :
+	Setiap kategori model harap dibuat folder masing-masing
+	
+	admin			-	model kategori admin 
+	account			-	model untuk login, regis, lupa pass
+	

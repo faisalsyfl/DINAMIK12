@@ -1,0 +1,12 @@
+Catatan :
+	Folder untuk asset javascript, per-kategori
+	
+	adminlte		-	JS adminLTE (baca dokumentasi di folder docs buat info lain)
+	bootstrap		-	JS bootstrap
+	carousel		-	S.E.
+	custom			-	JS custom buatan sendiri
+	jquery			-	JQuery lib
+	other			-	tanpa kategori lebih lanjut
+	parallax		-	JS parallax scrolling
+	
+	

@@ -1,0 +1,3 @@
+Catatan :
+	Semua file & folder yang termasuk plugin adminLTE (AdminLTE/plugins/*)
+	disimpan di folder application/libraries

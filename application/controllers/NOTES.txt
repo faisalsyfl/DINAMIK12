@@ -1,0 +1,6 @@
+Catatan :
+	Setiap kategori controller harap dimasukkan ke folder masing-masing 
+	
+	admin	-	semua controller admin / superuser
+	home	-	semua controller yang berhubungan sama halaman depan
+	msg		-	semua controller pesan user (404, maintenance)

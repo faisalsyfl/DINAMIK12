@@ -1,0 +1,5 @@
+Catatan :
+	Folder untuk penyimpanan upload file, per-kategori
+	
+	trans		-	bukti pembayaran
+	

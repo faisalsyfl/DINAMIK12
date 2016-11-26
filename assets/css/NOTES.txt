@@ -1,0 +1,12 @@
+Catatan :
+	Folder storage CSS
+	JANGAN DIPINDAH-PINDAH LAGI KALAU TIDAK MENGGUNAKAN APLIKASI YANG MENDUKUNG
+	LINK REFERENCE KE FONT HARUS DIUBAH KALAU DIPINDAH LAGI
+	
+	adminlte		-	template adminLTE v2.3.7
+	bootstrap		-	template bootstrap v3.3.7
+	carousel		-	template untuk carousel
+	custom			-	folder template css buatan sendiri
+	other			-	folder template lain
+	
+	

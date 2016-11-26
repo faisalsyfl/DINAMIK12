@@ -1,0 +1,11 @@
+Catatan :
+	Folder untuk penyimpanan gambar asset, per-kategori
+	Jika memungkinkan, nantinya di-host online tanpa harus disimpan di server
+	
+	header		-	gambar splitted globe
+	icon_blue	-	S.E.
+	icon_white	-	S.E.
+	logo		-	semua gambar yang bisa dikategorikan sebagai logo
+	parallax	-	semua gambar bahan parallax scrolling
+	pattern		-	semua gambar latar berpola
+	
