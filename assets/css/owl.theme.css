@@ -24,8 +24,6 @@
 	background: #869791;
 	filter: Alpha(Opacity=50);/*IE7 fix*/
 	opacity: 0.5;
-   transition: background-color 0.2s ease-out,
-              color 0.2s ease-out;
 }
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
@@ -79,70 +77,6 @@
 	min-height: 150px;
 	background: url(AjaxLoader.gif) no-repeat center center
 }
-
-/* Styling Next and Prev buttons */
-
-.owl-theme .owl-controls .owl-buttons div{
-	color: black;
-	display: inline-block;
-	zoom: 1;
-	*display: inline;/*IE7 life-saver */
-	margin: 5px;
-	padding: 3px 10px;
-	font-size: 12px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-	background: #fff;
-	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.5;
-}
-/* Clickable class fix problem with hover on touch devices */
-/* Use it for non-touch hover action */
-.owl-theme .owl-controls.clickable .owl-buttons div:hover{
-	filter: Alpha(Opacity=100);/*IE7 fix*/
-	opacity: 1;
-	text-decoration: none;
-}
-
-
-
-/*#owl-demo .owl-item > div img {
-    display: block;
-    width: 100%;
-    height: auto;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    margin-bottom:4px;
-}
-
-#owl-demo .owl-item > div{
-  background : #42bdc2;
-  text-align: center;
-  padding:50px 0px;
-  margin:3px;
-  color: white;
-  font-size:32px;
-  border:1px white;
-}*/
-
 .wrapper-with-margin{
   margin:0px 50px;
-}
-
- 
-.owl-theme .owl-controls .owl-buttons div {
-  position: absolute;
-}
- 
-.owl-theme .owl-controls .owl-buttons .owl-prev{
-  left: -45px;
-  top: 55px;
-
-}
- 
-.owl-theme .owl-controls .owl-buttons .owl-next{
-  right: -45px;
-  top: 55px;
 }
