@@ -24,4 +24,20 @@ class Akun extends CI_Controller {
 		$this->load->view('home/akun');
 		$this->load->view('layout/footer');
 	}
+	
+	public function login(){
+		if(isset($_POST['btnLogin'])){
+		
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			$options = [
+				'cost' => 10,
+				'salt' => "dinamik#12^accounts@upi%bdg",
+			];
+			$hash = password_hash($password, PASSWORD_DEFAULT, $options);
+			/* Output hasil hash password	 	*/
+			/* echo "<b><hr>".$hash."</b>"; 	*/
+	}
+		
+	}
 }
