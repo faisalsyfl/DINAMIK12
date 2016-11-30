@@ -24,10 +24,61 @@
 				
 				<div class="tab-content event-detail-list">
 					<!-- talkshow -->
-					<div id="talkshow" class="tab-pane fade in active">
+					<div id="masuk" class="tab-pane fade in active">
+						<div class="login-box">
+							<div class="login-logo">
+								<a href="../../index2.html"><b>Admin</b>LTE</a>
+							</div>
+							<!-- /.login-logo -->
+							<div class="login-box-body">
+								<p class="login-box-msg">Sign in to start your session</p>
+
+								<form action="../../index2.html" method="post">
+								<div class="form-group has-feedback">
+									<input type="email" class="form-control" placeholder="Email">
+									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<input type="password" class="form-control" placeholder="Password">
+									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+								</div>
+								<div class="row">
+									<div class="col-xs-8">
+										<div class="checkbox icheck">
+											<label>
+												<input type="checkbox"> Remember Me
+											</label>
+										</div>
+									</div>
+									<!-- /.col -->
+									<div class="col-xs-4">
+										<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+									</div>
+									<!-- /.col -->
+								</div>
+								</form>
+
+								<div class="social-auth-links text-center">
+									<p>- OR -</p>
+									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
+								<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
+								</div>
+								<!-- /.social-auth-links -->
+
+								<a href="#">I forgot my password</a><br>
+								<a href="register.html" class="text-center">Register a new membership</a>
+
+							</div>
+							<!-- /.login-box-body -->
+						</div>
+						<!-- /.login-box -->
+					</div>
+					
+					<!-- semnas -->
+					<div id="daftar" class="tab-pane fade in">
 						<div class="register-box">
 							<div class="register-logo">
-								<a href="#"><b>DINAMIK</b>12</a>
+								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
 							</div>
 
 							<div class="register-box-body">
@@ -78,46 +129,63 @@
 							</div>
 							<!-- /.form-box -->
 						</div>
-						<!-- /.register-box -->
-					</div>
-					
-					<!-- semnas -->
-					<div id="semnas" class="tab-pane fade in">
-					  <img src="<?php echo base_url("assets/img/icon_white/semnas.png"); ?>" class="img-contest" align="center"><br><br>
-					  <h3 class="event-detail-title">SEMINAR NASIONAL</h3>
-					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 01 April 2017
-					  </p>
-					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
-					  </p>
-					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
-					  </p>
-					  <p class="event-detail-text">
-					  Seminar Nasional (Semnas) merupakan suatu kegiatan pertemuan skala nasional untuk membahas, menyikapi suatu topik bahasan dan menampilkan satu atau beberapa pembicara. Seminar nasional ini memiliki tema “Penerapan teknologi ‘Big data’ Dalam Transformasi Pendidikan dan Pembelajaran”. Peserta seminar yang hadir harus berpartisipasi secara aktif dan diharapakan terjadi interaksi dua arah antara pembicara dan peserta seminar.
-					  </p>
 					</div>
 					
 					<!-- felose -->
-					<div id="felose" class="tab-pane fade in">
-					  <img src="<?php echo base_url("assets/img/icon_white/felose.png"); ?>" class="img-contest" align="center"><br><br>
-					  <h3 class="event-detail-title">FESTIVAL TEKNOLOGI DAN SENI</h3>
-					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Minggu, 07 - 09 April 2017
-					  </p>
-					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
-					  </p>
-					  <p class="event-detail-text">
-					  Festival Teknologi dan Seni atau disebut juga FELOSE merupakan salah satu dari rangkaian acara di DINAMIK 12 yang bertajuk unjuk karya mahasiswa/i ilmu komputer dan pendidikan ilmu computer, mahasiswa/i seJawa Barat dan kerjasama IT dengan berbagai komunitas di Bandung. FELOSE ini juga merupakan bentuk perkembangan dari pameran karya pada dinamik 11 maupun dinamik 10 yang didalamnya dibagi menjadi 2 kategori yaitu Seni murni seperti digital art, kriya, komic, ilustrasi dsb dan Teknologi seperti robot, aplikasi, game dsb. Tema yang diusungkan adalah “Mahakarya Teknologi dan Seni Indonesia”. Sasaran dari kegiatan ini adalah Mahasiswa/i se-Nasional.
-					  </p>
-					</div>
-				</div>	
+					<div id="lupasandi" class="tab-pane fade in">
+						<div class="login-box">
+							<div class="login-logo">
+								<a href="../../index2.html"><b>Admin</b>LTE</a>
+							</div>
+							<!-- /.login-logo -->
+							<div class="login-box-body">
+								<p class="login-box-msg">Sign in to start your session</p>
+
+								<form action="../../index2.html" method="post">
+								<div class="form-group has-feedback">
+									<input type="email" class="form-control" placeholder="Email">
+									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<input type="password" class="form-control" placeholder="Password">
+									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+								</div>
+								<div class="row">
+									<div class="col-xs-8">
+										<div class="checkbox icheck">
+											<label>
+												<input type="checkbox"> Remember Me
+											</label>
+										</div>
+									</div>
+									<!-- /.col -->
+									<div class="col-xs-4">
+										<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+									</div>
+									<!-- /.col -->
+								</div>
+								</form>
+
+								<div class="social-auth-links text-center">
+									<p>- OR -</p>
+									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
+								<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
+								</div>
+								<!-- /.social-auth-links -->
+
+								<a href="#">I forgot my password</a><br>
+								<a href="register.html" class="text-center">Register a new membership</a>
+
+							</div>
+							<!-- /.login-box-body -->
+						</div>
+						<!-- /.login-box -->
+					</div>	
+				</div>
 			</div>
 		</div>
-	</div>
-<!-- </div>/.container -->
+<!--/.container -->
+<!--</div>
 
 <!-- iCheck -->
 <script src="<?php echo base_url("/plugins/iCheck/icheck.min.js"); ?>"></script>

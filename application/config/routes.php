@@ -54,5 +54,6 @@ $route['404_override'] = 'msg/message_404';
 $route['translate_uri_dashes'] = FALSE;
 $route['acara'] = 'home/acara'; 
 $route['lomba'] = 'home/lomba'; 
+$route['akun'] = 'home/akun'; 
 $route['pendaftaran'] = 'home/pendaftaran'; 
 $route['maintenance'] = 'msg/maintenance';
