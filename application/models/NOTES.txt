@@ -3,4 +3,9 @@ Catatan :
 	
 	admin			-	model kategori admin 
 	account			-	model untuk login, regis, lupa pass
+
+
+	Penulisan: /* Created by Isal */
+	nama class = nama tabel belakang + Model
+	nama fungsi = mainin huruf, tanpa _ (ALAYYYYYYYYYYYYYY)
 	

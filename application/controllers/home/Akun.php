@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Akun extends CI_Controller {
+class Akun extends CI_Controller{
 
 	/**
 	 * Index Page for this controller.
@@ -23,21 +23,67 @@ class Akun extends CI_Controller {
 		$this->load->view('layout/header');
 		$this->load->view('home/akun');
 		$this->load->view('layout/footer');
+		// var_dump($_COOKIE);
 	}
 	
 	public function login(){
 		if(isset($_POST['btnLogin'])){
-		
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$options = [
-				'cost' => 10,
-				'salt' => "dinamik#12^accounts@upi%bdg",
-			];
-			$hash = password_hash($password, PASSWORD_DEFAULT, $options);
-			/* Output hasil hash password	 	*/
-			/* echo "<b><hr>".$hash."</b>"; 	*/
+			$cb = $this->input->post('checkbox');
+
+
+			/*Logging in via username nor email*/
+			$data = $this->AccountModel->selectByUsername($username);
+			if(!isset($data)){
+				$data = $this->AccountModel->selectByEmail($username);
+			}
+
+
+			/*Checking Login*/
+			if(md5($password) == $data['account_password']){
+				/*Success Login*/
+
+				/*Storing key value as session data*/
+				$userdata = array(
+					'username'  => $data['account_username'],
+					'email'     => $data['account_email'],
+					'category'  => $data['account_category'],
+					'logged_in' => TRUE
+					// 'key_value' => 'key_answer'
+				);
+				$this->session->set_userdata($userdata);
+
+				/*if checkbox is checked*/
+				if($cb == "on"){
+					$cookie = array(
+					    'name'   => 'username',
+					    'value'  => $username,
+					    'expire' => '1209600',  // Two weeks
+					    'domain' => '',
+					    'path'   => '/'
+					);
+					set_cookie($cookie);
+
+					$cookie = array(
+					    'name'   => 'password',
+					    'value'  => $password,
+					    'expire' => '1209600',  // Two weeks
+					    'domain' => '',
+					    'path'   => '/'
+					);
+					set_cookie($cookie);
+				}
+				redirect(site_url('dashboard/Admin'));
+			}else{
+				/*Failed Login*/
+				redirect(site_url('home/Akun'));
+			}
+		}
 	}
-		
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(site_url('/akun'));
 	}
 }

@@ -20,6 +20,12 @@ class Admin extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin/main_dashboard');
+		if(isset($_SESSION['logged_in'])){
+			/* if has session */
+			$this->load->view('admin/main_dashboard');
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/'));
+		}
 	}
 }
