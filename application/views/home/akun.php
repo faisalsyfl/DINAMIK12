@@ -1,9 +1,14 @@
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
+<!-- RECONFIG THE STYLE TO MATCH THE HOME -->
+<!-- THIS SETTINGS OVERRIDING THE HOME PAGE STYLES -->
 <link rel="stylesheet" href="<?php echo base_url("/assets/css/adminlte/AdminLTE.min.css"); ?>">
 <!-- iCheck -->
 <link rel="stylesheet" href="<?php echo base_url("/plugins/iCheck/square/blue.css"); ?>">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="<?php echo base_url("/plugins/iCheck/all.css"); ?>">
+  
 	<div id="event-detail" class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -27,12 +32,15 @@
 					<div id="masuk" class="tab-pane fade in active">
 						<div class="login-box">
 							<!-- /.login-logo -->
+							<div class="register-logo">
+								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
+							</div>
 							<div class="login-box-body">
 								<p class="login-box-msg">Masuk untuk melanjutkan</p>
 
 								<?php echo form_open('home/Akun/login'); ?>
 								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="Email/Username" name="username" value="">
+									<input type="text" class="form-control" placeholder="Email/Nama pengguna" name="username" value="">
 									<?php  
 										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
 										// if($this->input->cookie('username')) echo $this->input->cookie('username'); 
@@ -41,7 +49,7 @@
 									
 								</div>
 								<div class="form-group has-feedback">
-									<input type="password" class="form-control" placeholder="Password" name="password" value="">
+									<input type="password" class="form-control" placeholder="Kata sandi" name="password" value="">
 									<?php 
 										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
 										if(isset($_COOKIE['password'])) echo $_COOKIE['password']; 
@@ -59,7 +67,9 @@
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-4">
-										<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnLogin">Sign In</button>
+										<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnLogin">
+											Masuk
+										</button>
 									</div>
 									<!-- /.col -->
 								</div>
@@ -92,41 +102,58 @@
 							</div>
 
 							<div class="register-box-body">
-							<p class="login-box-msg">Register a new membership</p>
+							<p class="login-box-msg">Mendaftar akun baru</p>
 
-								<form action="../../index.html" method="post">
+								<form action="<?php /* INSERT CONTROLLER HERE */ ?>" method="post">
 									<div class="form-group has-feedback">
-										<input type="text" class="form-control" placeholder="Full name">
+										<input type="text" class="form-control" placeholder="Nama akun">
 										<span class="glyphicon glyphicon-user form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="email" class="form-control" placeholder="Email">
+										<input type="email" class="form-control" placeholder="E-mail">
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="password" class="form-control" placeholder="Password">
+										<input type="password" class="form-control" placeholder="Kata sandi">
 											<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="password" class="form-control" placeholder="Retype password">
+										<input type="password" class="form-control" placeholder="Konfirmasi kata sandi">
 										<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 									</div>
+									<!-- radio -->
+									<!--NOT FIX
+									<div class="form-group">
+										<label>
+											<input type="radio" name="r3" class="flat-red" checked>
+										</label>
+										<label>
+											<input type="radio" name="r3" class="flat-red">
+										</label>
+										<label>
+											<input type="radio" name="r3" class="flat-red" disabled>
+											Flat green skin radio
+										</label>
+									</div>
+									-->
 									<div class="row">
 										<div class="col-xs-8">
 											<div class="checkbox icheck">
 												<label>
-													<input type="checkbox"> I agree to the <a href="#">terms</a>
+													<input type="checkbox"> Saya setuju terhadap <br>
+													<a href="#">syarat dan ketentuan.</a>
 												</label>
 											</div>
 										</div>
 									<!-- /.col -->
 										<div class="col-xs-4">
-											<button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+											<button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
 										</div>
 									<!-- /.col -->
 									</div>
 								</form>
-
+								
+								<!-- CURRENTLY NOT USED
 								<div class="social-auth-links text-center">
 									<p>- OR -</p>
 									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
@@ -134,8 +161,8 @@
 									<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
 										Google+</a>
 								</div>
-
-								<a href="login.html" class="text-center">I already have a membership</a>
+								-->
+								<a data-toggle="tab" href="#masuk" class="text-center">Saya sudah mempunyai akun</a>
 							</div>
 							<!-- /.form-box -->
 						</div>
@@ -145,37 +172,40 @@
 					<div id="lupasandi" class="tab-pane fade in">
 						<div class="login-box">
 							<div class="login-logo">
-								<a href="../../index2.html"><b>Admin</b>LTE</a>
+								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
 							</div>
 							<!-- /.login-logo -->
 							<div class="login-box-body">
-								<p class="login-box-msg">Sign in to start your session</p>
+								<p class="login-box-msg">Kirim kata sandi baru</p>
 
-								<form action="../../index2.html" method="post">
+								<form action="<?php /* INSERT CONTROLLER HERE */ ?>" method="post">
 								<div class="form-group has-feedback">
-									<input type="email" class="form-control" placeholder="Email">
+									<input type="text" class="form-control" placeholder="Nama pengguna">
 									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 								</div>
 								<div class="form-group has-feedback">
-									<input type="password" class="form-control" placeholder="Password">
+									<input type="email" class="form-control" placeholder="E-mail">
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 								</div>
 								<div class="row">
 									<div class="col-xs-8">
+										<!-- NOT USED FOR NOW
 										<div class="checkbox icheck">
 											<label>
 												<input type="checkbox"> Remember Me
 											</label>
 										</div>
+										-->
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-4">
-										<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+										<button type="submit" class="btn btn-primary btn-block btn-flat">Kirim</button>
 									</div>
 									<!-- /.col -->
 								</div>
 								</form>
 
+								<!-- CURRENTLY NOT USED
 								<div class="social-auth-links text-center">
 									<p>- OR -</p>
 									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
@@ -183,8 +213,8 @@
 								</div>
 								<!-- /.social-auth-links -->
 
-								<a href="#">I forgot my password</a><br>
-								<a href="register.html" class="text-center">Register a new membership</a>
+								<a data-toggle="tab" href="#masuk">Sudah ingat kata sandi?</a><br>
+								<a data-toggle="tab" href="#daftar" class="text-center">Daftar akun baru</a>
 
 							</div>
 							<!-- /.login-box-body -->
@@ -197,3 +227,21 @@
 	<!--/.container -->
 	</div>
 </div>
+
+<script>
+	//iCheck for checkbox and radio inputs
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+    });
+    //Red color scheme for iCheck
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+</script>

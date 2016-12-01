@@ -24,7 +24,7 @@ class Admin extends CI_Controller {
 	{
 		if(isset($_SESSION['logged_in'])){
 			/* if has session */
-			$this->load->view('admin/main_dashboard');
+			$this->load->view('admin/main');
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/'));
@@ -63,7 +63,7 @@ class Admin extends CI_Controller {
 	{
 		if(isset($_SESSION['logged_in'])){
 			/* if has session */
-			$this->load->view('admin/acaralomba');
+			$this->load->view('admin/main_dashboard');
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));

@@ -120,9 +120,9 @@
 					  </p>
 					</div>
 					
-				  </div>
 				</div>
-
 			</div>
+
 		</div>
-    </div><!-- /.container -->
+	</div>
+</div><!-- /.container -->
