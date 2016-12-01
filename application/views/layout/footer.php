@@ -34,7 +34,7 @@
 						  <span class="glyphicon glyphicon-envelope"></span>
 						</td>
 						<td>
-						  <a class="footer-link" href="mailto:dinamik@cs.upi.edu">dinamik@cs.upi.edu</a>
+						  <a class="footer-link" href="mailto:dinamik@cs.upi.edu">dinamik.cs@upi.edu</a>
 						</td>
 					  </tr>
 					  <tr>

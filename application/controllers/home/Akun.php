@@ -18,6 +18,11 @@ class Akun extends CI_Controller{
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 
+	 /* 
+		Index function
+		Display the account page
+	 */
 	public function index()
 	{
 		$this->load->view('layout/header');
@@ -26,6 +31,10 @@ class Akun extends CI_Controller{
 		// var_dump($_COOKIE);
 	}
 	
+	/* 
+		Login function
+		By username nor email
+	*/
 	public function login(){
 		if(isset($_POST['btnLogin'])){
 			$username = $_POST['username'];
@@ -74,16 +83,19 @@ class Akun extends CI_Controller{
 					);
 					set_cookie($cookie);
 				}
-				redirect(site_url('dashboard/Admin'));
+				
+				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
+				if($userdata['category'] == 'ADM')	redirect(site_url('dashboard/admin'));
+				
 			}else{
 				/*Failed Login*/
-				redirect(site_url('home/Akun'));
+				redirect(site_url('/akun'));
 			}
 		}
 	}
 
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect(site_url('/akun'));
+		redirect(site_url('/'));
 	}
 }

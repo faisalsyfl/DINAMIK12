@@ -23,29 +23,39 @@
 				</ul>
 				
 				<div class="tab-content event-detail-list">
-					<!-- talkshow -->
+					<!-- Login -->
 					<div id="masuk" class="tab-pane fade in active">
 						<div class="login-box">
 							<!-- /.login-logo -->
 							<div class="login-box-body">
-								<p class="login-box-msg">Sign in to start your session</p>
+								<p class="login-box-msg">Masuk untuk melanjutkan</p>
 
 								<?php echo form_open('home/Akun/login'); ?>
 								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="Email/Username" name="username" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username']; ?>">
+									<input type="text" class="form-control" placeholder="Email/Username" name="username" value="">
+									<?php  
+										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
+										// if($this->input->cookie('username')) echo $this->input->cookie('username'); 
+									?>
 									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+									
 								</div>
 								<div class="form-group has-feedback">
-									<input type="password" class="form-control" placeholder="Password" name="password" value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['password']; ?>">
+									<input type="password" class="form-control" placeholder="Password" name="password" value="">
+									<?php 
+										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
+										if(isset($_COOKIE['password'])) echo $_COOKIE['password']; 
+									?>
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 								</div>
 								<div class="row">
 									<div class="col-xs-8">
-										<div class="checkbox icheck">
+										<!-- CURRENTLY NOT USED -->
+										<!--<div class="checkbox icheck">
 											<label>
 												<input type="checkbox" name="checkbox"> Remember Me
 											</label>
-										</div>
+										</div>-->
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-4">
@@ -55,15 +65,18 @@
 								</div>
 								</form>
 
+								<!-- CURRENTLY NOT USED -->
+								<!--
 								<div class="social-auth-links text-center">
 									<p>- OR -</p>
 									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
-								<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
+									<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
 								</div>
+								-->
 								<!-- /.social-auth-links -->
 
-								<a href="#">I forgot my password</a><br>
-								<a href="register.html" class="text-center">Register a new membership</a>
+								<a data-toggle="tab" href="#lupasandi">Lupa kata sandi</a><br>
+								<a data-toggle="tab" href="#daftar" class="text-center">Daftar akun baru</a>
 
 							</div>
 							<!-- /.login-box-body -->
@@ -71,7 +84,7 @@
 						<!-- /.login-box -->
 					</div>
 					
-					<!-- semnas -->
+					<!-- Register -->
 					<div id="daftar" class="tab-pane fade in">
 						<div class="register-box">
 							<div class="register-logo">
@@ -128,7 +141,7 @@
 						</div>
 					</div>
 					
-					<!-- felose -->
+					<!-- Forgot Pass -->
 					<div id="lupasandi" class="tab-pane fade in">
 						<div class="login-box">
 							<div class="login-logo">
@@ -181,17 +194,6 @@
 				</div>
 			</div>
 		</div>
-<!--/.container -->
-<!--</div>
-
-<!-- iCheck -->
-<script src="<?php echo base_url("/plugins/iCheck/icheck.min.js"); ?>"></script>
-<script>
-$(function () {
-	$('input').iCheck({
-	checkboxClass: 'icheckbox_square-blue',
-	radioClass: 'iradio_square-blue',
-	increaseArea: '20%' // optional
-	});
-});
-</script>
+	<!--/.container -->
+	</div>
+</div>

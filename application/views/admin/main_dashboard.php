@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Fixed Layout</title>
+  <title>DINAMIK12 | Administrator</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -160,6 +160,7 @@
 						</span>
 					</a>
 					<ul class="treeview-menu" style="display: none;">
+						<li><a href="#">Akun Juri</a></li>
 						<li><a href="#">Akun Koordinator</a></li>
 						<li><a href="#">Akun Sekolah</a></li>
 						<li><a href="#">Akun Umum</a></li>
@@ -172,9 +173,6 @@
 						<small class="label pull-right bg-blue">777</small>            
 					</span></a></li>
         <li><a href="#"><i class="fa fa-thumbs-up"></i> <span>Hasil Penjurian</span><span class="pull-right-container">
-						<small class="label pull-right bg-blue">777</small>            
-					</span></a></li>
-        <li><a href="#"><i class="fa fa-user-secret"></i> <span>Juri</span><span class="pull-right-container">
 						<small class="label pull-right bg-blue">777</small>            
 					</span></a></li>
         <li><a href="#"><i class="fa fa-envelope"></i> <span>Pesan Masuk</span><span class="pull-right-container">
