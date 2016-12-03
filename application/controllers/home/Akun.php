@@ -57,7 +57,7 @@ class Akun extends CI_Controller{
 				$userdata = array(
 					'username'  => $data['account_username'],
 					'email'     => $data['account_email'],
-					'category'  => $data['account_category'],
+					'category'  => $data['account_category_id'],
 					'logged_in' => TRUE
 					// 'key_value' => 'key_answer'
 				);

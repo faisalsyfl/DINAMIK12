@@ -685,3 +685,12 @@ body {
   color: #ffffff;
   text-decoration:underline;
 }
+
+.icon-toggle {
+  width: 24px;
+  height: auto;
+}
+
+.logo-toggle {
+  width: 150px;
+}

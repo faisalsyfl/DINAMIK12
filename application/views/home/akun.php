@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="<?php echo base_url("/plugins/iCheck/square/blue.css"); ?>">
 <!-- iCheck for checkboxes and radio inputs -->
 <link rel="stylesheet" href="<?php echo base_url("/plugins/iCheck/all.css"); ?>">
+
+<style>
+	body{
+		font-family: 'Lato';
+	}
+</style>
   
 	<div id="event-detail" class="container">
 		<div class="row">
@@ -40,7 +46,7 @@
 
 								<?php echo form_open('home/Akun/login'); ?>
 								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="Email/Nama pengguna" name="username" value="">
+									<input type="text" class="form-control" placeholder="E-mail/Nama pengguna" name="username" value="">
 									<?php  
 										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
 										// if($this->input->cookie('username')) echo $this->input->cookie('username'); 

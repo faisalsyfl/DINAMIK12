@@ -4,10 +4,13 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>DINAMIK12 | <?php echo $this->session->username; ?></title>
+		<link rel="icon" href="<?php echo base_url("assets/img/logo/favicon.png"); ?>">
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<!-- Bootstrap 3.3.6 -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap/bootstrap.min.css">
+		<!-- Custom -->
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom/main.css">
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 		<!-- Ionicons -->
@@ -34,11 +37,11 @@
 		<div class="wrapper">
 			<header class="main-header">
 				<!-- Logo -->
-				<a href="../../index2.html" class="logo">
+				<a href="#" class="logo">
 					<!-- mini logo for sidebar mini 50x50 pixels -->
-					<span class="logo-mini"><b>A</b>LT</span>
+					<span class="logo-mini"><img class="icon-toggle" src="<?php echo base_url('/assets/img/logo/icon-white.png');?>"></span>
 					<!-- logo for regular state and mobile devices -->
-					<span class="logo-lg"><b>Admin</b>LTE</span>
+					<span class="logo-lg"><img class="logo-toggle" src="<?php echo base_url('/assets/img/logo/logo-white.png');?>"></span>
 				</a>
 				<!-- Header Navbar: style can be found in header.less -->
 				<nav class="navbar navbar-static-top">
@@ -66,7 +69,7 @@
 											<li><!-- start message -->
 												<a href="#">
 													<div class="pull-left">
-														<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+														<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
 													</div>
 													<h4>
 														Support Team
@@ -85,13 +88,13 @@
 							<!-- User Account: style can be found in dropdown.less -->
 							<li class="dropdown user user-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<img src="<?php echo base_url('/assets/img/avatar/default.png');?>" class="user-image" alt="User Image">
+									<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="user-image" alt="User Image">
 									<span class="hidden-xs">Bang Satyo</span>
 								</a>
 								<ul class="dropdown-menu">
 									<!-- User image -->
 									<li class="user-header">
-										<img src="<?php echo base_url('/assets/img/avatar/default.png');?>" class="img-circle" alt="User Image">
+										<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
 										<p>
 											Bang Satyo - Administrator
 											<small>Dinamik12 Administrator</small>
@@ -122,7 +125,7 @@
 					<!-- Sidebar user panel -->
 					<div class="user-panel">
 						<div class="pull-left image">
-							<img src="<?php echo base_url('/assets/img/avatar/default.png');?>" class="img-circle" alt="User Image">
+							<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
 						</div>
 						<div class="pull-left info">
 							<p>Bang Satyo</p>
@@ -176,6 +179,7 @@
 										<li><a href="#">Akun Koordinator</a></li>
 										<li><a href="#">Akun Sekolah</a></li>
 										<li><a href="#">Akun Umum</a></li>
+										<li><a href="#">Akun Tim</a></li>
 									</ul>
 								</li>
 							</ul>
