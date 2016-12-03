@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2016 at 08:14 PM
+-- Generation Time: Dec 03, 2016 at 07:18 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -30,21 +30,22 @@ USE `db_dinamik12`;
 
 DROP TABLE IF EXISTS `tb_account`;
 CREATE TABLE `tb_account` (
-  `account_id` varchar(10) NOT NULL DEFAULT '',
+  `account_id` varchar(10) NOT NULL DEFAULT '' COMMENT 'Kode : ACC*****',
   `account_email` varchar(255) NOT NULL,
   `account_username` varchar(16) NOT NULL,
   `account_password` varchar(255) NOT NULL,
-  `account_log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `account_category` varchar(10) NOT NULL,
-  `account_token` varchar(255) NOT NULL
+  `account_log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last login',
+  `account_category_id` varchar(10) NOT NULL,
+  `account_token` varchar(255) NOT NULL COMMENT 'Cookies token',
+  `account_image` text NOT NULL COMMENT 'Gambar kategori'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_account`
 --
 
-INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category`, `account_token`) VALUES
-('ACC00000', 'dinamik.cs@upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-12-01 12:15:01', 'ADM', 'a');
+INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category_id`, `account_token`, `account_image`) VALUES
+('ACC00000', '-', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-12-02 17:52:57', 'ADM', '', '');
 
 -- --------------------------------------------------------
 
@@ -79,6 +80,26 @@ CREATE TABLE `tb_calendar` (
   `calendar_event_name` varchar(255) NOT NULL,
   `calendar_event_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabel daftar acara buat kalender';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_category`
+--
+
+DROP TABLE IF EXISTS `tb_category`;
+CREATE TABLE `tb_category` (
+  `category_id` varchar(10) NOT NULL,
+  `category_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_category`
+--
+
+INSERT INTO `tb_category` (`category_id`, `category_name`) VALUES
+('ADM', 'Administrator'),
+('EVE', 'Koordinator Acara');
 
 -- --------------------------------------------------------
 
@@ -612,10 +633,17 @@ CREATE TABLE `tb_coordinator` (
   `coordinator_name` varchar(255) NOT NULL,
   `coordinator_contact` varchar(20) NOT NULL,
   `coordinator_address` text NOT NULL,
-  `coordinator_email` varchar(255) NOT NULL,
-  `coordinator_event_id` varchar(10) NOT NULL,
+  `coordinator_email` varchar(255) DEFAULT NULL,
+  `coordinator_event_id` varchar(10) DEFAULT NULL,
   `coordinator_account_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_coordinator`
+--
+
+INSERT INTO `tb_coordinator` (`coordinator_id`, `coordinator_name`, `coordinator_contact`, `coordinator_address`, `coordinator_email`, `coordinator_event_id`, `coordinator_account_id`) VALUES
+('COR00000', 'Administrator', '-', '-', '-', NULL, 'ACC00000');
 
 -- --------------------------------------------------------
 
@@ -628,7 +656,7 @@ CREATE TABLE `tb_event` (
   `event_id` varchar(10) NOT NULL DEFAULT '',
   `event_code` varchar(10) NOT NULL,
   `event_name` varchar(255) NOT NULL,
-  `event_status` tinyint(1) NOT NULL,
+  `event_status` tinyint(1) NOT NULL COMMENT '1 = valid/bisa daftar, 0 = tutup, 9 = spesial',
   `event_capacity` int(5) NOT NULL,
   `event_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -728,7 +756,7 @@ CREATE TABLE `tb_public` (
   `public_address` text NOT NULL,
   `public_image` text NOT NULL,
   `public_contact` varchar(20) NOT NULL,
-  `public_email` varchar(255) NOT NULL,
+  `public_email` varchar(255) DEFAULT NULL,
   `public_city_id` int(11) NOT NULL,
   `public_account_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -761,10 +789,11 @@ DROP TABLE IF EXISTS `tb_school`;
 CREATE TABLE `tb_school` (
   `school_id` varchar(10) NOT NULL DEFAULT '',
   `school_name` varchar(255) NOT NULL,
+  `school_grade` varchar(15) NOT NULL,
   `school_address` text NOT NULL,
   `school_image` text,
   `school_contact` varchar(20) NOT NULL,
-  `school_email` varchar(255) NOT NULL,
+  `school_email` varchar(255) DEFAULT NULL,
   `school_city_id` int(11) NOT NULL,
   `school_account_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -819,6 +848,34 @@ CREATE TABLE `tb_sponsor` (
   `sponsor_link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_cor_acc`
+--
+DROP VIEW IF EXISTS `v_cor_acc`;
+CREATE TABLE `v_cor_acc` (
+`acc_id` varchar(10)
+,`cor_id` varchar(10)
+,`cat_name` varchar(255)
+,`cor_username` varchar(16)
+,`cor_name` varchar(255)
+,`cor_email` varchar(255)
+,`cor_category` varchar(10)
+,`cor_image` text
+,`cor_event` varchar(10)
+,`cor_acc` varchar(10)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_cor_acc`
+--
+DROP TABLE IF EXISTS `v_cor_acc`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_cor_acc`  AS  select `acc`.`account_id` AS `acc_id`,`cor`.`coordinator_id` AS `cor_id`,`cat`.`category_name` AS `cat_name`,`acc`.`account_username` AS `cor_username`,`cor`.`coordinator_name` AS `cor_name`,`acc`.`account_email` AS `cor_email`,`acc`.`account_category_id` AS `cor_category`,`acc`.`account_image` AS `cor_image`,`cor`.`coordinator_event_id` AS `cor_event`,`cor`.`coordinator_account_id` AS `cor_acc` from ((`tb_account` `acc` join `tb_coordinator` `cor`) join `tb_category` `cat` on(((`acc`.`account_id` = `cor`.`coordinator_account_id`) and (`cat`.`category_id` = `acc`.`account_category_id`)))) ;
+
 --
 -- Indexes for dumped tables
 --
@@ -828,7 +885,8 @@ CREATE TABLE `tb_sponsor` (
 --
 ALTER TABLE `tb_account`
   ADD PRIMARY KEY (`account_id`),
-  ADD KEY `account_category` (`account_category`);
+  ADD KEY `account_category` (`account_category_id`),
+  ADD KEY `account_category_2` (`account_category_id`);
 
 --
 -- Indexes for table `tb_bazaar`
@@ -841,6 +899,12 @@ ALTER TABLE `tb_bazaar`
 --
 ALTER TABLE `tb_calendar`
   ADD PRIMARY KEY (`calendar_id`);
+
+--
+-- Indexes for table `tb_category`
+--
+ALTER TABLE `tb_category`
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indexes for table `tb_city`
@@ -968,6 +1032,12 @@ ALTER TABLE `tb_message`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `tb_account`
+--
+ALTER TABLE `tb_account`
+  ADD CONSTRAINT `tb_account_ibfk_1` FOREIGN KEY (`account_category_id`) REFERENCES `tb_category` (`category_id`);
 
 --
 -- Constraints for table `tb_coordinator`

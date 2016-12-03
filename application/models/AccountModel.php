@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * class khusus tabel tb_account
- */
+*/
 class AccountModel extends CI_Model {
 	public $tableName;
 
