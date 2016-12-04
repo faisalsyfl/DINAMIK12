@@ -23,10 +23,29 @@ class Akun extends CI_Controller{
 		Index function
 		Display the account page
 	 */
-	public function index()
+	public function index($report=0)
 	{
+		$data['city'] = $this->CityModel->selectAll()->result_array();
+		if($report==2){
+			$data['color'] = "success";
+			$data['h1'] = "Berhasil Daftar Akun!";
+			$data['p'] = "Terimakasih telah membuat akun lomba/acara DINAMIK 12";
+		}else if($report==3){
+			$data['color'] = "danger";
+			$data['h1'] = "Gagal Daftar Akun!";
+			$data['p'] = "Gagal Daftar Akun DINAMIK12, Silahkan coba lagi atau hubungi kami";
+		}else if($report==1){
+			$data['color'] = "danger";
+			$data['h1'] = "Gagal Masuk!";
+			$data['p'] = "Username atau password salah, silahkan login kembali atau hubungi kami";			
+		}else if($report==4){
+			$data['color'] = "danger";
+			$data['h1'] = "Akun belum diverifikasi";
+			$data['p'] = "Akun tidak atau belum diverifikasi oleh admnisitrator, silahkan hubungi kami";	
+		}
+		// var_dump($data['city']);
 		$this->load->view('layout/header');
-		$this->load->view('home/akun');
+		$this->load->view('home/akun',$data);
 		$this->load->view('layout/footer');
 		// var_dump($_COOKIE);
 	}
@@ -58,6 +77,7 @@ class Akun extends CI_Controller{
 					'username'  => $data['account_username'],
 					'email'     => $data['account_email'],
 					'category'  => $data['account_category_id'],
+					'status'  => $data['account_status'],
 					'logged_in' => TRUE
 					// 'key_value' => 'key_answer'
 				);
@@ -86,16 +106,78 @@ class Akun extends CI_Controller{
 				
 				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
 				if($userdata['category'] == 'ADM')	redirect(site_url('dashboard/admin'));
-				
+				else if($userdata['category'] == 'EVE' && $userdata['status'] == 1) redirect(site_url('dashboard/admin'));
+				else redirect(site_url('/akun/failedact'));
 			}else{
 				/*Failed Login*/
-				redirect(site_url('/akun'));
+				redirect(site_url('/akun/failedlog'));
 			}
 		}
 	}
 
+	/**
+	 * logout function
+	 * @return [type] [description]
+	 */
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect(site_url('/'));
+	}
+
+	/**
+	 * register new member as school
+	 * insert into account table
+	 * also school table
+	 * Automatically set status account FALSE, admin should verify their identity
+	 * @return  
+	 */
+	public function regAsSchool(){
+		if(isset($_POST['btnDaftarSekolah'])){
+			
+			$acc['account_email'] = $this->input->post('email');
+			$asd = explode(" ",$this->input->post('name'));
+			$acc['account_username'] = strtolower(implode("",$asd));
+			$acc['account_password'] = md5($acc['account_username']);
+			$acc['account_category_id'] = "EVE";
+			$this->AccountModel->insert($acc);
+			// var_dump($acc);
+			
+			$sch['school_name'] = $this->input->post('name');
+			$sch['school_grade'] = "SMA/SMK";
+			$sch['school_contact'] = $this->input->post('contact');
+			$sch['school_city_id'] = $this->input->post('city');
+			$sch['school_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
+			$this->SchoolModel->insert($sch);
+
+			redirect(site_url('/akun/success'));
+		}
+	}
+
+	/**
+	 * Register as public
+	 * Account for SEMNAS/TALKSHOW/DSTAR/DONOR
+	 * Insert into: tbl_account and also tb_public
+	 * Set account_status to TRUE, so user can login right after registration
+	 * @return 
+	 */
+	public function regAsPublic(){
+		if(isset($_POST['btnDaftarPublik'])){
+			
+			$acc['account_email'] = $this->input->post('email');
+			$asd = explode(" ",$this->input->post('name'));
+			$acc['account_username'] = strtolower(implode("",$asd));
+			$acc['account_password'] = md5($acc['account_username']);
+			$acc['account_category_id'] = "EVE";
+			$acc['account_status'] = "1";
+			$this->AccountModel->insert($acc);
+			
+			$pub['public_name'] = $this->input->post('name');
+			$pub['public_contact'] = $this->input->post('contact');
+			$pub['public_city_id'] = $this->input->post('city');
+			$pub['public_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
+			$this->PublicModel->insert($pub);
+
+			redirect(site_url('/akun/success'));			
+		}
 	}
 }
