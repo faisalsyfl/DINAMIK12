@@ -27,5 +27,13 @@
 		<!-- Chart JS -->
 		<script src="<?php echo base_url(); ?>assets/js/custom/piechart.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/custom/piechart2.js"></script>
+		<!-- Data Tables -->
+		<script src="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url(); ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+		<script type="text/javascript" charset="utf-8" async defer>
+			$(document).ready(function() {
+			    $('#allAcc').DataTable();
+			} );
+		</script>		
 	</body>
 </html>

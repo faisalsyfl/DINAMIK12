@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `tb_account` (
 --
 
 INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category_id`, `account_token`, `account_image`, `account_status`) VALUES
-(0, 'dinamik@cs.upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-12-04 10:49:08', 'ADM', '', '', 0);
+(0, 'dinamik@cs.upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-12-04 10:49:08', 'ADM', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,12 @@ CREATE TABLE IF NOT EXISTS `tb_category` (
 
 INSERT INTO `tb_category` (`category_id`, `category_name`) VALUES
 ('ADM', 'Administrator'),
-('EVE', 'Koordinator Acara');
+('JDG', 'Juri'),
+('SCH', 'Sekolah'),
+('PUB', 'Publik'),
+('SCT', 'Tim Sekolah'),
+('PBT', 'Tim Publik'),
+('COR', 'Koordinator');
 
 -- --------------------------------------------------------
 

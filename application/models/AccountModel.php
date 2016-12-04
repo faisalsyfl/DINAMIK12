@@ -44,6 +44,11 @@ class AccountModel extends CI_Model {
 	public function insert($data){
 		$this->db->insert($this->tableName,$data);
 	}
+	public function update($id,$data){
+		$this->db->set($data);
+		$this->db->where('id',$id);
+		$this->db->update($this->tableName);
+	}
 
 	public function getId(){
 		$this->db->select('account_id');
@@ -53,8 +58,12 @@ class AccountModel extends CI_Model {
 		$x = $this->db->get()->row()->account_id;
 		return($x);
 	}
-	public function substarct($x){
+	public function selectJoinCategory(){
+		$this->db->select('*');
+		$this->db->from($this->tableName);
+		$this->db->join('tb_category','account_category_id = category_id');
 
+		return $this->db->get();
 	}
 }
 

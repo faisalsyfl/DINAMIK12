@@ -8,10 +8,10 @@ class View extends CI_Model {
 
 	public function __construct(){
 		parent::__construct();
+		$this->tableName = "v_cor_acc";
 	}
 
 	public function selectAll($from=0,$offset=0){
-		$this->tableName = "v_cor_acc";
 		
 		$this->db->select('*');
 		$this->db->from($this->tableName);
@@ -20,7 +20,7 @@ class View extends CI_Model {
 		return $this->db->get();
 	}
 	
-		public function selectByAccID($accid){
+	public function selectByAccID($accid){
 		$this->db->select('*');
 		$this->db->from($this->tableName);
 		$this->db->where('acc_id', $accid);

@@ -22,6 +22,8 @@
 		<!-- AdminLTE Skins. Choose a skin from the css/skins
 		   folder instead of downloading all of them to reduce the load. -->
 		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/adminlte/skins/_all-skins.min.css">
+		<!-- Data Tables -->
+		<link rel="stylesheet" href="<?php echo base_url(); ?>plugins/datatables/dataTables.bootstrap.css">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -161,7 +163,7 @@
 							</a>
 							<ul class="treeview-menu" style="display: none;">
 								<li>
-									<a href="#">
+									<a href="<?php echo site_url('dashboard/admin/akun') ?>">
 										<i class="fa fa-users"></i> Semua Akun
 										<span class="pull-right-container">
 											<small class="label pull-right bg-blue">777</small>            

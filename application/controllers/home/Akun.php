@@ -69,6 +69,7 @@ class Akun extends CI_Controller{
 
 
 			/*Checking Login*/
+			// var_du
 			if(md5($password) == $data['account_password']){
 				/*Success Login*/
 
@@ -105,11 +106,20 @@ class Akun extends CI_Controller{
 				}
 				
 				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
-				if($userdata['category'] == 'ADM')	redirect(site_url('dashboard/admin'));
-				else if($userdata['category'] == 'EVE' && $userdata['status'] == 1) redirect(site_url('dashboard/admin'));
+				if($userdata['category'] == 'ADM')	
+					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'SCH' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'PUB' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'JDG' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'COR' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin'));
 				else redirect(site_url('/akun/failedact'));
 			}else{
 				/*Failed Login*/
+				// var_dump(md5($password)."---".$data['account_password']);
 				redirect(site_url('/akun/failedlog'));
 			}
 		}
@@ -138,7 +148,7 @@ class Akun extends CI_Controller{
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
 			$acc['account_password'] = md5($acc['account_username']);
-			$acc['account_category_id'] = "EVE";
+			$acc['account_category_id'] = "SCH";
 			$this->AccountModel->insert($acc);
 			// var_dump($acc);
 			
@@ -147,6 +157,7 @@ class Akun extends CI_Controller{
 			$sch['school_contact'] = $this->input->post('contact');
 			$sch['school_city_id'] = $this->input->post('city');
 			$sch['school_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
+			// var_dump($sch);
 			$this->SchoolModel->insert($sch);
 
 			redirect(site_url('/akun/success'));
@@ -166,8 +177,8 @@ class Akun extends CI_Controller{
 			$acc['account_email'] = $this->input->post('email');
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
-			$acc['account_password'] = md5($acc['account_username']);
-			$acc['account_category_id'] = "EVE";
+			$acc['account_password'] = md5($this->input->post('pass2'));
+			$acc['account_category_id'] = "PUB";
 			$acc['account_status'] = "1";
 			$this->AccountModel->insert($acc);
 			

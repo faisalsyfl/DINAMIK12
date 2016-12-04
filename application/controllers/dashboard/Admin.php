@@ -33,142 +33,31 @@ class Admin extends CI_Controller {
 		}
 	}
 	
-	/* Event page */
-	public function acaralomba()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* Calendar page */
-	public function kalender()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/kalender');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
+
 	/* 
 		Account page 
 		Show per category if parameter is not NULL
+		ADM Admin
+		JDG Juri
+		COR koor
+		PBT Peserta Acara
+		SCH sekolah
+		PUB umum
+		SCT Tim sekolah
 	*/
 	public function akun($category = NULL)
 	{
 		if(isset($_SESSION['logged_in'])){
 			/* if has session */
-			$this->load->view('admin/main_dashboard');
+			$data['list'] = $this->AccountModel->selectJoinCategory()->result_array();
+			// var_dump($data['list']);
+			$this->load->view('admin/layout/header');
+			$this->load->view('admin/akun',$data);
+			$this->load->view('admin/layout/footer');
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}
 	}
 	
-	/* 
-		News page 
-	*/
-	public function berita()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		Scoring page (NOT IN PRIORITY)
-	*/
-	public function penjurian()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		Mailbox page 
-	*/
-	public function kotakpesan()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		Bazaar info and list page 
-	*/
-	public function bazaar()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		Participant list
-	*/
-	public function datapeserta()
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		Public team list
-		Show per category if param is not null
-	*/
-	public function timacara($category = NULL)
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
-	
-	/* 
-		School team list
-		Show per category if param is not null
-	*/
-	public function timlomba($category = NULL)
-	{
-		if(isset($_SESSION['logged_in'])){
-			/* if has session */
-			$this->load->view('admin/acaralomba');
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}
-	}
 }
