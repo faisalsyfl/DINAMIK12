@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2016 at 07:18 AM
--- Server version: 10.1.8-MariaDB
--- PHP Version: 5.6.14
+-- Generation Time: Dec 04, 2016 at 12:01 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_dinamik12`
 --
+
 DROP DATABASE IF EXISTS `db_dinamik12`;
 CREATE DATABASE `db_dinamik12` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `db_dinamik12`;
@@ -29,8 +30,7 @@ USE `db_dinamik12`;
 -- Table structure for table `tb_account`
 --
 
-DROP TABLE IF EXISTS `tb_account`;
-CREATE TABLE `tb_account` (
+CREATE TABLE IF NOT EXISTS `tb_account` (
   `account_id` int(11) NOT NULL,
   `account_email` varchar(255) NOT NULL,
   `account_username` varchar(16) NOT NULL,
@@ -42,14 +42,12 @@ CREATE TABLE `tb_account` (
   `account_status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Dumping data for table `tb_category`
+-- Dumping data for table `tb_account`
 --
 
-INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_category_id`) VALUES
-('', 'dinamik@cs.upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'ADM');
+INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category_id`, `account_token`, `account_image`, `account_status`) VALUES
+(0, 'dinamik@cs.upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2016-12-04 10:49:08', 'ADM', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -57,8 +55,7 @@ INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `ac
 -- Table structure for table `tb_bazaar`
 --
 
-DROP TABLE IF EXISTS `tb_bazaar`;
-CREATE TABLE `tb_bazaar` (
+CREATE TABLE IF NOT EXISTS `tb_bazaar` (
   `bazaar_id` int(11) NOT NULL,
   `bazaar_name` varchar(255) NOT NULL,
   `bazaar_type` varchar(20) NOT NULL,
@@ -73,8 +70,7 @@ CREATE TABLE `tb_bazaar` (
 -- Table structure for table `tb_calendar`
 --
 
-DROP TABLE IF EXISTS `tb_calendar`;
-CREATE TABLE `tb_calendar` (
+CREATE TABLE IF NOT EXISTS `tb_calendar` (
   `calendar_id` int(11) NOT NULL,
   `calendar_event_id` varchar(10) NOT NULL,
   `calendar_start_date` date NOT NULL,
@@ -91,8 +87,7 @@ CREATE TABLE `tb_calendar` (
 -- Table structure for table `tb_category`
 --
 
-DROP TABLE IF EXISTS `tb_category`;
-CREATE TABLE `tb_category` (
+CREATE TABLE IF NOT EXISTS `tb_category` (
   `category_id` varchar(10) NOT NULL,
   `category_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -111,528 +106,500 @@ INSERT INTO `tb_category` (`category_id`, `category_name`) VALUES
 -- Table structure for table `tb_city`
 --
 
-DROP TABLE IF EXISTS `tb_city`;
-CREATE TABLE `tb_city` (
-  `city_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tb_city` (
+  `city_id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `city_name` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
 -- Dumping data for table `tb_city`
 --
 
-INSERT INTO `tb_city` (`city_id`, `city_name`) VALUES
-(1, 'Kabupaten Aceh Barat'),
-(2, 'Kabupaten Aceh Barat Daya'),
-(3, 'Kabupaten Aceh Besar'),
-(4, 'Kabupaten Aceh Jaya'),
-(5, 'Kabupaten Aceh Selatan'),
-(6, 'Kabupaten Aceh Singkil'),
-(7, 'Kabupaten Aceh Tamiang'),
-(8, 'Kabupaten Aceh Tengah'),
-(9, 'Kabupaten Aceh Tenggara'),
-(10, 'Kabupaten Aceh Timur'),
-(11, 'Kabupaten Aceh Utara'),
-(12, 'Kabupaten Bener Meriah'),
-(13, 'Kabupaten Bireuen'),
-(14, 'Kabupaten Gayo Luwes'),
-(15, 'Kabupaten Nagan Raya'),
-(16, 'Kabupaten Pidie'),
-(17, 'Kabupaten Pidie Jaya'),
-(18, 'Kabupaten Simeulue'),
-(19, 'Kota Banda Aceh'),
-(20, 'Kota Langsa'),
-(21, 'Kota Lhokseumawe'),
-(22, 'Kota Sabang'),
-(23, 'Kota Subulussalam'),
-(24, 'Kabupaten Asahan'),
-(25, 'Kabupaten Batubara'),
-(26, 'Kabupaten Dairi'),
-(27, 'Kabupaten Deli Serdang'),
-(28, 'Kabupaten Humbang Hasundutan'),
-(29, 'Kabupaten Karo'),
-(30, 'Kabupaten Labuhan Batu'),
-(31, 'Kabupaten Labuhanbatu Selatan'),
-(32, 'Kabupaten Labuhanbatu Utara'),
-(33, 'Kabupaten Langkat'),
-(34, 'Kabupaten Mandailing Natal'),
-(35, 'Kabupaten Nias'),
-(36, 'Kabupaten Nias Barat'),
-(37, 'Kabupaten Nias Selatan'),
-(38, 'Kabupaten Nias Utara'),
-(39, 'Kabupaten Padang Lawas'),
-(40, 'Kabupaten Padang Lawas Utara'),
-(41, 'Kabupaten Pakpak Barat'),
-(42, 'Kabupaten Samosir'),
-(43, 'Kabupaten Serdang Bedagai'),
-(44, 'Kabupaten Simalungun'),
-(45, 'Kabupaten Tapanuli Selatan'),
-(46, 'Kabupaten Tapanuli Tengah'),
-(47, 'Kabupaten Tapanuli Utara'),
-(48, 'Kabupaten Toba Samosir'),
-(49, 'Kota Binjai'),
-(50, 'Kota Gunung Sitoli'),
-(51, 'Kota Medan'),
-(52, 'Kota Padangsidempuan'),
-(53, 'Kota Pematang Siantar'),
-(54, 'Kota Sibolga'),
-(55, 'Kota Tanjung Balai'),
-(56, 'Kota Tebing Tinggi'),
-(57, 'Kabupaten Agam'),
-(58, 'Kabupaten Dharmas Raya'),
-(59, 'Kabupaten Kepulauan Mentawai'),
-(60, 'Kabupaten Lima Puluh Kota'),
-(61, 'Kabupaten Padang Pariaman'),
-(62, 'Kabupaten Pasaman'),
-(63, 'Kabupaten Pasaman Barat'),
-(64, 'Kabupaten Pesisir Selatan'),
-(65, 'Kabupaten Sijunjung'),
-(66, 'Kabupaten Solok'),
-(67, 'Kabupaten Solok Selatan'),
-(68, 'Kabupaten Tanah Datar'),
-(69, 'Kota Bukittinggi'),
-(70, 'Kota Padang'),
-(71, 'Kota Padang Panjang'),
-(72, 'Kota Pariaman'),
-(73, 'Kota Payakumbuh'),
-(74, 'Kota Sawah Lunto'),
-(75, 'Kota Solok'),
-(76, 'Kabupaten Bengkalis'),
-(77, 'Kabupaten Indragiri Hilir'),
-(78, 'Kabupaten Indragiri Hulu'),
-(79, 'Kabupaten Kampar'),
-(80, 'Kabupaten Kuantan Singingi'),
-(81, 'Kabupaten Meranti'),
-(82, 'Kabupaten Pelalawan'),
-(83, 'Kabupaten Rokan Hilir'),
-(84, 'Kabupaten Rokan Hulu'),
-(85, 'Kabupaten Siak'),
-(86, 'Kota Dumai'),
-(87, 'Kota Pekanbaru'),
-(88, 'Kabupaten Bintan'),
-(89, 'Kabupaten Karimun'),
-(90, 'Kabupaten Kepulauan Anambas'),
-(91, 'Kabupaten Lingga'),
-(92, 'Kabupaten Natuna'),
-(93, 'Kota Batam'),
-(94, 'Kota Tanjung Pinang'),
-(95, 'Kabupaten Bangka'),
-(96, 'Kabupaten Bangka Barat'),
-(97, 'Kabupaten Bangka Selatan'),
-(98, 'Kabupaten Bangka Tengah'),
-(99, 'Kabupaten Belitung'),
-(100, 'Kabupaten Belitung Timur'),
-(101, 'Kota Pangkal Pinang'),
-(102, 'Kabupaten Kerinci'),
-(103, 'Kabupaten Merangin'),
-(104, 'Kabupaten Sarolangun'),
-(105, 'Kabupaten Batang Hari'),
-(106, 'Kabupaten Muaro Jambi'),
-(107, 'Kabupaten Tanjung Jabung Timur'),
-(108, 'Kabupaten Tanjung Jabung Barat'),
-(109, 'Kabupaten Tebo'),
-(110, 'Kabupaten Bungo'),
-(111, 'Kota Jambi'),
-(112, 'Kota Sungai Penuh'),
-(113, 'Kabupaten Bengkulu Selatan'),
-(114, 'Kabupaten Bengkulu Tengah'),
-(115, 'Kabupaten Bengkulu Utara'),
-(116, 'Kabupaten Kaur'),
-(117, 'Kabupaten Kepahiang'),
-(118, 'Kabupaten Lebong'),
-(119, 'Kabupaten Mukomuko'),
-(120, 'Kabupaten Rejang Lebong'),
-(121, 'Kabupaten Seluma'),
-(122, 'Kota Bengkulu'),
-(123, 'Kabupaten Banyuasin'),
-(124, 'Kabupaten Empat Lawang'),
-(125, 'Kabupaten Lahat'),
-(126, 'Kabupaten Muara Enim'),
-(127, 'Kabupaten Musi Banyu Asin'),
-(128, 'Kabupaten Musi Rawas'),
-(129, 'Kabupaten Ogan Ilir'),
-(130, 'Kabupaten Ogan Komering Ilir'),
-(131, 'Kabupaten Ogan Komering Ulu'),
-(132, 'Kabupaten Ogan Komering Ulu Se'),
-(133, 'Kabupaten Ogan Komering Ulu Ti'),
-(134, 'Kota Lubuklinggau'),
-(135, 'Kota Pagar Alam'),
-(136, 'Kota Palembang'),
-(137, 'Kota Prabumulih'),
-(138, 'Kabupaten Lampung Barat'),
-(139, 'Kabupaten Lampung Selatan'),
-(140, 'Kabupaten Lampung Tengah'),
-(141, 'Kabupaten Lampung Timur'),
-(142, 'Kabupaten Lampung Utara'),
-(143, 'Kabupaten Mesuji'),
-(144, 'Kabupaten Pesawaran'),
-(145, 'Kabupaten Pringsewu'),
-(146, 'Kabupaten Tanggamus'),
-(147, 'Kabupaten Tulang Bawang'),
-(148, 'Kabupaten Tulang Bawang Barat'),
-(149, 'Kabupaten Way Kanan'),
-(150, 'Kota Bandar Lampung'),
-(151, 'Kota Metro'),
-(152, 'Kabupaten Lebak'),
-(153, 'Kabupaten Pandeglang'),
-(154, 'Kabupaten Serang'),
-(155, 'Kabupaten Tangerang'),
-(156, 'Kota Cilegon'),
-(157, 'Kota Serang'),
-(158, 'Kota Tangerang'),
-(159, 'Kota Tangerang Selatan'),
-(160, 'Kabupaten Adm. Kepulauan Serib'),
-(161, 'Kota Jakarta Barat'),
-(162, 'Kota Jakarta Pusat'),
-(163, 'Kota Jakarta Selatan'),
-(164, 'Kota Jakarta Timur'),
-(165, 'Kota Jakarta Utara'),
-(166, 'Kabupaten Bandung'),
-(167, 'Kabupaten Bandung Barat'),
-(168, 'Kabupaten Bekasi'),
-(169, 'Kabupaten Bogor'),
-(170, 'Kabupaten Ciamis'),
-(171, 'Kabupaten Cianjur'),
-(172, 'Kabupaten Cirebon'),
-(173, 'Kabupaten Garut'),
-(174, 'Kabupaten Indramayu'),
-(175, 'Kabupaten Karawang'),
-(176, 'Kabupaten Kuningan'),
-(177, 'Kabupaten Majalengka'),
-(178, 'Kabupaten Purwakarta'),
-(179, 'Kabupaten Subang'),
-(180, 'Kabupaten Sukabumi'),
-(181, 'Kabupaten Sumedang'),
-(182, 'Kabupaten Tasikmalaya'),
-(183, 'Kota Bandung'),
-(184, 'Kota Banjar'),
-(185, 'Kota Bekasi'),
-(186, 'Kota Bogor'),
-(187, 'Kota Cimahi'),
-(188, 'Kota Cirebon'),
-(189, 'Kota Depok'),
-(190, 'Kota Sukabumi'),
-(191, 'Kota Tasikmalaya'),
-(192, 'Kabupaten Banjarnegara'),
-(193, 'Kabupaten Banyumas'),
-(194, 'Kabupaten Batang'),
-(195, 'Kabupaten Blora'),
-(196, 'Kabupaten Boyolali'),
-(197, 'Kabupaten Brebes'),
-(198, 'Kabupaten Cilacap'),
-(199, 'Kabupaten Demak'),
-(200, 'Kabupaten Grobogan'),
-(201, 'Kabupaten Jepara'),
-(202, 'Kabupaten Karanganyar'),
-(203, 'Kabupaten Kebumen'),
-(204, 'Kabupaten Kendal'),
-(205, 'Kabupaten Klaten'),
-(206, 'Kabupaten Kota Tegal'),
-(207, 'Kabupaten Kudus'),
-(208, 'Kabupaten Magelang'),
-(209, 'Kabupaten Pati'),
-(210, 'Kabupaten Pekalongan'),
-(211, 'Kabupaten Pemalang'),
-(212, 'Kabupaten Purbalingga'),
-(213, 'Kabupaten Purworejo'),
-(214, 'Kabupaten Rembang'),
-(215, 'Kabupaten Semarang'),
-(216, 'Kabupaten Sragen'),
-(217, 'Kabupaten Sukoharjo'),
-(218, 'Kabupaten Temanggung'),
-(219, 'Kabupaten Wonogiri'),
-(220, 'Kabupaten Wonosobo'),
-(221, 'Kota Magelang'),
-(222, 'Kota Pekalongan'),
-(223, 'Kota Salatiga'),
-(224, 'Kota Semarang'),
-(225, 'Kota Surakarta'),
-(226, 'Kota Tegal'),
-(227, 'Kabupaten Bantul'),
-(228, 'Kabupaten Gunung Kidul'),
-(229, 'Kabupaten Kulon Progo'),
-(230, 'Kabupaten Sleman'),
-(231, 'Kota Yogyakarta'),
-(232, 'Kabupaten Bangkalan'),
-(233, 'Kabupaten Banyuwangi'),
-(234, 'Kabupaten Blitar'),
-(235, 'Kabupaten Bojonegoro'),
-(236, 'Kabupaten Bondowoso'),
-(237, 'Kabupaten Gresik'),
-(238, 'Kabupaten Jember'),
-(239, 'Kabupaten Jombang'),
-(240, 'Kabupaten Kediri'),
-(241, 'Kabupaten Lamongan'),
-(242, 'Kabupaten Lumajang'),
-(243, 'Kabupaten Madiun'),
-(244, 'Kabupaten Magetan'),
-(245, 'Kabupaten Malang'),
-(246, 'Kabupaten Mojokerto'),
-(247, 'Kabupaten Nganjuk'),
-(248, 'Kabupaten Ngawi'),
-(249, 'Kabupaten Pacitan'),
-(250, 'Kabupaten Pamekasan'),
-(251, 'Kabupaten Pasuruan'),
-(252, 'Kabupaten Ponorogo'),
-(253, 'Kabupaten Probolinggo'),
-(254, 'Kabupaten Sampang'),
-(255, 'Kabupaten Sidoarjo'),
-(256, 'Kabupaten Situbondo'),
-(257, 'Kabupaten Sumenep'),
-(258, 'Kabupaten Trenggalek'),
-(259, 'Kabupaten Tuban'),
-(260, 'Kabupaten Tulungagung'),
-(261, 'Kota Batu'),
-(262, 'Kota Blitar'),
-(263, 'Kota Kediri'),
-(264, 'Kota Madiun'),
-(265, 'Kota Malang'),
-(266, 'Kota Mojokerto'),
-(267, 'Kota Pasuruan'),
-(268, 'Kota Probolinggo'),
-(269, 'Kota Surabaya'),
-(270, 'Kabupaten Badung'),
-(271, 'Kabupaten Bangli'),
-(272, 'Kabupaten Buleleng'),
-(273, 'Kabupaten Gianyar'),
-(274, 'Kabupaten Jembrana'),
-(275, 'Kabupaten Karang Asem'),
-(276, 'Kabupaten Klungkung'),
-(277, 'Kabupaten Tabanan'),
-(278, 'Kota Denpasar'),
-(279, 'Kabupaten Bima'),
-(280, 'Kabupaten Dompu'),
-(281, 'Kabupaten Lombok Barat'),
-(282, 'Kabupaten Lombok Tengah'),
-(283, 'Kabupaten Lombok Timur'),
-(284, 'Kabupaten Lombok Utara'),
-(285, 'Kabupaten Sumbawa'),
-(286, 'Kabupaten Sumbawa Barat'),
-(287, 'Kota Bima'),
-(288, 'Kota Mataram'),
-(289, 'Kabupaten Alor'),
-(290, 'Kabupaten Belu'),
-(291, 'Kabupaten Ende'),
-(292, 'Kabupaten Flores Timur'),
-(293, 'Kabupaten Kupang'),
-(294, 'Kabupaten Lembata'),
-(295, 'Kabupaten Manggarai'),
-(296, 'Kabupaten Manggarai Barat'),
-(297, 'Kabupaten Manggarai Timur'),
-(298, 'Kabupaten Nagekeo'),
-(299, 'Kabupaten Ngada'),
-(300, 'Kabupaten Rote Ndao'),
-(301, 'Kabupaten Sabu Raijua'),
-(302, 'Kabupaten Sikka'),
-(303, 'Kabupaten Sumba Barat'),
-(304, 'Kabupaten Sumba Barat Daya'),
-(305, 'Kabupaten Sumba Tengah'),
-(306, 'Kabupaten Sumba Timur'),
-(307, 'Kabupaten Timor Tengah Selatan'),
-(308, 'Kabupaten Timor Tengah Utara'),
-(309, 'Kota Kupang'),
-(310, 'Kabupaten Bengkayang'),
-(311, 'Kabupaten Kapuas Hulu'),
-(312, 'Kabupaten Kayong Utara'),
-(313, 'Kabupaten Ketapang'),
-(314, 'Kabupaten Kubu Raya'),
-(315, 'Kabupaten Landak'),
-(316, 'Kabupaten Melawi'),
-(317, 'Kabupaten Pontianak'),
-(318, 'Kabupaten Sambas'),
-(319, 'Kabupaten Sanggau'),
-(320, 'Kabupaten Sekadau'),
-(321, 'Kabupaten Sintang'),
-(322, 'Kota Pontianak'),
-(323, 'Kota Singkawang'),
-(324, 'Kabupaten Barito Selatan'),
-(325, 'Kabupaten Barito Timur'),
-(326, 'Kabupaten Barito Utara'),
-(327, 'Kabupaten Gunung Mas'),
-(328, 'Kabupaten Kapuas'),
-(329, 'Kabupaten Katingan'),
-(330, 'Kabupaten Kotawaringin Barat'),
-(331, 'Kabupaten Kotawaringin Timur'),
-(332, 'Kabupaten Lamandau'),
-(333, 'Kabupaten Murung Raya'),
-(334, 'Kabupaten Pulang Pisau'),
-(335, 'Kabupaten Seruyan'),
-(336, 'Kabupaten Sukamara'),
-(337, 'Kota Palangkaraya'),
-(338, 'Kabupaten Balangan'),
-(339, 'Kabupaten Banjar'),
-(340, 'Kabupaten Barito Kuala'),
-(341, 'Kabupaten Hulu Sungai Selatan'),
-(342, 'Kabupaten Hulu Sungai Tengah'),
-(343, 'Kabupaten Hulu Sungai Utara'),
-(344, 'Kabupaten Kota Baru'),
-(345, 'Kabupaten Tabalong'),
-(346, 'Kabupaten Tanah Bumbu'),
-(347, 'Kabupaten Tanah Laut'),
-(348, 'Kabupaten Tapin'),
-(349, 'Kota Banjar Baru'),
-(350, 'Kota Banjarmasin'),
-(351, 'Kabupaten Berau'),
-(352, 'Kabupaten Bulongan'),
-(353, 'Kabupaten Kutai Barat'),
-(354, 'Kabupaten Kutai Kartanegara'),
-(355, 'Kabupaten Kutai Timur'),
-(356, 'Kabupaten Malinau'),
-(357, 'Kabupaten Nunukan'),
-(358, 'Kabupaten Paser'),
-(359, 'Kabupaten Penajam Paser Utara'),
-(360, 'Kabupaten Tana Tidung'),
-(361, 'Kota Balikpapan'),
-(362, 'Kota Bontang'),
-(363, 'Kota Samarinda'),
-(364, 'Kota Tarakan'),
-(365, 'Kabupaten Boalemo'),
-(366, 'Kabupaten Bone Bolango'),
-(367, 'Kabupaten Gorontalo'),
-(368, 'Kabupaten Gorontalo Utara'),
-(369, 'Kabupaten Pohuwato'),
-(370, 'Kota Gorontalo'),
-(371, 'Kabupaten Bantaeng'),
-(372, 'Kabupaten Barru'),
-(373, 'Kabupaten Bone'),
-(374, 'Kabupaten Bulukumba'),
-(375, 'Kabupaten Enrekang'),
-(376, 'Kabupaten Gowa'),
-(377, 'Kabupaten Jeneponto'),
-(378, 'Kabupaten Luwu'),
-(379, 'Kabupaten Luwu Timur'),
-(380, 'Kabupaten Luwu Utara'),
-(381, 'Kabupaten Maros'),
-(382, 'Kabupaten Pangkajene Kepulauan'),
-(383, 'Kabupaten Pinrang'),
-(384, 'Kabupaten Selayar'),
-(385, 'Kabupaten Sidenreng Rappang'),
-(386, 'Kabupaten Sinjai'),
-(387, 'Kabupaten Soppeng'),
-(388, 'Kabupaten Takalar'),
-(389, 'Kabupaten Tana Toraja'),
-(390, 'Kabupaten Toraja Utara'),
-(391, 'Kabupaten Wajo'),
-(392, 'Kota Makassar'),
-(393, 'Kota Palopo'),
-(394, 'Kota Pare-pare'),
-(395, 'Kabupaten Bombana'),
-(396, 'Kabupaten Buton'),
-(397, 'Kabupaten Buton Utara'),
-(398, 'Kabupaten Kolaka'),
-(399, 'Kabupaten Kolaka Utara'),
-(400, 'Kabupaten Konawe'),
-(401, 'Kabupaten Konawe Selatan'),
-(402, 'Kabupaten Konawe Utara'),
-(403, 'Kabupaten Muna'),
-(404, 'Kabupaten Wakatobi'),
-(405, 'Kota Bau-bau'),
-(406, 'Kota Kendari'),
-(407, 'Kabupaten Banggai'),
-(408, 'Kabupaten Banggai Kepulauan'),
-(409, 'Kabupaten Buol'),
-(410, 'Kabupaten Donggala'),
-(411, 'Kabupaten Morowali'),
-(412, 'Kabupaten Parigi Moutong'),
-(413, 'Kabupaten Poso'),
-(414, 'Kabupaten Sigi'),
-(415, 'Kabupaten Tojo Una-Una'),
-(416, 'Kabupaten Toli Toli'),
-(417, 'Kota Palu'),
-(418, 'Kabupaten Bolaang Mangondow'),
-(419, 'Kabupaten Bolaang Mangondow Se'),
-(420, 'Kabupaten Bolaang Mangondow Ti'),
-(421, 'Kabupaten Bolaang Mangondow Ut'),
-(422, 'Kabupaten Kepulauan Sangihe'),
-(423, 'Kabupaten Kepulauan Siau Tagul'),
-(424, 'Kabupaten Kepulauan Talaud'),
-(425, 'Kabupaten Minahasa'),
-(426, 'Kabupaten Minahasa Selatan'),
-(427, 'Kabupaten Minahasa Tenggara'),
-(428, 'Kabupaten Minahasa Utara'),
-(429, 'Kota Bitung'),
-(430, 'Kota Kotamobagu'),
-(431, 'Kota Manado'),
-(432, 'Kota Tomohon'),
-(433, 'Kabupaten Majene'),
-(434, 'Kabupaten Mamasa'),
-(435, 'Kabupaten Mamuju'),
-(436, 'Kabupaten Mamuju Utara'),
-(437, 'Kabupaten Polewali Mandar'),
-(438, 'Kabupaten Buru'),
-(439, 'Kabupaten Buru Selatan'),
-(440, 'Kabupaten Kepulauan Aru'),
-(441, 'Kabupaten Maluku Barat Daya'),
-(442, 'Kabupaten Maluku Tengah'),
-(443, 'Kabupaten Maluku Tenggara'),
-(444, 'Kabupaten Maluku Tenggara Bara'),
-(445, 'Kabupaten Seram Bagian Barat'),
-(446, 'Kabupaten Seram Bagian Timur'),
-(447, 'Kota Ambon'),
-(448, 'Kota Tual'),
-(449, 'Kabupaten Halmahera Barat'),
-(450, 'Kabupaten Halmahera Selatan'),
-(451, 'Kabupaten Halmahera Tengah'),
-(452, 'Kabupaten Halmahera Timur'),
-(453, 'Kabupaten Halmahera Utara'),
-(454, 'Kabupaten Kepulauan Sula'),
-(455, 'Kabupaten Pulau Morotai'),
-(456, 'Kota Ternate'),
-(457, 'Kota Tidore Kepulauan'),
-(458, 'Kabupaten Fakfak'),
-(459, 'Kabupaten Kaimana'),
-(460, 'Kabupaten Manokwari'),
-(461, 'Kabupaten Maybrat'),
-(462, 'Kabupaten Raja Ampat'),
-(463, 'Kabupaten Sorong'),
-(464, 'Kabupaten Sorong Selatan'),
-(465, 'Kabupaten Tambrauw'),
-(466, 'Kabupaten Teluk Bintuni'),
-(467, 'Kabupaten Teluk Wondama'),
-(468, 'Kota Sorong'),
-(469, 'Kabupaten Merauke'),
-(470, 'Kabupaten Jayawijaya'),
-(471, 'Kabupaten Nabire'),
-(472, 'Kabupaten Kepulauan Yapen'),
-(473, 'Kabupaten Biak Numfor'),
-(474, 'Kabupaten Paniai'),
-(475, 'Kabupaten Puncak Jaya'),
-(476, 'Kabupaten Mimika'),
-(477, 'Kabupaten Boven Digoel'),
-(478, 'Kabupaten Mappi'),
-(479, 'Kabupaten Asmat'),
-(480, 'Kabupaten Yahukimo'),
-(481, 'Kabupaten Pegunungan Bintang'),
-(482, 'Kabupaten Tolikara'),
-(483, 'Kabupaten Sarmi'),
-(484, 'Kabupaten Keerom'),
-(485, 'Kabupaten Waropen'),
-(486, 'Kabupaten Jayapura'),
-(487, 'Kabupaten Deiyai'),
-(488, 'Kabupaten Dogiyai'),
-(489, 'Kabupaten Intan Jaya'),
-(490, 'Kabupaten Lanny Jaya'),
-(491, 'Kabupaten Mamberamo Raya'),
-(492, 'Kabupaten Mamberamo Tengah'),
-(493, 'Kabupaten Nduga'),
-(494, 'Kabupaten Puncak'),
-(495, 'Kabupaten Supiori'),
-(496, 'Kabupaten Yalimo'),
-(497, 'Kota Jayapura'),
-(498, 'Kabupaten Bulungan'),
-(499, 'Kabupaten Malinau'),
-(500, 'Kabupaten Nunukan'),
-(501, 'Kabupaten Tana Tidung'),
-(502, 'Kota Tarakan');
-
--- --------------------------------------------------------
+INSERT INTO `tb_city` (`city_name`) VALUES
+('Aceh Barat Daya'),
+('Aceh Barat'),
+('Aceh Besar'),
+('Aceh Jaya'),
+('Aceh Selatan'),
+('Aceh Singkil'),
+('Aceh Tamiang'),
+('Aceh Tengah'),
+('Aceh Tenggara'),
+('Aceh Timur'),
+('Aceh Utara'),
+('Adm. Kepulauan Serib'),
+('Agam'),
+('Alor'),
+('Ambon'),
+('Asahan'),
+('Asmat'),
+('Badung'),
+('Balangan'),
+('Balikpapan'),
+('Banda Aceh'),
+('Bandar Lampung'),
+('Bandung Barat'),
+('Bandung'),
+('Banggai Kepulauan'),
+('Banggai'),
+('Bangka Barat'),
+('Bangka Selatan'),
+('Bangka Tengah'),
+('Bangka'),
+('Bangkalan'),
+('Bangli'),
+('Banjar Baru'),
+('Banjar'),
+('Banjarmasin'),
+('Banjarnegara'),
+('Bantaeng'),
+('Bantul'),
+('Banyuasin'),
+('Banyumas'),
+('Banyuwangi'),
+('Barito Kuala'),
+('Barito Selatan'),
+('Barito Timur'),
+('Barito Utara'),
+('Barru'),
+('Baru'),
+('Batam'),
+('Batang Hari'),
+('Batang'),
+('Batu'),
+('Batubara'),
+('Bau-bau'),
+('Bekasi'),
+('Belitung Timur'),
+('Belitung'),
+('Belu'),
+('Bener Meriah'),
+('Bengkalis'),
+('Bengkayang'),
+('Bengkulu Selatan'),
+('Bengkulu Tengah'),
+('Bengkulu Utara'),
+('Bengkulu'),
+('Berau'),
+('Biak Numfor'),
+('Bima'),
+('Binjai'),
+('Bintan'),
+('Bireuen'),
+('Bitung'),
+('Blitar'),
+('Blora'),
+('Boalemo'),
+('Bogor'),
+('Bojonegoro'),
+('Bolaang Mangondow Se'),
+('Bolaang Mangondow Ti'),
+('Bolaang Mangondow Ut'),
+('Bolaang Mangondow'),
+('Bombana'),
+('Bondowoso'),
+('Bone Bolango'),
+('Bone'),
+('Bontang'),
+('Boven Digoel'),
+('Boyolali'),
+('Brebes'),
+('Bukittinggi'),
+('Buleleng'),
+('Bulongan'),
+('Bulukumba'),
+('Bulungan'),
+('Bungo'),
+('Buol'),
+('Buru Selatan'),
+('Buru'),
+('Buton Utara'),
+('Buton'),
+('Ciamis'),
+('Cianjur'),
+('Cilacap'),
+('Cilegon'),
+('Cimahi'),
+('Cirebon'),
+('Dairi'),
+('Deiyai'),
+('Deli Serdang'),
+('Demak'),
+('Denpasar'),
+('Depok'),
+('Dharmas Raya'),
+('Dogiyai'),
+('Dompu'),
+('Donggala'),
+('Dumai'),
+('Empat Lawang'),
+('Ende'),
+('Enrekang'),
+('Fakfak'),
+('Flores Timur'),
+('Garut'),
+('Gayo Luwes'),
+('Gianyar'),
+('Gorontalo Utara'),
+('Gorontalo'),
+('Gowa'),
+('Gresik'),
+('Grobogan'),
+('Gunung Kidul'),
+('Gunung Mas'),
+('Gunung Sitoli'),
+('Halmahera Barat'),
+('Halmahera Selatan'),
+('Halmahera Tengah'),
+('Halmahera Timur'),
+('Halmahera Utara'),
+('Hulu Sungai Selatan'),
+('Hulu Sungai Tengah'),
+('Hulu Sungai Utara'),
+('Humbang Hasundutan'),
+('Indragiri Hilir'),
+('Indragiri Hulu'),
+('Indramayu'),
+('Intan Jaya'),
+('Jakarta Barat'),
+('Jakarta Pusat'),
+('Jakarta Selatan'),
+('Jakarta Timur'),
+('Jakarta Utara'),
+('Jambi'),
+('Jayapura'),
+('Jayawijaya'),
+('Jember'),
+('Jembrana'),
+('Jeneponto'),
+('Jepara'),
+('Jombang'),
+('Kaimana'),
+('Kampar'),
+('Kapuas Hulu'),
+('Kapuas'),
+('Karang Asem'),
+('Karanganyar'),
+('Karawang'),
+('Karimun'),
+('Karo'),
+('Katingan'),
+('Kaur'),
+('Kayong Utara'),
+('Kebumen'),
+('Kediri'),
+('Kediri'),
+('Keerom'),
+('Kendal'),
+('Kendari'),
+('Kepahiang'),
+('Kepulauan Anambas'),
+('Kepulauan Aru'),
+('Kepulauan Mentawai'),
+('Kepulauan Sangihe'),
+('Kepulauan Siau Tagul'),
+('Kepulauan Sula'),
+('Kepulauan Talaud'),
+('Kepulauan Yapen'),
+('Kerinci'),
+('Ketapang'),
+('Klaten'),
+('Klungkung'),
+('Kolaka Utara'),
+('Kolaka'),
+('Konawe Selatan'),
+('Konawe Utara'),
+('Konawe'),
+('Kotamobagu'),
+('Kotawaringin Barat'),
+('Kotawaringin Timur'),
+('Kuantan Singingi'),
+('Kubu Raya'),
+('Kudus'),
+('Kulon Progo'),
+('Kuningan'),
+('Kupang'),
+('Kutai Barat'),
+('Kutai Kartanegara'),
+('Kutai Timur'),
+('Labuhan Batu'),
+('Labuhanbatu Selatan'),
+('Labuhanbatu Utara'),
+('Lahat'),
+('Lamandau'),
+('Lamongan'),
+('Lampung Barat'),
+('Lampung Selatan'),
+('Lampung Tengah'),
+('Lampung Timur'),
+('Lampung Utara'),
+('Landak'),
+('Langkat'),
+('Langsa'),
+('Lanny Jaya'),
+('Lebak'),
+('Lebong'),
+('Lembata'),
+('Lhokseumawe'),
+('Lima Puluh Kota'),
+('Lingga'),
+('Lombok Barat'),
+('Lombok Tengah'),
+('Lombok Timur'),
+('Lombok Utara'),
+('Lubuklinggau'),
+('Lumajang'),
+('Luwu Timur'),
+('Luwu Utara'),
+('Luwu'),
+('Madiun'),
+('Magelang'),
+('Magetan'),
+('Majalengka'),
+('Majene'),
+('Makassar'),
+('Malang'),
+('Malinau'),
+('Maluku Barat Daya'),
+('Maluku Tengah'),
+('Maluku Tenggara Bara'),
+('Maluku Tenggara'),
+('Mamasa'),
+('Mamberamo Raya'),
+('Mamberamo Tengah'),
+('Mamuju Utara'),
+('Mamuju'),
+('Manado'),
+('Mandailing Natal'),
+('Manggarai Barat'),
+('Manggarai Timur'),
+('Manggarai'),
+('Manokwari'),
+('Mappi'),
+('Maros'),
+('Mataram'),
+('Maybrat'),
+('Medan'),
+('Melawi'),
+('Merangin'),
+('Meranti'),
+('Merauke'),
+('Mesuji'),
+('Metro'),
+('Mimika'),
+('Minahasa Selatan'),
+('Minahasa Tenggara'),
+('Minahasa Utara'),
+('Minahasa'),
+('Mojokerto'),
+('Morowali'),
+('Muara Enim'),
+('Muaro Jambi'),
+('Mukomuko'),
+('Muna'),
+('Murung Raya'),
+('Musi Banyu Asin'),
+('Musi Rawas'),
+('Nabire'),
+('Nagan Raya'),
+('Nagekeo'),
+('Natuna'),
+('Nduga'),
+('Ngada'),
+('Nganjuk'),
+('Ngawi'),
+('Nias Barat'),
+('Nias Selatan'),
+('Nias Utara'),
+('Nias'),
+('Nunukan'),
+('Ogan Ilir'),
+('Ogan Komering Ilir'),
+('Ogan Komering Ulu Se'),
+('Ogan Komering Ulu Ti'),
+('Ogan Komering Ulu'),
+('Pacitan'),
+('Padang Lawas Utara'),
+('Padang Lawas'),
+('Padang Panjang'),
+('Padang Pariaman'),
+('Padang'),
+('Padangsidempuan'),
+('Pagar Alam'),
+('Pakpak Barat'),
+('Palangkaraya'),
+('Palembang'),
+('Palopo'),
+('Palu'),
+('Pamekasan'),
+('Pandeglang'),
+('Pangkajene Kepulauan'),
+('Pangkal Pinang'),
+('Paniai'),
+('Pare-pare'),
+('Pariaman'),
+('Parigi Moutong'),
+('Pasaman Barat'),
+('Pasaman'),
+('Paser'),
+('Pasuruan'),
+('Pasuruan'),
+('Pati'),
+('Payakumbuh'),
+('Pegunungan Bintang'),
+('Pekalongan'),
+('Pekanbaru'),
+('Pelalawan'),
+('Pemalang'),
+('Pematang Siantar'),
+('Penajam Paser Utara'),
+('Pesawaran'),
+('Pesisir Selatan'),
+('Pidie Jaya'),
+('Pidie'),
+('Pinrang'),
+('Pohuwato'),
+('Polewali Mandar'),
+('Ponorogo'),
+('Pontianak'),
+('Poso'),
+('Prabumulih'),
+('Pringsewu'),
+('Probolinggo'),
+('Probolinggo'),
+('Pulang Pisau'),
+('Pulau Morotai'),
+('Puncak Jaya'),
+('Puncak'),
+('Purbalingga'),
+('Purwakarta'),
+('Purworejo'),
+('Raja Ampat'),
+('Rejang Lebong'),
+('Rembang'),
+('Rokan Hilir'),
+('Rokan Hulu'),
+('Rote Ndao'),
+('Sabang'),
+('Sabu Raijua'),
+('Salatiga'),
+('Samarinda'),
+('Sambas'),
+('Samosir'),
+('Sampang'),
+('Sanggau'),
+('Sarmi'),
+('Sarolangun'),
+('Sawah Lunto'),
+('Sekadau'),
+('Selayar'),
+('Seluma'),
+('Semarang'),
+('Seram Bagian Barat'),
+('Seram Bagian Timur'),
+('Serang'),
+('Serdang Bedagai'),
+('Seruyan'),
+('Siak'),
+('Sibolga'),
+('Sidenreng Rappang'),
+('Sidoarjo'),
+('Sigi'),
+('Sijunjung'),
+('Sikka'),
+('Simalungun'),
+('Simeulue'),
+('Singkawang'),
+('Sinjai'),
+('Sintang'),
+('Situbondo'),
+('Sleman'),
+('Solok Selatan'),
+('Solok'),
+('Soppeng'),
+('Sorong Selatan'),
+('Sorong'),
+('Sragen'),
+('Subang'),
+('Subulussalam'),
+('Sukabumi'),
+('Sukamara'),
+('Sukoharjo'),
+('Sumba Barat Daya'),
+('Sumba Barat'),
+('Sumba Tengah'),
+('Sumba Timur'),
+('Sumbawa Barat'),
+('Sumbawa'),
+('Sumedang'),
+('Sumenep'),
+('Sungai Penuh'),
+('Supiori'),
+('Surabaya'),
+('Surakarta'),
+('Tabalong'),
+('Tabanan'),
+('Takalar'),
+('Tambrauw'),
+('Tana Tidung'),
+('Tana Toraja'),
+('Tanah Bumbu'),
+('Tanah Datar'),
+('Tanah Laut'),
+('Tangerang Selatan'),
+('Tangerang'),
+('Tanggamus'),
+('Tanjung Balai'),
+('Tanjung Jabung Barat'),
+('Tanjung Jabung Timur'),
+('Tanjung Pinang'),
+('Tapanuli Selatan'),
+('Tapanuli Tengah'),
+('Tapanuli Utara'),
+('Tapin'),
+('Tarakan'),
+('Tarakan'),
+('Tasikmalaya'),
+('Tebing Tinggi'),
+('Tebo'),
+('Tegal'),
+('Teluk Bintuni'),
+('Teluk Wondama'),
+('Temanggung'),
+('Ternate'),
+('Tidore Kepulauan'),
+('Timor Tengah Selatan'),
+('Timor Tengah Utara'),
+('Toba Samosir'),
+('Tojo Una-Una'),
+('Toli Toli'),
+('Tolikara'),
+('Tomohon'),
+('Toraja Utara'),
+('Trenggalek'),
+('Tual'),
+('Tuban'),
+('Tulang Bawang Barat'),
+('Tulang Bawang'),
+('Tulungagung'),
+('Wajo'),
+('Wakatobi'),
+('Waropen'),
+('Way Kanan'),
+('Wonogiri'),
+('Wonosobo'),
+('Yahukimo'),
+('Yalimo'),
+('Yogyakarta');  
+  
 
 --
 -- Table structure for table `tb_coordinator`
 --
 
-DROP TABLE IF EXISTS `tb_coordinator`;
-CREATE TABLE `tb_coordinator` (
+CREATE TABLE IF NOT EXISTS `tb_coordinator` (
   `coordinator_id` int(11) NOT NULL,
   `coordinator_name` varchar(255) NOT NULL,
   `coordinator_contact` varchar(20) NOT NULL,
@@ -647,8 +614,7 @@ CREATE TABLE `tb_coordinator` (
 -- Table structure for table `tb_event`
 --
 
-DROP TABLE IF EXISTS `tb_event`;
-CREATE TABLE `tb_event` (
+CREATE TABLE IF NOT EXISTS `tb_event` (
   `event_id` int(11) NOT NULL,
   `event_code` varchar(10) NOT NULL,
   `event_name` varchar(255) NOT NULL,
@@ -663,8 +629,7 @@ CREATE TABLE `tb_event` (
 -- Table structure for table `tb_judge`
 --
 
-DROP TABLE IF EXISTS `tb_judge`;
-CREATE TABLE `tb_judge` (
+CREATE TABLE IF NOT EXISTS `tb_judge` (
   `judge_id` int(11) NOT NULL,
   `judge_name` varchar(255) NOT NULL,
   `judge_affiliation` varchar(255) NOT NULL,
@@ -681,8 +646,7 @@ CREATE TABLE `tb_judge` (
 -- Table structure for table `tb_message`
 --
 
-DROP TABLE IF EXISTS `tb_message`;
-CREATE TABLE `tb_message` (
+CREATE TABLE IF NOT EXISTS `tb_message` (
   `message_id` int(11) NOT NULL,
   `message_name` varchar(75) NOT NULL,
   `message_email` varchar(255) NOT NULL,
@@ -696,8 +660,7 @@ CREATE TABLE `tb_message` (
 -- Table structure for table `tb_news`
 --
 
-DROP TABLE IF EXISTS `tb_news`;
-CREATE TABLE `tb_news` (
+CREATE TABLE IF NOT EXISTS `tb_news` (
   `news_id` int(11) NOT NULL,
   `news_category` varchar(20) NOT NULL,
   `news_title` varchar(255) NOT NULL,
@@ -709,48 +672,10 @@ CREATE TABLE `tb_news` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pubparticipant`
---
-
-DROP TABLE IF EXISTS `tb_pubparticipant`;
-CREATE TABLE `tb_pubparticipant` (
-  `pubparticipant_id` int(11) NOT NULL,
-  `pubparticipant_name` varchar(255) NOT NULL,
-  `pubparticipant_nisn` varchar(20) NOT NULL,
-  `pubparticipant_birth` date NOT NULL,
-  `pubparticipant_gender` char(1) NOT NULL,
-  `pubparticipant_contact` varchar(20) NOT NULL,
-  `pubparticipant_address` text NOT NULL,
-  `pubparticipant_pubteam_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_schparticipant`
---
-
-DROP TABLE IF EXISTS `tb_schparticipant`;
-CREATE TABLE `tb_schparticipant` (
-  `schparticipant_id` int(11) NOT NULL,
-  `schparticipant_name` varchar(255) NOT NULL,
-  `schparticipant_nisn` varchar(20) NOT NULL,
-  `schparticipant_birth` date NOT NULL,
-  `schparticipant_gender` char(1) NOT NULL,
-  `schparticipant_contact` varchar(20) NOT NULL,
-  `schparticipant_address` text NOT NULL,
-  `schparticipant_student_id` text NOT NULL,
-  `schparticipant_schteam_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tb_payment`
 --
 
-DROP TABLE IF EXISTS `tb_payment`;
-CREATE TABLE `tb_payment` (
+CREATE TABLE IF NOT EXISTS `tb_payment` (
   `payment_id` int(11) NOT NULL,
   `payment_amount` double NOT NULL,
   `payment_document` varchar(255) NOT NULL,
@@ -764,8 +689,7 @@ CREATE TABLE `tb_payment` (
 -- Table structure for table `tb_public`
 --
 
-DROP TABLE IF EXISTS `tb_public`;
-CREATE TABLE `tb_public` (
+CREATE TABLE IF NOT EXISTS `tb_public` (
   `public_id` int(11) NOT NULL,
   `public_name` varchar(255) NOT NULL,
   `public_address` text NOT NULL,
@@ -778,11 +702,27 @@ CREATE TABLE `tb_public` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_pubparticipant`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_pubparticipant` (
+  `pubparticipant_id` int(11) NOT NULL,
+  `pubparticipant_name` varchar(255) NOT NULL,
+  `pubparticipant_nisn` varchar(20) NOT NULL,
+  `pubparticipant_birth` date NOT NULL,
+  `pubparticipant_gender` char(1) NOT NULL,
+  `pubparticipant_contact` varchar(20) NOT NULL,
+  `pubparticipant_address` text NOT NULL,
+  `pubparticipant_pubteam_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_pubteam`
 --
 
-DROP TABLE IF EXISTS `tb_pubteam`;
-CREATE TABLE `tb_pubteam` (
+CREATE TABLE IF NOT EXISTS `tb_pubteam` (
   `pubteam_id` int(11) NOT NULL,
   `pubteam_name` varchar(255) NOT NULL,
   `pubteam_coach_name` varchar(255) DEFAULT NULL,
@@ -799,8 +739,7 @@ CREATE TABLE `tb_pubteam` (
 -- Table structure for table `tb_school`
 --
 
-DROP TABLE IF EXISTS `tb_school`;
-CREATE TABLE `tb_school` (
+CREATE TABLE IF NOT EXISTS `tb_school` (
   `school_id` int(11) NOT NULL,
   `school_name` varchar(255) NOT NULL,
   `school_grade` varchar(15) NOT NULL,
@@ -814,11 +753,28 @@ CREATE TABLE `tb_school` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_schparticipant`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_schparticipant` (
+  `schparticipant_id` int(11) NOT NULL,
+  `schparticipant_name` varchar(255) NOT NULL,
+  `schparticipant_nisn` varchar(20) NOT NULL,
+  `schparticipant_birth` date NOT NULL,
+  `schparticipant_gender` char(1) NOT NULL,
+  `schparticipant_contact` varchar(20) NOT NULL,
+  `schparticipant_address` text NOT NULL,
+  `schparticipant_student_id` text NOT NULL,
+  `schparticipant_schteam_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_schteam`
 --
 
-DROP TABLE IF EXISTS `tb_schteam`;
-CREATE TABLE `tb_schteam` (
+CREATE TABLE IF NOT EXISTS `tb_schteam` (
   `schteam_id` int(11) NOT NULL,
   `schteam_name` varchar(255) NOT NULL,
   `schteam_coach_name` varchar(255) DEFAULT NULL,
@@ -835,8 +791,7 @@ CREATE TABLE `tb_schteam` (
 -- Table structure for table `tb_score`
 --
 
-DROP TABLE IF EXISTS `tb_score`;
-CREATE TABLE `tb_score` (
+CREATE TABLE IF NOT EXISTS `tb_score` (
   `score_id` int(11) NOT NULL,
   `score_score` int(11) NOT NULL,
   `score_judge_id` int(11) NOT NULL,
@@ -850,8 +805,7 @@ CREATE TABLE `tb_score` (
 -- Table structure for table `tb_sponsor`
 --
 
-DROP TABLE IF EXISTS `tb_sponsor`;
-CREATE TABLE `tb_sponsor` (
+CREATE TABLE IF NOT EXISTS `tb_sponsor` (
   `sponsor_id` int(11) NOT NULL,
   `sponsor_name` varchar(255) NOT NULL,
   `sponsor_address` text NOT NULL,
@@ -866,8 +820,7 @@ CREATE TABLE `tb_sponsor` (
 --
 -- Stand-in structure for view `v_cor_acc`
 --
-DROP VIEW IF EXISTS `v_cor_acc`;
-CREATE TABLE `v_cor_acc` (
+CREATE TABLE IF NOT EXISTS `v_cor_acc` (
 `acc_id` int(11)
 ,`cor_id` int(11)
 ,`cat_name` varchar(255)
@@ -876,8 +829,8 @@ CREATE TABLE `v_cor_acc` (
 ,`cor_email` varchar(255)
 ,`cor_category` varchar(10)
 ,`cor_image` text
-,`cor_event` varchar(10)
-,`cor_acc` varchar(10)
+,`cor_event` int(11)
+,`cor_acc` int(11)
 );
 
 -- --------------------------------------------------------
@@ -887,7 +840,7 @@ CREATE TABLE `v_cor_acc` (
 --
 DROP TABLE IF EXISTS `v_cor_acc`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_cor_acc`  AS  select `acc`.`account_id` AS `acc_id`,`cor`.`coordinator_id` AS `cor_id`,`cat`.`category_name` AS `cat_name`,`acc`.`account_username` AS `cor_username`,`cor`.`coordinator_name` AS `cor_name`,`acc`.`account_email` AS `cor_email`,`acc`.`account_category_id` AS `cor_category`,`acc`.`account_image` AS `cor_image`,`cor`.`coordinator_event_id` AS `cor_event`,`cor`.`coordinator_account_id` AS `cor_acc` from ((`tb_account` `acc` join `tb_coordinator` `cor`) join `tb_category` `cat` on(((`acc`.`account_id` = `cor`.`coordinator_account_id`) and (`cat`.`category_id` = `acc`.`account_category_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_cor_acc` AS select `acc`.`account_id` AS `acc_id`,`cor`.`coordinator_id` AS `cor_id`,`cat`.`category_name` AS `cat_name`,`acc`.`account_username` AS `cor_username`,`cor`.`coordinator_name` AS `cor_name`,`acc`.`account_email` AS `cor_email`,`acc`.`account_category_id` AS `cor_category`,`acc`.`account_image` AS `cor_image`,`cor`.`coordinator_event_id` AS `cor_event`,`cor`.`coordinator_account_id` AS `cor_acc` from ((`tb_account` `acc` join `tb_coordinator` `cor`) join `tb_category` `cat` on(((`acc`.`account_id` = `cor`.`coordinator_account_id`) and (`cat`.`category_id` = `acc`.`account_category_id`))));
 
 --
 -- Indexes for dumped tables
@@ -907,6 +860,7 @@ ALTER TABLE `tb_account`
 ALTER TABLE `tb_bazaar`
   ADD PRIMARY KEY (`bazaar_id`);
 
+  
 --
 -- Indexes for table `tb_calendar`
 --
@@ -918,12 +872,6 @@ ALTER TABLE `tb_calendar`
 --
 ALTER TABLE `tb_category`
   ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `tb_city`
---
-ALTER TABLE `tb_city`
-  ADD PRIMARY KEY (`city_id`);
 
 --
 -- Indexes for table `tb_coordinator`
@@ -961,20 +909,6 @@ ALTER TABLE `tb_news`
   ADD KEY `news_event_id` (`news_event_id`);
 
 --
--- Indexes for table `tb_pubparticipant`
---
-ALTER TABLE `tb_pubparticipant`
-  ADD PRIMARY KEY (`pubparticipant_id`),
-  ADD KEY `pubparticipant_pubteam_id` (`pubparticipant_pubteam_id`);
-
---
--- Indexes for table `tb_schparticipant`
---
-ALTER TABLE `tb_schparticipant`
-  ADD PRIMARY KEY (`schparticipant_id`),
-  ADD KEY `schparticipant_schteam_id` (`schparticipant_schteam_id`);  
-  
---
 -- Indexes for table `tb_payment`
 --
 ALTER TABLE `tb_payment`
@@ -987,6 +921,13 @@ ALTER TABLE `tb_public`
   ADD PRIMARY KEY (`public_id`),
   ADD KEY `school_city_id` (`public_city_id`),
   ADD KEY `tb_school_ibfk_2` (`public_account_id`);
+
+--
+-- Indexes for table `tb_pubparticipant`
+--
+ALTER TABLE `tb_pubparticipant`
+  ADD PRIMARY KEY (`pubparticipant_id`),
+  ADD KEY `pubparticipant_pubteam_id` (`pubparticipant_pubteam_id`);
 
 --
 -- Indexes for table `tb_pubteam`
@@ -1007,6 +948,13 @@ ALTER TABLE `tb_school`
   ADD PRIMARY KEY (`school_id`),
   ADD KEY `school_city_id` (`school_city_id`),
   ADD KEY `tb_school_ibfk_2` (`school_account_id`);
+
+--
+-- Indexes for table `tb_schparticipant`
+--
+ALTER TABLE `tb_schparticipant`
+  ADD PRIMARY KEY (`schparticipant_id`),
+  ADD KEY `schparticipant_schteam_id` (`schparticipant_schteam_id`);
 
 --
 -- Indexes for table `tb_schteam`
@@ -1055,6 +1003,11 @@ ALTER TABLE `tb_bazaar`
 ALTER TABLE `tb_calendar`
   MODIFY `calendar_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tb_calendar`
+--
+ALTER TABLE `tb_city`
+  MODIFY `city_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tb_coordinator`
 --
 ALTER TABLE `tb_coordinator`
@@ -1068,7 +1021,7 @@ ALTER TABLE `tb_event`
 -- AUTO_INCREMENT for table `tb_judge`
 --
 ALTER TABLE `tb_judge`
-  MODIFY `judge_id` int(11) NOT NULL AUTO_INCREMENT; 
+  MODIFY `judge_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_message`
 --
@@ -1080,16 +1033,6 @@ ALTER TABLE `tb_message`
 ALTER TABLE `tb_news`
   MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `tb_pubparticipant`
---
-ALTER TABLE `tb_pubparticipant`
-  MODIFY `pubparticipant_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `tb_schparticipant`
---
-ALTER TABLE `tb_schparticipant`
-  MODIFY `schparticipant_id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `tb_payment`
 --
 ALTER TABLE `tb_payment`
@@ -1100,17 +1043,25 @@ ALTER TABLE `tb_payment`
 ALTER TABLE `tb_public`
   MODIFY `public_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tb_pubparticipant`
+--
+ALTER TABLE `tb_pubparticipant`
+  MODIFY `pubparticipant_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tb_pubteam`
 --
 ALTER TABLE `tb_pubteam`
   MODIFY `pubteam_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `tb_school`
 --
 ALTER TABLE `tb_school`
-  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT;  
-
+  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tb_schparticipant`
+--
+ALTER TABLE `tb_schparticipant`
+  MODIFY `schparticipant_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tb_schteam`
 --
@@ -1125,8 +1076,7 @@ ALTER TABLE `tb_score`
 -- AUTO_INCREMENT for table `tb_sponsor`
 --
 ALTER TABLE `tb_sponsor`
-  MODIFY `sponsor_id` int(11) NOT NULL AUTO_INCREMENT;  
-
+  MODIFY `sponsor_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -1158,23 +1108,17 @@ ALTER TABLE `tb_news`
   ADD CONSTRAINT `tb_news_ibfk_1` FOREIGN KEY (`news_event_id`) REFERENCES `tb_event` (`event_id`);
 
 --
--- Constraints for table `tb_pubparticipant`
---
-ALTER TABLE `tb_pubparticipant`
-  ADD CONSTRAINT `tb_pubparticipant_ibfk_1` FOREIGN KEY (`pubparticipant_pubteam_id`) REFERENCES `tb_pubteam` (`pubteam_id`);
-
---
--- Constraints for table `tb_schparticipant`
---
-ALTER TABLE `tb_schparticipant`
-  ADD CONSTRAINT `tb_schparticipant_ibfk_1` FOREIGN KEY (`schparticipant_schteam_id`) REFERENCES `tb_schteam` (`schteam_id`);  
-
---
 -- Constraints for table `tb_public`
 --
 ALTER TABLE `tb_public`
   ADD CONSTRAINT `tb_public_ibfk_1` FOREIGN KEY (`public_city_id`) REFERENCES `tb_city` (`city_id`),
   ADD CONSTRAINT `tb_public_ibfk_2` FOREIGN KEY (`public_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_pubparticipant`
+--
+ALTER TABLE `tb_pubparticipant`
+  ADD CONSTRAINT `tb_pubparticipant_ibfk_1` FOREIGN KEY (`pubparticipant_pubteam_id`) REFERENCES `tb_pubteam` (`pubteam_id`);
 
 --
 -- Constraints for table `tb_pubteam`
@@ -1184,13 +1128,19 @@ ALTER TABLE `tb_pubteam`
   ADD CONSTRAINT `tb_pubteam_ibfk_2` FOREIGN KEY (`pubteam_payment_id`) REFERENCES `tb_payment` (`payment_id`),
   ADD CONSTRAINT `tb_pubteam_ibfk_3` FOREIGN KEY (`pubteam_event_id`) REFERENCES `tb_event` (`event_id`),
   ADD CONSTRAINT `tb_pubteam_ibfk_4` FOREIGN KEY (`pubteam_account_id`) REFERENCES `tb_account` (`account_id`);
-  
+
 --
 -- Constraints for table `tb_school`
 --
 ALTER TABLE `tb_school`
   ADD CONSTRAINT `tb_school_ibfk_1` FOREIGN KEY (`school_city_id`) REFERENCES `tb_city` (`city_id`),
   ADD CONSTRAINT `tb_school_ibfk_2` FOREIGN KEY (`school_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+-- Constraints for table `tb_schparticipant`
+--
+ALTER TABLE `tb_schparticipant`
+  ADD CONSTRAINT `tb_schparticipant_ibfk_1` FOREIGN KEY (`schparticipant_schteam_id`) REFERENCES `tb_schteam` (`schteam_id`);
 
 --
 -- Constraints for table `tb_schteam`
@@ -1200,7 +1150,7 @@ ALTER TABLE `tb_schteam`
   ADD CONSTRAINT `tb_schteam_ibfk_2` FOREIGN KEY (`schteam_payment_id`) REFERENCES `tb_payment` (`payment_id`),
   ADD CONSTRAINT `tb_schteam_ibfk_3` FOREIGN KEY (`schteam_event_id`) REFERENCES `tb_event` (`event_id`),
   ADD CONSTRAINT `tb_schteam_ibfk_4` FOREIGN KEY (`schteam_account_id`) REFERENCES `tb_account` (`account_id`);
-  
+
 --
 -- Constraints for table `tb_score`
 --
@@ -1208,6 +1158,7 @@ ALTER TABLE `tb_score`
   ADD CONSTRAINT `tb_score_ibfk_1` FOREIGN KEY (`score_judge_id`) REFERENCES `tb_judge` (`judge_id`),
   ADD CONSTRAINT `tb_score_ibfk_2` FOREIGN KEY (`score_event_id`) REFERENCES `tb_event` (`event_id`),
   ADD CONSTRAINT `tb_score_ibfk_3` FOREIGN KEY (`score_schteam_id`) REFERENCES `tb_schteam` (`schteam_id`);
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
