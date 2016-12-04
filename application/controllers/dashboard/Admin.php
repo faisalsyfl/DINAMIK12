@@ -24,10 +24,12 @@ class Admin extends CI_Controller {
 	{
 		if(isset($_SESSION['logged_in'])){
 			/* if has session */
+			$this->load->view('admin/layout/header');
 			$this->load->view('admin/main');
+			$this->load->view('admin/layout/footer');
 		}else{
 			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/'));
+			redirect(site_url('/akun'));
 		}
 	}
 	

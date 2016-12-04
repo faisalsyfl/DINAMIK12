@@ -45,6 +45,17 @@ class AccountModel extends CI_Model {
 		$this->db->insert($this->tableName,$data);
 	}
 
+	public function getId(){
+		$this->db->select('account_id');
+		$this->db->from($this->tableName);
+		$this->db->order_by('account_id','DESC');
+
+		$x = $this->db->get()->row()->account_id;
+		return($x);
+	}
+	public function substarct($x){
+
+	}
 }
 
 /* End of file tb_account_model.php */

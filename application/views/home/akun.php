@@ -29,7 +29,8 @@
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
 					<li class="active"><a data-toggle="tab" href="#masuk">Masuk</a></li>
-					<li><a data-toggle="tab" href="#daftar">Daftar</a></li>
+					<li><a data-toggle="tab" href="#daftar">Daftar Sebagai Sekolah</a></li>
+					<li><a data-toggle="tab" href="#daftar2">Daftar Sebagai Umum</a></li>
 					<li><a data-toggle="tab" href="#lupasandi">Lupa Kata Sandi</a></li>
 				</ul>
 				
@@ -42,6 +43,13 @@
 								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
 							</div>
 							<div class="login-box-body">
+								<?php if(isset($color)){ ?>
+								<div class="alert alert-<?php echo $color;?> alert-dismissible fade in" role="alert"> 
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> 
+									<h4><?php echo $h1;?></h4> 
+									<p><?php echo $p;?></p>
+								</div>
+								<?php } ?>
 								<p class="login-box-msg">Masuk untuk melanjutkan</p>
 
 								<?php echo form_open('home/Akun/login'); ?>
@@ -58,7 +66,7 @@
 									<input type="password" class="form-control" placeholder="Kata sandi" name="password" value="">
 									<?php 
 										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
-										if(isset($_COOKIE['password'])) echo $_COOKIE['password']; 
+										// if(isset($_COOKIE['password'])) echo $_COOKIE['password']; 
 									?>
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 								</div>
@@ -108,23 +116,122 @@
 							</div>
 
 							<div class="register-box-body">
-							<p class="login-box-msg">Mendaftar akun baru</p>
+							<p class="login-box-msg">Mendaftar akun lomba sebagai sekolah</p>
 
-								<form action="<?php /* INSERT CONTROLLER HERE */ ?>" method="post">
+								<?php echo form_open('home/Akun/regAsSchool'); ?>
 									<div class="form-group has-feedback">
-										<input type="text" class="form-control" placeholder="Nama akun">
-										<span class="glyphicon glyphicon-user form-control-feedback"></span>
+										<select name="grade" class="form-control">
+											<option value="SD">SD</option>
+											<option value="SMP">SMP</option>
+											<option value="SMA">SMA</option>
+											<option value="SMK">SMK</option>
+										</select>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="email" class="form-control" placeholder="E-mail">
+										<input type="text" class="form-control" placeholder="Nama Sekolah" name="name">
+										<span class="glyphicon glyphicon-home form-control-feedback"></span>
+									</div>
+									<div class="form-group has-feedback">
+										<select name="city" class="form-control">
+											<?php
+											foreach($city as $data) 
+												echo "<option value=".$data['city_id'].">".$data['city_name']."</option>";
+											?>
+										</select>
+									</div>
+
+									<div class="form-group has-feedback">
+										<input type="email" class="form-control" placeholder="E-mail Resmi Sekolah" name="email">
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="password" class="form-control" placeholder="Kata sandi">
+										<input type="text" class="form-control" placeholder="Contact Resmi" name="contact">
+										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
+									</div>
+									<!-- radio -->
+									<!--NOT FIX
+									<div class="form-group">
+										<label>
+											<input type="radio" name="r3" class="flat-red" checked>
+										</label>
+										<label>
+											<input type="radio" name="r3" class="flat-red">
+										</label>
+										<label>
+											<input type="radio" name="r3" class="flat-red" disabled>
+											Flat green skin radio
+										</label>
+									</div>
+									-->
+									<div class="row">
+										<div class="col-xs-8">
+											<div class="checkbox icheck">
+												<label>
+													<input type="checkbox" name="cb" required=""> Saya setuju terhadap <br>
+													<a href="#">syarat dan ketentuan.</a>
+												</label>
+											</div>
+										</div>
+									<!-- /.col -->
+										<div class="col-xs-4">
+											<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnDaftarSekolah">Daftar</button>
+										</div>
+									<!-- /.col -->
+									</div>
+								</form>
+								
+<!-- 								 CURRENTLY NOT USED
+								<div class="social-auth-links text-center">
+									<p>- OR -</p>
+									<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
+										Facebook</a>
+									<a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
+										Google+</a>
+								</div>
+								 -->
+								 <p>Username dan sandi akan dikirim melalui surel yang tersedia setelah kami <b>verifikasi</b></p>
+								<a data-toggle="tab" href="#masuk" class="text-center">Saya sudah mempunyai akun</a>
+							</div>
+							<!-- /.form-box -->
+						</div>
+					</div>
+
+					<div id="daftar2" class="tab-pane fade in">
+						<div class="register-box">
+							<div class="register-logo">
+								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
+							</div>
+
+							<div class="register-box-body">
+							<p class="login-box-msg">Mendaftar akun Acara Semnas/Talkshow/DSTAR/Donor Darah</p>
+
+								<?php echo form_open('home/Akun/regAsPublic'); ?>
+									<div class="form-group has-feedback">
+										<input type="text" class="form-control" placeholder="Username" name="name" required="">
+										<span class="glyphicon glyphicon-user form-control-feedback"></span>
+									</div>
+									<div class="form-group has-feedback">
+										<select name="city" class="form-control">
+											<?php
+											foreach($city as $data) 
+												echo "<option value=".$data['city_id'].">".$data['city_name']."</option>";
+											?>
+										</select>
+									</div>									
+									<div class="form-group has-feedback">
+										<input type="email" class="form-control" placeholder="E-mail" name="email" required="">
+										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+									</div>
+									<div class="form-group has-feedback">
+										<input type="text" class="form-control" placeholder="Contact Resmi" name="contact">
+										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
+									</div>									
+									<div class="form-group has-feedback">
+										<input type="password" class="form-control" placeholder="Kata sandi" name="pass" required="">
 											<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="password" class="form-control" placeholder="Konfirmasi kata sandi">
+										<input type="password" class="form-control" placeholder="Konfirmasi kata sandi" name="pass2" required="">
 										<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 									</div>
 									<!-- radio -->
@@ -146,14 +253,14 @@
 										<div class="col-xs-8">
 											<div class="checkbox icheck">
 												<label>
-													<input type="checkbox"> Saya setuju terhadap <br>
+													<input type="checkbox" required="" name="cb"> Saya setuju terhadap <br>
 													<a href="#">syarat dan ketentuan.</a>
 												</label>
 											</div>
 										</div>
 									<!-- /.col -->
 										<div class="col-xs-4">
-											<button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
+											<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnDaftarPublik">Daftar</button>
 										</div>
 									<!-- /.col -->
 									</div>
@@ -205,7 +312,7 @@
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-4">
-										<button type="submit" class="btn btn-primary btn-block btn-flat">Kirim</button>
+										<button type="submit" class="btn btn-primary btn-block btn-flat " disabled>Kirim</button>
 									</div>
 									<!-- /.col -->
 								</div>

@@ -38,7 +38,8 @@ CREATE TABLE `tb_account` (
   `account_log` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last login',
   `account_category_id` varchar(10) NOT NULL,
   `account_token` varchar(255) NOT NULL COMMENT 'Cookies token',
-  `account_image` text NOT NULL COMMENT 'Gambar kategori'
+  `account_image` text NOT NULL COMMENT 'Gambar kategori',
+  `account_status` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -738,8 +739,7 @@ CREATE TABLE `tb_schparticipant` (
   `schparticipant_gender` char(1) NOT NULL,
   `schparticipant_contact` varchar(20) NOT NULL,
   `schparticipant_address` text NOT NULL,
-  `schparticipant_student_id` text NOT NULL,
-  `schparticipant_schteam_id` int(11) NOT NULL
+  `schparticipant_student_id` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -1103,9 +1103,22 @@ ALTER TABLE `tb_public`
 --
 ALTER TABLE `tb_pubteam`
   MODIFY `pubteam_id` int(11) NOT NULL AUTO_INCREMENT;
+<<<<<<< HEAD
 --
 -- AUTO_INCREMENT for table `tb_school`
 --
+=======
+
+--
+-- AUTO_INCREMENT for table `tb_school`
+--
+ALTER TABLE `tb_school`
+  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT;  
+
+--
+-- AUTO_INCREMENT for table `tb_schteam`
+--
+>>>>>>> 138c91eabce013d07f724b42001bd08da570314b
 ALTER TABLE `tb_schteam`
   MODIFY `schteam_id` int(11) NOT NULL AUTO_INCREMENT;
 --
@@ -1157,6 +1170,7 @@ ALTER TABLE `tb_pubparticipant`
 
 --
 -- Constraints for table `tb_schparticipant`
+<<<<<<< HEAD
 --
 ALTER TABLE `tb_schparticipant`
   ADD CONSTRAINT `tb_schparticipant_ibfk_1` FOREIGN KEY (`schparticipant_schteam_id`) REFERENCES `tb_schteam` (`schteam_id`);  
@@ -1169,6 +1183,20 @@ ALTER TABLE `tb_public`
   ADD CONSTRAINT `tb_public_ibfk_2` FOREIGN KEY (`public_account_id`) REFERENCES `tb_account` (`account_id`);
 
 --
+=======
+--
+ALTER TABLE `tb_schparticipant`
+  ADD CONSTRAINT `tb_schparticipant_ibfk_1` FOREIGN KEY (`schparticipant_schteam_id`) REFERENCES `tb_schteam` (`schteam_id`);  
+
+--
+-- Constraints for table `tb_public`
+--
+ALTER TABLE `tb_public`
+  ADD CONSTRAINT `tb_public_ibfk_1` FOREIGN KEY (`public_city_id`) REFERENCES `tb_city` (`city_id`),
+  ADD CONSTRAINT `tb_public_ibfk_2` FOREIGN KEY (`public_account_id`) REFERENCES `tb_account` (`account_id`);
+
+--
+>>>>>>> 138c91eabce013d07f724b42001bd08da570314b
 -- Constraints for table `tb_pubteam`
 --
 ALTER TABLE `tb_pubteam`
