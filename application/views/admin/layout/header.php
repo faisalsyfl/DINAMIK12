@@ -137,7 +137,7 @@
 					<!-- sidebar menu: : style can be found in sidebar.less -->
 					<ul class="sidebar-menu">
 						<li class="header">Admin Menu</li>
-						<li class="active"><a href="#"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
+						<li class="active"><a href="<?php echo site_url('dashboard/admin/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
 						<li>
 							<a href="#"><i class="fa fa-star"></i> 
 								<span>Acara & Lomba </span>
@@ -166,7 +166,7 @@
 									<a href="<?php echo site_url('dashboard/admin/akun') ?>">
 										<i class="fa fa-users"></i> Semua Akun
 										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">777</small>            
+											<small class="label pull-right bg-blue"><?php echo $totalAcc; ?></small>            
 										</span>
 									</a>
 								</li>
@@ -177,11 +177,12 @@
 										</span>
 									</a>
 									<ul class="treeview-menu" style="display: none;">
-										<li><a href="#">Akun Juri</a></li>
-										<li><a href="#">Akun Koordinator</a></li>
-										<li><a href="#">Akun Sekolah</a></li>
-										<li><a href="#">Akun Umum</a></li>
-										<li><a href="#">Akun Tim</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/akun/SCH') ?>">Akun Sekolah</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/akun/SCT') ?>">Akun Tim Sekolah</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/akun/PUB') ?>">Akun Umum</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/akun/PBT') ?>">Akun Tim Umum</a></li>										
+										<li><a href="<?php echo site_url('dashboard/admin/akun/COR') ?>">Akun Koordinator</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/akun/JDG') ?>">Akun Juri</a></li>
 									</ul>
 								</li>
 							</ul>

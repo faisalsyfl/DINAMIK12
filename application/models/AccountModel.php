@@ -34,7 +34,7 @@ class AccountModel extends CI_Model {
 	
 	public function selectById($id,$from=0,$offset=0){
 		$this->db->select('*');
-		$this->db->from($tableName);
+		$this->db->from($this->tableName);
 		$this->db->where('account_id',$id);
 		$this->db->limit($from,$offset);
 
@@ -46,10 +46,13 @@ class AccountModel extends CI_Model {
 	}
 	public function update($id,$data){
 		$this->db->set($data);
-		$this->db->where('id',$id);
+		$this->db->where('account_id',$id);
 		$this->db->update($this->tableName);
 	}
-
+	public function delete($id){
+		$this->db->where('account_id',$id);
+		$this->db->delete($this->tableName);
+	}
 	public function getId(){
 		$this->db->select('account_id');
 		$this->db->from($this->tableName);
@@ -58,11 +61,13 @@ class AccountModel extends CI_Model {
 		$x = $this->db->get()->row()->account_id;
 		return($x);
 	}
-	public function selectJoinCategory(){
+	public function selectJoinCategory($cat = NULL){
 		$this->db->select('*');
 		$this->db->from($this->tableName);
 		$this->db->join('tb_category','account_category_id = category_id');
-
+		if($cat != NULL){
+			$this->db->where('account_category_id',$cat);
+		}
 		return $this->db->get();
 	}
 }
