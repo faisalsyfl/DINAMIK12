@@ -10,15 +10,19 @@ SELECT
 	acc.account_category_id as cor_category,
 	acc.account_image as cor_image,
 	cor.coordinator_event_id as cor_event,
-	cor.coordinator_account_id as cor_acc
+	eve.event_name as eve_event_name
 FROM
 	tb_account acc
     JOIN
     tb_coordinator cor
 	JOIN
 	tb_category cat
+	JOIN
+	tb_event eve
     on 
     acc.account_id = cor.coordinator_account_id
+	and
+    eve.event_id = cor.coordinator_event_id
 	and
 	cat.category_id = acc.account_category_id
 

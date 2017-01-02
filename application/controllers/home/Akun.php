@@ -106,16 +106,20 @@ class Akun extends CI_Controller{
 				}
 				
 				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
-				if($userdata['category'] == 'ADM')	
+				if($userdata['category'] == 'X-SUADM')	
 					redirect(site_url('dashboard/admin'));
 				else if($userdata['category'] == 'SCH' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'SCT' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
 				else if($userdata['category'] == 'PUB' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
 				else if($userdata['category'] == 'JDG' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
-				else if($userdata['category'] == 'COR' && $userdata['status'] == 1) 
-					redirect(site_url('dashboard/admin'));
+				/* COOR PER CATEGORY 
+					else if($userdata['category'] == 'COR' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin')); 
+				*/
 				else redirect(site_url('/akun/failedact'));
 			}else{
 				/*Failed Login*/
@@ -148,12 +152,12 @@ class Akun extends CI_Controller{
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
 			$acc['account_password'] = md5($acc['account_username']);
-			$acc['account_category_id'] = "SCH";
+			$acc['account_category_id'] = "D-SCH";
 			$this->AccountModel->insert($acc);
 			// var_dump($acc);
 			
 			$sch['school_name'] = $this->input->post('name');
-			$sch['school_grade'] = "SMA/SMK";
+			$sch['school_grade'] = $this->input->post('grade');
 			$sch['school_contact'] = $this->input->post('contact');
 			$sch['school_city_id'] = $this->input->post('city');
 			$sch['school_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
@@ -178,7 +182,7 @@ class Akun extends CI_Controller{
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
 			$acc['account_password'] = md5($this->input->post('pass2'));
-			$acc['account_category_id'] = "PUB";
+			$acc['account_category_id'] = "D-PUB";
 			$acc['account_status'] = "1";
 			$this->AccountModel->insert($acc);
 			
