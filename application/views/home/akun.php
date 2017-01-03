@@ -29,8 +29,8 @@
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
 					<li class="active"><a data-toggle="tab" href="#masuk">Masuk</a></li>
-					<li><a data-toggle="tab" href="#daftar">Daftar Sebagai Sekolah</a></li>
-					<li><a data-toggle="tab" href="#daftar2">Daftar Sebagai Umum</a></li>
+					<li><a data-toggle="tab" href="#daftar">Daftar Akun Sekolah</a></li>
+					<li><a data-toggle="tab" href="#daftar2">Daftar Akun Umum</a></li>
 					<li><a data-toggle="tab" href="#lupasandi">Lupa Kata Sandi</a></li>
 				</ul>
 				
@@ -116,12 +116,13 @@
 							</div>
 
 							<div class="register-box-body">
-							<p class="login-box-msg">Mendaftar akun lomba sebagai sekolah</p>
+							<p class="login-box-msg">Pendaftaran Sekolah (Lomba)</p>
 
 								<?php echo form_open('home/Akun/regAsSchool'); ?>
 									<div class="form-group has-feedback">
 										<select name="grade" class="form-control">
-											<option value="SD">SD</option>
+											<!--<option value="SD">SD</option>-->
+											<option value="">--Pilih Kategori--</option>
 											<option value="SMP">SMP</option>
 											<option value="SMA">SMA</option>
 											<option value="SMK">SMK</option>
@@ -203,7 +204,7 @@
 							</div>
 
 							<div class="register-box-body">
-							<p class="login-box-msg">Mendaftar akun Acara Semnas/Talkshow/DSTAR/Donor Darah</p>
+							<p class="login-box-msg">Pendaftaran Akun Umum (Acara)</p>
 
 								<?php echo form_open('home/Akun/regAsPublic'); ?>
 									<div class="form-group has-feedback">

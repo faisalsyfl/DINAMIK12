@@ -53,6 +53,7 @@ class AccountModel extends CI_Model {
 		$this->db->where('account_id',$id);
 		$this->db->delete($this->tableName);
 	}
+	
 	public function getId(){
 		$this->db->select('account_id');
 		$this->db->from($this->tableName);
@@ -61,6 +62,7 @@ class AccountModel extends CI_Model {
 		$x = $this->db->get()->row()->account_id;
 		return($x);
 	}
+	
 	public function selectJoinCategory($cat = NULL){
 		$this->db->select('*');
 		$this->db->from($this->tableName);
@@ -69,6 +71,42 @@ class AccountModel extends CI_Model {
 			$this->db->where('account_category_id',$cat);
 		}
 		return $this->db->get();
+	}
+	
+	
+	/* GET CATEGORY NAME FOR SESSION DATA -> HEADER DASHBOARD DATA */
+	public function getCategoryNameByID($id){
+		$this->db->select('category_name');
+		$this->db->from('tb_category');
+		$this->db->where('category_id', $id);
+
+		$x = $this->db->get()->row()->category_name;
+		return($x);
+	}
+	
+	/* GET ACCOUNT NAME (NOT ID) FOR SESSION DATA -> HEADER DASHBOARD DATA */
+	public function getNameByID($id, $cat){
+		if($cat == "ADM" || $cat == "ADMSU" || $cat == "COR"){
+			$this->db->select('coordinator_name');
+			$this->db->from('tb_coordinator');
+			$this->db->where('coordinator_account_id', $id);
+			$x = $this->db->get()->row()->coordinator_name;
+		}else if($cat == "SCH"){
+			$this->db->select('school_name');
+			$this->db->from('tb_school');
+			$this->db->where('school_account_id', $id);
+			$x = $this->db->get()->row()->school_name;
+		}else if($cat == "PUB"){
+			$this->db->select('public_name');
+			$this->db->from('tb_public');
+			$this->db->where('public_account_id', $id);
+			$x = $this->db->get()->row()->public_name;
+		}else if($cat == "SCT"){
+			/* FOR SCHOOL TEAM */
+			
+		}
+		
+		return($x);
 	}
 }
 

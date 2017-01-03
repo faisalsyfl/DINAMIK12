@@ -90,16 +90,24 @@
 							<!-- User Account: style can be found in dropdown.less -->
 							<li class="dropdown user user-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="user-image" alt="User Image">
-									<span class="hidden-xs">Bang Satyo</span>
+									<img src="<?php echo base_url($this->session->userimg);?>" class="user-image" alt="User Image">
+									<span class="hidden-xs">
+										<?php 
+											echo $this->session->realname;
+										?>
+									</span>
 								</a>
 								<ul class="dropdown-menu">
 									<!-- User image -->
 									<li class="user-header">
-										<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
+										<img src="<?php echo base_url($this->session->userimg);?>" class="img-circle" alt="User Image">
 										<p>
-											Bang Satyo - Administrator
-											<small>Dinamik12 Administrator</small>
+											<?php 
+												echo $this->session->realname;
+											?>
+											<small>
+												Dinamik12 - <?php echo $this->session->catename;?>
+											</small>
 										</p>
 									</li>
 									<!-- Menu Footer-->
@@ -127,10 +135,10 @@
 					<!-- Sidebar user panel -->
 					<div class="user-panel">
 						<div class="pull-left image">
-							<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
+							<img src="<?php echo base_url($this->session->userimg);?>" class="img-circle" alt="User Image">
 						</div>
 						<div class="pull-left info">
-							<p>Bang Satyo</p>
+							<p><?php echo $this->session->realname; ?></p>
 							<a href="#"><span class="fa fa-user fa-2x text-success"></span> Profil</a>
 						</div>
 					</div>

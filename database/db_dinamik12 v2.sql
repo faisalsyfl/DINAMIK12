@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2017 at 10:02 PM
+-- Generation Time: Jan 03, 2017 at 01:20 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -57,28 +57,28 @@ TRUNCATE TABLE `tb_account`;
 --
 
 INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category_id`, `account_token`, `account_image`, `account_status`) VALUES
-(0, 'dinamik.cs@upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 11:23:46', 'X-SUADM', '', '', 1),
-(1, 'dinamik.cs@upi.edu', 'ketuplak', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:36:56', 'A-PLAK', '', '', 1),
-(2, 'dinamik.cs@upi.edu', 'acara', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:37:22', 'B-ACARA', '', '', 1),
-(3, 'dinamik.cs@upi.edu', 'bendahara', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:40:06', 'B-BDHR', '', '', 1),
-(4, 'dinamik.cs@upi.edu', 'danusbazaar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:40:06', 'B-DNSBZR', '', '', 1),
-(5, 'dinamik.cs@upi.edu', 'dokumentasi', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:40:06', 'B-DOK', '', '', 1),
-(6, 'dinamik.cs@upi.edu', 'publikasi', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:40:06', 'B-PUBLKS', '', '', 1),
-(7, 'dinamik.cs@upi.edu', 'sponsor', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:50:03', 'B-SPONSOR', '', '', 1),
-(8, 'dinamik.cs@upi.edu', 'cspc', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-CSPC', '', '', 1),
-(9, 'dinamik.cs@upi.edu', 'donor', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-DONOR', '', '', 1),
-(10, 'dinamik.cs@upi.edu', 'dstar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-DSTAR', '', '', 1),
-(11, 'dinamik.cs@upi.edu', 'felose', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-FELOSE', '', '', 1),
-(12, 'dinamik.cs@upi.edu', 'komjar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-KJ', '', '', 1),
-(13, 'dinamik.cs@upi.edu', 'lca', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-LCA', '', '', 1),
-(14, 'dinamik.cs@upi.edu', 'lcw', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-LCW', '', '', 1),
-(15, 'dinamik.cs@upi.edu', 'ldg', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-LDG', '', '', 1),
-(16, 'dinamik.cs@upi.edu', 'otik', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-OTIK', '', '', 1),
-(17, 'dinamik.cs@upi.edu', 'pca', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-PCA', '', '', 1),
-(18, 'dinamik.cs@upi.edu', 'rlf', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-RLF', '', '', 1),
-(19, 'dinamik.cs@upi.edu', 'semnas', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-SEMNAS', '', '', 1),
-(20, 'dinamik.cs@upi.edu', 'talkshow', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-TALKSHOW', '', '', 1),
-(21, 'dinamik.cs@upi.edu', 'workshop', '21232f297a57a5a743894a0e4a801fc3', '2017-01-02 12:44:00', 'C-WORKSHOP', '', '', 1);
+(0, 'dinamik.cs@upi.edu', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:35', 'ADMSU', '', '/assets/img/icon_dashboard/admin.jpg', 1),
+(1, 'dinamik.cs@upi.edu', 'ketuplak', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:38', 'ADM', '', '/assets/img/icon_dashboard/admin.jpg', 1),
+(2, 'dinamik.cs@upi.edu', 'acara', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:51', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(3, 'dinamik.cs@upi.edu', 'bendahara', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:54', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(4, 'dinamik.cs@upi.edu', 'danusbazaar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:56', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(5, 'dinamik.cs@upi.edu', 'dokumentasi', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:35:59', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(6, 'dinamik.cs@upi.edu', 'publikasi', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:01', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(7, 'dinamik.cs@upi.edu', 'sponsor', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(8, 'dinamik.cs@upi.edu', 'cspc', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:05', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(9, 'dinamik.cs@upi.edu', 'donor', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:09', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(10, 'dinamik.cs@upi.edu', 'dstar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:08', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(11, 'dinamik.cs@upi.edu', 'felose', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:12', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(12, 'dinamik.cs@upi.edu', 'komjar', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:18', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(13, 'dinamik.cs@upi.edu', 'lca', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:21', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(14, 'dinamik.cs@upi.edu', 'lcw', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:23', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(15, 'dinamik.cs@upi.edu', 'ldg', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:25', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(16, 'dinamik.cs@upi.edu', 'otik', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:27', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(17, 'dinamik.cs@upi.edu', 'pca', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:30', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(18, 'dinamik.cs@upi.edu', 'rlf', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:33', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(19, 'dinamik.cs@upi.edu', 'semnas', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:35', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(20, 'dinamik.cs@upi.edu', 'talkshow', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:38', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(21, 'dinamik.cs@upi.edu', 'workshop', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:40', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -160,32 +160,13 @@ TRUNCATE TABLE `tb_category`;
 --
 
 INSERT INTO `tb_category` (`category_id`, `category_name`) VALUES
-('A-PLAK', 'Administrator - Ketua Pelaksana'),
-('B-ACARA', 'Koordinator Acara'),
-('B-BDHR', 'Bendahara'),
-('B-DNSBZR', 'Danus & Bazaar'),
-('B-DOK', 'Dokumentasi'),
-('B-PUBLKS', 'Publikasi'),
-('B-SPONSOR', 'Sponsor'),
-('C-CSPC', 'Koordinator CSPC'),
-('C-DONOR', 'Koordinator Donor Darah'),
-('C-DSTAR', 'Koordinator Dinamik Star'),
-('C-FELOSE', 'Koordinator FELOSE'),
-('C-KJ', 'Koordinator Kompetisi Jaringan'),
-('C-LCA', 'Koordinator LCA'),
-('C-LCW', 'Koordinator LCW'),
-('C-LDG', 'Koordinator LDG'),
-('C-OTIK', 'Koordinator OTIK'),
-('C-PCA', 'Koordinator PCA'),
-('C-RLF', 'Koordinator RLF'),
-('C-SEMNAS', 'Koordinator SEMNAS'),
-('C-TALKSHOW', 'Koordinator Talkshow'),
-('C-WORKSHOP', 'Koordinator Workshop'),
-('D-JDG', 'Juri'),
-('D-PUB', 'Publik'),
-('D-SCH', 'Sekolah'),
-('E-SCT', 'Tim Sekolah'),
-('X-SUADM', 'Super Administrator');
+('ADM', 'Ketua Pelaksana'),
+('ADMSU', 'Super Administrator'),
+('COR', 'Coordinator'),
+('JDG', 'Juri'),
+('PUB', 'Publik'),
+('SCH', 'Sekolah'),
+('SCT', 'Tim Sekolah');
 
 -- --------------------------------------------------------
 
@@ -731,20 +712,20 @@ INSERT INTO `tb_coordinator` (`coordinator_id`, `coordinator_name`, `coordinator
 (5, 'Dokumentasi', NULL, NULL, NULL, 5),
 (6, 'Publikasi', NULL, NULL, NULL, 6),
 (7, 'Sponsor', NULL, NULL, NULL, 7),
-(8, 'Koordinator CSPC', NULL, NULL, 5, 8),
-(9, 'Koordinator Donor Darah', NULL, NULL, 12, 9),
-(10, 'Koordinator Dinamik Star', NULL, NULL, 14, 10),
-(11, 'Koordinator Festival Teknologi dan Seni', NULL, NULL, 11, 11),
-(12, 'Koordinator Kompetisi Jaringan', NULL, NULL, 8, 12),
-(13, 'Koordinator Lomba Cipta Animasi', NULL, NULL, 6, 13),
-(14, 'Koordinator Lomba Cipta Web', NULL, NULL, 2, 14),
-(15, 'Koordinator Lomba Desain Grafis', NULL, NULL, 1, 15),
-(16, 'Koordinator Olimpiade Teknologi Informasi dan Komunikasi', NULL, NULL, 3, 16),
-(17, 'Koordinator PC Assembling', NULL, NULL, 4, 17),
-(18, 'Koordinator Robot Line Follower', NULL, NULL, 7, 18),
-(19, 'Koordinator Seminar Nasional', NULL, NULL, 10, 19),
-(20, 'Koordinator Talkshow', NULL, NULL, 9, 20),
-(21, 'Koordinator Workshop', NULL, NULL, 13, 21);
+(8, 'CSPC', NULL, NULL, 5, 8),
+(9, 'Donor Darah', NULL, NULL, 12, 9),
+(10, 'Dinamik Star', NULL, NULL, 14, 10),
+(11, 'Festival Teknologi dan Seni', NULL, NULL, 11, 11),
+(12, 'Kompetisi Jaringan', NULL, NULL, 8, 12),
+(13, 'Lomba Cipta Animasi', NULL, NULL, 6, 13),
+(14, 'Lomba Cipta Web', NULL, NULL, 2, 14),
+(15, 'Lomba Desain Grafis', NULL, NULL, 1, 15),
+(16, 'Olimpiade Teknologi Informasi dan Komunikasi', NULL, NULL, 3, 16),
+(17, 'PC Assembling', NULL, NULL, 4, 17),
+(18, 'Robot Line Follower', NULL, NULL, 7, 18),
+(19, 'Seminar Nasional', NULL, NULL, 10, 19),
+(20, 'Talkshow', NULL, NULL, 9, 20),
+(21, 'Workshop', NULL, NULL, 13, 21);
 
 -- --------------------------------------------------------
 
@@ -1284,7 +1265,7 @@ ALTER TABLE `tb_sponsor`
 -- AUTO_INCREMENT for table `tb_account`
 --
 ALTER TABLE `tb_account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `tb_bazaar`
 --
@@ -1334,7 +1315,7 @@ ALTER TABLE `tb_payment`
 -- AUTO_INCREMENT for table `tb_public`
 --
 ALTER TABLE `tb_public`
-  MODIFY `public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tb_pubteam`
 --
@@ -1344,7 +1325,7 @@ ALTER TABLE `tb_pubteam`
 -- AUTO_INCREMENT for table `tb_school`
 --
 ALTER TABLE `tb_school`
-  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_schparticipant`
 --

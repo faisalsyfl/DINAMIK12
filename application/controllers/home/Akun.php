@@ -72,12 +72,19 @@ class Akun extends CI_Controller{
 			// var_du
 			if(md5($password) == $data['account_password']){
 				/*Success Login*/
-
+				
+				$catename = $this->AccountModel->getCategoryNameByID($data['account_category_id']);
+				$realname = $this->AccountModel->getNameByID($data['account_id'], $data['account_category_id']);
+				
 				/*Storing key value as session data*/
 				$userdata = array(
+					'userid'  => $data['account_id'],
 					'username'  => $data['account_username'],
+					'realname'  => $realname,
+					'userimg'  => $data['account_image'],
 					'email'     => $data['account_email'],
 					'category'  => $data['account_category_id'],
+					'catename'  => $catename,
 					'status'  => $data['account_status'],
 					'logged_in' => TRUE
 					// 'key_value' => 'key_answer'
@@ -106,7 +113,7 @@ class Akun extends CI_Controller{
 				}
 				
 				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
-				if($userdata['category'] == 'X-SUADM')	
+				if($userdata['category'] == 'ADMSU')	
 					redirect(site_url('dashboard/admin'));
 				else if($userdata['category'] == 'SCH' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
@@ -114,12 +121,10 @@ class Akun extends CI_Controller{
 					redirect(site_url('dashboard/admin'));
 				else if($userdata['category'] == 'PUB' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
+				else if($userdata['category'] == 'COR' && $userdata['status'] == 1) 
+					redirect(site_url('dashboard/admin')); 
 				else if($userdata['category'] == 'JDG' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/admin'));
-				/* COOR PER CATEGORY 
-					else if($userdata['category'] == 'COR' && $userdata['status'] == 1) 
-					redirect(site_url('dashboard/admin')); 
-				*/
 				else redirect(site_url('/akun/failedact'));
 			}else{
 				/*Failed Login*/
@@ -152,8 +157,10 @@ class Akun extends CI_Controller{
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
 			$acc['account_password'] = md5($acc['account_username']);
-			$acc['account_category_id'] = "D-SCH";
+			$acc['account_image'] = "/assets/img/icon_dashboard/sekolah.jpg";
+			$acc['account_category_id'] = "SCH";
 			$this->AccountModel->insert($acc);
+			
 			// var_dump($acc);
 			
 			$sch['school_name'] = $this->input->post('name');
@@ -182,7 +189,8 @@ class Akun extends CI_Controller{
 			$asd = explode(" ",$this->input->post('name'));
 			$acc['account_username'] = strtolower(implode("",$asd));
 			$acc['account_password'] = md5($this->input->post('pass2'));
-			$acc['account_category_id'] = "D-PUB";
+			$acc['account_image'] = "/assets/img/icon_dashboard/umum.jpg";
+			$acc['account_category_id'] = "PUB";
 			$acc['account_status'] = "1";
 			$this->AccountModel->insert($acc);
 			

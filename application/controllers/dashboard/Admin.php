@@ -1,4 +1,4 @@
-<?php
+	<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
@@ -39,6 +39,7 @@ class Admin extends CI_Controller {
 	/* 
 		Account page 
 		Show per category if parameter is not NULL
+		ADMSU Super Admin
 		ADM Admin
 		JDG Juri
 		COR koor
@@ -53,7 +54,7 @@ class Admin extends CI_Controller {
 		if(isset($_SESSION['logged_in'])){
 			if($category == NULL){
 				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-
+				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
 				$data['list'] = $this->AccountModel->selectJoinCategory()->result_array();
 				// var_dump($data['list']);
 				$this->load->view('admin/layout/header',$head);
@@ -83,7 +84,7 @@ class Admin extends CI_Controller {
 	 * @param  string $aksi action
 	 * @return        
 	 */
-	public function akunAction($id,$aksi){
+	public function akunAction($id, $aksi, $cat = NULL){
 		if($aksi == "verif"){
 			$row = $this->AccountModel->selectById($id)->row_array();
 			if($row['account_status'] == 1) 
@@ -92,8 +93,31 @@ class Admin extends CI_Controller {
 			$this->AccountModel->update($id,$upd);
 			redirect(site_url('dashboard/admin/akun'));
 		}else if($aksi == "watch"){
-			/*Action Watch as*/
-			/*SOON*/
+			/*Action Watch */
+			
+			/* 
+			SET WATCH SESSION DATA
+			$watchuserdata = array(
+				'userid'  => $data['account_id'],
+				'username'  => $data['account_username'],
+				'realname'  => $realname,
+				'userimg'  => $data['account_image'],
+				'email'     => $data['account_email'],
+				'category'  => $data['account_category_id'],
+				'catename'  => $catename,
+				'status'  => $data['account_status'],
+				'logged_in' => TRUE
+				// 'key_value' => 'key_answer'
+			);
+			$this->session->set_userdata($userdata); */
+			
+			/* 
+			LOAD THE MAIN PAGE OF THAT ACCOUNT CATEGORY AND DATA
+			$this->load->view('admin/layout/header',$head);
+			$this->load->view('admin/akunedit',$data);
+			$this->load->view('admin/layout/footer'); 
+			*/
+			
 		}else if($aksi == "edit"){
 			$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 			$data['row'] = $this->AccountModel->selectById($id)->row_array();
