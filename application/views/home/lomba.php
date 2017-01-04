@@ -34,7 +34,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
 					  </p>
 					  <p class="event-detail-text">
-					  Lomba Desain Grafis merupakan salah satu ajang kompetisi  dalam rangkaian acara DINAMIK12 di bidang desain grafis. Lomba Desain Grafis adalah lomba perorangan yang mengasah kreativitas peserta dalam mendesain sebuah ilustrasi yang sesuai dengan tema, yaitu “Teknologi data dalam pendidikan Indonesia” Ilustrasi yang dibuat tidak hanya bagus tetapi juga memiliki makna. Peserta lomba diharuskan membuat desain grafis berupa ilustrasi sesuai dengan tema LDG DINAMIK12 dengan menggunakan software seperti Inkscape, GIMP, Adobe Photoshop, atau CorelDRAW. Sasaran peserta dalam lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional. 
+					  <?php echo $list[0]['event_description']; ?>
 					  </p>
 					</div>
 					
@@ -49,7 +49,8 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Lomba Cipta Website merupakan kompetisi yang diselenggarakan oleh Mahasiswa Ilmu Komputer dan Pendidikan Ilmu Komputer pada Dies Natalis Mahasiswa Komputer yang ke-12 (Dinamik 12) untuk menuangkan ide dan kreativitas ke dalam sebuah website, bertujuan untuk memberikan motivasi dan sebagai sarana belajar untuk membangun dan mengembangkan website.Pada tahun ini, LCW mengusung tema “Technology Innovation for Smarter Indonesian Education” untuk ketentuan website peserta. Sasaran peserta lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional. 
+					  <?php echo $list[1]['event_description']; ?>
+
 					  </p>
 					</div>
 					
@@ -64,7 +65,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA C, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Olimpiade TIK merupakan salah satu cabang lomba dalam rangkaian acara DINAMIK 12. Pada perlombaan ini para peserta akan diuji dengan soal-soal logika matematika dan TIK dan harus diselesaikan dengan tepat dan cepat selama waktu yang ditentukan. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/SMK/ sederajat se-Jawa Barat.	
+					  <?php echo $list[2]['event_description']; ?>
 					  </p>
 					</div>
 					
@@ -80,7 +81,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Personal Computer Assembling (PCA) merupakan lomba yang menjadi daya tarik dalam DINAMIK. Dari tahun ke tahun PCA selalu menjadi lomba favorit yang diikuti dengan ditandainya jumlah peserta yang dapat mencapai 200 peserta. Lomba ini menekankan ketelitian, kerapihan dan kecepatan dalam perakitan komponen - komponen PC. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/ sederajat se-Nasional.
+					  <?php echo $list[3]['event_description']; ?>
 					  </p>
 					</div>
 					
@@ -95,7 +96,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
 					  </p>
 					  <p class="event-detail-text">
-					  Computer Science Programming Contest (CSPC) adalah lomba pemrograman yang diselanggarakan di DINAMIK. Lomba ini menekankan kemampuan analisis berpikir dalam pemecahan masalah yang diberikan dalam bentuk soal yang kemudian diinterpretasikan dalam bentuk kode program sehingga menjadi program yang efektif. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa - siswi SMA/SMK sederajat se-Nasional.
+					  <?php echo $list[4]['event_description']; ?>
 					  </p>
 					</div>
 					
@@ -110,7 +111,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
 					  </p>
 					  <p class="event-detail-text">
-					  Lomba Cipta Animasi (LCA) adalah salah satu cabang lomba di DINAMIK yang kembali muncul setelah absen selama 2 tahun di perhelatan DINAMIK. Lomba ini mengkompetisikan kemampuan peserta di bidang multimedia dalam pembuatan film pendek animasi 2D bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Peserta dibebaskan menggunakan perangkat lunak apapun dalam proses pembuatannya. Lomba ini ditujukan untuk siswa-siswi SMA/SMK sederajat se-Nasional.
+					  <?php echo $list[5]['event_description']; ?>
 					  </p>
 					</div>
 					
@@ -126,7 +127,8 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Robot Line Follower merupakan sebuah ajang kompetisi balapan robot dimana robot tersebut  bergerak mengikuti garis secara otomatis, dengan track yang ditentukan. Dengan ketentuan robot dibuat oleh masing-masing peserta. Tema yang diusungkan adalah “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran kompetisi line follower ini adalah seluruh siswa-siswi tingkat SMA/SMK/MA/Sederajat se-Nasional.
+					  <?php echo $list[6]['event_description']; ?>
+
 					  </p>
 					</div>
 					
@@ -141,7 +143,7 @@
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Ruang A Gymnasium, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
-					  Kompetisi Jaringan merupakan kompetisi untuk menguji kemampuan peserta dalam menghadapi kasus keamanan sistem komputer dan jaringan yang telah disiapkan. Sistem dirancang untuk mempunyai celah atau informasi tertentu yang berakibat terhadap dimungkinkannya peretasan pada sistem tersebut. Terdapat dua bidang yang di kompetisikan dalam acara ini yaitu bidang keamanan jaringan dan desain jaringan. Kompetisi Jaringan mengusung tema “sub teknologi data”. Sasaran peserta lomba ini yaitu siswa/i SMK se-Jawa Barat.
+					  <?php echo $list[7]['event_description']; ?>
 					  </p>
 					</div>
 					

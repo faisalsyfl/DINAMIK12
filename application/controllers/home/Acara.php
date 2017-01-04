@@ -20,8 +20,10 @@ class Acara extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['list'] = $this->EventModel->selectAll()->result_array();
+		// var_dump($data['list']);
 		$this->load->view('layout/header');
-		$this->load->view('home/acara');
+		$this->load->view('home/acara',$data);
 		$this->load->view('layout/footer');
 	}
 }

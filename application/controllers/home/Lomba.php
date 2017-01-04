@@ -20,8 +20,10 @@ class Lomba extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data['list'] = $this->EventModel->selectAll()->result_array();		
+		// var_dump($data['list']);
 		$this->load->view('layout/header');
-		$this->load->view('home/lomba');
+		$this->load->view('home/lomba',$data);
 		$this->load->view('layout/footer');
 	}
 }

@@ -15,7 +15,7 @@
 					<h2>Edit Akun</h2>
 					<div class="row">
 						<div class="col-md-4">
-							<?php echo form_open('dashboard/admin/akunAction/'.$row['account_id'].'/editAct'); ?>
+							<?php echo form_open('dashboard/admin/eventAction/'.$row['account_id'].'/editAct'); ?>
 								<input type="text" name="email" class="form-control" value="<?php echo $row['account_email']; ?>">
 								<input type="text" name="name" class="form-control" value="<?php echo $row['account_username']; ?>">
 								<input type="submit" name="btnEdit" value="Edit" class="btn btn-primary">

@@ -24,11 +24,21 @@ class Admin extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-			$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-			$data['total'] = $this->AccountModel->selectAll()->num_rows();
-			$this->load->view('admin/layout/header',$head);
-			$this->load->view('admin/main',$data);
-			$this->load->view('admin/layout/footer');
+			if($_SESSION['category']=='ADM' || $_SESSION['category']=='ADMSU' || $_SESSION['category']=='COOR'){
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				$data['total'] = $this->AccountModel->selectAll()->num_rows();
+				// var_dump($_SESSION['category']);
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/main',$data);
+				$this->load->view('admin/layout/footer');
+			}else{
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				$data['total'] = $this->AccountModel->selectAll()->num_rows();
+				// var_dump($_SESSION);
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/main2',$data);
+				$this->load->view('admin/layout/footer');				
+			}
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
@@ -58,14 +68,14 @@ class Admin extends CI_Controller {
 				$data['list'] = $this->AccountModel->selectJoinCategory()->result_array();
 				// var_dump($data['list']);
 				$this->load->view('admin/layout/header',$head);
-				$this->load->view('admin/akun',$data);
+				$this->load->view('admin/akun/akun',$data);
 				$this->load->view('admin/layout/footer');
 			}else{
 				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['list'] = $this->AccountModel->selectJoinCategory($category)->result_array();
 				// var_dump($data['list']);
 				$this->load->view('admin/layout/header',$head);
-				$this->load->view('admin/akun',$data);
+				$this->load->view('admin/akun/akun',$data);
 				$this->load->view('admin/layout/footer');
 			}
 		}else{
@@ -114,7 +124,7 @@ class Admin extends CI_Controller {
 			/* 
 			LOAD THE MAIN PAGE OF THAT ACCOUNT CATEGORY AND DATA
 			$this->load->view('admin/layout/header',$head);
-			$this->load->view('admin/akunedit',$data);
+			$this->load->view('admin/akun/akunedit',$data);
 			$this->load->view('admin/layout/footer'); 
 			*/
 			
@@ -123,7 +133,7 @@ class Admin extends CI_Controller {
 			$data['row'] = $this->AccountModel->selectById($id)->row_array();
 
 			$this->load->view('admin/layout/header',$head);
-			$this->load->view('admin/akunedit',$data);
+			$this->load->view('admin/akun/akunedit',$data);
 			$this->load->view('admin/layout/footer');
 		}else if($aksi == "editAct"){
 			$upd['account_email'] = $this->input->post('email');
@@ -139,6 +149,55 @@ class Admin extends CI_Controller {
 			}
 			$this->AccountModel->delete($id);
 			redirect(site_url('dashboard/admin/akun'));
+		}
+	}
+
+	public function acaralomba(){
+			/* if has session */
+		if(isset($_SESSION['logged_in'])){
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
+				$data['list'] = $this->EventModel->selectAll()->result_array();
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/acaralomba/index',$data);
+				$this->load->view('admin/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+
+	public function daftaracara(){
+		if(isset($_SESSION['logged_in'])){
+			$data['list'] = 
+			$this->load->view('admin/layout/header');
+			$this->load->view('admin/daftaracara/index');
+			$this->load->view('admin/layout/footer');
+		}else{
+				redirect(site_url('/akun'));		
+		}
+	}
+
+	public function eventAction($id,$aksi){
+		if($aksi == "activate"){
+			$row = $this->EventModel->selectById($id)->row_array();
+			if($row['event_status'] == 1) 
+				$upd['event_status'] = 0;
+			else $upd['event_status'] = 1;
+			$this->EventModel->update($id,$upd);
+			redirect(site_url('dashboard/admin/acaralomba'));			
+		}else if($aksi == "edit"){
+			$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+			$data['row'] = $this->EventModel->selectById($id)->row_array();
+
+			$this->load->view('admin/layout/header',$head);
+			$this->load->view('admin/acaralomba/eventedit',$data);
+			$this->load->view('admin/layout/footer');
+		}else if($aksi == "editAct"){
+			$data = $this->input->post();
+			unset($data['btnEdit']);
+			$this->EventModel->update($id,$data);
+			redirect(site_url('dashboard/admin/acaralomba'));
 		}
 	}
 	

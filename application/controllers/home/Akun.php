@@ -69,8 +69,7 @@ class Akun extends CI_Controller{
 
 
 			/*Checking Login*/
-			// var_du
-			if(md5($password) == $data['account_password']){
+				if(md5($password) == $data['account_password']){
 				/*Success Login*/
 				
 				$catename = $this->AccountModel->getCategoryNameByID($data['account_category_id']);
@@ -203,4 +202,4 @@ class Akun extends CI_Controller{
 			redirect(site_url('/akun/success'));			
 		}
 	}
-}
+}	

@@ -158,8 +158,7 @@
 						</li>
 						<?php 
 						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>						
+
 						<li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
@@ -168,10 +167,7 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>	
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>												
+				
 						<li class="">
 							<a href="#"><i class="fa fa-users"></i> Akun
 								<span class="pull-right-container">
@@ -204,10 +200,6 @@
 								</li>
 							</ul>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>													
 						<li>
 							<a href="#">
 								<i class="fa fa-newspaper-o"></i> 
@@ -217,10 +209,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR' || $_SESSION['category'] == 'JDG'){
-							?>														
 						<li>
 							<a href="#"><i class="fa fa-thumbs-up"></i> 
 								<span>Hasil Penjurian</span>
@@ -229,10 +217,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>
 						<li>
 							<a href="#"><i class="fa fa-envelope"></i> 
 								<span>Pesan Masuk</span><span class="pull-right-container">
@@ -241,10 +225,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>												
 						<li>
 							<a href="#">
 								<i class="fa fa-users"></i> 
@@ -254,10 +234,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>													
 						<li>
 							<a href="#">
 								<i class="fa fa-user"></i>
@@ -267,10 +243,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>													
 						<li class="">
 							<a href="#"><i class="fa fa-users"></i> Tim Peserta Acara
 								<span class="pull-right-container">
@@ -303,11 +275,7 @@
 								</li>
 							</ul>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>												
-						<li>
+						<li class="">
 							<a href="#"><i class="fa fa-users"></i> Tim Peserta Lomba
 								<span class="pull-right-container">
 									<i class="fa fa-angle-left pull-right"></i>
@@ -340,34 +308,6 @@
 								</li>
 							</ul>
 						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'SCH' || $_SESSION['category'] == 'SCT'){
-							?>													
-						<li>
-							<a href="#">
-								<i class="fa fa-user"></i>
-								<span>Daftar Lomba</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>
-						<?php 
-						} ?>
-						<?php if($_SESSION['category'] == 'PUB'){
-							?>													
-						<li>
-							<a href="<?php echo site_url('dashboard/admin/daftaracara'); ?>">
-								<i class="fa fa-user"></i>
-								<span>Daftar Acara</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>
-						<?php 
-						} ?>																			
 						<li class="header">LABELS</li>
 						<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Penting</span></a></li>
 						<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Peringatan</span></a></li>

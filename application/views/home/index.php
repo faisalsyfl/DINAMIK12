@@ -8,7 +8,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<a href="<?php echo site_url('pendaftaran/'); ?>">
+			<a href="<?php echo site_url('/akun'); ?>">
 			<button type="button" class="btn-daftar homeindex">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
