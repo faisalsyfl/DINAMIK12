@@ -29,6 +29,14 @@
 							<td class="p1">Anggota</td>
 							<td>Esa muhammad</td>
 						</tr>
+						<tr>
+							<td class="p1">Kode Pembayaran</td>
+							<td class="kode">FSA9FA8S9989</td>
+						</tr>
+						<tr>
+							<td class="p1">Status Pembayaran</td>
+							<td class="kode" style="color: green">LUNAS</td>
+						</tr>
 					</table>
 					<br>
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>

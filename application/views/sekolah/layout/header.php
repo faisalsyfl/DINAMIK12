@@ -123,6 +123,11 @@
 			.school-info .p1 {
 				font-weight: bold;
 			}
+			.school-info .kode {
+				font-size: 24px;
+				font-weight: bold;
+				color: #007eff;
+			}
 			
 			.daftar-tim {
 				font-size: 18px;
