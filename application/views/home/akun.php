@@ -146,7 +146,7 @@
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="text" class="form-control" placeholder="Contact Resmi" name="contact">
+										<input type="text" class="form-control" placeholder="Kontak Resmi" name="contact">
 										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 									</div>
 									<!-- radio -->
@@ -224,7 +224,7 @@
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="text" class="form-control" placeholder="Contact Resmi" name="contact">
+										<input type="text" class="form-control" placeholder="Kontak Resmi" name="contact">
 										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 									</div>									
 									<div class="form-group has-feedback">

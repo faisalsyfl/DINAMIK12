@@ -171,9 +171,9 @@
 					</h3>
 					<br>
 					<h4 class="activity-title">SYUKURAN DINAMIK</h4>
-					<h5 class="activity-date">28 JAN 2017</h5>
+					<h5 class="activity-date">04 FEB 2017</h5>
 					<p class="activity-text">
-						GYMNASIUM UPI<br>
+						AUDITORIUM FPMIPA-A<br>
 						10.00 - 18.00
 					</p>
 					<br>
@@ -268,7 +268,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<a href="<?php echo site_url('pendaftaran/'); ?>">
+			<a href="<?php echo site_url('/akun'); ?>">
 			<button type="button" class="btn-daftar">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
