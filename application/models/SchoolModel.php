@@ -33,4 +33,12 @@ class SchoolModel extends CI_Model {
 		$this->db->where('school_id',$id);
 		$this->db->delete($this->tableName);
 	}
+	public function selectByAccIdJoin($id){
+		$this->db->select('*');
+		$this->db->from($this->tableName);
+		$this->db->where('school_account_id',$id);
+		$this->db->join('tb_city','school_city_id = city_id');
+		// $this->db->limit($from,$offset);
+		return $this->db->get();
+	}	
 }

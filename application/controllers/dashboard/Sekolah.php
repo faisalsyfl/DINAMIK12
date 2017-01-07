@@ -24,21 +24,10 @@ class Sekolah extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-			if($_SESSION['category']=='ADM' || $_SESSION['category']=='ADMSU' || $_SESSION['category']=='COOR' || $_SESSION['category']=='SCH'){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
-				// var_dump($_SESSION['category']);
-				$this->load->view('sekolah/layout/header',$head);
-				$this->load->view('sekolah/daftartim/index',$data);
-				$this->load->view('sekolah/layout/footer');
-			}else{
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
-				// var_dump($_SESSION);
-				$this->load->view('sekolah/layout/header',$head);
-				$this->load->view('sekolah/daftartim/index',$data);
-				$this->load->view('sekolah/layout/footer');				
-			}
+			$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();
+			$this->load->view('sekolah/layout/header');
+			$this->load->view('sekolah/daftartim/index',$data);
+			$this->load->view('sekolah/layout/footer');				
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
@@ -62,10 +51,8 @@ class Sekolah extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
-				$data['list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('sekolah/layout/header',$head);
+				$data['list'] = $this->SchoolModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+				$this->load->view('sekolah/layout/header');
 				$this->load->view('sekolah/profil/profil',$data);
 				$this->load->view('sekolah/layout/footer');		
 		}else{
@@ -77,10 +64,8 @@ class Sekolah extends CI_Controller {
 	public function pendaftarantim(){
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
-				$data['list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('sekolah/layout/header',$head);
+				$data['list'] = $this->EventModel->selectAll(8,0)->result_array();
+				$this->load->view('sekolah/layout/header');
 				$this->load->view('sekolah/pendaftarantim/pendaftarantim',$data);
 				$this->load->view('sekolah/layout/footer');		
 		}else{
@@ -89,18 +74,65 @@ class Sekolah extends CI_Controller {
 		}	
 	}
 
-	public function detailtim(){
+	public function processDaftar(){
+		$school = $this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array();
+		$data = $this->input->post();
+		$asd = explode(" ",$this->input->post('schteam_name'));
+		$acc['account_username'] = strtolower(implode("",$asd));
+		$acc['account_email'] = $_SESSION['email'];
+		$acc['account_password'] = md5($acc['account_username']);
+		$acc['account_image'] = "/assets/img/icon_dashboard/tim.jpg";
+		$acc['account_category_id'] = "SCT";
+		$this->AccountModel->insert($acc);
+
+		$pay['payment_amount'] = $this->EventModel->selectById($data['schteam_event_id'])->row_array()['event_price'];
+		$pay['payment_unique_code'] = implode("",$this->PaymentModel->generate());
+		$data['schteam_payment_id'] = $this->PaymentModel->insert($pay);
+
+		$data['schteam_account_id'] = $this->AccountModel->selectByUsername(strtolower(implode("",$asd)))['account_id'];
+		$data['schteam_school_id'] = $school['school_id'];
+		unset($data['submit']);
+		$cAnggota = $data['anggota'];
+		$cNISN = $data['nisn'];
+		unset($data['anggota']);
+		unset($data['nisn']);
+		$insert['schparticipant_schteam_id'] = $this->SchoolTModel->insert($data);
+		
+		for($i=0;$i<3;$i++){
+			if($cAnggota[$i] != ""){
+				$insert['schparticipant_name'] = $cAnggota[$i];
+				$insert['schparticipant_nisn'] = $cNISN[$i];
+				$this->SchoolPModel->insert($insert);
+			}
+		}
+		redirect(site_url('dashboard/Sekolah/'));
+	}
+
+	public function detailtim($id){
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
-				$data['list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('sekolah/layout/header',$head);
+				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($id)->result_array();
+				$this->load->view('sekolah/layout/header');
 				$this->load->view('sekolah/detailtim/detailtim',$data);
 				$this->load->view('sekolah/layout/footer');		
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}	
+	}
+
+	public function sekolahAction($id,$string){
+		if($string == "edit"){
+			
+		}else if($string == "del"){
+			$this->SchoolPModel->delete($id);
+			$accid = $this->SchoolTModel->selectById($id)->row_array()['schteam_account_id'];
+			$payid = $this->SchoolTModel->selectById($id)->row_array()['schteam_payment_id'];
+			$this->SchoolTModel->delete($id);
+			$this->PaymentModel->delete($payid);
+			$this->AccountModel->delete($accid);
+
+			redirect(site_url('dashboard/sekolah/'));
+		}
 	}
 }

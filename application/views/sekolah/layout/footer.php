@@ -34,6 +34,15 @@
 			$(document).ready(function() {
 			    $('#allAcc').DataTable();
 			    $('#allEve').DataTable();
+			    counter = 0;
+			    $('#addanggota').on('click',function(){
+			    	counter++;
+			    	if(counter==1){
+			    		$('.tdanggota2').show('slow');
+			    	}else{
+			    		$('.tdanggota3').show('slow');
+			    	}
+			    });
 			} );
 		</script>		
 	</body>

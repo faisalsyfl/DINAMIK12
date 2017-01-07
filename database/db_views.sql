@@ -53,8 +53,8 @@ FROM
 
 /*VIEW DAFTAR TIM ACARA*/
 
-CREATE OR REPLACE VIEW v_daftar_acara AS
-SELECT 
+CREATE OR REPLACE VIEW v_schteam_dash AS
+SELECT 	
 	sct.schteam_id as sct_id,
 	sct.schteam_name as sct_name,
 	eve.event_name as eve_name,

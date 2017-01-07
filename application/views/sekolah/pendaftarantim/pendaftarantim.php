@@ -12,40 +12,82 @@
 				</section>
 				<!-- Main content -->
 				<section class="content">
+					<?php echo form_open('dashboard/Sekolah/processDaftar'); ?>
 					<table class="daftar-tim">
 						<tr>
 							<td class="p1">Kategori Lomba</td>
 							<td>
-								<select>
-									<option>LCA - Lomba Cipta Animasi</option>
+								<select name="schteam_event_id">
+									<?php 
+										foreach($list as $eve){
+											echo "<option value='".$eve['event_id']."'>".$eve['event_name']."</option>";
+										}
+									 ?>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td class="p1">Nama Tim</td>
 							<td>
-								<input type="text" placeholder="Nama Tim">
+								<input type="text" name="schteam_name" placeholder="Nama Tim">
 							</td>
 						</tr>
 						<tr>
 							<td class="p1">Nama Pembimbing</td>
 							<td>
-								<input type="text" placeholder="Nama Pembimbing">
+								<input type="text" name="schteam_coach_name" placeholder="Nama Pembimbing">
 							</td>
 						</tr>
 						<tr>
-							<td class="p1">Anggota</td>
+							<td class="p1">Kontak Pembimbing</td>
 							<td>
-								<input type="text" placeholder="Nama Anggota">
+								<input type="text" name="schteam_coach_contact" placeholder="Kontak Pembimbing">
+							</td>
+						</tr>						
+						<tr>
+							<td class="p1" class="tdanggota1">Anggota1</td>
+							<td>
+								<input type="text" name="anggota[]" placeholder="Nama Anggota">
 							</td>
 							<td>
-								<a href="#" class="btn-add">+</a>
+								<a href="#" class="btn-add" id="addanggota">+</a>
 							</td>
 						</tr>
+						<tr style="" class="tdanggota1">
+							<td class="p1"  >NISN</td>
+							<td>
+								<input type="text" name="nisn[]" placeholder="NISN Anggota 1">
+							</td>
+						</tr>	
+						<tr style="display:none;" class="tdanggota2">
+							<td class="p1"  >Anggota2</td>
+							<td>
+								<input type="text" name="anggota[]" placeholder="Nama Anggota">
+							</td>
+						</tr>
+						<tr style="display:none;" class="tdanggota2">
+							<td class="p1"  >NISN</td>
+							<td>
+								<input type="text" name="nisn[]" placeholder="NISN Anggota 2">
+							</td>
+						</tr>							
+						<tr style="display:none;" class="tdanggota3">
+							<td class="p1" >Anggota3</td>
+							<td>
+								<input type="text" name="anggota[]" placeholder="Nama Anggota">
+							</td>
+						</tr>
+						<tr style="display:none;" class="tdanggota3"	>
+							<td class="p1"  >NISN</td>
+							<td>
+								<input type="text" name="nisn[]" placeholder="NISN Anggota 3">
+							</td>
+						</tr>																				
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>
+					<input type="submit" name="submit" value="Daftar" class="btn-edit">
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali</a>
+					<?php echo form_close(); ?>
 				</section>
 				<!-- /.content -->
 			</div>

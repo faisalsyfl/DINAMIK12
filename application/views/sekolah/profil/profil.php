@@ -15,7 +15,7 @@
 					<table class="school-info">
 						<tr>
 							<td class="p1">Nama Sekolah</td>
-							<td>SMAN 2 Bandung</td>
+							<td><?php echo $list['school_name']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Kota</td>
@@ -23,11 +23,11 @@
 						</tr>
 						<tr>
 							<td class="p1">Alamat</td>
-							<td>Jl. Ahmad Sanusi</td>
+							<td><?php echo $list['school_address']; ?></td>
 						</tr>
 						<tr>
-							<td class="p1">Nomor Telepon</td>
-							<td>083112341234</td>
+							<td class="p1">Email</td>
+							<td><?php echo $_SESSION['email']; ?></td>
 						</tr>
 					</table>
 					<br>

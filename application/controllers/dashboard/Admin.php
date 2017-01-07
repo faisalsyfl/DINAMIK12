@@ -169,7 +169,7 @@ class Admin extends CI_Controller {
 
 	public function daftaracara(){
 		if(isset($_SESSION['logged_in'])){
-			$data['list'] = 
+			$data['list'] = $this->
 			$this->load->view('admin/layout/header');
 			$this->load->view('admin/daftaracara/index');
 			$this->load->view('admin/layout/footer');
