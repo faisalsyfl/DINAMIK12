@@ -20,17 +20,17 @@
 	<script src="<?php echo base_url("assets/js/custom/main.js"); ?>"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <!--<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
   
   <body>
-    <nav class="headroom headroom--unpinned navbar navbar-inverse navbar-fixed-top nav" style="">
+    <nav class="headroom headroom--unpinned navbar navbar-inverse navbar-fixed-top nav" style="" id="nav-indicator">
       <div class="collapse navbar-collapse head" style="">
         <a href="<?php echo site_url('/'); ?>"><img class="img" src="<?php echo base_url("assets/img/logo/logo.png"); ?>"></a>
       </div>
-      <div class="container">
+      <div class="container" >
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -54,4 +54,5 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
 

@@ -8,7 +8,7 @@
 			<div class="col-md-10 col-md-offset-1 foot-list">
 				<div class="col-sm-6 col-md-4 lokasi">
 					<h4><b>LOKASI</b></h4>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2460755780944!2d107.59213921419189!3d-6.861084495041789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b943c2c5ff%3A0xee36226510a79e76!2sUniversitas+Pendidikan+Indonesia+(UPI)!5e0!3m2!1sen!2sid!4v1479745205796" width="100%" height="auto" frameborder="0" style="border:0"></iframe>
+<!--					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2460755780944!2d107.59213921419189!3d-6.861084495041789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b943c2c5ff%3A0xee36226510a79e76!2sUniversitas+Pendidikan+Indonesia+(UPI)!5e0!3m2!1sen!2sid!4v1479745205796" width="100%" height="auto" frameborder="0" style="border:0"></iframe>-->
 				</div>
 				<div class="col-sm-6 col-md-4 kontak">
 					<h4><b>KONTAK</b></h4>
@@ -81,14 +81,15 @@
 		</div>
     </div><!-- /.container -->
 	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+
+    <script src="<?php echo base_url("assets/js/jquery/jquery.min.js"); ?>"></script>
     <script src="<?php echo base_url("assets/js/bootstrap/bootstrap.min.js");?>"></script>
-    <script src="<?php echo base_url("assets/js/carousel/owl.carousel.min.js"); ?>"></script> 
-    <script src="<?php echo base_url("assets/js/parallax/parallax.min.js"); ?>"></script> 
+    <script src="<?php echo base_url("assets/js/carousel/owl.carousel.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/js/parallax/parallax.min.js"); ?>"></script>
     <script src="<?php echo base_url("assets/js/other/ie10-viewport-bug-workaround.js");?>"></script>
-	<script src="<?php echo base_url("assets/js/jquery/jquery.countdown.min.js"); ?>"></script>
-	<script src="<?php echo base_url("assets/js/other/headroom.js"); ?>"></script> 
+    <script src="<?php echo base_url("assets/js/jquery/jquery.countdown.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/js/other/headroom.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/js/other/ziterz.min.js"); ?>"></script> 
 	<script src="<?php echo base_url("assets/js/other/app.js"); ?>"></script> 
     <script type="text/javascript">
@@ -148,7 +149,23 @@
 		// construct an instance of Headroom, passing the element
 		var headroom  = new Headroom(myElement);
 		// initialise
-		headroom.init(); 
+		headroom.init();
+
+        $(document).ready(function() {
+          var docHeight = $(document).height(),
+              windowHeight = $(window).height(),
+              scrollPercent;
+
+          $(window).scroll(function() {
+              scrollPercent = $(window).scrollTop() / (docHeight - windowHeight) * 100;
+
+              $('.scroll-progress').width(scrollPercent + '%');
+          });
+        });
+
+        if ( adaw == 1525) {
+            $("#nav-indicator").append("<div class='scroll-progress'></div>");
+        }
     </script>
   </body>
 </html>
