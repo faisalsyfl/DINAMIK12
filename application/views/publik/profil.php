@@ -29,11 +29,11 @@
 					</div>		
 					  <?php 
 					}}
-					  ?>
+					  ?>				
 					<table class="school-info">
 						<tr>
-							<td class="p1">Nama Sekolah</td>
-							<td><?php echo $list['school_name']; ?></td>
+							<td class="p1">Username</td>
+							<td><?php echo $list['public_name']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Kota</td>
@@ -41,7 +41,7 @@
 						</tr>
 						<tr>
 							<td class="p1">Alamat</td>
-							<td><?php echo $list['school_address']; ?></td>
+							<td><?php echo $list['public_address']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Email</td>
@@ -49,12 +49,10 @@
 						</tr>
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>
-					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali
-					</a>
+					<a href="<?php echo site_url('dashboard/publikAction/') ?>" class="btn-kembali">Kembali</a>
 					<br>
 					<br>
-					<?php echo form_open('dashboard/sekolah/editPass'); ?>
+					<?php echo form_open('dashboard/publik/editPass'); ?>
 					<table class="school-info">
 						<tr>
 							<td class="p1">Password Lama</td>
@@ -69,7 +67,7 @@
 							<td><input type="password" name="aft2" class="form-control" placeholder="Re-Enter Password"></td>
 						</tr>						
 					</table>
-					<input type="submit" name="Pass" value="Ganti Password" class="btn-kembali">				
+					<input type="submit" name="Pass" value="Ganti Password" class="btn-kembali">								
 				</section>
 				<!-- /.content -->
 			</div>

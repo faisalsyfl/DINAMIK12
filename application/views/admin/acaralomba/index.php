@@ -9,6 +9,8 @@
 						<small>Panel Informasi</small>
 					</h1>
 				</section>
+				<!-- Main content -->
+				<section class="content">
 					<table id="allEve" class="table table-bordered" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
@@ -51,8 +53,6 @@
 			            </tr>
 			        		<?php  }?>
 			   	</table>
-				<!-- Main content -->
-				<section class="content">
 					
 				</section>
 				<!-- /.content -->

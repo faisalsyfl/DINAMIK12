@@ -47,11 +47,14 @@ class Sekolah extends CI_Controller {
 		PUB umum
 		SCT Tim sekolah
 	*/
-	public function profil($category = NULL)
+	public function profil($err = NULL)
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
 				$data['list'] = $this->SchoolModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+				if($err!=NULL){
+					$data['err'] = $err;
+				}
 				$this->load->view('sekolah/layout/header');
 				$this->load->view('sekolah/profil/profil',$data);
 				$this->load->view('sekolah/layout/footer');		
@@ -61,13 +64,28 @@ class Sekolah extends CI_Controller {
 		}	
 	}
 
+	public function editPass(){
+		$data = $this->input->post();
+		if($this->AccountModel->selectById($_SESSION['userid'])->row_array()['account_password'] == md5($data['bef'])){
+			if($data['aft1']==$data['aft2']){
+				$edited['account_password'] = md5($data['aft1']);
+				$this->AccountModel->update($_SESSION['userid'],$edited);
+				redirect(site_url('dashboard/Sekolah/profil/1'));
+			}else{
+				redirect(site_url('dashboard/Sekolah/profil/2'));
+			}
+		}else{
+			redirect(site_url('dashboard/Sekolah/profil/2'));
+		}
+	}
+
 	public function pendaftarantim(){
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-				$data['list'] = $this->EventModel->selectAll(8,0)->result_array();
-				$this->load->view('sekolah/layout/header');
-				$this->load->view('sekolah/pendaftarantim/pendaftarantim',$data);
-				$this->load->view('sekolah/layout/footer');		
+			$data['list'] = $this->EventModel->selectAll(8,0)->result_array();
+			$this->load->view('sekolah/layout/header');
+			$this->load->view('sekolah/pendaftarantim/pendaftarantim',$data);
+			$this->load->view('sekolah/layout/footer');		
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));

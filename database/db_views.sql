@@ -58,10 +58,13 @@ SELECT
 	sct.schteam_id as sct_id,
 	sct.schteam_name as sct_name,
 	eve.event_name as eve_name,
+	eve.event_price as eve_price,
 	sct.schteam_coach_name as sct_coach_name,
    pay.payment_status as pay_status,
    sch.school_id as sch_id,
-   acc.account_id as acc_id
+   acc.account_id as acc_id,
+   pay.payment_unique_code as pay_unique_code,
+   eve.event_id as eve_id
 FROM
 	tb_schteam sct
    JOIN
@@ -80,4 +83,32 @@ AND
 	sct.schteam_payment_id = pay.payment_id 
 AND
 	sct.schteam_account_id = acc.account_id	
+
+CREATE OR REPLACE VIEW v_pubteam_dash AS
+SELECT 	
+	pbt.pubteam_id as pbt_id,
+	pbt.pubteam_name as pbt_name,
+	pbt.pubteam_email as pbt_email,
+	pbt.pubteam_contact as pbt_contact,
+	eve.event_name as eve_name,
+	eve.event_price as eve_price,
+   pay.payment_status as pay_status,
+   pay.payment_unique_code as pay_unique_code,
+   pub.public_id as pub_id,
+   eve.event_id as eve_id
+
+FROM
+	tb_pubteam pbt
+   JOIN
+   tb_public pub
+	JOIN
+	tb_event eve
+	JOIN
+	tb_payment pay
+ON 
+   pbt.pubteam_public_id = pub.public_id
+AND
+	pbt.pubteam_event_id = eve.event_id
+AND
+	pbt.pubteam_payment_id = pay.payment_id 
 	

@@ -20,7 +20,9 @@
 								<select name="schteam_event_id">
 									<?php 
 										foreach($list as $eve){
-											echo "<option value='".$eve['event_id']."'>".$eve['event_name']."</option>";
+											if($eve['event_status'] == 1){
+												echo "<option value='".$eve['event_id']."'>".$eve['event_name']."</option>";
+											}
 										}
 									 ?>
 								</select>

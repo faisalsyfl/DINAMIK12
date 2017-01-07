@@ -31,6 +31,121 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		
+		<style>
+			.section-dashboard {
+				color: #007eff;
+			}
+			
+			.btn-daftar {
+				padding: 5px 10px 5px 10px;;
+				margin: 5px 5px 5px 0px;
+				border: #14910d 1px solid;
+				background-color: #54c921;
+				color: #fff;
+				font-size: 14px;
+			}
+			.btn-daftar:hover {
+				background-color: #14910d;
+				color: #fff;
+			}
+			.btn-daftar:active {
+				color: #fff;
+			}
+			.btn-daftar:visited {
+				color: #fff;
+			}
+			
+			.btn-add {
+				padding: 7px 13px 7px 13px;;
+				margin-left: -20px;
+				border: #14910d 1px solid;
+				background-color: #54c921;
+				color: #fff;
+				font-size: 14px;
+			}
+			.btn-add:hover {
+				background-color: #14910d;
+				color: #fff;
+			}
+			.btn-add:active {
+				color: #fff;
+			}
+			.btn-add:visited {
+				color: #fff;
+			}
+			
+			.btn-kembali {
+				padding: 5px 30px 5px 30px;;
+				margin: 5px 5px 5px 0px;
+				border: #002672 1px solid;
+				background-color: #0a337f;
+				color: #fff;
+				font-size: 14px;
+			}
+			.btn-kembali:hover {
+				background-color: #002672;
+				color: #fff;
+			}
+			.btn-kembali:active {
+				color: #fff;
+			}
+			.btn-kembali:visited {
+				color: #fff;
+			}
+			
+			.btn-edit {
+				padding: 5px 30px 5px 30px;;
+				margin: 5px 5px 5px 0px;
+				border: #ffa619 1px solid;
+				background-color: #fcbe2a;
+				color: #fff;
+				font-size: 14px;
+			}
+			.btn-edit:hover {
+				background-color: #ffa619;
+				color: #fff;
+			}
+			.btn-edit:active {
+				color: #fff;
+			}
+			.btn-edit:visited {
+				color: #fff;
+			}
+			
+			.school-info {
+				font-size: 18px;
+			}
+			.school-info td {
+				padding: 10px 20px 10px 10px;
+				color: #6d6d6d;
+			}
+			.school-info .p1 {
+				font-weight: bold;
+			}
+			.school-info .kode {
+				font-size: 24px;
+				font-weight: bold;
+				color: #007eff;
+			}
+			
+			.daftar-tim {
+				font-size: 18px;
+			}
+			.daftar-tim td {
+				padding: 10px 20px 10px 10px;
+				color: #6d6d6d;
+			}
+			.daftar-tim .p1 {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.daftar-tim input,select {
+				font-size: 14px;
+				width: 100%;
+				padding: 5px 10px 5px 10px;
+			}
+		</style>
 	</head>
 	<!-- ADD THE CLASS fixed TO GET A FIXED HEADER AND SIDEBAR LAYOUT -->
 	<!-- the fixed layout is not compatible with sidebar-mini -->
@@ -113,7 +228,7 @@
 									<!-- Menu Footer-->
 									<li class="user-footer">
 										<div class="pull-left">
-											<a href="#" class="btn btn-default btn-flat">Profil</a>
+											<a href="<?php echo site_url('dashboard/publik/profil') ?>" class="btn btn-default btn-flat">Profil</a>
 										</div>
 										<div class="pull-right">
 											<a href="<?php echo site_url('home/Akun/logout'); ?>" class="btn btn-default btn-flat">Keluar</a>
@@ -144,68 +259,12 @@
 					</div>
 					<!-- sidebar menu: : style can be found in sidebar.less -->
 					<ul class="sidebar-menu">
-						<li class="header">Admin Menu</li>
-						<li class="active"><a href="<?php echo site_url('dashboard/admin/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
-						<li>
-							<a href="<?php echo site_url('dashboard/admin/acaralomba') ?>"><i class="fa fa-star"></i> 
-								<span>Acara & Lomba </span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">14</small>            
-								</span>
-							</a>
-						</li>			
+						<li class="header">Menu Publik</li>
+						<li class="active"><a href="<?php echo site_url('dashboard/publik/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
+
 						<li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>										
-						<li class="">
-							<a href="#"><i class="fa fa-users"></i> Akun
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu" style="display: none;">
-								<li>
-									<a href="<?php echo site_url('dashboard/admin/akun') ?>">
-										<i class="fa fa-users"></i> Semua Akun
-										<span class="pull-right-container">
-											<small class="label pull-right bg-blue"><?php echo $totalAcc; ?></small>            
-										</span>
-									</a>
-								</li>
-								<li class="">
-									<a href="#"><i class="fa fa-user"></i> Kategori Akun
-										<span class="pull-right-container">
-											<i class="fa fa-angle-left pull-right"></i>
-										</span>
-									</a>
-									<ul class="treeview-menu" style="display: none;">
-										<li><a href="<?php echo site_url('dashboard/admin/akun/SCH') ?>">Akun Sekolah</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/SCT') ?>">Akun Tim Sekolah</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/PUB') ?>">Akun Umum</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/PBT') ?>">Akun Tim Umum</a></li>										
-										<li><a href="<?php echo site_url('dashboard/admin/akun/COR') ?>">Akun Koordinator</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/JDG') ?>">Akun Juri</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>											
-						<li>
-							<a href="#">
-								<i class="fa fa-newspaper-o"></i> 
-								<span>Berita</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>												
-						<li>
-							<a href="#"><i class="fa fa-thumbs-up"></i> 
-								<span>Hasil Penjurian</span>
 								<span class="pull-right-container">
 									<small class="label pull-right bg-blue">777</small>            
 								</span>
@@ -218,112 +277,24 @@
 									<small class="label pull-right bg-red">3</small>            
 								</span>
 							</a>
-						</li>						
+						</li>
 						<li>
 							<a href="#">
-								<i class="fa fa-users"></i> 
-								<span>Peserta Bazaar</span>
+								<i class="fa fa-newspaper-o"></i> 
+								<span>Berita</span>
 								<span class="pull-right-container">
 									<small class="label pull-right bg-blue">777</small>            
 								</span>
 							</a>
-						</li>											
+						</li>
 						<li>
-							<a href="#">
-								<i class="fa fa-user"></i>
-								<span>Data Individual Peserta</span>
+							<a href="#"><i class="fa fa-thumbs-up"></i> 
+								<span>Hasil Penjurian</span>
 								<span class="pull-right-container">
 									<small class="label pull-right bg-blue">777</small>            
 								</span>
 							</a>
-						</li>											
-						<li class="">
-							<a href="#"><i class="fa fa-users"></i> Tim Peserta Acara
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu" style="display: none;">
-								<li>
-									<a href="#"><i class="fa fa-users"></i>
-										<span>Semua Tim</span>
-										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">777</small>            
-										</span>
-									</a>
-								</li>
-								<li class="">
-									<a href="#"><i class="fa fa-user"></i> Kategori Acara
-										<span class="pull-right-container">
-											<i class="fa fa-angle-left pull-right"></i>
-										</span>
-									</a>
-									<ul class="treeview-menu" style="display: none;">
-										<li><a href="#">Dinamik STAR</a></li>
-										<li><a href="#">Donor Darah</a></li>
-										<li><a href="#">Festival</a></li>
-										<li><a href="#">Seminar Nasional</a></li>
-										<li><a href="#">Talkshow</a></li>
-										<li><a href="#">Workshop Guru</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>										
-						<li>
-							<a href="#"><i class="fa fa-users"></i> Tim Peserta Lomba
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu" style="display: none;">
-								<li>
-									<a href="#"><i class="fa fa-users"></i><span>Semua Tim</span>
-										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">777</small>            
-										</span>
-									</a>
-								</li>
-								<li class="">
-									<a href="#"><i class="fa fa-user"></i> Kategori Lomba
-										<span class="pull-right-container">
-											<i class="fa fa-angle-left pull-right"></i>
-										</span>
-									</a>
-									<ul class="treeview-menu" style="display: none;">
-										<li><a href="#">CS Programming Contest</a></li>
-										<li><a href="#">Keamanan Jaringan</a></li>
-										<li><a href="#">Lomba Cipta Animasi</a></li>
-										<li><a href="#">Lomba Cipta Web</a></li>
-										<li><a href="#">Lomba Desain Grafis</a></li>
-										<li><a href="#">Olimpiade TIK</a></li>
-										<li><a href="#">PC Assembling</a></li>
-										<li><a href="#">Robot Line Follower</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>											
-						<li>
-							<a href="#">
-								<i class="fa fa-user"></i>
-								<span>Daftar Lomba</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>											
-						<li>
-							<a href="<?php echo site_url('dashboard/admin/daftaracara'); ?>">
-								<i class="fa fa-user"></i>
-								<span>Daftar Acara</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>																		
-						<li class="header">LABELS</li>
-						<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Penting</span></a></li>
-						<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Peringatan</span></a></li>
-						<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Informasi</span></a></li>
+						</li>
 					</ul>
 				</section>
 			<!-- /.sidebar -->
