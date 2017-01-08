@@ -64,7 +64,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 7 - 8 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA C, Universitas Pendidikan Indonesia
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
 					  </p>
 					  <p class="event-detail-text">
 					  <?php echo $list[2]['event_description']; ?>
