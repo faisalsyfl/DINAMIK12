@@ -89,7 +89,7 @@
     <script src="<?php echo base_url("assets/js/other/ie10-viewport-bug-workaround.js");?>"></script>
 	<script src="<?php echo base_url("assets/js/jquery/jquery.countdown.min.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/js/other/headroom.js"); ?>"></script> 
-	<script src="<?php echo base_url("assets/js/other/ziterz.min.js"); ?>"></script> 
+	<script src="<?php echo base_url("assets/js/other/graf.min.js"); ?>"></script> 
 	<script src="<?php echo base_url("assets/js/other/app.js"); ?>"></script> 
     <script type="text/javascript">
       $(document).ready(function() {
@@ -121,18 +121,18 @@
 		  	+ '<div class="col-md-8 col-md-offset-2">'
 
 		    + '<div class="col-md-3 col-xs-3">'
-		    + '<h2 class="countdown" id="day">%w</h2>'
-		    + '<span class="countdown-title">Minggu</span>'
-		    + '</div>'
-
-		    + '<div class="col-md-3 col-xs-3">'
-		    + '<h2 class="countdown" id="day">%d</h2>'
+		    + '<h2 class="countdown" id="day">%D</h2>'
 		    + '<span class="countdown-title">Hari</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%H</h2>'
 		    + '<span class="countdown-title">Jam</span>'
+		    + '</div>'
+
+		    + '<div class="col-md-3 col-xs-3">'
+		    + '<h2 class="countdown" id="day">%M</h2>'
+		    + '<span class="countdown-title">Menit</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
