@@ -28,7 +28,9 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/ldg.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA DESAIN GRAFIS</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Selasa - Sabtu, 14 - 18 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <br>
+						Babak Penyisihan : 14-18 Maret 2017<br>
+						Babak Final      : 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -59,7 +61,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/opk.png"); ?>" class="img-contest brightness" align="center"><br><br>
 					  <h3 class="event-detail-title">OLIMPIADE TIK</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at, 07 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 7-8 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA C, Universitas Pendidikan Indonesia

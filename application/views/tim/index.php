@@ -15,6 +15,7 @@
 					<p class="school-info">
 						Peraturan lomba secara lengkap bisa di download <a href="#"><b><a href="<?php echo $schteam['event_rule']; ?>" title="">Disini</a></b></a><br>
 						Untuk file/berkas yang harus diupload silahkan upload di google drive atau jasa penyedia layanan serupa.<br>
+						<small class="keterangan">*Lomba yang tidak memerlukan upload file tidak perlu mengisi</small><br>
 						<small class="keterangan">*Pastikan file bisa di download melalui link yang dimasukan</small>
 					</p>
 					<p class="school-info">
@@ -39,7 +40,7 @@
 					<script type="text/javascript" language="javascript">
 						function checkform()
 						{
-							if (document.getElementById("link-file").value.length == 0) {
+							if (document.getElementById("link-file").value == "No File Found") {
 								document.getElementById("btn-submit").disabled = false;
 							}
 						}

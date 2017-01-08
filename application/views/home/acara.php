@@ -47,7 +47,7 @@
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>08.00 - 15.00 WIB
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
 					 	<?php echo $list[9]['event_description']; ?>

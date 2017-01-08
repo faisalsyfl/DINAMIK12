@@ -54,6 +54,7 @@
 					</a>
 					<br>
 					<br>
+					<h3 class="section-dashboard">Ganti Password</h3>
 					<?php echo form_open('dashboard/sekolah/editPass'); ?>
 					<table class="school-info">
 						<tr>

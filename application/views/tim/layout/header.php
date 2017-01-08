@@ -194,6 +194,7 @@
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
 							<!-- Messages: style can be found in dropdown.less-->
+							<!--
 							<li class="dropdown messages-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 									<i class="fa fa-envelope-o"></i>
@@ -202,9 +203,10 @@
 								<ul class="dropdown-menu">
 									<li class="header">You have 4 messages</li>
 									<li>
-										<!-- inner menu: contains the actual data -->
+										
 										<ul class="menu">
-											<li><!-- start message -->
+											
+											<li>
 												<a href="#">
 													<div class="pull-left">
 														<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
@@ -216,13 +218,13 @@
 													<p>Why not buy a new awesome theme?</p>
 												</a>
 											</li>
-											<!-- end message -->
+											
 										</ul>
 									</li>
 									<li class="footer"><a href="#">See All Messages</a></li>
 								</ul>
 							</li>
-				 
+							-->
 							<!-- User Account: style can be found in dropdown.less -->
 							<li class="dropdown user user-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -280,21 +282,12 @@
 					</div>
 					<!-- sidebar menu: : style can be found in sidebar.less -->
 					<ul class="sidebar-menu">
-						<li class="header">Menu Sekolah</li>
+						<li class="header">Menu Tim</li>
 						<li class="active"><a href="<?php echo site_url('dashboard/tim/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
 						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>
-						<li>
-							<a href="#"><i class="fa fa-star"></i> 
-								<span>Acara & Lomba </span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">14</small>            
-								</span>
-							</a>
-						</li>
-						<?php 
+						
 						} ?>
-
+						<!--
 						<li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
@@ -328,6 +321,7 @@
 								</span>
 							</a>
 						</li>
+						-->
 					</ul>
 				</section>
 			<!-- /.sidebar -->
