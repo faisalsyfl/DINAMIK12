@@ -121,8 +121,8 @@
 		  	+ '<div class="col-md-8 col-md-offset-2">'
 
 		    + '<div class="col-md-3 col-xs-3">'
-		    + '<h2 class="countdown" id="day">%d</h2>'
-		    + '<span class="countdown-title">Hari</span>'
+		    + '<h2 class="countdown" id="day">%D</h2>'
+		    + '<span class="countdown-title">Minggu</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
