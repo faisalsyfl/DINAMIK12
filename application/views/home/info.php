@@ -14,8 +14,8 @@
 				<ul class="nav nav-tabs event-tabs">
 					<li class="active"><a data-toggle="tab" href="#tentang">TENTANG</a></li>
 					<li><a data-toggle="tab" href="#faq">FAQ</a></li>
-					<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
-					<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>
+					<!--<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>-->
+					<!--<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>-->
 				</ul>
 				
 				<div class="tab-content event-detail-list">
@@ -63,12 +63,14 @@
 							<li> Pilih acara apa saja yang sudah dibayar biaya pendaftarannya, kemudian tuliskan tiap kode pembayarannya pada deskripsi, pilih file bukti pembayaran kemudian tekan 'submit'</li>
 							<li> Jika sudah di-verifikasi maka anda sudah terdaftar menjadi peserta</li>
 						</ol>
+						<!--
 					  <h3 class="event-detail-title">PERTANYAAN</h3>
 					    <ul class="event-detail-text">
 							<li><b>Bagaimana caranya mendapatkan file-file yang dibutuhkan untuk keperluan lomba DINAMIK 12?</b><br>
 								Buka tab unduhan pada halaman <a href="<?php echo site_url('/info'); ?>" style="color: #ffa619;" target="_blank">Info</a> atau download melalui dashboard tim.
 								</li>
 						</ul>
+						-->
 					</div>
 					
 					<!-- KONTAK -->
@@ -93,6 +95,7 @@
 					</div>
 					
 					<!-- UNDUHAN -->
+					<!--
 					<div id="unduhan" class="tab-pane fade in">
 					  <h3 class="event-detail-title">UNDUHAN</h3>
 					  <p class="event-detail-text">
@@ -102,6 +105,7 @@
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> Booklet DINAMIK12 Lengkap
 					  </p>
 					</div>
+					-->
 				</div>
 			</div>
 
