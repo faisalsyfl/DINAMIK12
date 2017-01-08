@@ -60,7 +60,6 @@
 										// if($this->input->cookie('username')) echo $this->input->cookie('username'); 
 									?>
 									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-									
 								</div>
 								<div class="form-group has-feedback">
 									<input type="password" class="form-control" placeholder="Kata sandi" name="password" value="">
@@ -117,13 +116,12 @@
 
 							<div class="register-box-body">
 							<p class="login-box-msg">Pendaftaran Sekolah (Lomba)</p>
-
 								<?php echo form_open('home/Akun/regAsSchool'); ?>
 									<div class="form-group has-feedback">
 										<select name="grade" class="form-control">
-											<!--<option value="SD">SD</option>-->
 											<option value="">--Pilih Kategori--</option>
-											<option value="SMP">SMP</option>
+											<!-- <option value="SD">SD</option> -->
+											<!-- <option value="SMP">SMP</option> -->
 											<option value="SMA">SMA</option>
 											<option value="SMK">SMK</option>
 										</select>
@@ -141,7 +139,6 @@
 											?>
 										</select>
 									</div>
-
 									<div class="form-group has-feedback">
 										<input type="email" class="form-control" placeholder="E-mail Resmi Sekolah" name="email">
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>

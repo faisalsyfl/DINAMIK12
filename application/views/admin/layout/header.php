@@ -158,7 +158,7 @@
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
 						</li>										
@@ -199,7 +199,7 @@
 								<i class="fa fa-newspaper-o"></i> 
 								<span>Berita</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
 						</li>												
@@ -207,14 +207,14 @@
 							<a href="#"><i class="fa fa-thumbs-up"></i> 
 								<span>Hasil Penjurian</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-envelope"></i> 
 								<span>Pesan Masuk</span><span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 									<small class="label pull-right bg-red">3</small>            
 								</span>
 							</a>
@@ -224,7 +224,7 @@
 								<i class="fa fa-users"></i> 
 								<span>Peserta Bazaar</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
 						</li>											
@@ -233,7 +233,7 @@
 								<i class="fa fa-user"></i>
 								<span>Data Individual Peserta</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
+									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
 						</li>											
@@ -245,10 +245,10 @@
 							</a>
 							<ul class="treeview-menu" style="display: none;">
 								<li>
-									<a href="#"><i class="fa fa-users"></i>
+									<a href="<?php echo site_url('dashboard/admin/timacara'); ?>"><i class="fa fa-users"></i>
 										<span>Semua Tim</span>
 										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">777</small>            
+											<small class="label pull-right bg-blue">???</small>            
 										</span>
 									</a>
 								</li>
@@ -279,7 +279,7 @@
 								<li>
 									<a href="#"><i class="fa fa-users"></i><span>Semua Tim</span>
 										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">777</small>            
+											<small class="label pull-right bg-blue">???</small>            
 										</span>
 									</a>
 								</li>
@@ -301,25 +301,7 @@
 									</ul>
 								</li>
 							</ul>
-						</li>											
-						<li>
-							<a href="#">
-								<i class="fa fa-user"></i>
-								<span>Daftar Lomba</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>											
-						<li>
-							<a href="<?php echo site_url('dashboard/admin/daftaracara'); ?>">
-								<i class="fa fa-user"></i>
-								<span>Daftar Acara</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">777</small>            
-								</span>
-							</a>
-						</li>																		
+						</li>																											
 						<li class="header">LABELS</li>
 						<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Penting</span></a></li>
 						<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Peringatan</span></a></li>

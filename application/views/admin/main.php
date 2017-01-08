@@ -17,7 +17,7 @@
 						<!-- small box -->
 							<div class="small-box bg-aqua">
 								<div class="inner">
-									<h3><?php echo $total; ?></h3>
+									<h3><?php echo $totalakun; ?></h3>
 									<p>Jumlah Akun</p>
 								</div>
 								<div class="icon">
@@ -27,11 +27,11 @@
 							</div>
 						</div>
 						<!-- ./col -->
-						<div class="col-lg-4 col-xs-6">
+						<div class="col-lg-4	 col-xs-6">
 						<!-- small box -->
 							<div class="small-box bg-green">
 								<div class="inner">
-									<h3>666</h3>
+									<h3><?php echo $totaltim; ?></h3>
 									<p>Jumlah Tim Lomba & Peserta Acara</p>
 								</div>
 								<div class="icon">
@@ -47,7 +47,7 @@
 							<!-- small box -->
 							<div class="small-box bg-red">
 								<div class="inner">
-									<h3>65</h3>
+									<h3>??</h3>
 									<p>Pesan Baru</p>
 								</div>
 								<div class="icon">
@@ -82,12 +82,14 @@
 										<!-- /.col -->
 										<div class="col-md-4">
 											<ul class="chart-legend clearfix">
-												<li><i class="fa fa-circle-o text-red"></i> Kategori 1</li>
-												<li><i class="fa fa-circle-o text-green"></i>  Kategori 2</li>
-												<li><i class="fa fa-circle-o text-yellow"></i>  Kategori 3</li>
-												<li><i class="fa fa-circle-o text-aqua"></i>  Kategori 4</li>
-												<li><i class="fa fa-circle-o text-light-blue"></i>  Kategori 5</li>
-												<li><i class="fa fa-circle-o text-gray"></i>  Kategori 6</li>
+												<li><i class="fa fa-circle-o text-red"></i> LDG</li>
+												<li><i class="fa fa-circle-o text-green"></i>  LCW</li>
+												<li><i class="fa fa-circle-o text-yellow"></i> OTIK</li>
+												<li><i class="fa fa-circle-o text-aqua"></i>  PCA</li>
+												<li><i class="fa fa-circle-o text-light-blue"></i>  CSPC</li>
+												<li><i class="fa fa-circle-o text-gray"></i>  LCA</li>
+												<li><i class="fa fa-circle-o text-pink"></i>  RLF</li>
+												<li><i class="fa fa-circle-o text-beige"></i>  KJ</li>
 											</ul>
 										</div>
 										<!-- /.col -->
@@ -108,14 +110,14 @@
 								</div>
 								<div class="box-body collapsed-box">
 									<ul class="nav nav-pills nav-stacked">
-										<li><a href="#">Kategori 1<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 2<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 3<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 4<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 5<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 6<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 7<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 8<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">LDG<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">LCW<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">OTIK<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">PCA<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">CSPC<span class="pull-right text-red"></i> 12</span></a></li>
+										<li><a href="#">LCA<span class="pull-right text-red"></i> 12</span></a></li>
+										<li><a href="#">RLF<span class="pull-right text-red"></i> 12</span></a></li>
+										<li><a href="#">KJ<span class="pull-right text-red">12</span></a></li>
 									</ul>
 									<!-- /.row -->
 								</div>
@@ -150,12 +152,7 @@
 											<ul class="chart-legend clearfix">
 												<li><i class="fa fa-circle-o text-red"></i> Kategori 1</li>
 												<li><i class="fa fa-circle-o text-green"></i>  Kategori 2</li>
-												<li><i class="fa fa-circle-o text-yellow"></i>  Kategori 3</li>
-												<li><i class="fa fa-circle-o text-aqua"></i>  Kategori 4</li>
-												<li><i class="fa fa-circle-o text-light-blue"></i>  Kategori 5</li>
-												<li><i class="fa fa-circle-o text-gray"></i>  Kategori 6</li>
-												<li><i class="fa fa-circle-o text-gray"></i>  Kategori 7</li>
-												<li><i class="fa fa-circle-o text-gray"></i>  Kategori 8</li>
+
 											</ul>
 										</div>
 										<!-- /.col -->

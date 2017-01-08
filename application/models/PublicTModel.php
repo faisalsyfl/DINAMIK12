@@ -41,11 +41,28 @@ class PublicTModel extends CI_Model {
 		$this->db->where('pubteam_id',$id);
 		$this->db->delete($this->tableName);
 	}
-	public function viewPubtDash($id){
+	// public function selectViewPubtDash(){
+	// 	$this->db->select('*');
+	// 	$this->db->from('v_pubteam_dash');
+	// 	$this->db->where('pub_id',$id);
+
+	// 	return $this->db->get();		
+	// }
+	public function viewPubtDash($id=NULL){
+		$this->db->select('*');
+		$this->db->from('v_pubteam_dash');
+		if($id != NULL){
+			$this->db->where('pub_id',$id);
+		}
+
+		return $this->db->get();
+	}
+
+	public function viewPubtDashByEvent($id){
 		$this->db->select('*');
 		$this->db->from('v_pubteam_dash');
 		$this->db->where('pub_id',$id);
 
-		return $this->db->get();
+		return $this->db->get();		
 	}
 }

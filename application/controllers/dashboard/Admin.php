@@ -26,7 +26,8 @@ class Admin extends CI_Controller {
 		if(isset($_SESSION['logged_in'])){
 			if($_SESSION['category']=='ADM' || $_SESSION['category']=='ADMSU' || $_SESSION['category']=='COOR'){
 				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
+				$data['totalakun'] = $this->AccountModel->selectAll()->num_rows();
+				$data['totaltim'] = $this->SchoolTModel->selectAll()->num_rows() + $this->PublicTModel->selectAll()->num_rows();
 				// var_dump($_SESSION['category']);
 				$this->load->view('admin/layout/header',$head);
 				$this->load->view('admin/main',$data);
@@ -167,12 +168,23 @@ class Admin extends CI_Controller {
 		}	
 	}
 
-	public function daftaracara(){
+	public function timacara($cat=NULL){
 		if(isset($_SESSION['logged_in'])){
-			$data['list'] = $this->
-			$this->load->view('admin/layout/header');
-			$this->load->view('admin/daftaracara/index');
-			$this->load->view('admin/layout/footer');
+			if($cat==NULL){
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();			
+				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/timacara/index',$data);
+				$this->load->view('admin/layout/footer');
+			}else{
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();			
+				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/timacara/index',$data);
+				$this->load->view('admin/layout/footer');				
+			}
 		}else{
 				redirect(site_url('/akun'));		
 		}
@@ -200,5 +212,5 @@ class Admin extends CI_Controller {
 			redirect(site_url('dashboard/admin/acaralomba'));
 		}
 	}
-	
 }
+	

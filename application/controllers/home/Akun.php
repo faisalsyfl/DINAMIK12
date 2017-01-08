@@ -151,34 +151,40 @@ class Akun extends CI_Controller{
 	 */
 	public function regAsSchool(){
 		if(isset($_POST['btnDaftarSekolah'])){
-			$passgen = $this->UtilityModel->generatePassword();
-			$passgen = implode("",$passgen);
-			
-			$acc['account_email'] = $this->input->post('email');
-			$asd = explode(" ",$this->input->post('name'));
-			$acc['account_username'] = strtolower(implode("",$asd));
-			$acc['account_password'] = md5($passgen);
-			$acc['account_image'] = "/assets/img/icon_dashboard/sekolah.jpg";
-			$acc['account_category_id'] = "SCH";
-			$acc['account_status'] = "1";
-			$this->AccountModel->insert($acc);
-			
-			// var_dump($acc);
-			
-			$sch['school_name'] = $this->input->post('name');
-			$sch['school_grade'] = $this->input->post('grade');
-			$sch['school_contact'] = $this->input->post('contact');
-			$sch['school_city_id'] = $this->input->post('city');
-			$sch['school_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
-			// var_dump($sch);
-			$this->SchoolModel->insert($sch);
-			
-			$data['account_username'] = $acc['account_username'];
-			$data['account_password'] = $passgen;
-			$email = $acc['account_email'];
-			$this->sendmail("Akun DINAMIK12", $email, "Detail Pendaftaran Akun ".$sch['school_name'], $data, "reg");
-			
-			redirect(site_url('/akun/success'));
+			$x =  count($this->AccountModel->selectByEmail($this->input->post('email')));
+			$y =  count($this->AccountModel->selectByUsername(strtolower(implode("",explode(" ",$this->input->post('name'))))));
+			if($x == 0 && $y == 0){
+
+				$passgen = $this->UtilityModel->generatePassword();
+				$passgen = implode("",$passgen);
+				
+				$acc['account_email'] = $this->input->post('email');
+				$asd = explode(" ",$this->input->post('name'));
+				$acc['account_username'] = strtolower(implode("",$asd));
+				$acc['account_password'] = md5($passgen);
+				$acc['account_image'] = "/assets/img/icon_dashboard/sekolah.jpg";
+				$acc['account_category_id'] = "SCH";
+				$acc['account_status'] = "1";
+				$this->AccountModel->insert($acc);
+				
+				// var_dump($acc);
+				
+				$sch['school_name'] = $this->input->post('name');
+				$sch['school_grade'] = $this->input->post('grade');
+				$sch['school_contact'] = $this->input->post('contact');
+				$sch['school_city_id'] = $this->input->post('city');
+				$sch['school_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
+				// var_dump($sch);
+				$this->SchoolModel->insert($sch);
+				
+				$data['account_username'] = $acc['account_username'];
+				$data['account_password'] = $passgen;
+				$email = $acc['account_email'];
+				$this->sendmail("Akun DINAMIK12", $email, "Detail Pendaftaran Akun ".$sch['school_name'], $data, "reg");
+				redirect(site_url('/akun/success'));
+			}else{
+				redirect(site_url('/akun/failedreg'));
+			}
 		}
 	}
 
@@ -191,23 +197,28 @@ class Akun extends CI_Controller{
 	 */
 	public function regAsPublic(){
 		if(isset($_POST['btnDaftarPublik'])){
-			
-			$acc['account_email'] = $this->input->post('email');
-			$asd = explode(" ",$this->input->post('name'));
-			$acc['account_username'] = strtolower(implode("",$asd));
-			$acc['account_password'] = md5($this->input->post('pass2'));
-			$acc['account_image'] = "/assets/img/icon_dashboard/umum.jpg";
-			$acc['account_category_id'] = "PUB";
-			$acc['account_status'] = "1";
-			$this->AccountModel->insert($acc);
-			
-			$pub['public_name'] = $this->input->post('name');
-			$pub['public_contact'] = $this->input->post('contact');
-			$pub['public_city_id'] = $this->input->post('city');
-			$pub['public_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
-			$this->PublicModel->insert($pub);
+			$x =  count($this->AccountModel->selectByEmail($this->input->post('email')));
+			$y =  count($this->AccountModel->selectByUsername(strtolower(implode("",explode(" ",$this->input->post('name'))))));		
+			if($x==0||$y==0){			
+				$acc['account_email'] = $this->input->post('email');
+				$asd = explode(" ",$this->input->post('name'));
+				$acc['account_username'] = strtolower(implode("",$asd));
+				$acc['account_password'] = md5($this->input->post('pass2'));
+				$acc['account_image'] = "/assets/img/icon_dashboard/umum.jpg";
+				$acc['account_category_id'] = "PUB";
+				$acc['account_status'] = "1";
+				$this->AccountModel->insert($acc);
+				
+				$pub['public_name'] = $this->input->post('name');
+				$pub['public_contact'] = $this->input->post('contact');
+				$pub['public_city_id'] = $this->input->post('city');
+				$pub['public_account_id'] = $this->AccountModel->selectByUsername($acc['account_username'])['account_id'];
+				$this->PublicModel->insert($pub);
 
-			redirect(site_url('/akun/success'));			
+				redirect(site_url('/akun/success'));			
+			}else{
+				redirect(site_url('/akun/failedreg'));
+			}
 		}
 	}
 
@@ -221,7 +232,6 @@ class Akun extends CI_Controller{
 		if(isset($_POST['btnForgot'])){
 			$passgen = $this->UtilityModel->generatePassword();
 			$passgen = implode("",$passgen);
-			
 			$email = $this->input->post('email');
 			$edited['account_password'] = md5($passgen);
 			
@@ -247,7 +257,6 @@ class Akun extends CI_Controller{
 		/*
 			** SEND MAIL **
 		*/
-		
 		$config = Array(
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',

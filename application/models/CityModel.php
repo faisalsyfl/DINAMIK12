@@ -19,6 +19,13 @@ class CityModel extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function selectById($id){
+		$this->db->select('*');
+		$this->db->from($this->tableName);
+		$this->db->where('id',$id);
+		return $this->db->get();		
+	}
+
 }
 
 /* End of file tb_account_model.php */
