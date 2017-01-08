@@ -46,9 +46,10 @@ class SchoolTModel extends CI_Model {
 		$this->db->where('schteam_id',$id);
 		$this->db->delete($this->tableName);
 	}
-	public function viewSchtDash(){
+	public function viewSchtDash($id){
 		$this->db->select('*');
 		$this->db->from('v_schteam_dash');
+		$this->db->where('sch_id',$id);
 		return $this->db->get();
 	}
 	public function selectByAccIdJoin($id){

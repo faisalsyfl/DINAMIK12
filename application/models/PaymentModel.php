@@ -26,6 +26,12 @@ class PaymentModel extends CI_Model {
 		$this->db->where('acc_id', $accid);
 		return $this->db->get()->row_array();
 	}
+	public function selectById($id){
+		$this->db->select('*');
+		$this->db->from($this->tableName);
+		$this->db->where('payment_id', $id);
+		return $this->db->get();
+	}	
 
 	public function insert($data){
 		$this->db->insert($this->tableName,$data);

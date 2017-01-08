@@ -261,7 +261,11 @@
 					<ul class="sidebar-menu">
 						<li class="header">Menu Sekolah</li>
 						<li class="active"><a href="<?php echo site_url('dashboard/sekolah/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
-s
+						<li>
+							<a href="<?php echo site_url('dashboard/sekolah/uploadBukti'); ?>"><i class="fa fa-file"></i> 
+								<span>Upload Bukti</span>
+							</a>
+						</li>		
 						<!-- <li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>

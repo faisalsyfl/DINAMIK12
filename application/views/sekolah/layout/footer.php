@@ -43,6 +43,12 @@
 			    		$('.tdanggota3').show('slow');
 			    	}
 			    });
+			    $('.cbbayar').change(function() {
+			        if($(this).is(":checked")) {
+			        	$('#btn-upload').show('slow');
+			        }
+			        // $('#textbox1').val($(this).is(':checked'));        
+			    });			    
 			} );
 		</script>		
 	</body>

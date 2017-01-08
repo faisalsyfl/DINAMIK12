@@ -19,7 +19,7 @@
 					<?php foreach($list as $data){ 
 						if($data['pay_status'] == 0 && $data['pay_document']==NULL){?>
 						<label class="checkbox-inline" style="font-size:18px;">
-						  <input type="checkbox" id="inlineCheckbox1" value="<?php echo $data['pay_id']?>" name="pay_id[]	"> <?php echo $data['sct_name'];?>
+						  <input type="checkbox" id="inlineCheckbox1" class="cbbayar" value="<?php echo $data['pay_id']?>" name="pay_id[]	"> <?php echo $data['sct_name'];?>
 						</label>									
 					<?php }} ?>
 					<p class="school-info">
@@ -32,7 +32,7 @@
 					  </div>
 					  <textarea name="payment_description" class="form-control" placeholder="Deksripsikan Bukti Pembayaran anda, sertakan tanggal." rows=5></textarea>
 					  <br>
-						<input type="submit" class="btn-submit btn btn-primary" id="btn-submit" value="Submit"><br>
+						<input type="submit" class="btn-submit btn btn-primary" id="btn-upload" value="Submit" style="display:none;"><br>
 					</form>
 
 				</section>

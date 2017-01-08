@@ -41,9 +41,10 @@ class PublicTModel extends CI_Model {
 		$this->db->where('pubteam_id',$id);
 		$this->db->delete($this->tableName);
 	}
-	public function viewPubtDash(){
+	public function viewPubtDash($id){
 		$this->db->select('*');
 		$this->db->from('v_pubteam_dash');
+		$this->db->where('pub_id',$id);
 
 		return $this->db->get();
 	}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 07 Jan 2017 pada 20.03
+-- Generation Time: 08 Jan 2017 pada 08.36
 -- Versi Server: 10.1.9-MariaDB
 -- PHP Version: 7.0.1
 
@@ -66,8 +66,9 @@ INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `ac
 (20, 'dinamik.cs@upi.edu', 'talkshow', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:38', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (21, 'dinamik.cs@upi.edu', 'workshop', '21232f297a57a5a743894a0e4a801fc3', '2017-01-03 09:36:40', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (31, 'sman11bdg@sch.id', 'sman11bandung', 'af5003a5ac23ae93e207489ccda88af9', '2017-01-07 18:58:10', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(32, 'faisalsyfl@gmail.com', 'faisalsyfl', '70444599d70b97bfbc4168afb82b9b6f', '2017-01-07 19:02:41', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(57, 'sman11bdg@sch.id', 'gogogogo', '18b9893e2636f3bac2815b5d79343733', '2017-01-07 18:30:49', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0);
+(32, 'faisalsyfl@gmail.com', 'faisalsyfl', '21232f297a57a5a743894a0e4a801fc3', '2017-01-08 06:15:54', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
+(63, 'rayhanrr@gmail.com', 'rayhanrezki', 'd7a273c3becade875278fc5c4391a502', '2017-01-08 06:38:10', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
+(64, 'smansabdg@sch.id', 'sman1bandung', '7815696ecbf1c96e6894b779456d330e', '2017-01-08 07:10:32', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -673,6 +674,7 @@ CREATE TABLE `tb_event` (
   `event_status` tinyint(1) NOT NULL COMMENT '1 = valid/bisa daftar, 0 = tutup, 9 = spesial',
   `event_price` double DEFAULT NULL,
   `event_capacity` int(5) NOT NULL,
+  `event_rule` varchar(255) DEFAULT NULL,
   `event_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -680,21 +682,21 @@ CREATE TABLE `tb_event` (
 -- Dumping data untuk tabel `tb_event`
 --
 
-INSERT INTO `tb_event` (`event_id`, `event_code`, `event_name`, `event_status`, `event_price`, `event_capacity`, `event_description`) VALUES
-(1, 'LDG', 'Lomba Desain Grafis', 1, 50000, 59, 'Lomba Desain Grafis merupakan salah satu ajang kompetisi  dalam rangkaian acara DINAMIK12 di bidang desain grafis. Lomba Desain Grafis adalah lomba perorangan yang mengasah kreativitas peserta dalam mendesain sebuah ilustrasi yang sesuai dengan tema, yaitu “Teknologi data dalam pendidikan Indonesia” Ilustrasi yang dibuat tidak hanya bagus tetapi juga memiliki makna. Peserta lomba diharuskan membuat desain grafis berupa ilustrasi sesuai dengan tema LDG DINAMIK12 dengan menggunakan software seperti Inkscape, GIMP, Adobe Photoshop, atau CorelDRAW. Sasaran peserta dalam lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional.									\r\n																	\r\n									\r\n								'),
-(2, 'LCW', 'Lomba Cipta Web', 1, 100000, 50, 'Lomba Cipta Website merupakan kompetisi yang diselenggarakan oleh Mahasiswa Ilmu Komputer dan Pendidikan Ilmu Komputer pada Dies Natalis Mahasiswa Komputer yang ke-12 (Dinamik 12) untuk menuangkan ide dan kreativitas ke dalam sebuah website, bertujuan untuk memberikan motivasi dan sebagai sarana belajar untuk membangun dan mengembangkan website.Pada tahun ini, LCW mengusung tema “Technology Innovation for Smarter Indonesian Education” untuk ketentuan website peserta. Sasaran peserta lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional.'),
-(3, 'OTIK', 'Olimpiade Teknologi Informasi dan Komunikasi', 1, 60000, 50, 'Olimpiade TIK merupakan salah satu cabang lomba dalam rangkaian acara DINAMIK 12. Pada perlombaan ini para peserta akan diuji dengan soal-soal logika matematika dan TIK dan harus diselesaikan dengan tepat dan cepat selama waktu yang ditentukan. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/SMK/ sederajat se-Jawa Barat.'),
-(4, 'PCA', 'Personal Computer Assembling', 1, 95000, 50, 'Personal Computer Assembling (PCA) merupakan lomba yang menjadi daya tarik dalam DINAMIK. Dari tahun ke tahun PCA selalu menjadi lomba favorit yang diikuti dengan ditandainya jumlah peserta yang dapat mencapai 200 peserta. Lomba ini menekankan ketelitian, kerapihan dan kecepatan dalam perakitan komponen - komponen PC. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/ sederajat se-Nasional.'),
-(5, 'CSPC', 'Computer Science Programming Contest', 1, 50000, 50, 'Computer Science Programming Contest (CSPC) adalah lomba pemrograman yang diselanggarakan di DINAMIK. Lomba ini menekankan kemampuan analisis berpikir dalam pemecahan masalah yang diberikan dalam bentuk soal yang kemudian diinterpretasikan dalam bentuk kode program sehingga menjadi program yang efektif. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa - siswi SMA/SMK sederajat se-Nasional.'),
-(6, 'LCA', 'Lomba Cipta Animasi', 1, 100000, 50, 'Lomba Cipta Animasi (LCA) adalah salah satu cabang lomba di DINAMIK yang kembali muncul setelah absen selama 2 tahun di perhelatan DINAMIK. Lomba ini mengkompetisikan kemampuan peserta di bidang multimedia dalam pembuatan film pendek animasi 2D bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Peserta dibebaskan menggunakan perangkat lunak apapun dalam proses pembuatannya. Lomba ini ditujukan untuk siswa-siswi SMA/SMK sederajat se-Nasional.'),
-(7, 'RLF', 'Robot Line Follower', 1, 110000, 50, 'Robot Line Follower merupakan sebuah ajang kompetisi balapan robot dimana robot tersebut  bergerak mengikuti garis secara otomatis, dengan track yang ditentukan. Dengan ketentuan robot dibuat oleh masing-masing peserta. Tema yang diusungkan adalah “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran kompetisi line follower ini adalah seluruh siswa-siswi tingkat SMA/SMK/MA/Sederajat se-Nasional.'),
-(8, 'KJ', 'Kompetisi Jaringan', 1, 50000, 50, 'Kompetisi Jaringan merupakan kompetisi untuk menguji kemampuan peserta dalam menghadapi kasus keamanan sistem komputer dan jaringan yang telah disiapkan. Sistem dirancang untuk mempunyai celah atau informasi tertentu yang berakibat terhadap dimungkinkannya peretasan pada sistem tersebut. Terdapat dua bidang yang di kompetisikan dalam acara ini yaitu bidang keamanan jaringan dan desain jaringan. Kompetisi Jaringan mengusung tema “sub teknologi data”. Sasaran peserta lomba ini yaitu siswa/i SMK se-Jawa Barat.'),
-(9, 'TALKSHOW', 'Talkshow Inspiratif', 1, 50000, 50, 'Talkshow Inspiratif merupakan salah satu dari rangkaian acara DINAMIK 12. Acara ini tentunya menyuguhkan ilmu yang bermanfaat. Dengan bertemakan “Menyelaraskan Teknologi dan Pendidikan Yang Sesuai Dengan Syariat Islam”, pemateri akan memandu peserta untuk mengupas tuntas tema tersebut. Selanjutnya, peserta akan berdiskusi dalam sebuah talkshow inspiratif bersama beberapa orang pemateri. Acara ini terbuka untuk umum.'),
-(10, 'SEMNAS', 'Seminar Nasional', 1, 50000, 50, 'Seminar Nasional (Semnas) merupakan suatu kegiatan pertemuan skala nasional untuk membahas, menyikapi suatu topik bahasan dan menampilkan satu atau beberapa pembicara. Seminar nasional ini memiliki tema “Penerapan teknologi ‘Big data’ Dalam Transformasi Pendidikan dan Pembelajaran”. Peserta seminar yang hadir harus berpartisipasi secara aktif dan diharapakan terjadi interaksi dua arah antara pembicara dan peserta seminar.'),
-(11, 'FELOSE', 'Festival Teknologi dan Seni', 1, 0, 50, 'Festival Teknologi dan Seni atau disebut juga FELOSE merupakan salah satu dari rangkaian acara di DINAMIK 12 yang bertajuk unjuk karya mahasiswa/i ilmu komputer dan pendidikan ilmu computer, mahasiswa/i seJawa Barat dan kerjasama IT dengan berbagai komunitas di Bandung. FELOSE ini juga merupakan bentuk perkembangan dari pameran karya pada dinamik 11 maupun dinamik 10 yang didalamnya dibagi menjadi 2 kategori yaitu Seni murni seperti digital art, kriya, komic, ilustrasi dsb dan Teknologi seperti robot, aplikasi, game dsb. Tema yang diusungkan adalah “Mahakarya Teknologi dan Seni Indonesia”. Sasaran dari kegiatan ini adalah Mahasiswa/i se-Nasional.'),
-(12, 'DONOR', 'Donor Darah', 0, 0, 50, 'Donor Darah DINAMIK merupakan kegiatan sosial tahunan yang dilaksanakan bertepatan dengan DINAMIK. Pada tahun ini Donor Darah DINAMIK mengusung tema “Blood is a gift of life”. Donor Darah memiliki banyak manfaat antara lain dapat mengetahui golongan darah, mengurangi zat besi yang berlebih dalam tubuh, membakar kalori dalam tubuh, dapat menurunkan resiko penyakit serangan jantung bagi pendonor rutin,  mencegah penuaan dini karena sel-sel darah merah diperbaharui secara berkala dan mencegah resiko kanker. Sasaran dari acara ini yaitu mahasiswa dan masyarakat umum di wilayah Universitas Pendidikan Indonesia dan sekitarnya.'),
-(13, 'WORKSHOP', 'Workshop Digitalisasi Guru', 1, 50000, 50, 'Workshop Digitalisasi Guru merupakan suatu acara dimana beberapa guru berkumpul untuk memecahkan masalah dan mencari solusinya. Acara ini bertujuan untuk mengajarkan guru dalam menggunakan teknologi pada level 0-2. Acara ini mengusung tema “Digitalisasi Pembelajaran”. Sasaran Workshop Digitalisasi Guru adalah semua guru se-Nasional.'),
-(14, 'DSTAR', 'Dinamik Star', 1, 50000, 50, 'DINAMIK Star adalah suatu acara pencarian bakat yang diadakan dalam perayaan DINAMIK (Dies Natalis Mahasiswa Ilmu Komputer) Universitas Pendidikan Indonesia. Pada tahun ini DINAMIK Star mengusung tema “Mahakarya Talenta dalam Balutan Teknologi”. Acara ini diadakan untuk semua kalangan dari TK, SD, SMP, SMA atau sederajatnya maupun kalangan mahasiswa se-Bandung Raya. Acara ini pun tidak membatasi semua bakat yang dimiliki oleh peserta. Dinamik Star ini ditujukan untuk masyarakat umum khususnya mahasiswa/i UPI.');
+INSERT INTO `tb_event` (`event_id`, `event_code`, `event_name`, `event_status`, `event_price`, `event_capacity`, `event_rule`, `event_description`) VALUES
+(1, 'LDG', 'Lomba Desain Grafis', 1, 50000, 59, NULL, 'Lomba Desain Grafis merupakan salah satu ajang kompetisi  dalam rangkaian acara DINAMIK12 di bidang desain grafis. Lomba Desain Grafis adalah lomba perorangan yang mengasah kreativitas peserta dalam mendesain sebuah ilustrasi yang sesuai dengan tema, yaitu “Teknologi data dalam pendidikan Indonesia” Ilustrasi yang dibuat tidak hanya bagus tetapi juga memiliki makna. Peserta lomba diharuskan membuat desain grafis berupa ilustrasi sesuai dengan tema LDG DINAMIK12 dengan menggunakan software seperti Inkscape, GIMP, Adobe Photoshop, atau CorelDRAW. Sasaran peserta dalam lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional.                  \r\n                                  \r\n                  \r\n                '),
+(2, 'LCW', 'Lomba Cipta Web', 1, 100000, 50, NULL, 'Lomba Cipta Website merupakan kompetisi yang diselenggarakan oleh Mahasiswa Ilmu Komputer dan Pendidikan Ilmu Komputer pada Dies Natalis Mahasiswa Komputer yang ke-12 (Dinamik 12) untuk menuangkan ide dan kreativitas ke dalam sebuah website, bertujuan untuk memberikan motivasi dan sebagai sarana belajar untuk membangun dan mengembangkan website.Pada tahun ini, LCW mengusung tema “Technology Innovation for Smarter Indonesian Education” untuk ketentuan website peserta. Sasaran peserta lomba ini yaitu siswa/i SMA/SMK/sederajat se-Nasional.'),
+(3, 'OTIK', 'Olimpiade Teknologi Informasi dan Komunikasi', 1, 60000, 50, NULL, 'Olimpiade TIK merupakan salah satu cabang lomba dalam rangkaian acara DINAMIK 12. Pada perlombaan ini para peserta akan diuji dengan soal-soal logika matematika dan TIK dan harus diselesaikan dengan tepat dan cepat selama waktu yang ditentukan. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/SMK/ sederajat se-Jawa Barat.'),
+(4, 'PCA', 'Personal Computer Assembling', 1, 95000, 50, NULL, 'Personal Computer Assembling (PCA) merupakan lomba yang menjadi daya tarik dalam DINAMIK. Dari tahun ke tahun PCA selalu menjadi lomba favorit yang diikuti dengan ditandainya jumlah peserta yang dapat mencapai 200 peserta. Lomba ini menekankan ketelitian, kerapihan dan kecepatan dalam perakitan komponen - komponen PC. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/ sederajat se-Nasional.'),
+(5, 'CSPC', 'Computer Science Programming Contest', 1, 50000, 50, NULL, 'Computer Science Programming Contest (CSPC) adalah lomba pemrograman yang diselanggarakan di DINAMIK. Lomba ini menekankan kemampuan analisis berpikir dalam pemecahan masalah yang diberikan dalam bentuk soal yang kemudian diinterpretasikan dalam bentuk kode program sehingga menjadi program yang efektif. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa - siswi SMA/SMK sederajat se-Nasional.'),
+(6, 'LCA', 'Lomba Cipta Animasi', 1, 100000, 50, NULL, 'Lomba Cipta Animasi (LCA) adalah salah satu cabang lomba di DINAMIK yang kembali muncul setelah absen selama 2 tahun di perhelatan DINAMIK. Lomba ini mengkompetisikan kemampuan peserta di bidang multimedia dalam pembuatan film pendek animasi 2D bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Peserta dibebaskan menggunakan perangkat lunak apapun dalam proses pembuatannya. Lomba ini ditujukan untuk siswa-siswi SMA/SMK sederajat se-Nasional.'),
+(7, 'RLF', 'Robot Line Follower', 1, 110000, 50, NULL, 'Robot Line Follower merupakan sebuah ajang kompetisi balapan robot dimana robot tersebut  bergerak mengikuti garis secara otomatis, dengan track yang ditentukan. Dengan ketentuan robot dibuat oleh masing-masing peserta. Tema yang diusungkan adalah “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran kompetisi line follower ini adalah seluruh siswa-siswi tingkat SMA/SMK/MA/Sederajat se-Nasional.'),
+(8, 'KJ', 'Kompetisi Jaringan', 1, 50000, 50, NULL, 'Kompetisi Jaringan merupakan kompetisi untuk menguji kemampuan peserta dalam menghadapi kasus keamanan sistem komputer dan jaringan yang telah disiapkan. Sistem dirancang untuk mempunyai celah atau informasi tertentu yang berakibat terhadap dimungkinkannya peretasan pada sistem tersebut. Terdapat dua bidang yang di kompetisikan dalam acara ini yaitu bidang keamanan jaringan dan desain jaringan. Kompetisi Jaringan mengusung tema “sub teknologi data”. Sasaran peserta lomba ini yaitu siswa/i SMK se-Jawa Barat.'),
+(9, 'TALKSHOW', 'Talkshow Inspiratif', 1, 50000, 50, NULL, 'Talkshow Inspiratif merupakan salah satu dari rangkaian acara DINAMIK 12. Acara ini tentunya menyuguhkan ilmu yang bermanfaat. Dengan bertemakan “Menyelaraskan Teknologi dan Pendidikan Yang Sesuai Dengan Syariat Islam”, pemateri akan memandu peserta untuk mengupas tuntas tema tersebut. Selanjutnya, peserta akan berdiskusi dalam sebuah talkshow inspiratif bersama beberapa orang pemateri. Acara ini terbuka untuk umum.'),
+(10, 'SEMNAS', 'Seminar Nasional', 1, 50000, 50, NULL, 'Seminar Nasional (Semnas) merupakan suatu kegiatan pertemuan skala nasional untuk membahas, menyikapi suatu topik bahasan dan menampilkan satu atau beberapa pembicara. Seminar nasional ini memiliki tema “Penerapan teknologi ‘Big data’ Dalam Transformasi Pendidikan dan Pembelajaran”. Peserta seminar yang hadir harus berpartisipasi secara aktif dan diharapakan terjadi interaksi dua arah antara pembicara dan peserta seminar.'),
+(11, 'FELOSE', 'Festival Teknologi dan Seni', 1, 0, 50, NULL, 'Festival Teknologi dan Seni atau disebut juga FELOSE merupakan salah satu dari rangkaian acara di DINAMIK 12 yang bertajuk unjuk karya mahasiswa/i ilmu komputer dan pendidikan ilmu computer, mahasiswa/i seJawa Barat dan kerjasama IT dengan berbagai komunitas di Bandung. FELOSE ini juga merupakan bentuk perkembangan dari pameran karya pada dinamik 11 maupun dinamik 10 yang didalamnya dibagi menjadi 2 kategori yaitu Seni murni seperti digital art, kriya, komic, ilustrasi dsb dan Teknologi seperti robot, aplikasi, game dsb. Tema yang diusungkan adalah “Mahakarya Teknologi dan Seni Indonesia”. Sasaran dari kegiatan ini adalah Mahasiswa/i se-Nasional.'),
+(12, 'DONOR', 'Donor Darah', 0, 0, 50, NULL, 'Donor Darah DINAMIK merupakan kegiatan sosial tahunan yang dilaksanakan bertepatan dengan DINAMIK. Pada tahun ini Donor Darah DINAMIK mengusung tema “Blood is a gift of life”. Donor Darah memiliki banyak manfaat antara lain dapat mengetahui golongan darah, mengurangi zat besi yang berlebih dalam tubuh, membakar kalori dalam tubuh, dapat menurunkan resiko penyakit serangan jantung bagi pendonor rutin,  mencegah penuaan dini karena sel-sel darah merah diperbaharui secara berkala dan mencegah resiko kanker. Sasaran dari acara ini yaitu mahasiswa dan masyarakat umum di wilayah Universitas Pendidikan Indonesia dan sekitarnya.'),
+(13, 'WORKSHOP', 'Workshop Digitalisasi Guru', 1, 50000, 50, NULL, 'Workshop Digitalisasi Guru merupakan suatu acara dimana beberapa guru berkumpul untuk memecahkan masalah dan mencari solusinya. Acara ini bertujuan untuk mengajarkan guru dalam menggunakan teknologi pada level 0-2. Acara ini mengusung tema “Digitalisasi Pembelajaran”. Sasaran Workshop Digitalisasi Guru adalah semua guru se-Nasional.'),
+(14, 'DSTAR', 'Dinamik Star', 1, 50000, 50, NULL, 'DINAMIK Star adalah suatu acara pencarian bakat yang diadakan dalam perayaan DINAMIK (Dies Natalis Mahasiswa Ilmu Komputer) Universitas Pendidikan Indonesia. Pada tahun ini DINAMIK Star mengusung tema “Mahakarya Talenta dalam Balutan Teknologi”. Acara ini diadakan untuk semua kalangan dari TK, SD, SMP, SMA atau sederajatnya maupun kalangan mahasiswa se-Bandung Raya. Acara ini pun tidak membatasi semua bakat yang dimiliki oleh peserta. Dinamik Star ini ditujukan untuk masyarakat umum khususnya mahasiswa/i UPI.');
 
 -- --------------------------------------------------------
 
@@ -762,11 +764,7 @@ CREATE TABLE `tb_payment` (
 --
 
 INSERT INTO `tb_payment` (`payment_id`, `payment_amount`, `payment_document`, `payment_status`, `payment_unique_code`, `payment_description`) VALUES
-(12, 50000, NULL, 0, '53XQIO', NULL),
-(13, 50000, NULL, 0, 'EG5V3G', NULL),
-(14, 50000, NULL, 0, 'L6QEVC', NULL),
-(15, 50000, NULL, 0, '0XY2WX', NULL),
-(16, 50000, NULL, 0, 'ONHWCP', NULL);
+(29, 50000, NULL, 0, '229554', 'sadsadadadad');
 
 -- --------------------------------------------------------
 
@@ -790,7 +788,8 @@ CREATE TABLE `tb_public` (
 --
 
 INSERT INTO `tb_public` (`public_id`, `public_name`, `public_gender`, `public_address`, `public_image`, `public_contact`, `public_city_id`, `public_account_id`) VALUES
-(3, 'faisalsyfl', '', '', '', '085793434357', 24, 32);
+(3, 'faisalsyfl', '', '', '', '085793434357', 24, 32),
+(4, 'rayhanrezki', '', '', '', '082247034655', 147, 63);
 
 -- --------------------------------------------------------
 
@@ -807,6 +806,13 @@ CREATE TABLE `tb_pubteam` (
   `pubteam_event_id` int(11) NOT NULL,
   `pubteam_payment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_pubteam`
+--
+
+INSERT INTO `tb_pubteam` (`pubteam_id`, `pubteam_name`, `pubteam_email`, `pubteam_contact`, `pubteam_public_id`, `pubteam_event_id`, `pubteam_payment_id`) VALUES
+(5, 'gostargo', 'desongsong@gmail.com', 'asdsadsadad', 3, 14, 29);
 
 -- --------------------------------------------------------
 
@@ -830,7 +836,8 @@ CREATE TABLE `tb_school` (
 --
 
 INSERT INTO `tb_school` (`school_id`, `school_name`, `school_grade`, `school_address`, `school_image`, `school_contact`, `school_city_id`, `school_account_id`) VALUES
-(5, 'SMAN 11 Bandung', 'SMA', '', NULL, '085793434357', 24, 31);
+(5, 'SMAN 11 Bandung', 'SMA', '', NULL, '085793434357', 24, 31),
+(6, 'SMAN 1 Bandung', 'SMA', '', NULL, '0813211852228', 24, 64);
 
 -- --------------------------------------------------------
 
@@ -850,14 +857,6 @@ CREATE TABLE `tb_schparticipant` (
   `schparticipant_schteam_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tb_schparticipant`
---
-
-INSERT INTO `tb_schparticipant` (`schparticipant_id`, `schparticipant_name`, `schparticipant_nisn`, `schparticipant_birth`, `schparticipant_gender`, `schparticipant_contact`, `schparticipant_address`, `schparticipant_student_id`, `schparticipant_schteam_id`) VALUES
-(12, 'Arif Rahman Sidiq', '1403356', NULL, NULL, NULL, NULL, NULL, 9),
-(13, 'faisal Sa', '10101010', NULL, NULL, NULL, NULL, NULL, 9);
-
 -- --------------------------------------------------------
 
 --
@@ -869,18 +868,12 @@ CREATE TABLE `tb_schteam` (
   `schteam_name` varchar(255) NOT NULL,
   `schteam_coach_name` varchar(255) DEFAULT NULL,
   `schteam_coach_contact` varchar(20) DEFAULT NULL,
+  `schteam_file` text,
   `schteam_school_id` int(11) NOT NULL,
   `schteam_event_id` int(11) NOT NULL,
   `schteam_payment_id` int(11) NOT NULL,
   `schteam_account_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_schteam`
---
-
-INSERT INTO `tb_schteam` (`schteam_id`, `schteam_name`, `schteam_coach_name`, `schteam_coach_contact`, `schteam_school_id`, `schteam_event_id`, `schteam_payment_id`, `schteam_account_id`) VALUES
-(9, 'GOGOGOGO', 'Risna D', '085793434357', 5, 5, 16, 57);
 
 -- --------------------------------------------------------
 
@@ -943,6 +936,8 @@ CREATE TABLE `v_pubteam_dash` (
 ,`eve_name` varchar(255)
 ,`eve_price` double
 ,`pay_status` tinyint(1)
+,`pay_document` varchar(255)
+,`pay_id` int(11)
 ,`pay_unique_code` varchar(255)
 ,`pub_id` int(11)
 ,`eve_id` int(11)
@@ -960,6 +955,8 @@ CREATE TABLE `v_schteam_dash` (
 ,`eve_price` double
 ,`sct_coach_name` varchar(255)
 ,`pay_status` tinyint(1)
+,`pay_document` varchar(255)
+,`pay_id` int(11)
 ,`sch_id` int(11)
 ,`acc_id` int(11)
 ,`pay_unique_code` varchar(255)
@@ -982,7 +979,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_pubteam_dash`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_pubteam_dash`  AS  select `pbt`.`pubteam_id` AS `pbt_id`,`pbt`.`pubteam_name` AS `pbt_name`,`pbt`.`pubteam_email` AS `pbt_email`,`pbt`.`pubteam_contact` AS `pbt_contact`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`pay`.`payment_status` AS `pay_status`,`pay`.`payment_unique_code` AS `pay_unique_code`,`pub`.`public_id` AS `pub_id`,`eve`.`event_id` AS `eve_id` from (((`tb_pubteam` `pbt` join `tb_public` `pub`) join `tb_event` `eve`) join `tb_payment` `pay` on(((`pbt`.`pubteam_public_id` = `pub`.`public_id`) and (`pbt`.`pubteam_event_id` = `eve`.`event_id`) and (`pbt`.`pubteam_payment_id` = `pay`.`payment_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_pubteam_dash`  AS  select `pbt`.`pubteam_id` AS `pbt_id`,`pbt`.`pubteam_name` AS `pbt_name`,`pbt`.`pubteam_email` AS `pbt_email`,`pbt`.`pubteam_contact` AS `pbt_contact`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`pay`.`payment_status` AS `pay_status`,`pay`.`payment_document` AS `pay_document`,`pay`.`payment_id` AS `pay_id`,`pay`.`payment_unique_code` AS `pay_unique_code`,`pub`.`public_id` AS `pub_id`,`eve`.`event_id` AS `eve_id` from (((`tb_pubteam` `pbt` join `tb_public` `pub`) join `tb_event` `eve`) join `tb_payment` `pay` on(((`pbt`.`pubteam_public_id` = `pub`.`public_id`) and (`pbt`.`pubteam_event_id` = `eve`.`event_id`) and (`pbt`.`pubteam_payment_id` = `pay`.`payment_id`)))) ;
 
 -- --------------------------------------------------------
 
@@ -991,7 +988,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_schteam_dash`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_schteam_dash`  AS  select `sct`.`schteam_id` AS `sct_id`,`sct`.`schteam_name` AS `sct_name`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`sct`.`schteam_coach_name` AS `sct_coach_name`,`pay`.`payment_status` AS `pay_status`,`sch`.`school_id` AS `sch_id`,`acc`.`account_id` AS `acc_id`,`pay`.`payment_unique_code` AS `pay_unique_code`,`eve`.`event_id` AS `eve_id` from ((((`tb_schteam` `sct` join `tb_school` `sch`) join `tb_event` `eve`) join `tb_payment` `pay`) join `tb_account` `acc` on(((`sct`.`schteam_school_id` = `sch`.`school_id`) and (`sct`.`schteam_event_id` = `eve`.`event_id`) and (`sct`.`schteam_payment_id` = `pay`.`payment_id`) and (`sct`.`schteam_account_id` = `acc`.`account_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_schteam_dash`  AS  select `sct`.`schteam_id` AS `sct_id`,`sct`.`schteam_name` AS `sct_name`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`sct`.`schteam_coach_name` AS `sct_coach_name`,`pay`.`payment_status` AS `pay_status`,`pay`.`payment_document` AS `pay_document`,`pay`.`payment_id` AS `pay_id`,`sch`.`school_id` AS `sch_id`,`acc`.`account_id` AS `acc_id`,`pay`.`payment_unique_code` AS `pay_unique_code`,`eve`.`event_id` AS `eve_id` from ((((`tb_schteam` `sct` join `tb_school` `sch`) join `tb_event` `eve`) join `tb_payment` `pay`) join `tb_account` `acc` on(((`sct`.`schteam_school_id` = `sch`.`school_id`) and (`sct`.`schteam_event_id` = `eve`.`event_id`) and (`sct`.`schteam_payment_id` = `pay`.`payment_id`) and (`sct`.`schteam_account_id` = `acc`.`account_id`)))) ;
 
 --
 -- Indexes for dumped tables
@@ -1140,7 +1137,7 @@ ALTER TABLE `tb_sponsor`
 -- AUTO_INCREMENT for table `tb_account`
 --
 ALTER TABLE `tb_account`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT for table `tb_bazaar`
 --
@@ -1185,32 +1182,32 @@ ALTER TABLE `tb_news`
 -- AUTO_INCREMENT for table `tb_payment`
 --
 ALTER TABLE `tb_payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `tb_public`
 --
 ALTER TABLE `tb_public`
-  MODIFY `public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `public_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_pubteam`
 --
 ALTER TABLE `tb_pubteam`
-  MODIFY `pubteam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pubteam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tb_school`
 --
 ALTER TABLE `tb_school`
-  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tb_schparticipant`
 --
 ALTER TABLE `tb_schparticipant`
-  MODIFY `schparticipant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `schparticipant_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `tb_schteam`
 --
 ALTER TABLE `tb_schteam`
-  MODIFY `schteam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `schteam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `tb_score`
 --

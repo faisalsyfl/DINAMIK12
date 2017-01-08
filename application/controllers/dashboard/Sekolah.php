@@ -24,7 +24,8 @@ class Sekolah extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-			$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();
+
+			$data['list'] = $this->SchoolTModel->viewSchtDash($this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array()['school_id'])->result_array();
 			$this->load->view('sekolah/layout/header');
 			$this->load->view('sekolah/daftartim/index',$data);
 			$this->load->view('sekolah/layout/footer');				
@@ -150,6 +151,7 @@ class Sekolah extends CI_Controller {
 			$accid = $this->SchoolTModel->selectById($id)->row_array()['schteam_account_id'];
 			$payid = $this->SchoolTModel->selectById($id)->row_array()['schteam_payment_id'];
 			$this->SchoolTModel->delete($id);
+			// unlink('./uploads/'.$this->PaymentModel->selectById($pay_id))
 			$this->PaymentModel->delete($payid);
 			$this->AccountModel->delete($accid);
 
@@ -159,7 +161,7 @@ class Sekolah extends CI_Controller {
 
 	public function uploadBukti(){
 		$data['school'] = $this->SchoolModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
-		$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();		
+		$data['list'] = $this->SchoolTModel->viewSchtDash($this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array()['school_id'])->result_array();		
 		// var_dump($data);
 		$this->load->view('sekolah/layout/header');
 		$this->load->view('sekolah/uploadbayar',$data);
@@ -184,6 +186,7 @@ class Sekolah extends CI_Controller {
 		}else{
 			//sukses
 			$upload['payment_document'] = $config['file_name'];
+			$upload['payment_description'] = $x['payment_description'];			
 			foreach($x['pay_id'] as $id){
 				$this->PaymentModel->update($id,$upload);
 			}

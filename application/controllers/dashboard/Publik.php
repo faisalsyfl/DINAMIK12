@@ -24,7 +24,7 @@ class Publik extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-			$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
+			$data['list'] = $this->PublicTModel->viewPubtDash($this->PublicModel->selectByAccId($_SESSION['userid'])->row_array()['public_id'])->result_array();
 			$this->load->view('publik/layout/header');
 			$this->load->view('publik/index',$data);
 			$this->load->view('publik/layout/footer');				
@@ -124,16 +124,15 @@ class Publik extends CI_Controller {
 		if($string == "edit"){
 			
 		}else if($string == "del"){
-			$payid = $this->PublicTModel->selectById($id)->row_array()['schteam_payment_id'];
+			$payid = $this->PublicTModel->selectById($id)->row_array()['pubteam_payment_id'];
 			$this->PublicTModel->delete($id);
 			$this->PaymentModel->delete($payid);
-
 			redirect(site_url('dashboard/publik/'));
 		}
 	}
 	public function uploadBukti(){
 		// $data['public'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
-		$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();		
+		$data['list'] = $this->PublicTModel->viewPubtDash($this->PublicModel->selectByAccId($_SESSION['userid'])->row_array()['public_id'])->result_array();		
 		// var_dump($data);
 		$this->load->view('publik/layout/header');
 		$this->load->view('publik/uploadbayar',$data);
@@ -157,7 +156,9 @@ class Publik extends CI_Controller {
 			redirect(site_url('dashboard/publik/uploadBukti'));
 		}else{
 			//sukses
-			$upload['payment_document'] = $config['file_name'];
+			$upload['payment_document'] = $config['file_name'].$this->upload->data('file_ext');
+			$upload['payment_description'] = $x['payment_description'];
+			var_dump($upload);
 			foreach($x['pay_id'] as $id){
 				$this->PaymentModel->update($id,$upload);
 			}
