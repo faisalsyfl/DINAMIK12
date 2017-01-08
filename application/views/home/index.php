@@ -101,7 +101,7 @@
 						Dies Natalis Keluarga Besar Ilmu Komputer merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer pada tahun ini DINAMIK akan menginjak angka ke-12
 					</p>
 					<br>
-					<a href="<?php echo site_url('Maintenance/'); ?>">
+					<a href="<?php echo site_url('/info'); ?>">
 					<button type="button" class="btn-tentang">SELENGKAPNYA</button></a>
 				</div>
 			</div>
@@ -183,7 +183,7 @@
 						ONLINE<br>
 					</p>
 					<br>
-					<a href="<?php echo site_url('maintenance/'); ?>"><button type="button" class="btn-activity">SELENGKAPNYA</button></a>
+					<a href="<?php echo site_url('/info'); ?>"><button type="button" class="btn-activity">SELENGKAPNYA</button></a>
 				</div>
 			</div>
 		</div>
@@ -232,7 +232,7 @@
 					  <div class="caption">
 						<h4 class="news-title">PENDAFTARAN DINAMIK</h4>
 						<p class="news-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 23 NOV 2016
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 9 JAN 2016
 						</p>
 						<a href="<?php echo site_url('/pendaftaran'); ?>">
 						<button class="btn-news">SELENGKAPNYA</button></a>
