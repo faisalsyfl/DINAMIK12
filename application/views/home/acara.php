@@ -26,10 +26,10 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/talkshow.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">TALKSHOW INSPIRATIF</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Minggu, 02 April 2016
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Minggu, 2 April 2016
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
 					 	<?php echo $list[8]['event_description']; ?>
@@ -41,13 +41,13 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/semnas.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">SEMINAR NASIONAL</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Sabtu, 01 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 1 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>08.00 - 15.00 WIB
+						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
 					 	<?php echo $list[9]['event_description']; ?>
@@ -59,7 +59,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/felose.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">FESTIVAL TEKNOLOGI DAN SENI</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Minggu, 07 - 09 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Minggu, 7 - 9 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -75,7 +75,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/donor.png"); ?>" class="img-contest brightness" align="center"><br><br>
 					  <h3 class="event-detail-title">DONOR DARAH</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 08 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 – 12.00 WIB
@@ -93,7 +93,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/workshop.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">WORKSHOP DIGITALISASI GURU</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Sabtu, 07 - 09  April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Sabtu, 7 - 9  April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
@@ -112,7 +112,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/d-star.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">DINAMIK STAR</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu - Minggu, 01 - 02 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu - Minggu, 1 - 2 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA-C, Universitas Pendidikan Indonesia

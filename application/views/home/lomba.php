@@ -29,7 +29,7 @@
 					  <h3 class="event-detail-title">LOMBA DESAIN GRAFIS</h3>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <br>
-						Babak Penyisihan : 14-18 Maret 2017<br>
+						Babak Penyisihan : 14 - 18 Maret 2017<br>
 						Babak Final      : 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
@@ -45,7 +45,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/lcw.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA CIPTA WEB</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Rabu - Sabtu, 01 - 04 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Rabu - Sabtu, 1 - 4 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -61,7 +61,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/opk.png"); ?>" class="img-contest brightness" align="center"><br><br>
 					  <h3 class="event-detail-title">OLIMPIADE TIK</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 7-8 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 7 - 8 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA C, Universitas Pendidikan Indonesia
@@ -76,7 +76,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/pca.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">PERSONAL COMPUTER ASSEMBLING</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 08 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 8 April 2017
 					  </p>
 					  
 					  <p class="event-detail-date">
@@ -107,7 +107,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/lca.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA CIPTA ANIMASI</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Selasa- Sabtu, 14-18 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Selasa- Sabtu, 14 - 18 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -123,7 +123,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/lf.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LINE FOLLOWER</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Sabtu, 07 - 08 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Sabtu, 7 - 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -139,7 +139,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/network.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">KOMPETISI JARINGAN</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at, 07 April 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at, 7 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Ruang A Gymnasium, Universitas Pendidikan Indonesia

@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['acara'] = 'home/acara'; 
 $route['lomba'] = 'home/lomba'; 
 $route['akun'] = 'home/akun'; 
+$route['info'] = 'home/info';
 $route['akun/failedlog'] = 'home/akun/index/1';
 $route['akun/success'] = 'home/akun/index/2';
 $route['akun/failedreg'] = 'home/akun/index/3';
