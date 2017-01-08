@@ -694,3 +694,43 @@ body {
 .logo-toggle {
   width: 150px;
 }
+
+.scroll-progress {
+  width: 0px;
+  height: 5px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 9999;
+}
+
+.news-by{
+  float: left;
+}
+
+.news-category{
+  float: right;
+}
+
+.news-detail{
+  text-align: justify;
+}
+
+.news-thumbail img{
+  margin-right: 10px;
+}
+
+.news-thumbail {
+  margin-bottom: 20px;
+}
+
+.news-thumbail .news-title{
+  float: left;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.news-headline{
+  text-align: justify;
+  margin-bottom: 10px;
+}

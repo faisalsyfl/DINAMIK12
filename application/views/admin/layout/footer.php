@@ -30,11 +30,22 @@
 		<!-- Data Tables -->
 		<script src="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="<?php echo base_url(); ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+		<!-- CK Editor -->
+		<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+		<!-- Bootstrap WYSIHTML5 -->
+		<script src="<?php echo base_url(); ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 		<script type="text/javascript" charset="utf-8" async defer>
 			$(document).ready(function() {
 			    $('#allAcc').DataTable();
 			    $('#allEve').DataTable();
 			} );
+			$(function () {
+				// Replace the <textarea id="editor1"> with a CKEditor
+				// instance, using default configuration.
+				CKEDITOR.replace('editor1');
+				//bootstrap WYSIHTML5 - text editor
+				$(".textarea").wysihtml5();
+			});
 		</script>		
 	</body>
 </html>

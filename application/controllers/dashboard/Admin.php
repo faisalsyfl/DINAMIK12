@@ -212,5 +212,50 @@ class Admin extends CI_Controller {
 			redirect(site_url('dashboard/admin/acaralomba'));
 		}
 	}
+	
+	public function berita(){
+			/* if has session */
+		if(isset($_SESSION['logged_in'])){
+				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
+				$data['list'] = $this->NewsModel->selectJoinEvent()->result_array();
+				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/berita/index',$data);
+				$this->load->view('admin/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+	
+	public function newsAction($aksi,$id=NULL){			
+		if($aksi == "edit"){
+			$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+			$data['event_list'] = $this->EventModel->selectAll()->result_array();
+			$data['row'] = $this->NewsModel->selectById($id)->row_array();
+
+			$this->load->view('admin/layout/header',$head);
+			$this->load->view('admin/berita/newsedit',$data);
+			$this->load->view('admin/layout/footer');
+		}else if($aksi=="add"){
+			$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+			$data['event_list'] = $this->EventModel->selectAll()->result_array();
+			$this->load->view('admin/layout/header',$head);
+			$this->load->view('admin/berita/newsadd',$data);
+			$this->load->view('admin/layout/footer');
+		}else if($aksi == "editAct"){
+			$data = $this->input->post();
+			unset($data['btnEdit']);
+			$this->NewsModel->update($id,$data);
+			redirect(site_url('dashboard/admin/berita'));
+		}else if($aksi=="addAct"){
+			$data = $this->input->post();
+			unset($data['btnAdd']);
+			//print_r($data);
+			$this->NewsModel->insert($data);
+			redirect(site_url('dashboard/admin/berita'));
+			
+		}
+	}
 }
 	
