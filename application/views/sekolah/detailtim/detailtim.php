@@ -50,7 +50,7 @@
 						</tr>
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>
+					<!--<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>-->
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali</a>
 				</section>
 				<!-- /.content -->

@@ -39,17 +39,19 @@
 							<td class="p1">Kota</td>
 							<td><?php echo $list['city_name']; ?></td>
 						</tr>
+						<!--
 						<tr>
 							<td class="p1">Alamat</td>
 							<td><?php echo $list['school_address']; ?></td>
 						</tr>
+						-->
 						<tr>
 							<td class="p1">Email</td>
 							<td><?php echo $_SESSION['email']; ?></td>
 						</tr>
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>
+					<!--<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>-->
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali
 					</a>
 					<br>

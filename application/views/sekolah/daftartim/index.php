@@ -59,8 +59,8 @@
 			        		 ?>
 		        				<td>
 	        		 			<button type="" class="btn btn-primary" onclick="location.href='<?php echo site_url('dashboard/sekolah/detailtim/'.$data['sct_id']);?>'"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" ></span></button>		        				
-		        				<button type="" class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/sekolah/sekolahAction/'.$data['sct_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
-		        				<button type="" class="btn btn-danger" onclick="location.href='<?php echo site_url('dashboard/sekolah/sekolahAction/'.$data['sct_id'].'/del');?>'"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>
+		        				<!--<button type="" class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/sekolah/sekolahAction/'.$data['sct_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>-->
+		        				<!--<button type="" class="btn btn-danger" onclick="location.href='<?php echo site_url('dashboard/sekolah/sekolahAction/'.$data['sct_id'].'/del');?>'"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>-->
 		        				</td>
 			        		 
 		        			<?php 

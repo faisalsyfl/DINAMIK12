@@ -33,8 +33,12 @@
 		<![endif]-->
 		
 		<style>
-			.section-dashboard {
+			.section-dashboard, .nama-tim {
 				color: #007eff;
+			}
+			
+			.kategori {
+				color: #ffa619;
 			}
 			
 			.btn-daftar {

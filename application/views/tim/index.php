@@ -13,10 +13,10 @@
 				<!-- Main content -->
 				<section class="content">
 					<p class="school-info">
-						Peraturan lomba secara lengkap bisa di download <a href="#"><b><a href="<?php echo $schteam['event_rule']; ?>" title="">Disini</a></b></a><br>
-						Untuk file/berkas yang harus diupload silahkan upload di google drive atau jasa penyedia layanan serupa.<br>
-						<small class="keterangan">*Lomba yang tidak memerlukan upload file tidak perlu mengisi</small><br>
-						<small class="keterangan">*Pastikan file bisa di download melalui link yang dimasukan</small>
+						- Peraturan lomba secara lengkap bisa di download <a href="#"><b><a href="<?php echo $schteam['event_rule']; ?>" title="">disini</a></b></a><br>
+						- Untuk file/berkas yang harus diupload silahkan upload di google drive atau jasa penyedia layanan serupa.<br>
+						- Lomba yang tidak memerlukan upload file tidak perlu mengisi<br>
+						- Pastikan file bisa di download melalui link yang dimasukan
 					</p>
 					<p class="school-info">
 						Silahkan masukan link berkas yang sudah diupload dibawah ini :

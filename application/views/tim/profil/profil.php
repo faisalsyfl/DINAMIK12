@@ -5,10 +5,10 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Profil Sekolah
+						Profil Tim
 						<small>Panel Informasi</small>
 					</h1>
-					<h3 class="section-dashboard">Informasi Sekolah</h3>
+					<h3 class="section-dashboard">Informasi Tim</h3>
 				</section>
 				<!-- Main content -->
 				<section class="content">
@@ -46,7 +46,7 @@
 						</tr>
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-edit">Edit</a>
+					<!--<a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-edit">Edit</a>-->
 					<a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-kembali">Kembali</a>
 				</section>
 				<!-- /.content -->
