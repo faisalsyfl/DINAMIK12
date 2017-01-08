@@ -122,7 +122,7 @@
 
 		    + '<div class="col-md-3 col-xs-3">'
 		    + '<h2 class="countdown" id="day">%D</h2>'
-		    + '<span class="countdown-title">Minggu</span>'
+		    + '<span class="countdown-title">Hari</span>'
 		    + '</div>'
 
 		    + '<div class="col-md-3 col-xs-3">'
