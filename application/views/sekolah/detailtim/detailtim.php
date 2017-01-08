@@ -5,10 +5,10 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Profil Sekolah
+						Detail Tim
 						<small>Panel Informasi</small>
 					</h1>
-					<h3 class="section-dashboard">Informasi Sekolah</h3>
+					<h3 class="section-dashboard">Informasi Tim</h3>
 				</section>
 				<!-- Main content -->
 				<section class="content">
