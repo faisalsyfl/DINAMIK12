@@ -14,13 +14,13 @@
 				<ul class="nav nav-tabs event-tabs">
 					<li class="active"><a data-toggle="tab" href="#tentang">TENTANG</a></li>
 					<li><a data-toggle="tab" href="#faq">FAQ</a></li>
-					<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>
 					<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
+					<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
 					<!-- TENTANG -->
-					<div id="tentang" class="tab-pane fade in">
+					<div id="tentang" class="tab-pane fade in active">
 					  <h3 class="event-detail-title">Tentang DINAMIK12</h3>
 					  <p class="event-detail-text">
 						Dies Natalis Keluarga Besar Ilmu Komputer (DINAMIK) merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer. Pada tahun ini DINAMIK akan menginjak angka ke-12. DINAMIK12 ini mengusung tema: <br>
@@ -93,7 +93,7 @@
 					</div>
 					
 					<!-- UNDUHAN -->
-					<div id="unduhan" class="tab-pane fade in active">
+					<div id="unduhan" class="tab-pane fade in">
 					  <h3 class="event-detail-title">UNDUHAN</h3>
 					  <p class="event-detail-text">
 					 	Silahkan download file-file yang dibutuhkan dibawah ini:
