@@ -35,6 +35,12 @@
 							</td>
 						</tr>
 						<tr>
+							<td class="p1">Password</td>
+							<td>
+								<input type="password" name="account_password" placeholder="Enter password">
+							</td>
+						</tr>						
+						<tr>
 							<td class="p1">Nama Pembimbing</td>
 							<td>
 								<input type="text" name="schteam_coach_name" placeholder="Nama Pembimbing">

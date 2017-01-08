@@ -261,20 +261,8 @@
 					<ul class="sidebar-menu">
 						<li class="header">Menu Sekolah</li>
 						<li class="active"><a href="<?php echo site_url('dashboard/sekolah/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>
-						<li>
-							<a href="#"><i class="fa fa-star"></i> 
-								<span>Acara & Lomba </span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">14</small>            
-								</span>
-							</a>
-						</li>
-						<?php 
-						} ?>
-
-						<li>
+s
+						<!-- <li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
 								<span class="pull-right-container">
@@ -306,7 +294,7 @@
 									<small class="label pull-right bg-blue">777</small>            
 								</span>
 							</a>
-						</li>
+						</li> -->
 					</ul>
 				</section>
 			<!-- /.sidebar -->

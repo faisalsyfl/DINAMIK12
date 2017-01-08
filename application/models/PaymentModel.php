@@ -31,15 +31,20 @@ class PaymentModel extends CI_Model {
 		$this->db->insert($this->tableName,$data);
 
 		return $this->db->insert_id();
-	}	
+	}
+	public function update($id,$data){
+		$this->db->set($data);
+		$this->db->where('payment_id',$id);
+		$this->db->update($this->tableName);
+	}		
 
 	public function generate(){
 		$data = [
-		'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'
+		'0','1','2','3','4','5','6','7','8','9'
 		];
 		$coupon = array();
 		for($i=0;$i<6;$i++){
-			$temp = mt_rand(0,35);
+			$temp = mt_rand(0,9);
 			$coupon[$i] = $data[$temp];
 		}
 

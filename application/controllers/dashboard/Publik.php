@@ -131,4 +131,37 @@ class Publik extends CI_Controller {
 			redirect(site_url('dashboard/publik/'));
 		}
 	}
+	public function uploadBukti(){
+		// $data['public'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+		$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();		
+		// var_dump($data);
+		$this->load->view('publik/layout/header');
+		$this->load->view('publik/uploadbayar',$data);
+		$this->load->view('publik/layout/footer');		
+	}	
+
+	public function uploadB(){
+		$x = 	$this->input->post();
+		var_dump($x);
+		$config['upload_path']          = './uploads/';
+		$config['allowed_types']        = 'jpg|png|pdf|rar';
+		$config['max_size']             = 0;
+		$config['max_width']            = 0;
+		$config['max_height']           = 0;
+		date_default_timezone_set("Asia/Bangkok");		
+		$config['file_name']				  = $_SESSION['username']."-".time();
+		echo $config['file_name'];
+		$this->load->library('upload', $config);
+		if(!$this->upload->do_upload('payment_document')){
+			//gagal
+			redirect(site_url('dashboard/publik/uploadBukti'));
+		}else{
+			//sukses
+			$upload['payment_document'] = $config['file_name'];
+			foreach($x['pay_id'] as $id){
+				$this->PaymentModel->update($id,$upload);
+			}
+			redirect(site_url('dashboard/publik/'));
+		}	
+	}		
 }

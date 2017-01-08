@@ -22,6 +22,10 @@
 							<td><?php echo $anggota[0]['sct_name']; ?></td>
 						</tr>
 						<tr>
+							<td class="p1">Username Team Login</td>
+							<td><b style="color:green;"><?php echo $account['account_username']; ?></b></td>
+						</tr>											 
+						<tr>
 							<td class="p1">Nama Pembimbing</td>
 							<td><?php echo $anggota[0]['sct_coach_name']; ?></td>
 						</tr>

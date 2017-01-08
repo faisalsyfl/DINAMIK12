@@ -98,7 +98,7 @@ class Sekolah extends CI_Controller {
 		$asd = explode(" ",$this->input->post('schteam_name'));
 		$acc['account_username'] = strtolower(implode("",$asd));
 		$acc['account_email'] = $_SESSION['email'];
-		$acc['account_password'] = md5($acc['account_username']);
+		$acc['account_password'] = md5($data['account_password']);
 		$acc['account_image'] = "/assets/img/icon_dashboard/tim.jpg";
 		$acc['account_category_id'] = "SCT";
 		$this->AccountModel->insert($acc);
@@ -114,6 +114,7 @@ class Sekolah extends CI_Controller {
 		$cNISN = $data['nisn'];
 		unset($data['anggota']);
 		unset($data['nisn']);
+		unset($data['account_password']);
 		$insert['schparticipant_schteam_id'] = $this->SchoolTModel->insert($data);
 		
 		for($i=0;$i<3;$i++){
@@ -130,6 +131,8 @@ class Sekolah extends CI_Controller {
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
 				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($id)->result_array();
+				// var_dump($data['anggota']);
+				$data['account'] = $this->AccountModel->selectById($data['anggota'][0]['acc_id'])->row_array();
 				$this->load->view('sekolah/layout/header');
 				$this->load->view('sekolah/detailtim/detailtim',$data);
 				$this->load->view('sekolah/layout/footer');		
@@ -153,4 +156,38 @@ class Sekolah extends CI_Controller {
 			redirect(site_url('dashboard/sekolah/'));
 		}
 	}
+
+	public function uploadBukti(){
+		$data['school'] = $this->SchoolModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+		$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();		
+		// var_dump($data);
+		$this->load->view('sekolah/layout/header');
+		$this->load->view('sekolah/uploadbayar',$data);
+		$this->load->view('sekolah/layout/footer');		
+	}
+
+	public function uploadB(){
+		$x = 	$this->input->post();
+		var_dump($x);
+		$config['upload_path']          = './uploads/';
+		$config['allowed_types']        = 'jpg|png|pdf|rar';
+		$config['max_size']             = 0;
+		$config['max_width']            = 0;
+		$config['max_height']           = 0;
+		date_default_timezone_set("Asia/Bangkok");		
+		$config['file_name']				  = $_SESSION['username']."-".time();
+		echo $config['file_name'];
+		$this->load->library('upload', $config);
+		if(!$this->upload->do_upload('payment_document')){
+			//gagal
+			redirect(site_url('dashboard/sekolah/uploadBukti'));
+		}else{
+			//sukses
+			$upload['payment_document'] = $config['file_name'];
+			foreach($x['pay_id'] as $id){
+				$this->PaymentModel->update($id,$upload);
+			}
+			redirect(site_url('dashboard/sekolah/'));
+		}	
+	}	
 }

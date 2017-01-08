@@ -48,7 +48,11 @@
 			        				if($data['pay_status'] == 1){
 			        					echo "<td style='color:green;font-weight:bold;'>"."Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
 			        				}else{
+		        						if($data['pay_document']==NULL){
 			        					echo "<td style='color:red;font-weight:bold;'>"."Belum Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
+				        				}else{
+				        					echo "<td style='color:blue;font-weight:bold;'>"."Dalam Konfirmasi"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
+				        				}
 			        				}
 			        				echo "<td style='color:green;font-weight:bold;'>".$data['pay_unique_code']."</td>";
 			        				// echo "<td >"."<a href='".site_url('dashboard/Sekolah/detailtim/'.$data['sct_id'])."'>Detail Tim</a>"."</td>";

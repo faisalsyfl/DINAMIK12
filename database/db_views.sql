@@ -61,6 +61,8 @@ SELECT
 	eve.event_price as eve_price,
 	sct.schteam_coach_name as sct_coach_name,
    pay.payment_status as pay_status,
+   pay.payment_document as pay_document,
+   pay.payment_id as pay_id,
    sch.school_id as sch_id,
    acc.account_id as acc_id,
    pay.payment_unique_code as pay_unique_code,
@@ -93,6 +95,8 @@ SELECT
 	eve.event_name as eve_name,
 	eve.event_price as eve_price,
    pay.payment_status as pay_status,
+   pay.payment_document as pay_document,
+   pay.payment_id as pay_id,
    pay.payment_unique_code as pay_unique_code,
    pub.public_id as pub_id,
    eve.event_id as eve_id
