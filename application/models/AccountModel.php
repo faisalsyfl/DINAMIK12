@@ -44,11 +44,13 @@ class AccountModel extends CI_Model {
 	public function insert($data){
 		$this->db->insert($this->tableName,$data);
 	}
+	
 	public function update($id,$data){
 		$this->db->set($data);
 		$this->db->where('account_id',$id);
 		$this->db->update($this->tableName);
 	}
+	
 	public function delete($id){
 		$this->db->where('account_id',$id);
 		$this->db->delete($this->tableName);
@@ -63,6 +65,7 @@ class AccountModel extends CI_Model {
 		return($x);
 	}
 	
+	
 	public function selectJoinCategory($cat = NULL){
 		$this->db->select('*');
 		$this->db->from($this->tableName);
@@ -73,6 +76,16 @@ class AccountModel extends CI_Model {
 		return $this->db->get();
 	}
 	
+	/* FIND ID FOR FORGOT PASSWORD */
+	public function findForgotten($email){
+		$this->db->select('account_id');
+		$this->db->select('account_username');
+		$this->db->from($this->tableName);
+		$this->db->where('account_email',$email);
+
+		$x = $this->db->get()->row_array();
+		return($x);
+	}
 	
 	/* GET CATEGORY NAME FOR SESSION DATA -> HEADER DASHBOARD DATA */
 	public function getCategoryNameByID($id){

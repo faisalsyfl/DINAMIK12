@@ -135,6 +135,7 @@
 									<div class="form-group has-feedback">
 										<select name="city" class="form-control">
 											<?php
+											echo "<option value=''>--Pilih kota/kabupaten--</option>";
 											foreach($city as $data) 
 												echo "<option value=".$data['city_id'].">".$data['city_name']."</option>";
 											?>
@@ -145,25 +146,12 @@
 										<input type="email" class="form-control" placeholder="E-mail Resmi Sekolah" name="email">
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
+									
 									<div class="form-group has-feedback">
-										<input type="text" class="form-control" placeholder="Kontak Resmi" name="contact">
+										<input type="number" class="form-control" placeholder="Kontak Resmi" name="contact">
 										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 									</div>
-									<!-- radio -->
-									<!--NOT FIX
-									<div class="form-group">
-										<label>
-											<input type="radio" name="r3" class="flat-red" checked>
-										</label>
-										<label>
-											<input type="radio" name="r3" class="flat-red">
-										</label>
-										<label>
-											<input type="radio" name="r3" class="flat-red" disabled>
-											Flat green skin radio
-										</label>
-									</div>
-									-->
+									
 									<div class="row">
 										<div class="col-xs-8">
 											<div class="checkbox icheck">
@@ -292,13 +280,9 @@
 							<div class="login-box-body">
 								<p class="login-box-msg">Kirim kata sandi baru</p>
 
-								<form action="<?php /* INSERT CONTROLLER HERE */ ?>" method="post">
+								<?php echo form_open('home/Akun/forgotPass'); ?>
 								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="Nama pengguna">
-									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-								</div>
-								<div class="form-group has-feedback">
-									<input type="email" class="form-control" placeholder="E-mail">
+									<input type="email" class="form-control" placeholder="E-mail" required name="email">
 									<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 								</div>
 								<div class="row">
@@ -313,7 +297,7 @@
 									</div>
 									<!-- /.col -->
 									<div class="col-xs-4">
-										<button type="submit" class="btn btn-primary btn-block btn-flat " disabled>Kirim</button>
+										<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnForgot">Kirim</button>
 									</div>
 									<!-- /.col -->
 								</div>

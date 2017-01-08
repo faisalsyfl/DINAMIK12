@@ -8,7 +8,6 @@ class UtilityModel extends CI_Model {
 
 	public function __construct(){
 		parent::__construct();
-		// $this->tableName = "tb_payment";
 	}
 
 	public function generatePassword(){
@@ -16,7 +15,7 @@ class UtilityModel extends CI_Model {
 		'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'
 		];
 		$pass = array();
-		for($i=0;$i<5;$i++){
+		for($i=0;$i<6;$i++){
 			$temp = mt_rand(0,35);
 			$pass[$i] = $data[$temp];
 		}
@@ -26,5 +25,5 @@ class UtilityModel extends CI_Model {
 	}	
 }
 
-/* End of file tb_account_model.php */
-/* Location: ./application/models/tb_account_model.php */
+/* End of file UtilityModel.php */
+/* Location: ./application/models/UtilityModel.php */
