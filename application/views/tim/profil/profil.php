@@ -15,27 +15,34 @@
 					<table class="school-info">
 						<tr>
 							<td class="p1">Kategori Lomba</td>
-							<td>CSPC - Computer Science Programming Contest</td>
+							<td><?php echo $anggota[0]['eve_name']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Nama Tim</td>
-							<td>Dinamiku</td>
+							<td><?php echo $anggota[0]['sct_name']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Nama Pembimbing</td>
-							<td>Bambang Sanusi</td>
+							<td><?php echo $anggota[0]['sct_coach_name']; ?></td>
 						</tr>
-						<tr>
-							<td class="p1">Anggota</td>
-							<td>Esa muhammad</td>
-						</tr>
+						<?php 
+							foreach($anggota as $key){
+								echo "<tr>";
+								echo "<td class='p1'>Anggota</td>";
+								echo "<td>".$key['schparticipant_name']."</td>";
+							}
+						 ?>
 						<tr>
 							<td class="p1">Kode Pembayaran</td>
-							<td class="kode">FSA9FA8S9989</td>
+							<td class="kode"><?php echo $anggota[0]['pay_unique_code']; ?></td>
 						</tr>
 						<tr>
 							<td class="p1">Status Pembayaran</td>
-							<td class="kode" style="color: green">LUNAS</td>
+							<?php if ($anggota[0]['pay_status']==1){ ?>
+							<td class="kode" style="color: green">Lunas</td>
+							<?php }else{ ?>
+							<td class="kode" style="color: red">Belum Lunas</td>
+							<?php } ?>
 						</tr>
 					</table>
 					<br>

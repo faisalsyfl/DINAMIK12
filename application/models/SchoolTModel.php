@@ -37,6 +37,11 @@ class SchoolTModel extends CI_Model {
 
 		return $this->db->insert_id();
 	}
+	public function update($id,$data){
+		$this->db->set($data);
+		$this->db->where('schteam_id',$id);
+		$this->db->update($this->tableName);
+	}	
 	public function delete($id){
 		$this->db->where('schteam_id',$id);
 		$this->db->delete($this->tableName);
@@ -44,7 +49,13 @@ class SchoolTModel extends CI_Model {
 	public function viewSchtDash(){
 		$this->db->select('*');
 		$this->db->from('v_schteam_dash');
-
+		return $this->db->get();
+	}
+	public function selectByAccIdJoin($id){
+		$this->db->select('*');
+		$this->db->from($this->tableName);
+		$this->db->where('schteam_account_id',$id);
+		$this->db->join('tb_event','schteam_event_id = event_id');
 		return $this->db->get();
 	}
 }

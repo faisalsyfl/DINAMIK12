@@ -24,22 +24,12 @@ class Tim extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-			if($_SESSION['category']=='ADM' || $_SESSION['category']=='ADMSU' || $_SESSION['category']=='COOR' || $_SESSION['category']=='SCH'){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
-				// var_dump($_SESSION['category']);
-				$this->load->view('tim/layout/header',$head);
-				$this->load->view('tim/index',$data);
-				$this->load->view('tim/layout/footer');
-			}else{
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
-				// var_dump($_SESSION);
-				$this->load->view('tim/layout/header',$head);
-				$this->load->view('tim/index',$data);
-				$this->load->view('tim/layout/footer');				
-			}
-		}else{
+			$data['schteam'] = $this->SchoolTModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+			// var_dump($_SESSION);
+			$this->load->view('tim/layout/header');
+			$this->load->view('tim/index',$data);
+			$this->load->view('tim/layout/footer');				
+					}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}
@@ -62,15 +52,20 @@ class Tim extends CI_Controller {
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in'])){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
-				$data['list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('tim/layout/header',$head);
+				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($this->SchoolTModel->selectByAccId($_SESSION['userid'])->row_array()['schteam_id'])->result_array();
+				$this->load->view('tim/layout/header');
 				$this->load->view('tim/profil/profil',$data);
 				$this->load->view('tim/layout/footer');		
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}	
+	}
+
+	public function uploadF(){
+		// var_dump($this->input->post(''));
+		$data['schteam_file'] = $this->input->post('schteam_file');
+		$this->SchoolTModel->update($this->input->post('schteam_id'),$data);
+		redirect(site_url('dashboard/Tim/'));
 	}
 }

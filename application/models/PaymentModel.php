@@ -39,7 +39,7 @@ class PaymentModel extends CI_Model {
 		];
 		$coupon = array();
 		for($i=0;$i<6;$i++){
-			$temp = random_int(0,35);
+			$temp = mt_rand(0,35);
 			$coupon[$i] = $data[$temp];
 		}
 
