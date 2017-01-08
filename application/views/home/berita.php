@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <!-- News Image -->
-                        <img src="<?php echo base_url("assets/img/1.png"); ?>" alt="News Image">
+                        <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="News Image" class="thumbnail" style="width:270px;">
                     </div>
                     <div class="col-md-8">
                         <!-- News Text -->
@@ -29,13 +29,13 @@
                         </div>
                         
                         <div class="news-by">
-                            <span class="fa fa-user-o"></span>&nbsp; Oleh <a href="#">Administrator</a>
+                            <span class="fa fa-user-o"></span>&nbsp; Oleh <a href="#" style="color:#ffa619">Administrator</a>
                             &nbsp;
-                            <span class="fa fa-tags"></span>&nbsp; Kategori : <a href="#"><?php echo $data['news_category'] ?></a>
+                            <span class="fa fa-tags"></span>&nbsp; Kategori : <a href="#" style="color:#ffa619"><?php echo $data['news_category'] ?></a>
                         </div>
 
                         <div class="news-category">
-                            <a href="<?php echo base_url("berita/detail/".$data['news_id']); ?>"> Readmore >> </a>
+                            <a href="<?php echo base_url("berita/detail/".$data['news_id']); ?>" style="color:#ffa619"> Selengkapnya >> </a>
                         </div>
                     </div>
                 </div>

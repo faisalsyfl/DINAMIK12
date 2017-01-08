@@ -48,13 +48,18 @@
 					</table>
 				</div>
 				<div class="col-sm-6 col-md-4 medsos">
+					<h4><b>DISELENGGARAKAN OLEH</b></h4>
+					<a href="http://upi.edu" target="_blank"><img src="<?php echo base_url("assets/img/logo/upi.png"); ?>" style="width:50px;"></a>
+					<a href="http://kemakom.cs.upi.edu" target="_blank"><img src="<?php echo base_url("assets/img/logo/kemakom.png"); ?>" style="width:50px;"></a>
+					<hr>
+					<!--
 					<h4><b>MEDIA SOSIAL</b></h4>
 					<a href="#"><img src="<?php echo base_url("assets/img/logo/facebook.png"); ?>"></a>
 					<a href="#"><img src="<?php echo base_url("assets/img/logo/instagram.png"); ?>"></a>
 					<a href="#"><img src="<?php echo base_url("assets/img/logo/twitter.png"); ?>"></a>
 					<a href="#"><img src="<?php echo base_url("assets/img/logo/youtube.png"); ?>"></a>
-					<hr>
 					<br>
+					-->
 					<!-- NOT USED
 					<h4><b>BERLANGGANAN</b></h4>
 					<form target="#" method="POST">
@@ -72,12 +77,14 @@
 			<div class="col-md-6 copy-left">
 				<p>Copyright &copy DINAMIK12 2016</p>
 			</div>
+			<!--
 			<div class="col-md-6 copy-right">
 				<a href="#" class="copy-link">Site Map</a>
 				<a href="#" class="copy-link">Privacy Policy</a>
 				<a href="#" class="copy-link">Term of Use</a>
 				<a href="#" class="copy-link">About</a>
 			</div>
+			-->
 		</div>
     </div><!-- /.container -->
 	

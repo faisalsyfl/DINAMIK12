@@ -46,7 +46,8 @@
             <li <?php if ( $this->uri->uri_string() == 'lomba' ) echo 'class="active"' ?>><a href="<?php echo site_url('/lomba'); ?>">LOMBA</a></li>
             <li <?php if ( $this->uri->uri_string() == 'acara' ) echo 'class="active"' ?>><a href="<?php echo site_url('/acara'); ?>">ACARA</a></li>
             <li <?php if ( $this->uri->uri_string() == 'berita' ) echo 'class="active"' ?>><a href="<?php echo site_url('/berita'); ?>">BERITA</a></li>
-            <li <?php if ( $this->uri->uri_string() == 'galeri' ) echo 'class="active"' ?>><a href="<?php echo site_url('/maintenance'); ?>">GALERI</a></li>   <li <?php if ( $this->uri->uri_string() == 'akun' ) echo 'class="active"' ?>><a href="<?php echo site_url('/akun'); ?>">AKUN</a></li>
+            <!-- <li <?php if ( $this->uri->uri_string() == 'galeri' ) echo 'class="active"' ?>><a href="<?php echo site_url('/maintenance'); ?>">GALERI</a></li> -->
+			<li <?php if ( $this->uri->uri_string() == 'akun' ) echo 'class="active"' ?>><a href="<?php echo site_url('/akun'); ?>">AKUN</a></li>
             <li <?php if ( $this->uri->uri_string() == 'info' ) echo 'class="active"' ?>><a href="<?php echo site_url('/info'); ?>">INFO</a></li>
           </ul>
         </div><!--/.nav-collapse -->

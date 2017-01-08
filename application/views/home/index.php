@@ -234,7 +234,7 @@
 						<p class="news-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 9 JAN 2016
 						</p>
-						<a href="<?php echo site_url('/pendaftaran'); ?>">
+						<a href="<?php echo site_url('/akun'); ?>">
 						<button class="btn-news">SELENGKAPNYA</button></a>
 					  </div>
 					</div>
@@ -242,7 +242,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<a class="news-link" href="<?php echo site_url('/Maintenance'); ?>">BERITA LAINNYA</a>
+			<a class="news-link" href="<?php echo site_url('/berita'); ?>">BERITA LAINNYA</a>
 		</div>
 	</div>
 	
