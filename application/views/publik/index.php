@@ -18,6 +18,7 @@
 			            <tr>
 			                <th>No</th>
 			                <th>Nama Lengkap</th>
+			                <th>Instansi</th>
 			                <th>Email</th>
 			                <th>Kontak</th>
 			                <th>Nama Acara</th>
@@ -30,6 +31,7 @@
 			            <tr>
 			                <th>No</th>
 			                <th>Nama Lengkap</th>
+			                <th>Instansi</th>
 			                <th>Email</th>
 			                <th>Kontak</th>
 			                <th>Nama Acara</th>
@@ -45,6 +47,7 @@
 			        				echo "<tr>";
 			        				echo "<td>".$i++."</td>";
 			        				echo "<td>".$data['pbt_name']."</td>";
+			        				echo "<td>".$data['pbt_instance']."</td>";
 			        				echo "<td>".$data['pbt_email']."</td>";
 			        				echo "<td>".$data['pbt_contact']."</td>";
 			        				echo "<td>".$data['eve_name']."</td>";
@@ -62,12 +65,29 @@
 			        		 ?>
 		        				<td>	        				
 		        				<button class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
-		        				<button class="btn btn-danger" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/del');?>'"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>
+		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['pbt_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
 		        				</td>
 			        		 
 		        			<?php 
 		        				}
 		        			?>
+							<script type="text/javascript">
+							    var url="<?php echo site_url();?>";
+							    function deletes(id){
+										swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this team again",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  closeOnConfirm: false
+},
+function(){
+  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+});
+							        } 
+							</script>		        			
 			        </tbody>
 			   	</table>
 				</section>

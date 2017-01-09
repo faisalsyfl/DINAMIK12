@@ -14,7 +14,7 @@
 			<?php foreach($list as $data){ ?>
             <!-- News Block -->
             <div class="news-thumbail">
-                <a class="news-title"><?php echo $data['news_title']; ?></a>
+                <a class="news-title" style=""><?php echo $data['news_title']; ?></a>
                 <br>
                 <hr>
                 <div class="row">

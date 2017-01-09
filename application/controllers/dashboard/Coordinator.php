@@ -20,11 +20,5 @@ class Coordinator extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo "<p> ID:".$namabarang['id']."--- Nama:".$namabarang['nama'];
-		$data['namabarang'] = $this->barangModel->selectAll()->result_array();
-		$data['namabarang'] = $this->barangModel->selectAll()->result();
-		$data['namabarang'] = $this->barangModel->selectAll()->row_array();
-		$data['namabarang'] = $this->barangModel->selectAll()->row();
-		$this->load->view('admin/main_dashboard',$data);
 	}
 }

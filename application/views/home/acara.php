@@ -29,6 +29,9 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Minggu, 2 April 2016
 					  </p>
 					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[8]['event_price'],0,',','.'); ?>
+					  </p>					  					  
+					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
@@ -47,6 +50,9 @@
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
 					  </p>
 					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[9]['event_price'],0,',','.'); ?>
+					  </p>					  					  
+					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
@@ -60,7 +66,7 @@
 					  <h3 class="event-detail-title">FESTIVAL TEKNOLOGI DAN SENI</h3>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Minggu, 7 - 9 April 2017
-					  </p>
+					  </p>					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
 					  </p>
@@ -99,6 +105,9 @@
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
 					  </p>
 					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[12]['event_price'],0,',','.'); ?>
+					  </p>					  					  
+					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Isola Resort, Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
@@ -114,6 +123,9 @@
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu - Minggu, 1 - 2 April 2017
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[13]['event_price'],0,',','.'); ?>
+					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> FPMIPA-C, Universitas Pendidikan Indonesia
 					  </p>

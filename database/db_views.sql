@@ -90,6 +90,7 @@ CREATE OR REPLACE VIEW v_pubteam_dash AS
 SELECT 	
 	pbt.pubteam_id as pbt_id,
 	pbt.pubteam_name as pbt_name,
+	pbt.pubteam_instance as pbt_instance,
 	pbt.pubteam_email as pbt_email,
 	pbt.pubteam_contact as pbt_contact,
 	eve.event_name as eve_name,

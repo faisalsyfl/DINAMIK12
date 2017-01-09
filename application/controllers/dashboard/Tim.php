@@ -23,7 +23,7 @@ class Tim extends CI_Controller {
 	public function index()
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCT'){
 			$data['schteam'] = $this->SchoolTModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
 			// var_dump($_SESSION);
 			$this->load->view('tim/layout/header');

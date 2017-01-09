@@ -23,7 +23,7 @@ class Sekolah extends CI_Controller {
 	public function index()
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
 
 			$data['list'] = $this->SchoolTModel->viewSchtDash($this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array()['school_id'])->result_array();
 			$this->load->view('sekolah/layout/header');
@@ -127,6 +127,40 @@ class Sekolah extends CI_Controller {
 		}
 		redirect(site_url('dashboard/Sekolah/'));
 	}
+	public function processEdit(){
+		$school = $this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array();
+		$data = $this->input->post();
+		$asd = explode(" ",$this->input->post('schteam_name'));
+		$acc['account_username'] = strtolower(implode("",$asd));
+		$acc['account_email'] = $_SESSION['email'];
+		$acc['account_password'] = md5($data['account_password']);
+		$acc['account_image'] = "/assets/img/icon_dashboard/tim.jpg";
+		$acc['account_category_id'] = "SCT";
+		$this->AccountModel->insert($acc);
+
+		$pay['payment_amount'] = $this->EventModel->selectById($data['schteam_event_id'])->row_array()['event_price'];
+		$pay['payment_unique_code'] = implode("",$this->PaymentModel->generate());
+		$data['schteam_payment_id'] = $this->PaymentModel->insert($pay);
+
+		$data['schteam_account_id'] = $this->AccountModel->selectByUsername(strtolower(implode("",$asd)))['account_id'];
+		$data['schteam_school_id'] = $school['school_id'];
+		unset($data['submit']);
+		$cAnggota = $data['anggota'];
+		$cNISN = $data['nisn'];
+		unset($data['anggota']);
+		unset($data['nisn']);
+		unset($data['account_password']);
+		$insert['schparticipant_schteam_id'] = $this->SchoolTModel->insert($data);
+		
+		for($i=0;$i<3;$i++){
+			if($cAnggota[$i] != ""){
+				$insert['schparticipant_name'] = $cAnggota[$i];
+				$insert['schparticipant_nisn'] = $cNISN[$i];
+				$this->SchoolPModel->insert($insert);
+			}
+		}
+		redirect(site_url('dashboard/Sekolah/'));
+	}	
 
 	public function detailtim($id){
 			/* if has session */

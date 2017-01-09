@@ -23,7 +23,7 @@ class Publik extends CI_Controller {
 	public function index()
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){
 			$data['list'] = $this->PublicTModel->viewPubtDash($this->PublicModel->selectByAccId($_SESSION['userid'])->row_array()['public_id'])->result_array();
 			$this->load->view('publik/layout/header');
 			$this->load->view('publik/index',$data);
@@ -107,22 +107,25 @@ class Publik extends CI_Controller {
 		redirect(site_url('dashboard/Publik/'));
 	}
 
-	public function detailtim($id){
-			/* if has session */
-		if(isset($_SESSION['logged_in'])){
-				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($id)->result_array();
-				$this->load->view('public/layout/header');
-				$this->load->view('public/detailtim',$data);
-				$this->load->view('public/layout/footer');		
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}	
-	}
+	public function processEdit(){
+		$data = $this->input->post();
+		$id = $data['pubteam_id'];
+		unset($data['pubteam_id']);
+		unset($data['submit']);
+		// var_dump($data);
+		$this->PublicTModel->update($id,$data);
+		redirect(site_url('dashboard/Publik/'));
+		
+		// redirect(site_url('dashboard/Publik/'));
+	}	
 
 	public function publikAction($id,$string){
 		if($string == "edit"){
-			
+			$data['list'] = $this->EventModel->selectAll(9,8)->result_array();	
+			$data['data'] = $this->PublicTModel->selectById($id)->row_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/edittim',$data);
+			$this->load->view('publik/layout/footer');	
 		}else if($string == "del"){
 			$payid = $this->PublicTModel->selectById($id)->row_array()['pubteam_payment_id'];
 			$this->PublicTModel->delete($id);

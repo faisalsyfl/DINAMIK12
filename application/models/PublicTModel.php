@@ -37,6 +37,11 @@ class PublicTModel extends CI_Model {
 
 		return $this->db->insert_id();
 	}
+	public function update($id,$data){
+		$this->db->set($data);
+		$this->db->where('pubteam_id',$id);
+		$this->db->update($this->tableName);
+	}		
 	public function delete($id){
 		$this->db->where('pubteam_id',$id);
 		$this->db->delete($this->tableName);

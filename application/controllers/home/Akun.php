@@ -23,6 +23,7 @@ class Akun extends CI_Controller{
 		Index function
 		Display the account page
 	 */
+	
 	public function index($report=0)
 	{
 		$data['city'] = $this->CityModel->selectAll()->result_array();
@@ -199,7 +200,7 @@ class Akun extends CI_Controller{
 		if(isset($_POST['btnDaftarPublik'])){
 			$x =  count($this->AccountModel->selectByEmail($this->input->post('email')));
 			$y =  count($this->AccountModel->selectByUsername(strtolower(implode("",explode(" ",$this->input->post('name'))))));		
-			if($x==0||$y==0){			
+			if($x==0&&$y==0){			
 				$acc['account_email'] = $this->input->post('email');
 				$asd = explode(" ",$this->input->post('name'));
 				$acc['account_username'] = strtolower(implode("",$asd));

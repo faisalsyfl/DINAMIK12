@@ -146,8 +146,6 @@
 					<ul class="sidebar-menu">
 						<li class="header">Admin Menu</li>
 						<li class="active"><a href="<?php echo site_url('dashboard/admin/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
-						<?php if($_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'COR'){
-							?>
 						<li>
 							<a href="<?php echo site_url('dashboard/admin/acaralomba') ?>"><i class="fa fa-star"></i> 
 								<span>Acara & Lomba </span>
@@ -156,9 +154,6 @@
 								</span>
 							</a>
 						</li>
-						<?php 
-						} ?>
-
 						<li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>

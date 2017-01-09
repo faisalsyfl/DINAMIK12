@@ -49,22 +49,22 @@
 						</tr>
 					</table>
 					<br>
-					<a href="<?php echo site_url('dashboard/publikAction/') ?>" class="btn-kembali">Kembali</a>
+					<a href="<?php echo site_url('dashboard/publik/') ?>" class="btn-kembali">Kembali</a>
 					<br>
 					<br>
 					<?php echo form_open('dashboard/publik/editPass'); ?>
 					<table class="school-info">
 						<tr>
 							<td class="p1">Password Lama</td>
-							<td><input type="text" name="bef" class="form-control" placeholder="Password Lama"></td>
+							<td><input type="text" name="bef" class="form-control" placeholder="Password Lama" required=""></td>
 						</tr>
 						<tr>
 							<td class="p1">Password Baru</td>
-							<td><input type="password" name="aft1" class="form-control" placeholder="Enter Password"></td>
+							<td><input type="password" name="aft1" class="form-control" placeholder="Enter Password" required=""></td>
 						</tr>
 						<tr>
 							<td class="p1">Re-Enter Password</td>
-							<td><input type="password" name="aft2" class="form-control" placeholder="Re-Enter Password"></td>
+							<td><input type="password" name="aft2" class="form-control" placeholder="Re-Enter Password" required=""></td>
 						</tr>						
 					</table>
 					<input type="submit" name="Pass" value="Ganti Password" class="btn-kembali">								
