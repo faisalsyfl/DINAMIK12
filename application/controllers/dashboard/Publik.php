@@ -50,7 +50,7 @@ class Publik extends CI_Controller {
 	public function profil($err = NULL)
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
 			if($err!=NULL){
 				$data['err'] = $err;
 			}			
@@ -81,7 +81,7 @@ class Publik extends CI_Controller {
 
 	public function pendaftarantim(){
 		/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
 			$data['list'] = $this->EventModel->selectAll(9,8)->result_array();
 			$this->load->view('publik/layout/header');
 			$this->load->view('publik/pendaftarantim',$data);

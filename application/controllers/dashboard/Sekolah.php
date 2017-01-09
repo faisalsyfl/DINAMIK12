@@ -51,7 +51,7 @@ class Sekolah extends CI_Controller {
 	public function profil($err = NULL)
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'SCH'){
 				$data['list'] = $this->SchoolModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
 				if($err!=NULL){
 					$data['err'] = $err;
@@ -82,7 +82,7 @@ class Sekolah extends CI_Controller {
 
 	public function pendaftarantim(){
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
 			$data['list'] = $this->EventModel->selectAll(8,0)->result_array();
 			$this->load->view('sekolah/layout/header');
 			$this->load->view('sekolah/pendaftarantim/pendaftarantim',$data);
@@ -98,7 +98,7 @@ class Sekolah extends CI_Controller {
 		$data = $this->input->post();
 		$asd = explode(" ",$this->input->post('schteam_name'));
 		$acc['account_username'] = strtolower(implode("",$asd));
-		$acc['account_email'] = $_SESSION['email'];
+		$acc['account_email'] = $data['account_email'];
 		$acc['account_password'] = md5($data['account_password']);
 		$acc['account_image'] = "/assets/img/icon_dashboard/tim.jpg";
 		$acc['account_category_id'] = "SCT";
@@ -115,6 +115,7 @@ class Sekolah extends CI_Controller {
 		$cNISN = $data['nisn'];
 		unset($data['anggota']);
 		unset($data['nisn']);
+		unset($data['account_email']);
 		unset($data['account_password']);
 		$insert['schparticipant_schteam_id'] = $this->SchoolTModel->insert($data);
 		
@@ -164,7 +165,7 @@ class Sekolah extends CI_Controller {
 
 	public function detailtim($id){
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
 				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($id)->result_array();
 				// var_dump($data['anggota']);
 				$data['account'] = $this->AccountModel->selectById($data['anggota'][0]['acc_id'])->row_array();

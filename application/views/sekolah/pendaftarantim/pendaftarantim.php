@@ -35,10 +35,19 @@
 							</td>
 						</tr>
 						<tr>
+							<td class="p1">Email Ketua Tim</td>
+							<td>	
+								<input type="email" name="account_email" value="" placeholder="Email Ketua">
+							</td>	
+							<td style="color:red;">Email ini digunakan untuk Login sebagai Tim. <br>Akun Aktif ketika pembayaran sudah <b style="color:green;">LUNAS</b> <br>Mohon dibedakan dengan email resmi sekolah</td>
+
+						</tr>	
+						<tr>
 							<td class="p1">Password</td>
 							<td>
 								<input type="password" name="account_password" placeholder="Enter password">
 							</td>
+							<td style="color:red;">Password ini digunakan untuk login sebagai Tim.</td>
 						</tr>						
 						<tr>
 							<td class="p1">Nama Pembimbing</td>

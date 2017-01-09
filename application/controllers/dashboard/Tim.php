@@ -51,7 +51,7 @@ class Tim extends CI_Controller {
 	public function profil($category = NULL)
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in'])){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'SCT'){
 				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($this->SchoolTModel->selectByAccId($_SESSION['userid'])->row_array()['schteam_id'])->result_array();
 				$this->load->view('tim/layout/header');
 				$this->load->view('tim/profil/profil',$data);

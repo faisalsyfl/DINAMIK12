@@ -22,6 +22,7 @@
 						  <input type="checkbox" id="inlineCheckbox1" class="cbbayar" value="<?php echo $data['pay_id']?>" name="pay_id[]	"> <?php echo $data['sct_name'];?>
 						</label>									
 					<?php }} ?>
+					<?php if((count($list)==0)) echo "<h3 style='color:red;'>Anda belum mendaftarkan tim ,silahkan daftar <a href='".site_url('dashboard/sekolah/pendaftarantim')."'>Disini</a></h3>";  ?>					
 					<p class="school-info">
 						Silahkan masukan bukti pembayaran dibawah ini :
 					</p>

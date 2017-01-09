@@ -65,8 +65,10 @@
 			        		 ?>
 		        				<td>	        				
 		        				<button class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
+							<?php if($data['pay_status'] != 1){?>
 		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['pbt_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
 		        				</td>
+							<?php }?>	
 			        		 
 		        			<?php 
 		        				}
@@ -74,9 +76,9 @@
 							<script type="text/javascript">
 							    var url="<?php echo site_url();?>";
 							    function deletes(id){
-										swal({
+swal({
   title: "Are you sure?",
-  text: "You will not be able to recover this team again",
+  text: "You will not be able to recover this team again!",
   type: "warning",
   showCancelButton: true,
   confirmButtonColor: "#DD6B55",
@@ -84,9 +86,9 @@
   closeOnConfirm: false
 },
 function(){
-  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+							          window.location = url+"dashboard/publik/publikAction/"+id+"/del";
 });
-							        } 
+}
 							</script>		        			
 			        </tbody>
 			   	</table>
