@@ -1,8 +1,3 @@
-<?php 
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
-			redirect(site_url('/akun'));
-		}
- ?>
 <!DOCTYPE html>
 <html>
 	<head>
