@@ -11,6 +11,7 @@
 				</section>
 				<!-- Main content -->
 				<section class="content">
+					<button onclick="location.href='<?php echo site_url('dashboard/admin/newsAction/add');?>'" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"> Tambah Berita</span></button><br><br>
 					<table id="allEve" class="table table-bordered" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
@@ -30,7 +31,6 @@
 			                <th>Action</th>	                
 			            </tr>
 			        </tfoot>
-					<button onclick="location.href='<?php echo site_url('dashboard/admin/newsAction/add');?>'" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 			        <tbody>
 			        		<?php $i=1;foreach($list as $data){ ?>
 			            <tr class="success">

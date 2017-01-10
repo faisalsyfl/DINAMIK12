@@ -34,11 +34,14 @@ class SchoolPModel extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function selectJoinVSchTDash($id){
+	public function selectJoinVSchTDash($id=NULL){
 		$this->db->select('*');
 		$this->db->from($this->tableName);
 		$this->db->join('v_schteam_dash','sct_id = schparticipant_schteam_id');
-		$this->db->where('schparticipant_schteam_id',$id);
+		if($id!=NULL){
+			$this->db->where('schparticipant_schteam_id',$id);
+		}
+		// $this->db->order_by('sct_name',)
 		return $this->db->get();
 	}
 

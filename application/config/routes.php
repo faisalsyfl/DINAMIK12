@@ -60,6 +60,7 @@ $route['info'] = 'home/info';
 $route['berita/detail/(:num)']='home/berita/detail/$1';
 $route['akun/failedlog'] = 'home/akun/index/1';
 $route['akun/success'] = 'home/akun/index/2';
+$route['akun/success2'] = 'home/akun/index/5';
 $route['akun/failedreg'] = 'home/akun/index/3';
 $route['akun/failedact'] = 'home/akun/index/4';
 $route['info/success'] = '/home/info/index/1';

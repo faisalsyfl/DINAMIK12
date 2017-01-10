@@ -30,7 +30,7 @@ class Akun extends CI_Controller{
 		if($report==2){
 			$data['color'] = "success";
 			$data['h1'] = "Berhasil Daftar Akun!";
-			$data['p'] = "Terimakasih telah membuat akun lomba/acara DINAMIK 12";
+			$data['p'] = "Terimakasih telah membuat akun acara DINAMIK 12, Silahkan login sekarang juga!";
 		}else if($report==3){
 			$data['color'] = "danger";
 			$data['h1'] = "Gagal Daftar Akun!";
@@ -43,6 +43,10 @@ class Akun extends CI_Controller{
 			$data['color'] = "danger";
 			$data['h1'] = "Akun belum diverifikasi";
 			$data['p'] = "Akun tidak atau belum diverifikasi oleh admnisitrator, silahkan hubungi kami";	
+		}else if($report==5){
+			$data['color'] = "success";
+			$data['h1'] = "Berhasil Daftar Akun Sekolah!";
+			$data['p'] = "Terimakasih telah membuat Akun Sekolah, Silahkan cek folder Inbox Email anda!";
 		}
 		// var_dump($data['city']);
 		$this->load->view('layout/header');
@@ -182,7 +186,7 @@ class Akun extends CI_Controller{
 				$data['account_password'] = $passgen;
 				$email = $acc['account_email'];
 				$this->sendmail("Akun DINAMIK12", $email, "Detail Pendaftaran Akun ".$sch['school_name'], $data, "reg");
-				redirect(site_url('/akun/success'));
+				redirect(site_url('/akun/success2'));
 			}else{
 				redirect(site_url('/akun/failedreg'));
 			}

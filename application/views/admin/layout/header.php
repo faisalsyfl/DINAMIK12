@@ -240,14 +240,14 @@
 								</span>
 							</a>
 						</li> -->
-						<li>
+<!-- 						<li>
 							<a href="#"><i class="fa fa-envelope"></i> 
 								<span>Pesan Masuk</span><span class="pull-right-container">
 									<small class="label pull-right bg-blue">???</small>            
 									<small class="label pull-right bg-red">3</small>            
 								</span>
 							</a>
-						</li>						
+						</li>		 -->				
 <!-- 						<li>
 							<a href="#">
 								<i class="fa fa-users"></i> 
@@ -258,47 +258,6 @@
 							</a>
 						</li>		 -->									
 						<li>
-							<a href="#">
-								<i class="fa fa-user"></i>
-								<span>Data Individual Peserta</span>
-								<span class="pull-right-container">
-									<small class="label pull-right bg-blue"><?php echo $totalSchPart; ?></small>            
-								</span>
-							</a>
-						</li>											
-						<li class="">
-							<a href="#"><i class="fa fa-users"></i> Tim Peserta Acara
-								<span class="pull-right-container">
-									<i class="fa fa-angle-left pull-right"></i>
-								</span>
-							</a>
-							<ul class="treeview-menu" style="display: none;">
-								<li>
-									<a href="<?php echo site_url('dashboard/admin/timacara'); ?>"><i class="fa fa-users"></i>
-										<span>Semua Tim</span>
-										<span class="pull-right-container">
-											<small class="label pull-right bg-blue"><?php echo $totalPubTeam; ?></small>            
-										</span>
-									</a>
-								</li>
-								<li class="">
-									<a href="#"><i class="fa fa-user"></i> Kategori Acara
-										<span class="pull-right-container">
-											<i class="fa fa-angle-left pull-right"></i>
-										</span>
-									</a>
-									<ul class="treeview-menu" style="display: none;">
-										<li><a href="#">Dinamik STAR</a></li>
-										<li><a href="#">Donor Darah</a></li>
-										<li><a href="#">Festival</a></li>
-										<li><a href="#">Seminar Nasional</a></li>
-										<li><a href="#">Talkshow</a></li>
-										<li><a href="#">Workshop Guru</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>										
-						<li>
 							<a href="#"><i class="fa fa-users"></i> Tim Peserta Lomba
 								<span class="pull-right-container">
 									<i class="fa fa-angle-left pull-right"></i>
@@ -306,7 +265,7 @@
 							</a>
 							<ul class="treeview-menu" style="display: none;">
 								<li>
-									<a href="#"><i class="fa fa-users"></i><span>Semua Tim</span>
+									<a href="<?php echo site_url('dashboard/admin/timlomba'); ?>"><i class="fa fa-users"></i><span>Semua Tim</span>
 										<span class="pull-right-container">
 											<small class="label pull-right bg-blue"><?php echo $totalSchTeam; ?></small>            
 										</span>
@@ -319,18 +278,58 @@
 										</span>
 									</a>
 									<ul class="treeview-menu" style="display: none;">
-										<li><a href="#">CS Programming Contest</a></li>
-										<li><a href="#">Keamanan Jaringan</a></li>
-										<li><a href="#">Lomba Cipta Animasi</a></li>
-										<li><a href="#">Lomba Cipta Web</a></li>
-										<li><a href="#">Lomba Desain Grafis</a></li>
-										<li><a href="#">Olimpiade TIK</a></li>
-										<li><a href="#">PC Assembling</a></li>
-										<li><a href="#">Robot Line Follower</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/5'); ?>">CS Programming Contest</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/8'); ?>">Keamanan Jaringan</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/6'); ?>">Lomba Cipta Animasi</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/2'); ?>">Lomba Cipta Web</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/1'); ?>">Lomba Desain Grafis</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/3'); ?>">Olimpiade TIK</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/4'); ?>">PC Assembling</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timlomba/7'); ?>">Robot Line Follower</a></li>
 									</ul>
 								</li>
 							</ul>
 						</li>																											
+						<li>
+							<a href="<?php echo site_url('dashboard/admin/individu'); ?>">
+								<i class="fa fa-user"></i>
+								<span>Data Individu Peserta</span>
+								<span class="pull-right-container">
+									<small class="label pull-right bg-blue"><?php echo $totalSchPart; ?></small>            
+								</span>
+							</a>
+						</li>											
+						<li class="">
+							<a href="#"><i class="fa fa-users"></i>Peserta Acara
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu" style="display: none;">
+								<li>
+									<a href="<?php echo site_url('dashboard/admin/timacara'); ?>"><i class="fa fa-users"></i>
+										<span>Semua Peserta</span>
+										<span class="pull-right-container">
+											<small class="label pull-right bg-blue"><?php echo $totalPubTeam; ?></small>            
+										</span>
+									</a>
+								</li>
+								<li class="">
+									<a href="#"><i class="fa fa-user"></i> Kategori Acara
+										<span class="pull-right-container">
+											<i class="fa fa-angle-left pull-right"></i>
+										</span>
+									</a>
+									<ul class="treeview-menu" style="display: none;">
+										<li><a href="<?php echo site_url('dashboard/admin/timacara/14'); ?>">Dinamik STAR</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timacara/11'); ?>">Festival</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timacara/10'); ?>">Seminar Nasional</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timacara/9'); ?>">Talkshow</a></li>
+										<li><a href="<?php echo site_url('dashboard/admin/timacara/13'); ?>">Workshop Guru</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>										
 						<li class="header">LABELS</li>
 						<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Penting</span></a></li>
 						<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Peringatan</span></a></li>

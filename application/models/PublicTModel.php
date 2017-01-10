@@ -66,7 +66,7 @@ class PublicTModel extends CI_Model {
 	public function viewPubtDashByEvent($id){
 		$this->db->select('*');
 		$this->db->from('v_pubteam_dash');
-		$this->db->where('pub_id',$id);
+		$this->db->where('eve_id',$id);
 
 		return $this->db->get();		
 	}

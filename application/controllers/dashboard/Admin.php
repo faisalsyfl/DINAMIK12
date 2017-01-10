@@ -182,25 +182,6 @@ class Admin extends CI_Controller {
 		}	
 	}
 
-	public function timacara($cat=NULL){
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
-			if($cat==NULL){
-				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
-				// var_dump($data);
-				$this->load->view('admin/layout/header',$this->head);
-				$this->load->view('admin/timacara/index',$data);
-				$this->load->view('admin/layout/footer');
-			}else{
-				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
-				// var_dump($data);
-				$this->load->view('admin/layout/header',$this->head);
-				$this->load->view('admin/timacara/index',$data);
-				$this->load->view('admin/layout/footer');				
-			}
-		}else{
-				redirect(site_url('/akun'));		
-		}
-	}
 
 	public function eventAction($id,$aksi){
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
@@ -228,6 +209,46 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function timacara($cat=NULL){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+			if($cat==NULL){
+				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$this->head);
+				$this->load->view('admin/timacara/index',$data);
+				$this->load->view('admin/layout/footer');
+			}else{
+				$data['list'] = $this->PublicTModel->viewPubtDashByEvent($cat)->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$this->head);
+				$this->load->view('admin/timacara/index',$data);
+				$this->load->view('admin/layout/footer');				
+			}
+		}else{
+				redirect(site_url('/akun'));		
+		}
+	}
+	public function timlomba($cat=NULL){
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+			if($cat==NULL){
+				$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$this->head);
+				$this->load->view('admin/timlomba',$data);
+				$this->load->view('admin/layout/footer');
+			}else{
+				$data['list'] = $this->SchoolTModel->viewSchtDashByEvent($cat)->result_array();
+				// var_dump($data);
+				$this->load->view('admin/layout/header',$this->head);
+				$this->load->view('admin/timlomba',$data);
+				$this->load->view('admin/layout/footer');				
+			}
+		}else{
+				redirect(site_url('/akun'));		
+		}
+	}	
+
+
 	public function berita(){
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
@@ -323,5 +344,12 @@ class Admin extends CI_Controller {
 		$this->PaymentModel->update($id,$upd);
 		redirect(site_url('dashboard/admin/bendaharapublik'));
 	}		
+
+	public function individu(){
+		$data['list'] = $this->SchoolPModel->selectJoinVSchTDash()->result_array();
+		$this->load->view('admin/layout/header',$this->head);
+		$this->load->view('admin/individulomba',$data);
+		$this->load->view('admin/layout/footer');						
+	}
 }
 	
