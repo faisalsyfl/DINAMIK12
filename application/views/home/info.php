@@ -79,6 +79,9 @@
 							<li><b>Dimana informasi lengkap mengenai lomba/acara?</b><br>
 								Buka menu Lomba / Acara pada menu diatas, atau klik <a href="<?php echo site_url('/lomba'); ?>" style="color: #ffa619;" target="_blank">Lomba</a> / <a href="<?php echo site_url('/acara'); ?>" style="color: #ffa619;" target="_blank">Acara</a>.
 								</li>
+							<li><b>Dimana saya bisa melihat biaya pendaftaran?</b><br>
+								Biaya pendaftaran untuk tiap lomba / acara sudah ada pada halaman <a href="<?php echo site_url('/lomba'); ?>" style="color: #ffa619;" target="_blank">Lomba</a> / <a href="<?php echo site_url('/acara'); ?>" style="color: #ffa619;" target="_blank">Acara</a>.
+								</li>
 						</ul>
 					</div>
 					

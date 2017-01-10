@@ -24,7 +24,7 @@
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
 				</h3>
 				<br>
-				<p>Petunjuk alur pendaftaran bisa dibaca pada FAQ <a href="<?php echo site_url('/info'); ?>" style="color:#ffa619">disini</a></p>
+				<h4>Petunjuk alur pendaftaran bisa dibaca <a href="<?php echo site_url('/info'); ?>" style="color:#ffa619">disini</a></h4>
 			</div>
 		</div>
 		<div class="row">
