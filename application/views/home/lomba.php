@@ -73,7 +73,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/opk.png"); ?>" class="img-contest brightness" align="center"><br><br>
 					  <h3 class="event-detail-title">OLIMPIADE TIK</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 7 - 8 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 1 - 2 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[2]['event_price'],0,',','.'); ?>
