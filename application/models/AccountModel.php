@@ -73,6 +73,7 @@ class AccountModel extends CI_Model {
 		if($cat != NULL){
 			$this->db->where('account_category_id',$cat);
 		}
+		$this->db->order_by('account_id','DESC');
 		return $this->db->get();
 	}
 	

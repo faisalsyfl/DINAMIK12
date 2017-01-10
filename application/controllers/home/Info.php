@@ -18,8 +18,11 @@ class Info extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($err=0)
 	{
+		if($err==1){
+			$data['err'] = "success"; 
+		}
 		$data['list'] = $this->EventModel->selectAll()->result_array();		
 		// var_dump($data['list']);
 		$this->load->view('layout/header');
@@ -29,9 +32,9 @@ class Info extends CI_Controller {
 	
 	public function contactMsg(){
 		$message = $this->input->post();
-		
+		unset($message['btnKirim']);
 		$this->InfoModel->insert($message);
 		
-		//redirect(site_url('info/'));
+		redirect(site_url('info/success'));
 	}
 }

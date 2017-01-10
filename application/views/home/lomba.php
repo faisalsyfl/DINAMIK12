@@ -28,8 +28,9 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/ldg.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA DESAIN GRAFIS</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <br>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 						Babak Penyisihan : 14 - 18 Maret 2017<br>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 						Babak Final      : 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
@@ -41,6 +42,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[0]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[0]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet LDG </a>
+					  </p>						  
 					</div>
 					
 					<!-- lcw -->
@@ -58,8 +62,10 @@
 					  </p>					  
 					  <p class="event-detail-text">
 					  <?php echo $list[1]['event_description']; ?>
-
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[1]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet LCW </a>
+					  </p>					  
 					</div>
 					
 					<!-- ocs -->
@@ -78,6 +84,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[2]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[2]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet OTIK</a>
+					  </p>					  
 					</div>
 					
 					<!-- pca -->
@@ -96,6 +105,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[3]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[3]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet PCA</a>
+					  </p>						  
 					</div>
 					
 					<!-- cspc -->
@@ -103,7 +115,9 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/cspc.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">COMPUTER SCIENCE PROGRAMMING COMPETITION</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Selasa, 21 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Penyisihan : Selasa, 21 Maret 2017 <br>	
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Semifinal : Selasa, 28 Maret 2017 <br>	
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Final : Minggu, 9 April 2017 <br>	
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[4]['event_price'],0,',','.'); ?>
@@ -114,6 +128,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[4]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[4]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet CSPC</a>
+					  </p>						  
 					</div>
 					
 					<!-- lca -->
@@ -132,6 +149,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[5]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[5]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet LCA</a>
+					  </p>						  
 					</div>
 					
 					
@@ -150,8 +170,10 @@
 					  </p>
 					  <p class="event-detail-text">
 					  <?php echo $list[6]['event_description']; ?>
-
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[6]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet LF</a>
+					  </p>						  
 					</div>
 					
 					<!-- kompetisijaringan -->
@@ -170,6 +192,9 @@
 					  <p class="event-detail-text">
 					  <?php echo $list[7]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php 	echo $list[7]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet KJ</a>
+					  </p>						  
 					</div>
 					
 				  </div>

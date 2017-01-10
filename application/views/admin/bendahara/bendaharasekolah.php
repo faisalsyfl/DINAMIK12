@@ -5,11 +5,10 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Beranda Sekolah
-						<small>Panel Informasi</small>
+						Beranda Admin
+						<small>Panel Pembayaran</small>
 					</h1>
-					<h3 class="section-dashboard">Daftar Tim</h3>
-					<a href="<?php echo site_url('dashboard/sekolah/pendaftarantim/') ?>" class="btn-daftar">Daftarkan Tim</a>
+					<h3 class="section-dashboard">Aktivasi Pembayaran</h3>
 				</section>
 				<!-- Main content -->
 				<section class="content">
@@ -19,9 +18,10 @@
 			                <th>No</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
-			                <th>Pembimbing</th>
 			                <th>Status Pembayaran</th>
 			                <th>Kode Pembayaran</th>
+			                <th>Deksripsi</th>
+			                <th>Bukti</th>
 			                <th>Aksi</th>
 			            </tr>
 			        </thead>
@@ -30,9 +30,10 @@
 			                <th>No</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
-			                <th>Pembimbing</th>
 			                <th>Status Pembayaran</th>
 			                <th>Kode Pembayaran</th>
+			                <th>Deskripsi</th>
+			                <th>Bukti</th>
 			                <th>Aksi</th>
 			            </tr>
 			        </tfoot>
@@ -40,6 +41,7 @@
 			        		<?php 
 			        			$i=1;
 			        			foreach($list as $data){
+			        				if($data['pay_document'] != NULL){
 			        				if($data['pay_status'] == 1){
 			        					echo "<tr class='success'>";
 			        				}else{
@@ -48,7 +50,7 @@
 			        				echo "<td>".$i++."</td>";
 			        				echo "<td>".$data['sct_name']."</td>";
 			        				echo "<td>".$data['eve_name']."</td>";
-			        				echo "<td>".$data['sct_coach_name']."</td>";
+			        				// echo "<td>".$data['sct_coach_name']."</td>";
 			        				if($data['pay_status'] == 1){
 			        					echo "<td style='color:green;font-weight:bold;'>"."Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
 			        				}else{
@@ -59,36 +61,17 @@
 				        				}
 			        				}
 			        				echo "<td style='color:green;font-weight:bold;'>".$data['pay_unique_code']."</td>";
+			        				echo "<td>".$data['pay_desc']."</td>";
 			        				// echo "<td >"."<a href='".site_url('dashboard/Sekolah/detailtim/'.$data['sct_id'])."'>Detail Tim</a>"."</td>";
 			        		 ?>
+			        		 	<td><a title="Lihat Bukti" target="_blank" class="btn btn-primary" href="<?php echo base_url('uploads/'.$data['pay_document']);?>"><span class="glyphicon glyphicon-fullscreen"></span></a></td>
 		        				<td>
-	        		 			<button type="" class="btn btn-primary" onclick="location.href='<?php echo site_url('dashboard/sekolah/detailtim/'.$data['sct_id']);?>'"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" ></span></button>		        				
-		        				<!--<button type="" class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/sekolah/sekolahAction/'.$data['sct_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>-->
-							<?php if($data['pay_status'] != 1){?>
-		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['sct_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
-		        				</td>
-							<?php }?>	
+		                 	<button title="<?php if($data['pay_status'] == 0) echo "Verifikasi"; else echo "Batal Verifikasi";?>" onclick="location.href='<?php echo site_url('dashboard/admin/bsAction/'.$data['pay_id'].'/'.$data['acc_id']);?>'" class="btn btn-<?php if($data['pay_status'] == 1) echo "danger"; else echo "success";?>">
+		              		<span class="glyphicon glyphicon-<?php if($data['pay_status'] == 0) echo "ok"; else echo "remove";?>" aria-hidden="true"></span></button> 		        				        				
 			        		 
 		        			<?php 
-		        				}
-		        			?>
-							<script type="text/javascript">
-							    var url="<?php echo site_url();?>";
-							    function deletes(id){
-swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this team again!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
-},
-function(){
-							          window.location = url+"dashboard/sekolah/sekolahAction/"+id+"/del";
-});
-}
-							</script>				        			
+		        				}}
+		        			?>  			
 			        </tbody>
 			   	</table>
 				</section>

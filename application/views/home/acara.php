@@ -132,6 +132,9 @@
 					  <p class="event-detail-text">
 					 	<?php echo $list[13]['event_description']; ?>
 					  </p>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span> <a href="<?php echo $list[13]['event_rule']; ?>" title="" style="color:orange;" target="_blank">Download Booklet DSTAR</a>
+					  </p>						  
 					</div>
 					
 				</div>

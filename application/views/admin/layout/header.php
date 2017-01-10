@@ -157,14 +157,14 @@
 								</span>
 							</a>
 						</li>			
-						<li>
+<!-- 						<li>
 							<a href="#"><i class="fa fa-calendar"></i> 
 								<span>Agenda Kalender</span>
 								<span class="pull-right-container">
 									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
-						</li>										
+						</li>	 -->									
 						<li class="">
 							<a href="#"><i class="fa fa-users"></i> Akun
 								<span class="pull-right-container">
@@ -190,30 +190,56 @@
 										<li><a href="<?php echo site_url('dashboard/admin/akun/SCH') ?>">Akun Sekolah</a></li>
 										<li><a href="<?php echo site_url('dashboard/admin/akun/SCT') ?>">Akun Tim Sekolah</a></li>
 										<li><a href="<?php echo site_url('dashboard/admin/akun/PUB') ?>">Akun Umum</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/PBT') ?>">Akun Tim Umum</a></li>										
+										<!-- <li><a href="<?php echo site_url('dashboard/admin/akun/PBT') ?>">Akun Tim Umum</a></li>										 -->
 										<li><a href="<?php echo site_url('dashboard/admin/akun/COR') ?>">Akun Koordinator</a></li>
-										<li><a href="<?php echo site_url('dashboard/admin/akun/JDG') ?>">Akun Juri</a></li>
+										<!-- <li><a href="<?php echo site_url('dashboard/admin/akun/JDG') ?>">Akun Juri</a></li> -->
 									</ul>
 								</li>
 							</ul>
 						</li>											
 						<li>
+							<a href="#"><i class="fa fa-usd"></i> Pembayaran
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu" style="display: none;">
+								<li>
+									<a href="<?php echo site_url('dashboard/admin/bendaharasekolah') ?>">
+										<i class="fa fa-building"></i> Sekolah
+										<span class="pull-right-container">
+											<small class="label pull-right bg-blue"><?php echo $totalPaySch; ?></small>            
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="<?php echo site_url('dashboard/admin/bendaharapublik') ?>">
+										<i class="fa fa-globe"></i> Publik
+										<span class="pull-right-container">
+											<small class="label pull-right bg-blue"><?php echo $totalPayPub; ?></small>            
+										</span>
+									</a>
+								</li>
+														
+							</ul>							
+						</li>							
+						<li>
 							<a href="<?php echo site_url('dashboard/admin/berita') ?>">
 								<i class="fa fa-newspaper-o"></i> 
 								<span>Berita</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">???</small>            
+									<small class="label pull-right bg-blue"><?php echo $totalNews; ?></small>            
 								</span>
 							</a>
 						</li>												
-						<li>
+<!-- 						<li>
 							<a href="#"><i class="fa fa-thumbs-up"></i> 
 								<span>Hasil Penjurian</span>
 								<span class="pull-right-container">
 									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
-						</li>
+						</li> -->
 						<li>
 							<a href="#"><i class="fa fa-envelope"></i> 
 								<span>Pesan Masuk</span><span class="pull-right-container">
@@ -222,7 +248,7 @@
 								</span>
 							</a>
 						</li>						
-						<li>
+<!-- 						<li>
 							<a href="#">
 								<i class="fa fa-users"></i> 
 								<span>Peserta Bazaar</span>
@@ -230,13 +256,13 @@
 									<small class="label pull-right bg-blue">???</small>            
 								</span>
 							</a>
-						</li>											
+						</li>		 -->									
 						<li>
 							<a href="#">
 								<i class="fa fa-user"></i>
 								<span>Data Individual Peserta</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">???</small>            
+									<small class="label pull-right bg-blue"><?php echo $totalSchPart; ?></small>            
 								</span>
 							</a>
 						</li>											
@@ -251,7 +277,7 @@
 									<a href="<?php echo site_url('dashboard/admin/timacara'); ?>"><i class="fa fa-users"></i>
 										<span>Semua Tim</span>
 										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">???</small>            
+											<small class="label pull-right bg-blue"><?php echo $totalPubTeam; ?></small>            
 										</span>
 									</a>
 								</li>
@@ -282,7 +308,7 @@
 								<li>
 									<a href="#"><i class="fa fa-users"></i><span>Semua Tim</span>
 										<span class="pull-right-container">
-											<small class="label pull-right bg-blue">???</small>            
+											<small class="label pull-right bg-blue"><?php echo $totalSchTeam; ?></small>            
 										</span>
 									</a>
 								</li>

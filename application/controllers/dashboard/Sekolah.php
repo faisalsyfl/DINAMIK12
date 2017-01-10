@@ -220,7 +220,7 @@ class Sekolah extends CI_Controller {
 			redirect(site_url('dashboard/sekolah/uploadBukti'));
 		}else{
 			//sukses
-			$upload['payment_document'] = $config['file_name'];
+			$upload['payment_document'] = $config['file_name'].$this->upload->data('file_ext');
 			$upload['payment_description'] = $x['payment_description'];			
 			foreach($x['pay_id'] as $id){
 				$this->PaymentModel->update($id,$upload);

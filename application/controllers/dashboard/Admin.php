@@ -18,27 +18,40 @@ class Admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	private $head;
+	public function __construct(){
+		parent::__construct();
+		$this->head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+		$this->head['totalNews'] = $this->NewsModel->selectAll()->num_rows();
+		$this->head['totalPubTeam'] = $this->PublicTModel->selectAll()->num_rows();
+		$this->head['totalSchTeam'] = $this->SchoolTModel->selectAll()->num_rows();
+		$this->head['totalSchPart'] = $this->SchoolPModel->selectAll()->num_rows();
+		$totalPaySch = $this->PaymentModel->viewSchtDash()->result();
+		$this->head['totalPaySch'] = 0;
+		foreach($totalPaySch as $tps){
+			if($tps->pay_document != NULL)
+				$this->head['totalPaySch']+=1;
+		}
+		$totalPayPub = $this->PaymentModel->viewPubtDash()->result();
+		$this->head['totalPayPub'] = 0;
+		foreach($totalPayPub as $tps){
+			if($tps->pay_document != NULL)
+				$this->head['totalPayPub']+=1;
+		}		
+		// var_dump($head);	
+		
+	}
 	/* INDEX FUNCTION */
 	public function index()
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
-			if($_SESSION['category']=='ADM' || $_SESSION['category']=='ADMSU' || $_SESSION['category']=='COOR'){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['totalakun'] = $this->AccountModel->selectAll()->num_rows();
-				$data['totaltim'] = $this->SchoolTModel->selectAll()->num_rows() + $this->PublicTModel->selectAll()->num_rows();
-				// var_dump($_SESSION['category']);
-				$this->load->view('admin/layout/header',$head);
-				$this->load->view('admin/main',$data);
-				$this->load->view('admin/layout/footer');
-			}else{
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$data['total'] = $this->AccountModel->selectAll()->num_rows();
-				// var_dump($_SESSION);
-				$this->load->view('admin/layout/header',$head);
-				$this->load->view('admin/main2',$data);
-				$this->load->view('admin/layout/footer');				
-			}
+			$data['totalakun'] = $this->AccountModel->selectAll()->num_rows()-22;
+			$data['totaltim'] = $this->SchoolTModel->selectAll()->num_rows() + $this->PublicTModel->selectAll()->num_rows();
+			// var_dump($_SESSION['category']);
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/main',$data);
+			$this->load->view('admin/layout/footer');
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
@@ -63,18 +76,15 @@ class Admin extends CI_Controller {
 		/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
 			if($category == NULL){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
 				$data['list'] = $this->AccountModel->selectJoinCategory()->result_array();
 				// var_dump($data['list']);
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/akun/akun',$data);
 				$this->load->view('admin/layout/footer');
 			}else{
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['list'] = $this->AccountModel->selectJoinCategory($category)->result_array();
 				// var_dump($data['list']);
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/akun/akun',$data);
 				$this->load->view('admin/layout/footer');
 			}
@@ -130,10 +140,10 @@ class Admin extends CI_Controller {
 				*/
 				
 			}else if($aksi == "edit"){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				// $head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['row'] = $this->AccountModel->selectById($id)->row_array();
 
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/akun/akunedit',$data);
 				$this->load->view('admin/layout/footer');
 			}else if($aksi == "editAct"){
@@ -160,10 +170,10 @@ class Admin extends CI_Controller {
 	public function acaralomba(){
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
+				// $head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
+				// $head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
 				$data['list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/acaralomba/index',$data);
 				$this->load->view('admin/layout/footer');		
 		}else{
@@ -175,17 +185,15 @@ class Admin extends CI_Controller {
 	public function timacara($cat=NULL){
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
 			if($cat==NULL){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();			
 				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
 				// var_dump($data);
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/timacara/index',$data);
 				$this->load->view('admin/layout/footer');
 			}else{
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();			
 				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
 				// var_dump($data);
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/timacara/index',$data);
 				$this->load->view('admin/layout/footer');				
 			}
@@ -204,10 +212,9 @@ class Admin extends CI_Controller {
 				$this->EventModel->update($id,$upd);
 				redirect(site_url('dashboard/admin/acaralomba'));			
 			}else if($aksi == "edit"){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['row'] = $this->EventModel->selectById($id)->row_array();
 
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/acaralomba/eventedit',$data);
 				$this->load->view('admin/layout/footer');
 			}else if($aksi == "editAct"){
@@ -224,10 +231,8 @@ class Admin extends CI_Controller {
 	public function berita(){
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
-				$head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
 				$data['list'] = $this->NewsModel->selectJoinEvent()->result_array();
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/berita/index',$data);
 				$this->load->view('admin/layout/footer');		
 		}else{
@@ -239,17 +244,15 @@ class Admin extends CI_Controller {
 	public function newsAction($aksi,$id=NULL){	
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
 			if($aksi == "edit"){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['event_list'] = $this->EventModel->selectAll()->result_array();
 				$data['row'] = $this->NewsModel->selectById($id)->row_array();
 
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/berita/newsedit',$data);
 				$this->load->view('admin/layout/footer');
 			}else if($aksi=="add"){
-				$head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				$data['event_list'] = $this->EventModel->selectAll()->result_array();
-				$this->load->view('admin/layout/header',$head);
+				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/berita/newsadd',$data);
 				$this->load->view('admin/layout/footer');
 			}else if($aksi == "editAct"){
@@ -270,5 +273,55 @@ class Admin extends CI_Controller {
 			redirect(site_url('/akun'));
 		}	
 	}
+	public function bendaharasekolah(){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+
+			$data['list'] = $this->PaymentModel->viewSchtDash()->result_array();
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/bendahara/bendaharasekolah',$data);
+			$this->load->view('admin/layout/footer');				
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}
+	}
+	public function bsAction($id,$accid){
+		$curr = $this->PaymentModel->selectById($id)->row_array()['payment_status'];
+		if($curr == "0"){
+		var_dump($curr);
+			$upd['payment_status'] = 1;
+			$acc['account_status'] = 1;
+		}
+		else {
+			$upd['payment_status'] = 0;
+			$acc['account_status'] = 0;
+		}
+		$this->PaymentModel->update($id,$upd);
+		$this->AccountModel->update($accid,$acc);
+		redirect(site_url('dashboard/admin/bendaharasekolah'));
+	}
+	public function bendaharapublik	(){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+			$data['list'] = $this->PaymentModel->viewPubtDash()->result_array();
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/bendahara/bendaharapublik',$data);
+			$this->load->view('admin/layout/footer');				
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}
+	}
+	public function bpAction($id){
+		$curr = $this->PaymentModel->selectById($id)->row_array()['payment_status'];
+		if($curr == "0"){
+		var_dump($curr);
+			$upd['payment_status'] = 1;
+		}
+		else {
+			$upd['payment_status'] = 0;
+		}
+		$this->PaymentModel->update($id,$upd);
+		redirect(site_url('dashboard/admin/bendaharapublik'));
+	}		
 }
 	

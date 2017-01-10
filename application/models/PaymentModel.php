@@ -60,7 +60,22 @@ class PaymentModel extends CI_Model {
 	public function delete($id){
 		$this->db->where('payment_id',$id);
 		$this->db->delete($this->tableName);
-	}		
+	}
+
+	public function viewSchtDash(){
+		$this->db->select('*');
+		$this->db->from('v_schteam_dash');
+		$this->db->order_by('pay_status',"ASC");
+		// $this->db->where('sch_id',$id);
+		return $this->db->get();
+	}
+	public function viewPubtDash(){
+		$this->db->select('*');
+		$this->db->from('v_pubteam_dash');
+		$this->db->order_by('pay_status',"ASC");
+
+		return $this->db->get();
+	}				
 }
 
 /* End of file tb_account_model.php */

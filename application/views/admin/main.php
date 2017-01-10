@@ -18,7 +18,7 @@
 							<div class="small-box bg-aqua">
 								<div class="inner">
 									<h3><?php echo $totalakun; ?></h3>
-									<p>Jumlah Akun</p>
+									<p>Jumlah Akun Pendaftar</p>
 								</div>
 								<div class="icon">
 									<i class="fa fa-user"></i>

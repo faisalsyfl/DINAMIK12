@@ -155,7 +155,7 @@
 		<div class="row">
 			<br>
 			<br>
-			<a class="contest-link" href="<?php echo site_url('/Acara'); ?>">DETAIL ACARA</a>
+			<a class="contest-link" href="<?php echo site_url('/acara'); ?>">DETAIL ACARA</a>
 		</div>
     </div><!-- /.container -->
 	
