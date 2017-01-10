@@ -30,15 +30,15 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
-					<li class="active"><a data-toggle="tab" href="#masuk">Masuk</a></li>
-					<li><a data-toggle="tab" href="#daftar">Daftar Akun Sekolah</a></li>
-					<li><a data-toggle="tab" href="#daftar2">Daftar Akun Umum</a></li>
-					<li><a data-toggle="tab" href="#lupasandi">Lupa Kata Sandi</a></li>
+					<li <?php if(!isset($activetab) || $activetab == "masuk") echo "class='active'"; ?>><a data-toggle="tab" href="#masuk">Masuk</a></li>
+					<li <?php if(isset($activetab) && $activetab == "daftarsekolah") echo "class='active'"; ?>><a data-toggle="tab" href="#daftar">Daftar Akun Sekolah</a></li>
+					<li <?php if(isset($activetab) && $activetab == "daftarumum") echo "class='active'"; ?>><a data-toggle="tab" href="#daftar2">Daftar Akun Umum</a></li>
+					<li <?php if(isset($activetab) && $activetab == "lupapass") echo "class='active'"; ?>><a data-toggle="tab" href="#lupasandi">Lupa Kata Sandi</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
 					<!-- Login -->
-					<div id="masuk" class="tab-pane fade in active">
+					<div id="masuk" class="tab-pane fade in <?php if(!isset($activetab) || $activetab == "masuk") echo "active"; ?>">
 						<div class="login-box">
 							<!-- /.login-logo -->
 							<div class="register-logo">
@@ -110,7 +110,7 @@
 					</div>
 					
 					<!-- Register -->
-					<div id="daftar" class="tab-pane fade in">
+					<div id="daftar" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "daftarsekolah") echo "active"; ?>">
 						<div class="register-box">
 							<div class="register-logo">
 								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
@@ -184,7 +184,7 @@
 						</div>
 					</div>
 
-					<div id="daftar2" class="tab-pane fade in">
+					<div id="daftar2" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "daftarumum") echo "active"; ?>">
 						<div class="register-box">
 							<div class="register-logo">
 								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">
@@ -270,7 +270,7 @@
 					</div>
 					
 					<!-- Forgot Pass -->
-					<div id="lupasandi" class="tab-pane fade in">
+					<div id="lupasandi" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "lupapass") echo "active"; ?>">
 						<div class="login-box">
 							<div class="login-logo">
 								<img class="dinamik-foot" src="<?php echo base_url("assets/img/logo/logo-white.png"); ?>">

@@ -24,8 +24,9 @@ class Akun extends CI_Controller{
 		Display the account page
 	 */
 	
-	public function index($report=0)
+	public function index($report=0, $view = NULL)
 	{
+		$data['activetab'] = $view;
 		$data['city'] = $this->CityModel->selectAll()->result_array();
 		if($report==2){
 			$data['color'] = "success";

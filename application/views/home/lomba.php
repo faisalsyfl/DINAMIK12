@@ -12,19 +12,19 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
-					<li class="active"><a data-toggle="tab" href="#ldg">LDG</a></li>
-					<li><a data-toggle="tab" href="#lcw">LCW</a></li>
-					<li><a data-toggle="tab" href="#ocs">OTIK</a></li>
-					<li><a data-toggle="tab" href="#pca">PCA</a></li>
-					<li><a data-toggle="tab" href="#cspc">CSPC</a></li>
-					<li><a data-toggle="tab" href="#lca">LCA</a></li>
-					<li><a data-toggle="tab" href="#linefollower">LF</a></li>
-					<li><a data-toggle="tab" href="#kompetisijaringan">KJ</a></li>
+					<li <?php if(!isset($activetab) || $activetab == "ldg") echo "class='active'"; ?>><a data-toggle="tab" href="#ldg">LDG</a></li>
+					<li <?php if(isset($activetab) && $activetab == "lcw") echo "class='active'"; ?>><a data-toggle="tab" href="#lcw">LCW</a></li>
+					<li <?php if(isset($activetab) && $activetab == "otik") echo "class='active'"; ?>><a data-toggle="tab" href="#ocs">OTIK</a></li>
+					<li <?php if(isset($activetab) && $activetab == "pca") echo "class='active'"; ?>><a data-toggle="tab" href="#pca">PCA</a></li>
+					<li <?php if(isset($activetab) && $activetab == "cspc") echo "class='active'"; ?>><a data-toggle="tab" href="#cspc">CSPC</a></li>
+					<li <?php if(isset($activetab) && $activetab == "lca") echo "class='active'"; ?>><a data-toggle="tab" href="#lca">LCA</a></li>
+					<li <?php if(isset($activetab) && $activetab == "lf") echo "class='active'"; ?>><a data-toggle="tab" href="#linefollower">LF</a></li>
+					<li <?php if(isset($activetab) && $activetab == "kj") echo "class='active'"; ?>><a data-toggle="tab" href="#kompetisijaringan">KJ</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
 					<!-- ldg -->
-					<div id="ldg" class="tab-pane fade in active">
+					<div id="ldg" class="tab-pane fade in <?php if(!isset($activetab) || $activetab == "ldg") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/ldg.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA DESAIN GRAFIS</h3>
 					  <p class="event-detail-date">
@@ -48,7 +48,7 @@
 					</div>
 					
 					<!-- lcw -->
-					<div id="lcw" class="tab-pane fade in">
+					<div id="lcw" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "lcw") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/lcw.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA CIPTA WEB</h3>
 					  <p class="event-detail-date">
@@ -69,7 +69,7 @@
 					</div>
 					
 					<!-- ocs -->
-					<div id="ocs" class="tab-pane fade in">
+					<div id="ocs" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "otik") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/opk.png"); ?>" class="img-contest brightness" align="center"><br><br>
 					  <h3 class="event-detail-title">OLIMPIADE TIK</h3>
 					  <p class="event-detail-date">
@@ -90,7 +90,7 @@
 					</div>
 					
 					<!-- pca -->
-					<div id="pca" class="tab-pane fade in">
+					<div id="pca" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "pca") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/pca.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">PERSONAL COMPUTER ASSEMBLING</h3>
 					  <p class="event-detail-date">
@@ -111,7 +111,7 @@
 					</div>
 					
 					<!-- cspc -->
-					<div id="cspc" class="tab-pane fade in">
+					<div id="cspc" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "cspc") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/cspc.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">COMPUTER SCIENCE PROGRAMMING COMPETITION</h3>
 					  <p class="event-detail-date">
@@ -134,7 +134,7 @@
 					</div>
 					
 					<!-- lca -->
-					<div id="lca" class="tab-pane fade in">
+					<div id="lca" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "lca") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/lca.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA CIPTA ANIMASI</h3>
 					  <p class="event-detail-date">
@@ -156,7 +156,7 @@
 					
 					
 					<!-- linefollower -->
-					<div id="linefollower" class="tab-pane fade in">
+					<div id="linefollower" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "lf") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/lf.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LINE FOLLOWER</h3>
 					  <p class="event-detail-date">
@@ -177,7 +177,7 @@
 					</div>
 					
 					<!-- kompetisijaringan -->
-					<div id="kompetisijaringan" class="tab-pane fade in">
+					<div id="kompetisijaringan" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "kj") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/network.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">KOMPETISI JARINGAN</h3>
 					  <p class="event-detail-date">

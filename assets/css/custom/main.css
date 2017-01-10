@@ -453,7 +453,7 @@ body {
   width:100%;
   height: auto;
   padding-top: 145px;
-  padding-bottom: 140px;
+  padding-bottom: 100px;
   display: inline-block;
   text-align: center;
   color: #fff;
@@ -474,7 +474,7 @@ body {
   width:100%;
   height: auto;
   background: #2b4da4;
-  padding-top: 50px;
+  padding-top: 25px;
   display: inline-block;
   text-align: center;
   color: #fff;
@@ -482,7 +482,31 @@ body {
 
 .foot-list {
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+}
+
+.footer-hlink {
+  color: #ffffff;
+  text-decoration:none;	
+  text-align: left;
+  margin-bottom: 20px;
+}
+.footer-hlink:visited {
+  color: #ffffff;
+  text-decoration:none;	
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-hlink:hover {
+  color: #e48e13;
+  text-decoration:underline;	
+  text-align: left;
+  margin-bottom: 20px;
+}
+.general-footer {
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .lokasi {
@@ -533,6 +557,7 @@ body {
 #copyright {
   width:100%;
   height: auto;
+  /* background: #002672; */
   background: #002672;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -673,17 +698,17 @@ body {
 
 .footer-link {
   color: #ffffff;
-  text-decoration:underline;
+  text-decoration:none;
 }
 
 .footer-link:hover {
   color: #e48e13;
-  text-decoration:none;
+  text-decoration:underline;
 }
 
 .footer-link:visited {
   color: #ffffff;
-  text-decoration:underline;
+  text-decoration:none;
 }
 
 .icon-toggle {

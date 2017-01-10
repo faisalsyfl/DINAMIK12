@@ -26,4 +26,13 @@ class Acara extends CI_Controller {
 		$this->load->view('home/acara',$data);
 		$this->load->view('layout/footer');
 	}
+	public function view($view)
+	{
+		$data['list'] = $this->EventModel->selectAll()->result_array();		
+		// var_dump($data['list']);
+		$data['activetab'] = $view;
+		$this->load->view('layout/header');
+		$this->load->view('home/acara',$data);
+		$this->load->view('layout/footer');
+	}
 }

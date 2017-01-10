@@ -12,16 +12,16 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
-					<li class="active"><a data-toggle="tab" href="#alur">ALUR PENDAFTARAN</a></li>
-					<li><a data-toggle="tab" href="#tentang">TENTANG</a></li>
-					<li><a data-toggle="tab" href="#faq">FAQ</a></li>
-					<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
-					<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>
+					<li <?php if(!isset($activetab) || $activetab == "pendaftaran") echo "class='active'"; ?>><a data-toggle="tab" href="#alur">ALUR PENDAFTARAN</a></li>
+					<li <?php if(isset($activetab) && $activetab == "tentang") echo "class='active'"; ?>><a data-toggle="tab" href="#tentang">TENTANG</a></li>
+					<li <?php if(isset($activetab) && $activetab == "faq") echo "class='active'"; ?>><a data-toggle="tab" href="#faq">FAQ</a></li>
+					<li <?php if(isset($activetab) && $activetab == "unduhan") echo "class='active'"; ?>><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
+					<li <?php if(isset($activetab) && $activetab == "kontak") echo "class='active'"; ?>><a data-toggle="tab" href="#kontak">KONTAK</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
 					<!-- TENTANG -->
-					<div id="tentang" class="tab-pane fade in">
+					<div id="tentang" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "tentang") echo "active"; ?>">
 					  <h3 class="event-detail-title">Tentang DINAMIK12</h3>
 					  <p class="event-detail-text">
 						Dies Natalis Keluarga Besar Ilmu Komputer (DINAMIK) merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer. Pada tahun ini DINAMIK akan menginjak angka ke-12. DINAMIK12 ini mengusung tema: <br>
@@ -35,8 +35,8 @@
 					  </p>
 					</div>
 					
-					<!-- FAQ -->
-					<div id="alur" class="tab-pane fade in active">
+					<!-- ALUR -->
+					<div id="alur" class="tab-pane fade in <?php if(!isset($activetab) || $activetab == "pendaftaran") echo "active"; ?>">
 					  <h3 class="event-detail-title">ALUR PENDAFTARAN</h3>
 					 	<ol class="event-detail-text">
 							<h3 style="color: #ffa619;">Sekolah</h3>
@@ -70,7 +70,7 @@
 					</div>
 					
 					<!-- KONTAK -->
-					<div id="faq" class="tab-pane fade in">
+					<div id="faq" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "faq") echo "active"; ?>">
 					  <h3 class="event-detail-title">PERTANYAAN</h3>
 					    <ul class="event-detail-text">
 							<li><b>Bagaimana caranya mendapatkan file-file yang dibutuhkan untuk keperluan lomba DINAMIK 12?</b><br>
@@ -86,7 +86,7 @@
 					</div>
 					
 					<!-- KONTAK -->
-					<div id="kontak" class="tab-pane fade in">
+					<div id="kontak" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "kontak") echo "active"; ?>">
 					  <h3 class="event-detail-title">KONTAK</h3>
 					  <p class="event-detail-text">
 					 	Jika ada pertanyaan, kritik, dan saran silahkan kirim melalui form dibawah ini:
@@ -106,7 +106,7 @@
 					
 					<!-- UNDUHAN -->
 					
-					<div id="unduhan" class="tab-pane fade in">
+					<div id="unduhan" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "unduhan") echo "active"; ?>">
 					  <h3 class="event-detail-title">UNDUHAN</h3>
 					  <p class="event-detail-text">
 					 	Silahkan unduh file-file yang dibutuhkan dibawah ini:
