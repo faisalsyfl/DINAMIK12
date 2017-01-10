@@ -26,4 +26,12 @@ class Info extends CI_Controller {
 		$this->load->view('home/info',$data);
 		$this->load->view('layout/footer');
 	}
+	
+	public function contactMsg(){
+		$message = $this->input->post();
+		
+		$this->InfoModel->insert($message);
+		
+		//redirect(site_url('info/'));
+	}
 }

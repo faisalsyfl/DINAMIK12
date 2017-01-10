@@ -4,7 +4,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<h3 class="title">
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
-					<b>DAFTAR ACARA</b>
+					<b>INFORMASI</b>
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
 				</h3>
 			</div>
@@ -12,15 +12,16 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<ul class="nav nav-tabs event-tabs">
-					<li class="active"><a data-toggle="tab" href="#tentang">TENTANG</a></li>
+					<li class="active"><a data-toggle="tab" href="#alur">ALUR PENDAFTARAN</a></li>
+					<li><a data-toggle="tab" href="#tentang">TENTANG</a></li>
 					<li><a data-toggle="tab" href="#faq">FAQ</a></li>
-					<!--<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>-->
-					<!--<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>-->
+					<li><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
+					<li><a data-toggle="tab" href="#kontak">KONTAK</a></li>
 				</ul>
 				
 				<div class="tab-content event-detail-list">
 					<!-- TENTANG -->
-					<div id="tentang" class="tab-pane fade in active">
+					<div id="tentang" class="tab-pane fade in">
 					  <h3 class="event-detail-title">Tentang DINAMIK12</h3>
 					  <p class="event-detail-text">
 						Dies Natalis Keluarga Besar Ilmu Komputer (DINAMIK) merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer. Pada tahun ini DINAMIK akan menginjak angka ke-12. DINAMIK12 ini mengusung tema: <br>
@@ -35,7 +36,7 @@
 					</div>
 					
 					<!-- FAQ -->
-					<div id="faq" class="tab-pane fade in">
+					<div id="alur" class="tab-pane fade in active">
 					  <h3 class="event-detail-title">ALUR PENDAFTARAN</h3>
 					 	<ol class="event-detail-text">
 							<h3 style="color: #ffa619;">Sekolah</h3>
@@ -64,13 +65,21 @@
 							<li> Jika sudah di-verifikasi maka anda sudah terdaftar menjadi peserta</li>
 						</ol>
 						<!--
+					  
+						-->
+					</div>
+					
+					<!-- KONTAK -->
+					<div id="faq" class="tab-pane fade in">
 					  <h3 class="event-detail-title">PERTANYAAN</h3>
 					    <ul class="event-detail-text">
 							<li><b>Bagaimana caranya mendapatkan file-file yang dibutuhkan untuk keperluan lomba DINAMIK 12?</b><br>
 								Buka tab unduhan pada halaman <a href="<?php echo site_url('/info'); ?>" style="color: #ffa619;" target="_blank">Info</a> atau download melalui dashboard tim.
 								</li>
+							<li><b>Dimana informasi lengkap mengenai lomba/acara?</b><br>
+								Buka menu Lomba / Acara pada menu diatas, atau klik <a href="<?php echo site_url('/lomba'); ?>" style="color: #ffa619;" target="_blank">Lomba</a> / <a href="<?php echo site_url('/acara'); ?>" style="color: #ffa619;" target="_blank">Acara</a>.
+								</li>
 						</ul>
-						-->
 					</div>
 					
 					<!-- KONTAK -->
@@ -79,33 +88,38 @@
 					  <p class="event-detail-text">
 					 	Jika ada pertanyaan, kritik, dan saran silahkan kirim melalui form dibawah ini:
 					  </p>
-					  <form method="post">
-						  <div class="form-group">
+					  <div class="form-group">
+						<?php echo form_open('home/Info/contactMsg'); ?>
 							<h3 class="event-detail-text">Nama</h3>
-							<input type="text" class="form-control" placeholder="Masukan nama lengkap">
+							<input type="text" class="form-control" placeholder="Masukan nama lengkap" name="message_name">
 							<h3 class="event-detail-text">Email</h3>
-							<input type="text" class="form-control" placeholder="Masukan email">
+							<input type="text" class="form-control" placeholder="Masukan email" name="message_email">
 							<h3 class="event-detail-text">Pesan</h3>
-							<textarea type="text" class="form-control" placeholder="Pesan anda"></textarea>
-						  </div>
-					  </form>
-					  <p class="event-detail-text">
-					 	<small>*) Jawaban pertanyaan akan dikirim melalui email anda.</small>
-					  </p>
+							<textarea type="text" class="form-control" placeholder="Pesan anda" name="message_content"></textarea><br>
+							<button type="submit" class="btn btn-primary form-control" name="btnKirim">Kirim</button>
+						<?php echo form_close(); ?>
+					  </div>
 					</div>
 					
 					<!-- UNDUHAN -->
-					<!--
+					
 					<div id="unduhan" class="tab-pane fade in">
 					  <h3 class="event-detail-title">UNDUHAN</h3>
 					  <p class="event-detail-text">
-					 	Silahkan download file-file yang dibutuhkan dibawah ini:
+					 	Silahkan unduh file-file yang dibutuhkan dibawah ini:
 						<br>
 						<br>
-						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> Booklet DINAMIK12 Lengkap
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQkZ6LXFXbjcwcDg" target="_blank">DINAMIK12 Booklet - Dinamik Star</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAVDBkdzZkcGJmVWs" target="_blank">DINAMIK12 Booklet - Kompetisi Jaringan</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQ2tIMzdZRzd6TXM" target="_blank">DINAMIK12 Booklet - Lomba Cipta Animasi</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAa3hqOHd2aFBDZnc" target="_blank">DINAMIK12 Booklet - Lomba Cipta Web</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAenI0ajdrWURZX28" target="_blank">DINAMIK12 Booklet - Lomba Desain Grafis</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAVlVqTk10WEk1c0E" target="_blank">DINAMIK12 Booklet - Olimpiade TIK</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAbFBYdkMzUUpYS1E" target="_blank">DINAMIK12 Booklet - PC Assembling</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tANV9HZWU1eUV3Q2M" target="_blank">DINAMIK12 Booklet - Computer Science Programming Contest</a><br>
 					  </p>
 					</div>
-					-->
+					
 				</div>
 			</div>
 
