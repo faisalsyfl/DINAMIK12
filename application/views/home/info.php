@@ -49,7 +49,7 @@
 								<small>* Username untuk akun tim akan dibuat otomatis sesuai dengan nama tim</small></li>
 							<li> Lihat informasi lengkap tim dengan cara klik tombol 'i' disebelah kanan</li>
 							<li> Lakukan pembayaran sesuai dengan biaya pendaftaran yang tertera melalui <b>Rek. BCA (014) 1480861899 a.n. Sita Kartina</b>, kemudian masukan kode pembayaran pada keterangan saat melakukan transfer</li>
-							<li> Upload bukti pembayaran melalui menu 'Upload Bukti' pada dashboard sekolah</li>
+							<li> Upload bukti pembayaran melalui menu 'Upload Bukti' pada dashboard publik</li>
 							<li> Pilih tim mana saja yang sudah membayar biaya pendaftaran, kemudian tuliskan kode pembayaran tiap tim pada deskripsi, pilih file bukti pembayaran kemudian tekan 'submit'</li>
 							<li> Tunggu proses verifikasi untuk bisa login menggunakan akun tim</li>
 							<li> Jika sudah di-verifikasi, maka anda bisa login menggunakan akun tim menggunakan username dan password yang telah dibuat</li>
