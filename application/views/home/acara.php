@@ -26,7 +26,7 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/talkshow.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">TALKSHOW INSPIRATIF</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Minggu, 2 April 2016
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Minggu, 2 April 2017
 					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[8]['event_price'],0,',','.'); ?>
@@ -64,6 +64,9 @@
 					<div id="felose" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "felose") echo "active"; ?>">
 					  <img src="<?php echo base_url("assets/img/icon_white/felose.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">FESTIVAL TEKNOLOGI DAN SENI</h3>
+					  <p class="event-detail-date">
+						<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Pendafataran Dibuka 1 Februari 2017
+					  </p>
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Minggu, 7 - 9 April 2017
 					  </p>					  

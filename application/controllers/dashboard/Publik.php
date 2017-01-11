@@ -98,6 +98,9 @@ class Publik extends CI_Controller {
 
 		$pay['payment_amount'] = $this->EventModel->selectById($data['pubteam_event_id'])->row_array()['event_price'];
 		$pay['payment_unique_code'] = implode("",$this->PaymentModel->generate());
+		if($data['pubteam_event_id'] == 11){
+			$pay['payment_status'] = 1;
+		}
 		$data['pubteam_payment_id'] = $this->PaymentModel->insert($pay);
 		$data['pubteam_public_id'] = $public['public_id'];
 		unset($data['submit']);
