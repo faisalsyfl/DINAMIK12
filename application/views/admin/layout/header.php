@@ -248,15 +248,24 @@
 								</span>
 							</a>
 						</li>		 -->				
-<!-- 						<li>
-							<a href="#">
+						<li>
+							<a href="<?php echo site_url('dashboard/admin/bazaar'); ?>">
 								<i class="fa fa-users"></i> 
 								<span>Peserta Bazaar</span>
 								<span class="pull-right-container">
-									<small class="label pull-right bg-blue">???</small>            
+									<small class="label pull-right bg-blue"><?php echo $totalbazaar; ?></small>            
 								</span>
 							</a>
-						</li>		 -->									
+						</li>
+						<li>
+							<a href="<?php echo site_url('dashboard/admin/sponsor'); ?>">
+								<i class="fa fa-users"></i> 
+								<span>List Sponsor</span>
+								<span class="pull-right-container">
+									<small class="label pull-right bg-blue"><?php echo $totalsponsor; ?></small>            
+								</span>
+							</a>
+						</li>																	
 						<li>
 							<a href="#"><i class="fa fa-users"></i> Tim Peserta Lomba
 								<span class="pull-right-container">

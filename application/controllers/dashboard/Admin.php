@@ -26,6 +26,8 @@ class Admin extends CI_Controller {
 		$this->head['totalPubTeam'] = $this->PublicTModel->selectAll()->num_rows();
 		$this->head['totalSchTeam'] = $this->SchoolTModel->selectAll()->num_rows();
 		$this->head['totalSchPart'] = $this->SchoolPModel->selectAll()->num_rows();
+		$this->head['totalbazaar'] = $this->BazaarModel->selectAll()->num_rows();
+		$this->head['totalsponsor'] = $this->SponsorModel->selectAll()->num_rows();
 		$totalPaySch = $this->PaymentModel->viewSchtDash()->result();
 		$this->head['totalPaySch'] = 0;
 		foreach($totalPaySch as $tps){
@@ -321,7 +323,7 @@ class Admin extends CI_Controller {
 		$this->AccountModel->update($accid,$acc);
 		redirect(site_url('dashboard/admin/bendaharasekolah'));
 	}
-	public function bendaharapublik	(){
+	public function bendaharapublik(){
 		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
 			$data['list'] = $this->PaymentModel->viewPubtDash()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
@@ -346,10 +348,132 @@ class Admin extends CI_Controller {
 	}		
 
 	public function individu(){
-		$data['list'] = $this->SchoolPModel->selectJoinVSchTDash()->result_array();
-		$this->load->view('admin/layout/header',$this->head);
-		$this->load->view('admin/individulomba',$data);
-		$this->load->view('admin/layout/footer');						
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+			$data['list'] = $this->SchoolPModel->selectJoinVSchTDash()->result_array();
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/individulomba',$data);
+			$this->load->view('admin/layout/footer');	
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));			
+		}					
 	}
+
+	public function bazaar(){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+
+			$data['list'] = $this->BazaarModel->selectAll()->result_array();
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/bazaar/bazaar',$data);
+			$this->load->view('admin/layout/footer');						
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));					
+		}
+	}		
+	public function bazaarAction($id,$act){
+		if($act == "edit"){
+			$data['upd'] = $this->BazaarModel->selectById($id)->row_array();
+			// var_dump($data['upd']);
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/bazaar/bazaaredit',$data);
+			$this->load->view('admin/layout/footer');						
+
+		}else if($act == "del"){
+			$this->BazaarModel->delete($id);
+			redirect(site_url('dashboard/admin/bazaar'));
+		}else if($act == "editAct"){
+			$data = $this->input->post();
+			$this->BazaarModel->update($id,$data);
+			redirect(site_url('dashboard/admin/bazaar'));
+		}else if($act == "add"){
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/bazaar/bazaaredit');
+			$this->load->view('admin/layout/footer');							
+		}else if($act == "addAct"){
+			$data = $this->input->post();
+			$this->BazaarModel->insert($data);
+			redirect(site_url('dashboard/admin/bazaar'));
+		}
+	}				
+	public function sponsor(){
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){		
+			$data['list'] = $this->SponsorModel->selectAll()->result_array();
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/sponsor/sponsor',$data);
+			$this->load->view('admin/layout/footer');					
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));					
+		}	
+	}	
+	public function sponsorAction($id,$act){
+		if($act == "edit"){
+			$data['upd'] = $this->SponsorModel->selectById($id)->row_array();
+			// var_dump($data['upd']);
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/sponsor/sponsoredit',$data);
+			$this->load->view('admin/layout/footer');						
+		}else if($act == "del"){
+			$this->SponsorModel->delete($id);
+			redirect(site_url('dashboard/admin/sponsor'));
+		}else if($act == "editAct"){
+			$data = $this->input->post();
+
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'jpg|png|gif|rar';
+			$config['max_size']             = 0;
+			$config['max_width']            = 0;
+			$config['max_height']           = 0;
+			date_default_timezone_set("Asia/Bangkok");		
+			$config['file_name']				  = $data['sponsor_name']."-".time();
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('sponsor_image')){
+				//gagal
+				unset($data['sponsor_image']);
+				var_dump($data);
+				$this->SponsorModel->update($id,$data);
+				redirect(site_url('dashboard/admin/sponsor'));
+			}else{
+				//sukses
+				$uri = "uploads/".$this->SponsorModel->selectById($id)->row()->sponsor_image;
+				// $auri = explode("://",$uri);
+				unlink($uri);
+				$data['sponsor_image'] = $config['file_name'].$this->upload->data('file_ext');
+				// var_dump($auri);
+				$this->SponsorModel->update($id,$data);
+				redirect(site_url('dashboard/admin/sponsor'));
+			}				
+			
+			// redirect(site_url('dashboard/admin/sponsor'));
+		}else if($act == "add"){
+			$this->load->view('admin/layout/header',$this->head);
+			$this->load->view('admin/sponsor/sponsoredit');
+			$this->load->view('admin/layout/footer');							
+		}else if($act == "addAct"){
+			$data = $this->input->post();
+
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'jpg|png|gif|rar';
+			$config['max_size']             = 0;
+			$config['max_width']            = 0;
+			$config['max_height']           = 0;
+			date_default_timezone_set("Asia/Bangkok");		
+			$config['file_name']				  = $data['sponsor_name']."-".time();
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('sponsor_image')){
+				//gagal
+				redirect(site_url('dashboard/admin/sponsor'));
+			}else{
+				//sukses
+				$data['sponsor_image'] = $config['file_name'].$this->upload->data('file_ext');
+
+				$this->SponsorModel->insert($data);
+				redirect(site_url('dashboard/admin/sponsor'));
+			}				
+
+
+		}
+	}			
 }
 	

@@ -67,8 +67,8 @@
 		        				<button class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
 							<?php if($data['pay_status'] != 1){?>
 		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['pbt_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
-		        				</td>
 							<?php }?>	
+		        				</td>
 			        		 
 		        			<?php 
 		        				}
@@ -91,6 +91,7 @@ function(){
 }
 							</script>		        			
 			        </tbody>
+			        
 			   	</table>
 				</section>
 				<!-- /.content -->
