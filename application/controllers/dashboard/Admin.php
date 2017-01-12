@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 			/* if has session */
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			$data['totalakun'] = $this->AccountModel->selectAll()->num_rows()-22;
 			$data['totaltim'] = $this->SchoolTModel->selectAll()->num_rows() + $this->PublicTModel->selectAll()->num_rows();
 			// var_dump($_SESSION['category']);
@@ -76,7 +76,7 @@ class Admin extends CI_Controller {
 	public function akun($category = NULL)
 	{
 		/* if has session */
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($category == NULL){
 				$data['list'] = $this->AccountModel->selectJoinCategory()->result_array();
 				// var_dump($data['list']);
@@ -107,7 +107,7 @@ class Admin extends CI_Controller {
 	 * @return        
 	 */
 	public function akunAction($id, $aksi, $cat = NULL){
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($aksi == "verif"){
 				$row = $this->AccountModel->selectById($id)->row_array();
 				if($row['account_status'] == 1) 
@@ -171,7 +171,7 @@ class Admin extends CI_Controller {
 
 	public function acaralomba(){
 			/* if has session */
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 				// $head['totalAcc'] = $this->AccountModel->selectAll()->num_rows();
 				// $head['data'] = $this->AccountModel->selectById($_SESSION['userid'])->result_array();
 				$data['list'] = $this->EventModel->selectAll()->result_array();
@@ -186,7 +186,7 @@ class Admin extends CI_Controller {
 
 
 	public function eventAction($id,$aksi){
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($aksi == "activate"){
 				$row = $this->EventModel->selectById($id)->row_array();
 				if($row['event_status'] == 1) 
@@ -212,7 +212,7 @@ class Admin extends CI_Controller {
 	}
 	
 	public function timacara($cat=NULL){
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($cat==NULL){
 				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
 				// var_dump($data);
@@ -231,7 +231,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	public function timlomba($cat=NULL){
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($cat==NULL){
 				$data['list'] = $this->SchoolTModel->viewSchtDash()->result_array();
 				// var_dump($data);
@@ -253,7 +253,7 @@ class Admin extends CI_Controller {
 
 	public function berita(){
 			/* if has session */
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 				$data['list'] = $this->NewsModel->selectJoinEvent()->result_array();
 				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/berita/index',$data);
@@ -265,7 +265,7 @@ class Admin extends CI_Controller {
 	}
 	
 	public function newsAction($aksi,$id=NULL){	
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($aksi == "edit"){
 				$data['event_list'] = $this->EventModel->selectAll()->result_array();
 				$data['row'] = $this->NewsModel->selectById($id)->row_array();
@@ -297,7 +297,7 @@ class Admin extends CI_Controller {
 		}	
 	}
 	public function bendaharasekolah(){
-		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 
 			$data['list'] = $this->PaymentModel->viewSchtDash()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
@@ -324,7 +324,7 @@ class Admin extends CI_Controller {
 		redirect(site_url('dashboard/admin/bendaharasekolah'));
 	}
 	public function bendaharapublik(){
-		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			$data['list'] = $this->PaymentModel->viewPubtDash()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
 			$this->load->view('admin/bendahara/bendaharapublik',$data);
@@ -348,7 +348,7 @@ class Admin extends CI_Controller {
 	}		
 
 	public function individu(){
-		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			$data['list'] = $this->SchoolPModel->selectJoinVSchTDash()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
 			$this->load->view('admin/individulomba',$data);
@@ -360,7 +360,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function bazaar(){
-		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){
+		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 
 			$data['list'] = $this->BazaarModel->selectAll()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
@@ -397,7 +397,7 @@ class Admin extends CI_Controller {
 		}
 	}				
 	public function sponsor(){
-		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'ADMSU'){		
+		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){		
 			$data['list'] = $this->SponsorModel->selectAll()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
 			$this->load->view('admin/sponsor/sponsor',$data);
@@ -474,6 +474,39 @@ class Admin extends CI_Controller {
 
 
 		}
-	}			
+	}
+	public function profil($err = NULL)
+	{
+			/* if has session */
+		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
+				if($err!=NULL){
+					$data['err'] = $err;
+					$this->load->view('admin/layout/header',$this->head);
+					$this->load->view('admin/profil',$data);
+					$this->load->view('admin/layout/footer');		
+				}else{
+					$this->load->view('admin/layout/header',$this->head);
+					$this->load->view('admin/profil');
+					$this->load->view('admin/layout/footer');							
+				}
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}	
+	public function editPass(){
+		$data = $this->input->post();
+		if($this->AccountModel->selectById($_SESSION['userid'])->row_array()['account_password'] == md5($data['bef'])){
+			if($data['aft1']==$data['aft2']){
+				$edited['account_password'] = md5($data['aft1']);
+				$this->AccountModel->update($_SESSION['userid'],$edited);
+				redirect(site_url('dashboard/admin/profil/1'));
+			}else{
+				redirect(site_url('dashboard/admin/profil/2'));
+			}
+		}else{
+			redirect(site_url('dashboard/admin/profil/2'));
+		}
+	}				
 }
 	
