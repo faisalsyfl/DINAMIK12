@@ -48,19 +48,36 @@ class Tim extends CI_Controller {
 		PUB umum
 		SCT Tim sekolah
 	*/
-	public function profil($category = NULL)
+	public function profil($err = NULL)
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'SCT'){
-				$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($this->SchoolTModel->selectByAccId($_SESSION['userid'])->row_array()['schteam_id'])->result_array();
-				$this->load->view('tim/layout/header');
-				$this->load->view('tim/profil/profil',$data);
-				$this->load->view('tim/layout/footer');		
+			$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($this->SchoolTModel->selectByAccId($_SESSION['userid'])->row_array()['schteam_id'])->result_array();
+			if($err!=NULL){
+				$data['err'] = $err;
+			}						
+			$this->load->view('tim/layout/header');
+			$this->load->view('tim/profil/profil',$data);
+			$this->load->view('tim/layout/footer');		
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}	
 	}
+	public function editPass(){
+		$data = $this->input->post();
+		if($this->AccountModel->selectById($_SESSION['userid'])->row_array()['account_password'] == md5($data['bef'])){
+			if($data['aft1']==$data['aft2']){
+				$edited['account_password'] = md5($data['aft1']);
+				$this->AccountModel->update($_SESSION['userid'],$edited);
+				redirect(site_url('dashboard/tim/profil/1'));
+			}else{
+				redirect(site_url('dashboard/tim/profil/2'));
+			}
+		}else{
+			redirect(site_url('dashboard/tim/profil/2'));
+		}
+	}		
 
 	public function uploadF(){
 		// var_dump($this->input->post(''));

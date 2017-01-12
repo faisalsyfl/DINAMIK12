@@ -27,9 +27,9 @@
 						<input type="submit" class="btn-submit" id="btn-submit" value="Submit" disabled><br>
 						File saat ini : <br>
 						<?php if($schteam['schteam_file'] != NULL){ ?>
-							<input type="text" class="daftar-tim form-control" id="link-file" value="<?php echo $schteam['schteam_file']; ?>" disabled>
+							<input type="text" class="daftar-tim form-control" id="link-file" value="<?php echo $schteam['schteam_file']; ?>" readonly>
 						<?php }else{ ?>
-							<input type="text" class="daftar-tim form-control" id="link-file" value="No File Found" disabled>
+							<input type="text" class="daftar-tim form-control" id="link-file" value="No File Found" readonly>
 						<?php 
 						} ?>
 						<input type="button" class="btn-edit" id="btn-edit" value="Edit" onclick="enableSubmit()"><br>

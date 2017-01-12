@@ -116,7 +116,10 @@ class AccountModel extends CI_Model {
 			$this->db->where('public_account_id', $id);
 			$x = $this->db->get()->row()->public_name;
 		}else if($cat == "SCT"){
-			/* FOR SCHOOL TEAM */
+			$this->db->select('schteam_name');
+			$this->db->from('tb_schteam');
+			$this->db->where('schteam_account_id', $id);
+			$x = $this->db->get()->row()->schteam_name;
 			
 		}
 		

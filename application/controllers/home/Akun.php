@@ -129,6 +129,7 @@ class Akun extends CI_Controller{
 				else if($userdata['category'] == 'SCH' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/sekolah'));
 				else if($userdata['category'] == 'SCT' && $userdata['status'] == 1) 
+					// var_dump($_SESSION);
 					redirect(site_url('dashboard/tim'));
 				else if($userdata['category'] == 'PUB' && $userdata['status'] == 1) 
 					redirect(site_url('dashboard/publik'));

@@ -19,6 +19,7 @@
 			                <th>No</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
+			                <th>Link File</th>
 			                <th>Status Pembayaran</th>
 			            </tr>
 			        </thead>
@@ -26,7 +27,7 @@
 			            <tr>
 			                <th>No</th>
 			                <th>Nama Tim</th>
-			                <th>Kategori Lomba</th>
+			                <th>Link File</th>
 			                <th>Status Pembayaran</th>
 			            </tr>
 			        </tfoot>
@@ -36,6 +37,11 @@
 			                <td><?php echo $i++;?></td>
 			                <td><?php echo $data['sct_name'];?></td>
 			                <td><?php echo $data['eve_name'];?></td>
+			                <?php if($data['sct_file'] == NULL){?>
+			                	<td style="color:red;">No Upload Yet.</td>
+			                <?php }else{?>
+			                	<td><a href="<?php echo $data['sct_file'];?>" title="">View Link</a></td>
+			                <?php }?>
 			                <?php
 			        				if($data['pay_status'] == 1){
 			        					echo "<td style='color:green;font-weight:bold;'>"."Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
