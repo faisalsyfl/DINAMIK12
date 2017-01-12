@@ -75,11 +75,15 @@ class Akun extends CI_Controller{
 
 
 			/*Checking Login*/
-				if(md5($password) == $data['account_password']){
+			if(md5($password) == $data['account_password']){
 				/*Success Login*/
 				
 				$catename = $this->AccountModel->getCategoryNameByID($data['account_category_id']);
 				$realname = $this->AccountModel->getNameByID($data['account_id'], $data['account_category_id']);
+
+				date_default_timezone_set("Asia/Bangkok");		
+				$timestamp['account_log'] = date("Y-m-d H:i:s");
+				$this->AccountModel->update($data['account_id'],$timestamp);
 				
 				/*Storing key value as session data*/
 				$userdata = array(
@@ -171,6 +175,8 @@ class Akun extends CI_Controller{
 				$acc['account_image'] = "/assets/img/icon_dashboard/sekolah.jpg";
 				$acc['account_category_id'] = "SCH";
 				$acc['account_status'] = "1";
+				date_default_timezone_set("Asia/Bangkok");		
+				$acc['account_log'] = date("Y-m-d H:i:s");				
 				$this->AccountModel->insert($acc);
 				
 				// var_dump($acc);
@@ -213,6 +219,8 @@ class Akun extends CI_Controller{
 				$acc['account_image'] = "/assets/img/icon_dashboard/umum.jpg";
 				$acc['account_category_id'] = "PUB";
 				$acc['account_status'] = "1";
+				date_default_timezone_set("Asia/Bangkok");		
+				$acc['account_log'] = date("Y-m-d H:i:s");				
 				$this->AccountModel->insert($acc);
 				
 				$pub['public_name'] = $this->input->post('name');
