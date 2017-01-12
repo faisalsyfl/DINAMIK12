@@ -20,14 +20,39 @@ class Berita extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['list'] = $this->NewsModel->selectAll()->result_array();
-		$data['row'] = $this->NewsModel->selectAll()->num_rows();
+		// $data['list'] = $this->NewsModel->selectAll()->result_array();
+		// $data['row'] = $this->NewsModel->selectAll()->num_rows();
 		// var_dump($data['list']);
+		// $this->load->view('layout/header');
+		// $this->load->view('home/berita',$data);
+		// $this->load->view('layout/footer');
+		redirect(site_url('berita/page/1'));
+	}
+	public function page($page){
+		$total=($page-1)*6;
+		
+		$data['list'] = $this->NewsModel->selectAll(6,$total)->result_array();
+		$data['row'] = $this->NewsModel->selectAll()->num_rows();
+		$data['page']=$page;
+		//var_dump($data['list']);
 		$this->load->view('layout/header');
 		$this->load->view('home/berita',$data);
 		$this->load->view('layout/footer');
+		
 	}
 	
+	public function category($category){
+		//$total=($page-1)*6;
+		
+		$data['list'] = $this->NewsModel->selectByCategory(urldecode($category))->result_array();
+		$data['row'] = $this->NewsModel->selectByCategory(urldecode($category))->num_rows();
+		$data['page']=1;
+		//var_dump($data['list']);
+		$this->load->view('layout/header');
+		$this->load->view('home/berita',$data);
+		$this->load->view('layout/footer');
+		
+	}
 	public function detail($id){
 		
 		$data['list']=$this->NewsModel->selectById($id)->row_array();

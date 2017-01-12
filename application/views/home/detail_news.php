@@ -18,6 +18,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2 news-detail">
+			<center><img src="<?php echo base_url("uploads/news/".$list['news_image']); ?>" alt="News Image" class="thumbnail" style="width:300px;"></center>
             <?php echo $list['news_content']; ?>
             <hr>
             <p class="news-category" style="font-size: 18px;">

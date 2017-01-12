@@ -11,7 +11,7 @@
            
            
             <div class="box-body pad">
-              <?php echo form_open('dashboard/admin/newsAction/editAct/'.$row['news_id']); ?>
+              <?php echo form_open_multipart('dashboard/admin/newsAction/editAct/'.$row['news_id']); ?>
 			  <?php?>
 				 <div class="form-group">
                   <label for="inputJudul1">Judul</label>
@@ -29,6 +29,11 @@
 						
 					<?php } ?>
                   </select>
+				  </div>
+				  <div class="form-group">
+                  <label for="inputGambar1">Gambar</label>
+                  <input type="file" name="news_image">
+				  </div>
 				<div class="form-group">
                   <label for="editor1">Konten</label>
                  <textarea id="editor1" name="news_content" rows="10" cols="80"><?php echo $row['news_content']; ?></textarea>

@@ -19,6 +19,13 @@ class NewsModel extends CI_Model {
 		return $this->db->get();
 	}
 	
+	public function getLastId(){
+		$this->db->where('TABLE_SCHEMA','db_dinamik12');
+		$this->db->where('TABLE_NAME','tb_news');
+		$this->db->select('AUTO_INCREMENT');
+		return $this->db->get('INFORMATION_SCHEMA.TABLES')->row()->AUTO_INCREMENT;
+	}
+	
 	public function selectHeadline($id){
 		$this->db->select('SUBSTRING(news_content, 1, 100)',false);
 		$this->db->from($this->tableName);
@@ -26,11 +33,12 @@ class NewsModel extends CI_Model {
 		return $this->db->get()->row_array();
 	}
 	
-	public function selectByCategory($category){
-		$this->db->select('*');
+	public function selectByCategory($category,$from=0,$offset=0){
+		$this->db->select('*,SUBSTRING(news_content, 1, 400) as headline',false);
 		$this->db->from($this->tableName);
 		$this->db->where('news_category',$category);
-		return $this->db->get()->row_array();
+		$this->db->limit($from,$offset);
+		return $this->db->get();
 	}
 	public function selectJoinEvent($event = NULL){
 		$this->db->select('*');
