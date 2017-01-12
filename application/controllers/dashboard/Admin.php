@@ -280,15 +280,74 @@ class Admin extends CI_Controller {
 				$this->load->view('admin/layout/footer');
 			}else if($aksi == "editAct"){
 				$data = $this->input->post();
-				unset($data['btnEdit']);
-				$this->NewsModel->update($id,$data);
-				redirect(site_url('dashboard/admin/berita'));
+				if (empty($_FILES['news_image']['name'])) {
+					unset($data['news_image']);
+					unset($data['btnEdit']);		
+					$this->NewsModel->update($id,$data);
+					redirect(site_url('dashboard/admin/berita'));
+				}else{
+					$config['upload_path']          = './uploads/news/';
+					$config['allowed_types']        = 'gif|jpg|png|jpeg';
+					$config['overwrite']			= TRUE;
+					$config['max_size']             = 0;
+					$config['max_width']            = 0;
+					$config['max_height']           = 0;
+					date_default_timezone_set("Asia/Bangkok");		
+					$config['file_name']				  = "news-".$id;
+					echo $config['file_name'];
+					$this->load->library('upload', $config);
+					if(!$this->upload->do_upload('news_image')){
+						// gagal
+						echo $this->upload->display_errors();
+						redirect(site_url('dashboard/admin/newsAction/add'));
+					}else{
+						// sukses
+						unset($data['news_image']);
+						unset($data['btnEdit']);
+						$data['news_image'] = $config['file_name'].$this->upload->data('file_ext');		
+						$this->NewsModel->update($id,$data);
+						redirect(site_url('dashboard/admin/berita'));
+					}
+				}
+				
 			}else if($aksi=="addAct"){
+				$lastId=$this->NewsModel->getLastId();
 				$data = $this->input->post();
-				unset($data['btnAdd']);
-				//print_r($data);
-				$this->NewsModel->insert($data);
-				redirect(site_url('dashboard/admin/berita'));
+				var_dump($data);
+				
+				
+				if (empty($_FILES['news_image']['name'])) {
+					unset($data['news_image']);
+					unset($data['btnAdd']);
+					$data['news_image'] = "default.jpg";		
+					$this->NewsModel->insert($data);
+					redirect(site_url('dashboard/admin/berita'));
+				}else{
+					$config['upload_path']          = './uploads/news/';
+					$config['allowed_types']        = 'gif|jpg|png|jpeg';
+					$config['overwrite']			= TRUE;
+					$config['max_size']             = 0;
+					$config['max_width']            = 0;
+					$config['max_height']           = 0;
+					date_default_timezone_set("Asia/Bangkok");		
+					$config['file_name']				  = "news-".$lastId;
+					echo $config['file_name'];
+					$this->load->library('upload', $config);
+					if(!$this->upload->do_upload('news_image')){
+						// gagal
+						echo $this->upload->display_errors();
+						redirect(site_url('dashboard/admin/newsAction/add'));
+					}else{
+						// sukses
+						unset($data['news_image']);
+						unset($data['btnAdd']);
+						$data['news_image'] = $config['file_name'].$this->upload->data('file_ext');		
+						$this->NewsModel->insert($data);
+						redirect(site_url('dashboard/admin/berita'));
+					}
+				}
+				
+				
 				
 			}
 		}else{
