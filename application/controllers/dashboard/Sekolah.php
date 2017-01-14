@@ -258,5 +258,18 @@ class Sekolah extends CI_Controller {
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}	
-	}	
+	}
+
+	public function editprofil(){
+		/* if has session */
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
+			$data['list'] = $this->EventModel->selectAll(8,0)->result_array();
+			$this->load->view('sekolah/layout/header');
+			$this->load->view('sekolah/profil/editprofil',$data);
+			$this->load->view('sekolah/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
 }

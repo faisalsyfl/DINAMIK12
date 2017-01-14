@@ -198,5 +198,39 @@ class Publik extends CI_Controller {
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
 		}
-	}		
+	}
+
+	public function editprofil($err = NULL)
+	{
+			/* if has session */
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			if($err!=NULL){
+				$data['err'] = $err;
+			}			
+			$data['list'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/editprofil',$data);
+			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+	
+	public function uploadfile($err = NULL)
+	{
+			/* if has session */
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			if($err!=NULL){
+				$data['err'] = $err;
+			}			
+			$data['list'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/uploadfile',$data);
+			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
 }

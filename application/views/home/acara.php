@@ -90,7 +90,7 @@
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 – 12.00 WIB
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Halaman Depan Gymnasium, Universitas Pendidikan Indonesia
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium Universitas Pendidikan Indonesia
 					  </p>
 					  <p class="event-detail-text">
 					 	<?php echo $list[11]['event_description']; ?>

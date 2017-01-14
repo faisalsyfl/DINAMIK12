@@ -92,6 +92,7 @@ function(){
 							</script>		        			
 			        </tbody>
 			   	</table>
+				<a href="<?php echo site_url('dashboard/publik/uploadfile') ?>" class="btn-kembali">Upload File</a>
 				</section>
 				<!-- /.content -->
 			</div>

@@ -40,15 +40,16 @@
 							<td><?php echo $list['city_name']; ?></td>
 						</tr>
 						<tr>
-							<td class="p1">Alamat</td>
-							<td><?php echo $list['public_address']; ?></td>
-						</tr>
-						<tr>
 							<td class="p1">Email</td>
 							<td><?php echo $_SESSION['email']; ?></td>
 						</tr>
+						<tr>
+							<td class="p1">Alamat</td>
+							<td><?php echo $list['public_contact']; ?></td>
+						</tr>
 					</table>
 					<br>
+					<a href="<?php echo site_url('dashboard/publik/editprofil') ?>" class="btn-edit">Edit</a>
 					<a href="<?php echo site_url('dashboard/publik/') ?>" class="btn-kembali">Kembali</a>
 					<br>
 					<br>

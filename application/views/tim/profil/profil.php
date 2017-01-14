@@ -64,8 +64,8 @@
 						</tr>
 					</table>
 					<br>
-					<!--<a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-edit">Edit</a>-->
-					<!-- <a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-kembali">Kembali</a> -->
+					<a href="<?php echo site_url('dashboard/tim/editprofil') ?>" class="btn-edit">Edit</a>
+					<a href="<?php echo site_url('dashboard/tim/') ?>" class="btn-kembali">Kembali</a>
 					<!-- <br> -->
 					<h3 class="section-dashboard">Ganti Password</h3>
 					<?php echo form_open('dashboard/tim/editPass'); ?>

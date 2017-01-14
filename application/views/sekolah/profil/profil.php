@@ -49,9 +49,13 @@
 							<td class="p1">Email</td>
 							<td><?php echo $_SESSION['email']; ?></td>
 						</tr>
+						<tr>
+							<td class="p1">Kontak</td>
+							<td><?php echo $list['school_contact']; ?></td>
+						</tr>
 					</table>
 					<br>
-					<!--<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-edit">Edit</a>-->
+					<a href="<?php echo site_url('dashboard/sekolah/editprofil') ?>" class="btn-edit">Edit</a>
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali
 					</a>
 					<br>
