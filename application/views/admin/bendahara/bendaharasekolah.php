@@ -8,7 +8,7 @@
 						Beranda Admin
 						<small>Panel Pembayaran</small>
 					</h1>
-					<h3 class="section-dashboard">Aktivasi Pembayaran</h3>
+					<h3 class="section-dashboard">Verifikasi Peserta Lomba</h3>
 				</section>
 				<!-- Main content -->
 				<section class="content">

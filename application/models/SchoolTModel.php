@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * class khusus tabel tb_account
+ * class khusus tabel tim sekolah
 */
 class SchoolTModel extends CI_Model {
 	public $tableName;
@@ -46,11 +46,14 @@ class SchoolTModel extends CI_Model {
 		$this->db->where('schteam_id',$id);
 		$this->db->delete($this->tableName);
 	}
-	public function viewSchtDash($id=NULL){
+	public function viewSchtDash($id=NULL, $status = NULL){
 		$this->db->select('*');
 		$this->db->from('v_schteam_dash');
 		if($id!=NULL){
 			$this->db->where('sch_id',$id);
+		}
+		if($status!=NULL){
+			$this->db->where('pay_status',$status);
 		}
 		return $this->db->get();
 	}
@@ -60,6 +63,15 @@ class SchoolTModel extends CI_Model {
 		$this->db->where('eve_id',$id);
 		return $this->db->get();
 	}	
+	
+	public function viewSchtDashByPayAndEvent($id, $status){
+		$this->db->select('*');
+		$this->db->from('v_schteam_dash');
+		$this->db->where('eve_id',$id);
+		$this->db->where('pay_status',$status);
+		return $this->db->get();
+	}	
+	
 	public function selectByAccIdJoin($id){
 		$this->db->select('*');
 		$this->db->from($this->tableName);

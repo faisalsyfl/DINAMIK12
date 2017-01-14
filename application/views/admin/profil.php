@@ -5,8 +5,8 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Profil Admin
-						<small>Panel Informasi</small>
+						Profil
+						<small>Informasi</small>
 					</h1>
 				</section>
 				<!-- Main content -->
@@ -34,7 +34,7 @@
 					<table class="school-info">
 						<tr>
 							<td class="p1">Password Lama</td>
-							<td><input type="text" name="bef" class="form-control" placeholder="Password Lama"></td>
+							<td><input type="password" name="bef" class="form-control" placeholder="Password Lama"></td>
 						</tr>
 						<tr>
 							<td class="p1">Password Baru</td>

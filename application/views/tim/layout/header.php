@@ -175,7 +175,7 @@
 		<div class="wrapper">
 			<header class="main-header">
 				<!-- Logo -->
-				<a href="#" class="logo">
+				<a href="<?php echo site_url();?>" class="logo">
 					<!-- mini logo for sidebar mini 50x50 pixels -->
 					<span class="logo-mini"><img class="icon-toggle" src="<?php echo base_url('/assets/img/logo/icon-white.png');?>"></span>
 					<!-- logo for regular state and mobile devices -->
@@ -277,7 +277,7 @@
 						</div>
 						<div class="pull-left info">
 							<p><?php echo $this->session->realname; ?></p>
-							<a href="#"><span class="fa fa-user fa-2x text-success"></span> Profil</a>
+							<a href="<?php echo site_url('dashboard/tim/profil') ?>"><span class="fa fa-user fa-2x text-success"></span> Profil</a>
 						</div>
 					</div>
 					<!-- sidebar menu: : style can be found in sidebar.less -->

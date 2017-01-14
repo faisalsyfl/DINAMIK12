@@ -14,9 +14,9 @@
 				<ul class="nav nav-tabs event-tabs">
 					<li <?php if(!isset($activetab) || $activetab == "pendaftaran") echo "class='active'"; ?>><a data-toggle="tab" href="#alur">ALUR PENDAFTARAN</a></li>
 					<li <?php if(isset($activetab) && $activetab == "tentang") echo "class='active'"; ?>><a data-toggle="tab" href="#tentang">TENTANG</a></li>
-					<li <?php if(isset($activetab) && $activetab == "faq") echo "class='active'"; ?>><a data-toggle="tab" href="#faq">FAQ</a></li>
+					<li <?php if(isset($activetab) && $activetab == "faq") echo "class='active'"; ?>><a data-toggle="tab" href="#faq">PERTANYAAN</a></li>
 					<li <?php if(isset($activetab) && $activetab == "unduhan") echo "class='active'"; ?>><a data-toggle="tab" href="#unduhan">UNDUHAN</a></li>
-					<li <?php if(isset($activetab) && $activetab == "kontak") echo "class='active'"; ?>><a data-toggle="tab" href="#kontak">KONTAK</a></li>
+					<!--<li <?php // if(isset($activetab) && $activetab == "kontak") echo "class='active'"; ?>><a data-toggle="tab" href="#kontak">KONTAK</a></li>-->
 				</ul>
 				
 				<div class="tab-content event-detail-list">
@@ -69,7 +69,6 @@
 						-->
 					</div>
 					
-					<!-- KONTAK -->
 					<div id="faq" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "faq") echo "active"; ?>">
 					  <h3 class="event-detail-title">PERTANYAAN</h3>
 					    <ul class="event-detail-text">
@@ -85,14 +84,14 @@
 						</ul>
 					</div>
 					
-					<!-- KONTAK -->
-					<div id="kontak" class="tab-pane fade in <?php if(isset($activetab) && $activetab == "kontak") echo "active"; ?>">
+					<!-- KONTAK 
+					<div id="kontak" class="tab-pane fade in <?php //if(isset($activetab) && $activetab == "kontak") echo "active"; ?>">
 					  <h3 class="event-detail-title">KONTAK</h3>
 					  <p class="event-detail-text">
 					 	Jika ada pertanyaan, kritik, dan saran silahkan kirim melalui form dibawah ini:
 					  </p>
 					  <div class="form-group">
-						<?php echo form_open('home/Info/contactMsg'); ?>
+						<?php //echo form_open('home/Info/contactMsg'); ?>
 							<h3 class="event-detail-text">Nama</h3>
 							<input type="text" class="form-control" placeholder="Masukan nama lengkap" name="message_name">
 							<h3 class="event-detail-text">Email</h3>
@@ -100,7 +99,7 @@
 							<h3 class="event-detail-text">Pesan</h3>
 							<textarea type="text" class="form-control" placeholder="Pesan anda" name="message_content"></textarea><br>
 							<button type="submit" class="btn btn-primary form-control" name="btnKirim">Kirim</button>
-						<?php echo form_close(); ?>
+						<?php //echo form_close(); ?>
 					  </div>
 					</div>
 					
@@ -118,6 +117,7 @@
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAa3hqOHd2aFBDZnc" target="_blank">DINAMIK12 Booklet - Lomba Cipta Web</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAenI0ajdrWURZX28" target="_blank">DINAMIK12 Booklet - Lomba Desain Grafis</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAVlVqTk10WEk1c0E" target="_blank">DINAMIK12 Booklet - Olimpiade TIK</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U" target="_blank">DINAMIK12 Booklet - Robot Line Follower</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAbFBYdkMzUUpYS1E" target="_blank">DINAMIK12 Booklet - PC Assembling</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tANV9HZWU1eUV3Q2M" target="_blank">DINAMIK12 Booklet - Computer Science Programming Contest</a><br>
 					  </p>

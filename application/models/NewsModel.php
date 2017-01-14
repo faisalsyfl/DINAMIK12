@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * class khusus tabel tb_event
+ * class khusus tabel tb_news
 */
 class NewsModel extends CI_Model {
 	public $tableName;
@@ -25,6 +25,7 @@ class NewsModel extends CI_Model {
 		$this->db->select('AUTO_INCREMENT');
 		return $this->db->get('INFORMATION_SCHEMA.TABLES')->row()->AUTO_INCREMENT;
 	}
+	
 	
 	public function selectHeadline($id){
 		$this->db->select('SUBSTRING(news_content, 1, 100)',false);

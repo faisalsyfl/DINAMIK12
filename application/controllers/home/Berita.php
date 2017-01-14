@@ -59,7 +59,5 @@ class Berita extends CI_Controller {
 		$this->load->view('layout/header');
 		$this->load->view('home/detail_news',$data);
 		$this->load->view('layout/footer');
-		
-		
 	}
 }

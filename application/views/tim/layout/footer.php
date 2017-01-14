@@ -22,11 +22,6 @@
 		<!-- jvectormap -->
 		<script src="<?php echo base_url(); ?>plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 		<script src="<?php echo base_url(); ?>plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-		<!-- ChartJS 1.0.1 -->
-		<script src="<?php echo base_url(); ?>plugins/chartjs/Chart.min.js"></script>
-		<!-- Chart JS -->
-		<script src="<?php echo base_url(); ?>assets/js/custom/piechart.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/custom/piechart2.js"></script>
 		<!-- Data Tables -->
 		<script src="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="<?php echo base_url(); ?>plugins/datatables/dataTables.bootstrap.min.js"></script>

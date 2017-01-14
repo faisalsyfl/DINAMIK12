@@ -6,7 +6,7 @@
 				<section class="content-header">
 					<h1>
 						Acara & Lomba
-						<small>Panel Informasi</small>
+						<small>Detail Data Acara & Lomba</small>
 					</h1>
 				</section>
 				<!-- Main content -->

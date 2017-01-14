@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * class khusus tabel tb_account
+ * class khusus tabel tb_pubteam
 */
 class PublicTModel extends CI_Model {
 	public $tableName;
@@ -68,6 +68,14 @@ class PublicTModel extends CI_Model {
 		$this->db->from('v_pubteam_dash');
 		$this->db->where('eve_id',$id);
 
+		return $this->db->get();		
+	}
+	
+	public function viewPubtDashByPayAndEvent($id, $status){
+		$this->db->select('*');
+		$this->db->from('v_pubteam_dash');
+		$this->db->where('eve_id',$id);
+		$this->db->where('pay_status',$status);
 		return $this->db->get();		
 	}
 }

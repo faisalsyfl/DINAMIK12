@@ -3,15 +3,15 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Beranda Admin
-						<small>Panel Informasi</small>
+						Detail Data 
+						<small>Bazaar</small>
 					</h1>
 				</section>
 
 				<!-- Main content -->
 				<section class="content">
-				<h3>Rekapitulasi Bazaar</h3>
-					<a href="<?php echo site_url('dashboard/admin/bazaarAction/NULL/add'); ?>" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>&nbsp;Daftarkan Bazaar</a>				 <br>
+					<a href="<?php echo site_url('dashboard/admin/bazaarAction/NULL/add'); ?>" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>&nbsp;Daftarkan Bazaar</a>
+					<hr>
 					<table id="allEve" class="table table-bordered" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>

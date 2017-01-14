@@ -61,7 +61,7 @@
 					<table class="school-info">
 						<tr>
 							<td class="p1">Password Lama</td>
-							<td><input type="text" name="bef" class="form-control" placeholder="Password Lama"></td>
+							<td><input type="password" name="bef" class="form-control" placeholder="Password Lama"></td>
 						</tr>
 						<tr>
 							<td class="p1">Password Baru</td>

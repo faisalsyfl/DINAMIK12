@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * class khusus tabel tb_account
+ * class khusus tabel tb_city
 */
 class CityModel extends CI_Model {
 	public $tableName;

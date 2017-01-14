@@ -6,7 +6,7 @@
 				<section class="content-header">
 					<h1>
 						Berita
-						<small>Panel Berita</small>
+						<small>Panel Data Berita</small>
 					</h1>
 				</section>
 				<!-- Main content -->
@@ -17,14 +17,14 @@
 			            <tr>
 			                <th>No</th>
 			                <th>News Title</th>
-							 <th>News Category</th>
+							<th>News Category</th>
 			                <th>Event</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
 			        <tfoot>
 			            <tr>
-			                 <th>No</th>
+			                <th>No</th>
 							<th>News Title</th>
 			                <th>News Category</th>
 			                <th>Event</th>

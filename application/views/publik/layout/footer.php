@@ -1,8 +1,8 @@
 			<footer class="main-footer">
 				<div class="pull-right hidden-xs">
-					Didukung oleh<b> CodeIgniter dan AdminLTE</b>
+					Didukung oleh<b> CodeIgniter dan <a href="http://almsaeedstudio.com">AdminLTE</a></b>
 				</div>
-				<strong>Copyright &copy; 2016 <a href="http://almsaeedstudio.com">Tim Pengembang Dinamik12</a></strong>
+				<strong>&copy; 2016 - 2017 <a href="#">Tim Pengembang Dinamik12</a></strong>
 			</footer>
 		</div>
 		<!-- ./wrapper -->
@@ -24,9 +24,6 @@
 		<script src="<?php echo base_url(); ?>plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 		<!-- ChartJS 1.0.1 -->
 		<script src="<?php echo base_url(); ?>plugins/chartjs/Chart.min.js"></script>
-		<!-- Chart JS -->
-		<script src="<?php echo base_url(); ?>assets/js/custom/piechart.js"></script>
-		<script src="<?php echo base_url(); ?>assets/js/custom/piechart2.js"></script>
 		<!-- Data Tables -->
 		<script src="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.min.js"></script>
 		<script src="<?php echo base_url(); ?>plugins/datatables/dataTables.bootstrap.min.js"></script>

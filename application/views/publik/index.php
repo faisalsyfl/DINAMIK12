@@ -8,7 +8,7 @@
 						Beranda Publik
 						<small>Panel Informasi</small>
 					</h1>
-					<h3 class="section-dashboard">Daftar Acara</h3>
+					<h3 class="section-dashboard">Daftar Peserta Acara</h3>
 					<a href="<?php echo site_url('dashboard/publik/pendaftarantim/') ?>" class="btn-daftar">Daftar Acara DINAMIK</a>
 				</section>
 				<!-- Main content -->
@@ -67,8 +67,8 @@
 		        				<button class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
 							<?php if($data['pay_status'] != 1){?>
 		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['pbt_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
-							<?php }?>	
 		        				</td>
+							<?php }?>	
 			        		 
 		        			<?php 
 		        				}
@@ -91,7 +91,6 @@ function(){
 }
 							</script>		        			
 			        </tbody>
-			        
 			   	</table>
 				</section>
 				<!-- /.content -->

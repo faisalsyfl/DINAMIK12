@@ -5,7 +5,7 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Upload Bukti Acara
+						Upload Bukti Pembayaran Acara
 						<small>Panel Informasi</small>
 					</h1><br>
 					<h1 class="nama-tim"><b><?php echo $_SESSION['username']; ?></b></h1>

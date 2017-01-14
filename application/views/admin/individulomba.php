@@ -6,13 +6,12 @@
 				<section class="content-header">
 					<h1>
 						Beranda Admin
-						<small>Panel Informasi</small>
+						<small>Panel Informasi Data Individu Peserta</small>
 					</h1>
 				</section>
 
 				<!-- Main content -->
 				<section class="content">
-				<h3>Daftar</h3>
 					<table id="allEve" class="table table-bordered" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>

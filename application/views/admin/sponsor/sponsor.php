@@ -3,15 +3,15 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Beranda Admin
-						<small>Panel Informasi</small>
+						Detail Data
+						<small>Sponsor</small>
 					</h1>
 				</section>
 
 				<!-- Main content -->
 				<section class="content">
-				<h3>Rekapitulasi Sponsor</h3>
 					<a href="<?php echo site_url('dashboard/admin/sponsorAction/NULL/add'); ?>" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>&nbsp;Daftarkan Sponsor</a>				 <br>
+					<hr>
 					<table id="allEve" class="table table-bordered" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>

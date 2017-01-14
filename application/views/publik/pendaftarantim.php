@@ -15,12 +15,12 @@
 					<?php echo form_open('dashboard/Publik/processDaftar'); ?>
 					<table class="daftar-tim">
 						<tr>
-							<td class="p1">Nama Acara</td>
+							<td class="p1">Pilihan Acara</td>
 							<td>
 								<select name="pubteam_event_id">
 									<?php 
 										foreach($list as $eve){
-											if($eve['event_status'] == 1){
+											if($eve['event_status'] == 1 && $eve['event_id'] != 12){
 												echo "<option value='".$eve['event_id']."'>".$eve['event_name']."</option>";
 											}
 										}
@@ -29,7 +29,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td class="p1">Nama Lengkap</td>
+							<td class="p1">Nama Peserta</td>
 							<td>
 								<input type="text" name="pubteam_name" placeholder="Nama Lengkap">
 							</td>

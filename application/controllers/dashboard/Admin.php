@@ -50,10 +50,69 @@ class Admin extends CI_Controller {
 		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			$data['totalakun'] = $this->AccountModel->selectAll()->num_rows()-22;
 			$data['totaltim'] = $this->SchoolTModel->selectAll()->num_rows() + $this->PublicTModel->selectAll()->num_rows();
+			
+			$footer['lomba_ldg'] = $this->SchoolTModel->viewSchtDashByEvent(1)->num_rows();
+			$data['valid_ldg'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(1, 1)->num_rows();
+			$data['not_ldg'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(1, 0)->num_rows();
+			
+			$footer['lomba_lcw'] = $this->SchoolTModel->viewSchtDashByEvent(2)->num_rows(); 
+			$data['valid_lcw'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(2, 1)->num_rows();
+			$data['not_lcw'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(2, 0)->num_rows();
+			
+			$footer['lomba_otik'] = $this->SchoolTModel->viewSchtDashByEvent(3)->num_rows(); 
+			$data['valid_otik'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(3, 1)->num_rows();
+			$data['not_otik'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(3, 0)->num_rows();
+			
+			$footer['lomba_pca'] = $this->SchoolTModel->viewSchtDashByEvent(4)->num_rows(); 
+			$data['valid_pca'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(4, 1)->num_rows();
+			$data['not_pca'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(4, 0)->num_rows();
+			
+			$footer['lomba_cspc'] = $this->SchoolTModel->viewSchtDashByEvent(5)->num_rows(); 
+			$data['valid_cspc'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(5, 1)->num_rows();
+			$data['not_cspc'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(5, 0)->num_rows();
+			
+			$footer['lomba_lca'] = $this->SchoolTModel->viewSchtDashByEvent(6)->num_rows(); 
+			$data['valid_lca'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(6, 1)->num_rows();
+			$data['not_lca'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(6, 0)->num_rows();
+			
+			$footer['lomba_rlf'] = $this->SchoolTModel->viewSchtDashByEvent(7)->num_rows(); 
+			$data['valid_rlf'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(7, 1)->num_rows();
+			$data['not_rlf'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(7, 0)->num_rows();
+			
+			$footer['lomba_kj'] = $this->SchoolTModel->viewSchtDashByEvent(8)->num_rows(); 
+			$data['valid_kj'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(8, 1)->num_rows();
+			$data['not_kj'] = $this->SchoolTModel->viewSchtDashByPayAndEvent(8, 0)->num_rows();
+			
+			$footer['acara_talkshow'] = $this->PublicTModel->viewPubtDashByEvent(9)->num_rows();
+			$data['valid_talkshow'] = $this->PublicTModel->viewPubtDashByPayAndEvent(9, 1)->num_rows();
+			$data['not_talkshow'] = $this->PublicTModel->viewPubtDashByPayAndEvent(9, 0)->num_rows();
+			
+			$footer['acara_semnas'] = $this->PublicTModel->viewPubtDashByEvent(10)->num_rows();
+			$data['valid_semnas'] = $this->PublicTModel->viewPubtDashByPayAndEvent(10, 1)->num_rows();
+			$data['not_semnas'] = $this->PublicTModel->viewPubtDashByPayAndEvent(10, 0)->num_rows();
+			
+			$footer['acara_felose'] = $this->PublicTModel->viewPubtDashByEvent(11)->num_rows();
+			$data['valid_felose'] = $this->PublicTModel->viewPubtDashByPayAndEvent(11, 1)->num_rows();
+			$data['not_felose'] = $this->PublicTModel->viewPubtDashByPayAndEvent(11, 0)->num_rows();
+			
+			$footer['acara_donor'] = $this->PublicTModel->viewPubtDashByEvent(12)->num_rows();
+			$data['valid_donor'] = $this->PublicTModel->viewPubtDashByPayAndEvent(12, 1)->num_rows();
+			$data['not_donor'] = $this->PublicTModel->viewPubtDashByPayAndEvent(12, 0)->num_rows();
+			
+			$footer['acara_workshop'] = $this->PublicTModel->viewPubtDashByEvent(13)->num_rows();
+			$data['valid_workshop'] = $this->PublicTModel->viewPubtDashByPayAndEvent(13, 1)->num_rows();
+			$data['not_workshop'] = $this->PublicTModel->viewPubtDashByPayAndEvent(13, 0)->num_rows();
+			
+			$footer['acara_dstar'] = $this->PublicTModel->viewPubtDashByEvent(14)->num_rows();
+			$data['valid_dstar'] = $this->PublicTModel->viewPubtDashByPayAndEvent(14, 1)->num_rows();
+			$data['not_dstar'] = $this->PublicTModel->viewPubtDashByPayAndEvent(14, 0)->num_rows();
+			
+			$footer['status'] = 1;
+			
 			// var_dump($_SESSION['category']);
 			$this->load->view('admin/layout/header',$this->head);
 			$this->load->view('admin/main',$data);
-			$this->load->view('admin/layout/footer');
+			$this->load->view('admin/layout/footer', $footer);
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));
@@ -357,7 +416,6 @@ class Admin extends CI_Controller {
 	}
 	public function bendaharasekolah(){
 		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
-
 			$data['list'] = $this->PaymentModel->viewSchtDash()->result_array();
 			$this->load->view('admin/layout/header',$this->head);
 			$this->load->view('admin/bendahara/bendaharasekolah',$data);
@@ -367,10 +425,11 @@ class Admin extends CI_Controller {
 			redirect(site_url('/akun'));
 		}
 	}
+	
 	public function bsAction($id,$accid){
 		$curr = $this->PaymentModel->selectById($id)->row_array()['payment_status'];
 		if($curr == "0"){
-		var_dump($curr);
+			var_dump($curr);
 			$upd['payment_status'] = 1;
 			$acc['account_status'] = 1;
 		}
@@ -382,6 +441,7 @@ class Admin extends CI_Controller {
 		$this->AccountModel->update($accid,$acc);
 		redirect(site_url('dashboard/admin/bendaharasekolah'));
 	}
+	
 	public function bendaharapublik(){
 		if(isset($_SESSION['logged_in'])  && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			$data['list'] = $this->PaymentModel->viewPubtDash()->result_array();

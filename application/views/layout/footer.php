@@ -121,7 +121,7 @@
 						</tr>
 						<tr>
 							<td>
-								<a class="footer-link" href="<?php echo site_url('/info/view/kontak'); ?>">Hubungi Kami</a> 
+								<!--<a class="footer-link" href="<?php //echo site_url('/info/view/kontak'); ?>">Hubungi Kami</a> -->
 							</td>
 						</tr>
 					</table>
@@ -224,13 +224,13 @@
 					<table>
 						<tr>
 							<td>
-								<a href="#"><img src="<?php echo base_url("assets/img/logo/facebook.png"); ?>"></a>
+								<a target="_blank" href="https://www.facebook.com/dinamik12/"><img src="<?php echo base_url("assets/img/logo/facebook.png"); ?>"></a>
 							</td>
 							<td>
-								<a href="https://www.instagram.com/dinamik_upi/"><img src="<?php echo base_url("assets/img/logo/instagram.png"); ?>"></a>
+								<a target="_blank"  href="https://www.instagram.com/dinamik_upi/"><img src="<?php echo base_url("assets/img/logo/instagram.png"); ?>"></a>
 							</td>
 							<td>
-								<a href="https://www.youtube.com/channel/UCLtaMWVaAG3KBBH01wii1fw"><img src="<?php echo base_url("assets/img/logo/youtube.png"); ?>"></a>
+								<a target="_blank"  href="https://www.youtube.com/channel/UCLtaMWVaAG3KBBH01wii1fw"><img src="<?php echo base_url("assets/img/logo/youtube.png"); ?>"></a>
 							</td>
 							<td>
 								<a href="line://ti/p/~@aju3540r"><img src="<?php echo base_url("assets/img/logo/line.png"); ?>"></a>

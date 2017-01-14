@@ -5,8 +5,8 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Profil Sekolah
-						<small>Panel Informasi</small>
+						Sekolah
+						<small>Pendaftaran Tim</small>
 					</h1>
 					<h3 class="section-dashboard">Form Pendaftaran Tim</h3>
 				</section>
@@ -39,7 +39,9 @@
 							<td>	
 								<input type="email" name="account_email" value="" placeholder="Email Ketua">
 							</td>	
-							<td style="color:red;">Email ini digunakan untuk Login sebagai Tim. <br>Akun Aktif ketika pembayaran sudah <b style="color:green;">LUNAS</b> <br>Mohon dibedakan dengan email resmi sekolah</td>
+							<td style="color:red;">Email ini dapat digunakan untuk masuk sebagai tim lomba dan fitur lupa password akun tim. <br>
+							Akun akan aktif dan dapat digunakan ketika pembayaran sudah <b style="color:green;">LUNAS</b>. <br>
+							Email harus valid dan berbeda dengan email resmi sekolah.</td>
 
 						</tr>	
 						<tr>
@@ -54,6 +56,7 @@
 							<td>
 								<input type="text" name="schteam_coach_name" placeholder="Nama Pembimbing">
 							</td>
+							<td style="">Jika ada</td>
 						</tr>
 						<tr>
 							<td class="p1">Kontak Pembimbing</td>
@@ -74,6 +77,9 @@
 							<td class="p1"  >NISN</td>
 							<td>
 								<input type="text" name="nisn[]" placeholder="NISN Anggota 1">
+							</td>
+							<td>
+								Harap daftarkan anggota tim sesuai dengan syarat yang ada di dalam booklet lomba terkait.
 							</td>
 						</tr>	
 						<tr style="display:none;" class="tdanggota2">

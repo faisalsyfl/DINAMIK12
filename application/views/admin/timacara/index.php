@@ -6,7 +6,7 @@
 				<section class="content-header">
 					<h1>
 						Beranda Publik
-						<small>Panel Informasi</small>
+						<small>Panel Informasi Data Tim Peserta Acara</small>
 					</h1>
 				</section>
 

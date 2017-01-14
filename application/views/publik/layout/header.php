@@ -156,7 +156,7 @@
 		<div class="wrapper">
 			<header class="main-header">
 				<!-- Logo -->
-				<a href="#" class="logo">
+				<a href="<?php echo site_url('') ?>" class="logo">
 					<!-- mini logo for sidebar mini 50x50 pixels -->
 					<span class="logo-mini"><img class="icon-toggle" src="<?php echo base_url('/assets/img/logo/icon-white.png');?>"></span>
 					<!-- logo for regular state and mobile devices -->
@@ -175,6 +175,7 @@
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
 							<!-- Messages: style can be found in dropdown.less-->
+							<!--
 							<li class="dropdown messages-menu">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 									<i class="fa fa-envelope-o"></i>
@@ -184,11 +185,13 @@
 									<li class="header">You have 4 messages</li>
 									<li>
 										<!-- inner menu: contains the actual data -->
+										<!--
 										<ul class="menu">
 											<li><!-- start message -->
+												<!--
 												<a href="#">
 													<div class="pull-left">
-														<img src="<?php echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
+														<img src="<?php //echo base_url('/assets/img/icon_dashboard/admin.jpg');?>" class="img-circle" alt="User Image">
 													</div>
 													<h4>
 														Support Team
@@ -197,7 +200,7 @@
 													<p>Why not buy a new awesome theme?</p>
 												</a>
 											</li>
-											<!-- end message -->
+											<!-- end message
 										</ul>
 									</li>
 									<li class="footer"><a href="#">See All Messages</a></li>
@@ -256,7 +259,7 @@
 						</div>
 						<div class="pull-left info">
 							<p><?php echo $this->session->realname; ?></p>
-							<a href="#"><span class="fa fa-user fa-2x text-success"></span> Profil</a>
+							<a href="<?php echo site_url('dashboard/publik/profil') ?>"><span class="fa fa-user fa-2x text-success"></span> Profil</a>
 						</div>
 					</div>
 					<!-- sidebar menu: : style can be found in sidebar.less -->

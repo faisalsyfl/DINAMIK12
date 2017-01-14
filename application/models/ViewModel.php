@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * class khusus tabel tb_account
+ * class khusus view akun koordinator
 */
 class ViewModel extends CI_Model {
 	public $tableName;

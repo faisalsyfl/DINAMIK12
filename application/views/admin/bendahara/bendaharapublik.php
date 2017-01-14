@@ -8,7 +8,7 @@
 						Beranda Admin
 						<small>Panel Pembayaran</small>
 					</h1>
-					<h3 class="section-dashboard">Aktivasi Acara</h3>
+					<h3 class="section-dashboard">Verifikasi Peserta Acara</h3>
 				<!-- Main content -->
 				<section class="content">
 					<table id="allAcc" class="table table-bordered" cellspacing="0" width="100%">
@@ -76,19 +76,19 @@
 							<script type="text/javascript">
 							    var url="<?php echo site_url();?>";
 							    function deletes(id){
-swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this team again!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
-},
-function(){
-							          window.location = url+"dashboard/publik/publikAction/"+id+"/del";
-});
-}
+									swal({
+										title: "Are you sure?",
+										text: "You will not be able to recover this team again!",
+										type: "warning",
+										showCancelButton: true,
+										confirmButtonColor: "#DD6B55",
+										confirmButtonText: "Yes, delete it!",
+										closeOnConfirm: false
+									},
+									function(){
+										window.location = url+"dashboard/publik/publikAction/"+id+"/del";
+									});
+									}
 							</script>		        			
 			        </tbody>
 			   	</table>

@@ -54,16 +54,23 @@
 			              		<span class="glyphicon glyphicon-<?php if($data['account_status'] == 0) echo "ok"; else echo "remove";?>" aria-hidden="true"></span></button>
 
 								<?php
-									if($data['account_category_id'] != "ADM" && $data['account_category_id'] != "ADMSU" && $data['account_category_id'] != "COR")
+									if($data['account_category_id'] == "ADM" || $data['account_category_id'] == "ADMSU" || $data['account_category_id'] == "COR")
 									{
-									?>
+										/*
 										<button type="" onclick="location.href='<?php echo site_url('dashboard/admin/akunAction/'.$data['account_id'].'/watch/'.$data['category_id']);?>'"  class="btn btn-info"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
-									<?php
+										*/
 									}
 								?>
 								<button onclick="location.href='<?php echo site_url('dashboard/admin/akunAction/'.$data['account_id'].'/edit');?>'" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-			              		 
-			              		<button type="" class="btn btn-danger" onclick="location.href='<?php echo site_url('dashboard/admin/akunAction/'.$data['account_id'].'/del');?>'"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>
+			              		<?php
+									if($_SESSION['category'] == "ADMSU")
+									{
+										?>
+										<button type="" class="btn btn-danger" onclick="location.href='<?php echo site_url('dashboard/admin/akunAction/'.$data['account_id'].'/del');?>'"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></button>
+										<?php
+									}
+								?>
+			              		
 			                </td>
 			            </tr>
 			        		<?php  }?>
@@ -72,4 +79,20 @@
 				<!-- /.content -->
 			</div>
 			<!-- /.content-wrapper -->
-
+			<script type="text/javascript">
+				var url="<?php echo site_url();?>";
+				function deletes(id){
+					swal({
+					title: "Are you sure?",
+					text: "You will not be able to recover this data again!",
+					type: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#DD6B55",
+					confirmButtonText: "Yes, delete it!",
+					closeOnConfirm: false
+					},
+					function(){
+					window.location = url+"dashboard/admin/akunAction/"+id+"/del";
+					});
+					}
+			</script>			

@@ -5,10 +5,10 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Profil Sekolah
+						Profil Akun
 						<small>Panel Informasi</small>
 					</h1>
-					<h3 class="section-dashboard">Informasi Sekolah</h3>
+					<h3 class="section-dashboard">Informasi Akun</h3>
 				</section>
 				<!-- Main content -->
 				<section class="content">
@@ -56,7 +56,7 @@
 					<table class="school-info">
 						<tr>
 							<td class="p1">Password Lama</td>
-							<td><input type="text" name="bef" class="form-control" placeholder="Password Lama" required=""></td>
+							<td><input type="password" name="bef" class="form-control" placeholder="Password Lama" required=""></td>
 						</tr>
 						<tr>
 							<td class="p1">Password Baru</td>

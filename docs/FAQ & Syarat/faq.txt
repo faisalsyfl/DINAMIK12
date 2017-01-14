@@ -1,0 +1,41 @@
+Akun
+- Apa itu akun Sekolah?
+- Apa itu akun Umum?
+- Apa saja informasi penting yang dibutuhkan untuk mendaftarkan akun (dan tim)?
+- Saya selalu gagal mendaftarkan akun sekolah DINAMIK12, kenapa?
+- Saya selalu gagal mendaftarkan akun umum DINAMIK12, kenapa?
+
+- Saya adalah seorang siswa/i, apa yang harus saya lakukan agar bisa mendaftar lomba DINAMIK12?
+- Saya adalah seorang guru/staf/kepala sekolah, apa yang harus saya lakukan agar bisa mendaftar lomba DINAMIK12?
+
+- Saya lupa dengan username dan password akun saya, apa yang dapat saya lakukan?
+- Saya kehilangan atau tidak memiliki akses ke alamat email yang telah saya daftarkan, apa yang dapat saya lakukan?
+- Saya lupa dengan alamat email yang saya gunakan untuk akun saya, apa yang dapat saya lakukan?
+- Bagaimana saya dapat mengubah password akun saya?
+
+- Akun saya tidak dapat digunakan, saya mendapat pesan bahwa akun saya tidak diverifikasi, kenapa?
+
+Pembayaran
+- Saya sudah membayar dan mengunggah bukti pembayaran, kenapa status pendaftaran saya belum berubah?
+- Saya sudah membayar dan terverifikasi, apakah saya dapat mengubah atau menghapus keikutsertaan saya di acara/lomba tersebut dan meminta pengembalian dana?
+- Saya sudah membayar namun belum terverifikasi, apakah saya dapat mengubah atau menghapus keikutsertaan saya di acara/lomba tersebut dan meminta pengembalian dana?
+
+Umum
+- Bagaimana saya dapat mendaftar acara?
+- Saya tidak menemukan acara yang ingin saya daftarkan padahal acara/lomba tersebut ada di situs DINAMIK12, mengapa?
+- Apakah untuk mengikuti acara cukup dengan mendaftar dan mengirimkan bukti pembayaran di situs DINAMIK12?
+
+Sekolah
+- Bagaimana saya dapat mendaftar lomba?
+- Dimana saya dapat menemukan detail dan aturan perlombaan?
+- Berapakah jumlah peserta yang dibutuhkan untuk mendaftar perlombaan?
+- Apakah boleh mendaftar perlombaan suatu tim yang tidak memiliki pembimbing?
+- Ada kesalahan pada informasi sekolah, bagaimana solusinya?
+- Ada kesalahan pada informasi suatu tim, bagaimana solusinya?
+- Ada kesalahan pada informasi suatu tim yang sudah terverifikasi, bagaimana solusinya?
+- Saya tidak menemukan lomba yang ingin saya daftarkan padahal acara/lomba tersebut ada di situs DINAMIK12, mengapa?
+
+
+Tim
+- Untuk apa fungsi akun tim?
+- Bagaimana saya dapat masuk ke dalam akun tim?

@@ -1,4 +1,4 @@
-<?php
+	<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Akun extends CI_Controller{
@@ -26,20 +26,38 @@ class Akun extends CI_Controller{
 	
 	public function index($report=0, $view = NULL)
 	{
+		if(isset($_SESSION['logged_in']) && isset($_SESSION['category'])){
+			if($_SESSION['category'] == 'ADMSU')	
+				redirect(site_url('dashboard/admin'));
+			else if($_SESSION['category'] == 'ADM' && $_SESSION['status'] == 1) 
+				redirect(site_url('dashboard/admin'));
+			else if($_SESSION['category'] == 'SCH' && $_SESSION['status'] == 1) 
+				redirect(site_url('dashboard/sekolah'));
+			else if($_SESSION['category'] == 'SCT' && $_SESSION['status'] == 1) 
+				// var_dump($_SESSION);
+				redirect(site_url('dashboard/tim'));
+			else if($_SESSION['category'] == 'PUB' && $_SESSION['status'] == 1) 
+				redirect(site_url('dashboard/publik'));
+			else if($_SESSION['category'] == 'COR' && $_SESSION['status'] == 1) 
+				redirect(site_url('dashboard/admin')); 
+			else if($_SESSION['category'] == 'JDG' && $_SESSION['status'] == 1) 
+				redirect(site_url('dashboard/admin'));
+		}
+		$this->session->sess_destroy;
 		$data['activetab'] = $view;
 		$data['city'] = $this->CityModel->selectAll()->result_array();
 		if($report==2){
 			$data['color'] = "success";
 			$data['h1'] = "Berhasil Daftar Akun!";
-			$data['p'] = "Terimakasih telah membuat akun acara DINAMIK 12, Silahkan login sekarang juga!";
+			$data['p'] = "Terimakasih telah membuat akun acara DINAMIK 12, silahkan login sekarang juga!";
 		}else if($report==3){
 			$data['color'] = "danger";
 			$data['h1'] = "Gagal Daftar Akun!";
-			$data['p'] = "Gagal Daftar Akun DINAMIK12, Silahkan coba lagi atau hubungi kami";
+			$data['p'] = "Gagal mendaftar akun DINAMIK12, sekolah atau email yang anda gunakan sudah terdaftar, silahkan coba lagi atau hubungi kami";
 		}else if($report==1){
 			$data['color'] = "danger";
 			$data['h1'] = "Gagal Masuk!";
-			$data['p'] = "Username atau password salah, silahkan login kembali atau hubungi kami";			
+			$data['p'] = "Username atau password salah, silahkan login kembali, gunakan atau hubungi kami";			
 		}else if($report==4){
 			$data['color'] = "danger";
 			$data['h1'] = "Akun belum diverifikasi";
@@ -53,7 +71,7 @@ class Akun extends CI_Controller{
 		$this->load->view('layout/header');
 		$this->load->view('home/akun',$data);
 		$this->load->view('layout/footer');
-		// var_dump($_COOKIE);
+		// var_dump($_COOKIE);			
 	}
 	
 	/* 
@@ -75,16 +93,15 @@ class Akun extends CI_Controller{
 
 
 			/*Checking Login*/
-			if(md5($password) == $data['account_password']){
+				if(md5($password) == $data['account_password']){
 				/*Success Login*/
 				
 				$catename = $this->AccountModel->getCategoryNameByID($data['account_category_id']);
 				$realname = $this->AccountModel->getNameByID($data['account_id'], $data['account_category_id']);
-
+				
 				date_default_timezone_set("Asia/Bangkok");		
 				$timestamp['account_log'] = date("Y-m-d H:i:s");
 				$this->AccountModel->update($data['account_id'],$timestamp);
-				
 				/*Storing key value as session data*/
 				$userdata = array(
 					'userid'  => $data['account_id'],
@@ -223,7 +240,7 @@ class Akun extends CI_Controller{
 				$acc['account_category_id'] = "PUB";
 				$acc['account_status'] = "1";
 				date_default_timezone_set("Asia/Bangkok");		
-				$acc['account_log'] = date("Y-m-d H:i:s");				
+				$acc['account_log'] = date("Y-m-d H:i:s");	
 				$this->AccountModel->insert($acc);
 				
 				$pub['public_name'] = $this->input->post('name');

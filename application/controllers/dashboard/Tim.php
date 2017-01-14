@@ -81,8 +81,15 @@ class Tim extends CI_Controller {
 
 	public function uploadF(){
 		// var_dump($this->input->post(''));
-		$data['schteam_file'] = $this->input->post('schteam_file');
-		$this->SchoolTModel->update($this->input->post('schteam_id'),$data);
-		redirect(site_url('dashboard/Tim/'));
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'SCT'){
+			$data['schteam_file'] = $this->input->post('schteam_file');
+			date_default_timezone_set("Asia/Bangkok");		
+			$data['schteam_file_log'] = date("Y-m-d H:i:s");
+			$this->SchoolTModel->update($this->input->post('schteam_id'),$data);
+			redirect(site_url('dashboard/Tim/'));
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
 	}
 }

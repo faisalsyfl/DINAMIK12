@@ -65,17 +65,22 @@ class Publik extends CI_Controller {
 	}
 
 	public function editPass(){
-		$data = $this->input->post();
-		if($this->AccountModel->selectById($_SESSION['userid'])->row_array()['account_password'] == md5($data['bef'])){
-			if($data['aft1']==$data['aft2']){
-				$edited['account_password'] = md5($data['aft1']);
-				$this->AccountModel->update($_SESSION['userid'],$edited);
-				redirect(site_url('dashboard/Publik/profil/1'));
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){			
+			$data = $this->input->post();
+			if($this->AccountModel->selectById($_SESSION['userid'])->row_array()['account_password'] == md5($data['bef'])){
+				if($data['aft1']==$data['aft2']){
+					$edited['account_password'] = md5($data['aft1']);
+					$this->AccountModel->update($_SESSION['userid'],$edited);
+					redirect(site_url('dashboard/Publik/profil/1'));
+				}else{
+					redirect(site_url('dashboard/Publik/profil/2'));
+				}
 			}else{
 				redirect(site_url('dashboard/Publik/profil/2'));
 			}
 		}else{
-			redirect(site_url('dashboard/Publik/profil/2'));
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
 		}
 	}	
 
@@ -93,82 +98,105 @@ class Publik extends CI_Controller {
 	}
 
 	public function processDaftar(){
-		$public = $this->PublicModel->selectByAccId($_SESSION['userid'])->row_array();
-		$data = $this->input->post();
-
-		$pay['payment_amount'] = $this->EventModel->selectById($data['pubteam_event_id'])->row_array()['event_price'];
-		$pay['payment_unique_code'] = implode("",$this->PaymentModel->generate());
-		if($data['pubteam_event_id'] == 11){
-			$pay['payment_status'] = 1;
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){
+			$public = $this->PublicModel->selectByAccId($_SESSION['userid'])->row_array();
+			$data = $this->input->post();
+			if ($data['pubteam_event_id'] == 11){
+				$pay['payment_status'] = 1;
+			}
+			$pay['payment_amount'] = $this->EventModel->selectById($data['pubteam_event_id'])->row_array()['event_price'];
+			$pay['payment_unique_code'] = implode("",$this->PaymentModel->generate());
+			$data['pubteam_payment_id'] = $this->PaymentModel->insert($pay);
+			$data['pubteam_public_id'] = $public['public_id'];
+			unset($data['submit']);
+			// var_dump($data);
+			$x = $this->PublicTModel->insert($data);
+			
+			redirect(site_url('dashboard/Publik/'));			
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
 		}
-		$data['pubteam_payment_id'] = $this->PaymentModel->insert($pay);
-		$data['pubteam_public_id'] = $public['public_id'];
-		unset($data['submit']);
-		// var_dump($data);
-		$x = $this->PublicTModel->insert($data);
-		
-		redirect(site_url('dashboard/Publik/'));
 	}
 
+
 	public function processEdit(){
-		$data = $this->input->post();
-		$id = $data['pubteam_id'];
-		unset($data['pubteam_id']);
-		unset($data['submit']);
-		// var_dump($data);
-		$this->PublicTModel->update($id,$data);
-		redirect(site_url('dashboard/Publik/'));
-		
-		// redirect(site_url('dashboard/Publik/'));
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){			
+			$data = $this->input->post();
+			$id = $data['pubteam_id'];
+			unset($data['pubteam_id']);
+			unset($data['submit']);
+			// var_dump($data);
+			$this->PublicTModel->update($id,$data);
+			redirect(site_url('dashboard/Publik/'));		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}
 	}	
 
 	public function publikAction($id,$string){
-		if($string == "edit"){
-			$data['list'] = $this->EventModel->selectAll(9,8)->result_array();	
-			$data['data'] = $this->PublicTModel->selectById($id)->row_array();
-			$this->load->view('publik/layout/header');
-			$this->load->view('publik/edittim',$data);
-			$this->load->view('publik/layout/footer');	
-		}else if($string == "del"){
-			$payid = $this->PublicTModel->selectById($id)->row_array()['pubteam_payment_id'];
-			$this->PublicTModel->delete($id);
-			$this->PaymentModel->delete($payid);
-			redirect(site_url('dashboard/publik/'));
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){			
+			if($string == "edit"){
+				$data['list'] = $this->EventModel->selectAll(9,8)->result_array();	
+				$data['data'] = $this->PublicTModel->selectById($id)->row_array();
+				$this->load->view('publik/layout/header');
+				$this->load->view('publik/edittim',$data);
+				$this->load->view('publik/layout/footer');	
+			}else if($string == "del"){
+				$payid = $this->PublicTModel->selectById($id)->row_array()['pubteam_payment_id'];
+				$this->PublicTModel->delete($id);
+				$this->PaymentModel->delete($payid);
+				redirect(site_url('dashboard/publik/'));
+			}
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
 		}
 	}
 	public function uploadBukti(){
-		// $data['public'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
-		$data['list'] = $this->PublicTModel->viewPubtDash($this->PublicModel->selectByAccId($_SESSION['userid'])->row_array()['public_id'])->result_array();		
-		// var_dump($data);
-		$this->load->view('publik/layout/header');
-		$this->load->view('publik/uploadbayar',$data);
-		$this->load->view('publik/layout/footer');		
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){
+			// $data['public'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+			$data['list'] = $this->PublicTModel->viewPubtDash($this->PublicModel->selectByAccId($_SESSION['userid'])->row_array()['public_id'])->result_array();		
+			// var_dump($data);
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/uploadbayar',$data);
+			$this->load->view('publik/layout/footer');					
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}
 	}	
 
 	public function uploadB(){
-		$x = 	$this->input->post();
-		var_dump($x);
-		$config['upload_path']          = './uploads/';
-		$config['allowed_types']        = 'jpg|png|pdf|rar';
-		$config['max_size']             = 0;
-		$config['max_width']            = 0;
-		$config['max_height']           = 0;
-		date_default_timezone_set("Asia/Bangkok");		
-		$config['file_name']				  = $_SESSION['username']."-".time();
-		echo $config['file_name'];
-		$this->load->library('upload', $config);
-		if(!$this->upload->do_upload('payment_document')){
-			//gagal
-			redirect(site_url('dashboard/publik/uploadBukti'));
+		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'PUB'){
+			$x = 	$this->input->post();
+			var_dump($x);
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'jpg|png|pdf|rar';
+			$config['max_size']             = 0;
+			$config['max_width']            = 0;
+			$config['max_height']           = 0;
+			date_default_timezone_set("Asia/Bangkok");		
+			$config['file_name']				  = $_SESSION['username']."-".time();
+			echo $config['file_name'];
+			$this->load->library('upload', $config);
+			if(!$this->upload->do_upload('payment_document')){
+				//gagal
+				redirect(site_url('dashboard/publik/uploadBukti'));
+			}else{
+				//sukses
+				$upload['payment_document'] = $config['file_name'].$this->upload->data('file_ext');
+				$upload['payment_description'] = $x['payment_description'];
+				var_dump($upload);
+				foreach($x['pay_id'] as $id){
+					$this->PaymentModel->update($id,$upload);
+				}
+				redirect(site_url('dashboard/publik/'));
+			}			
 		}else{
-			//sukses
-			$upload['payment_document'] = $config['file_name'].$this->upload->data('file_ext');
-			$upload['payment_description'] = $x['payment_description'];
-			var_dump($upload);
-			foreach($x['pay_id'] as $id){
-				$this->PaymentModel->update($id,$upload);
-			}
-			redirect(site_url('dashboard/publik/'));
-		}	
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}
 	}		
 }

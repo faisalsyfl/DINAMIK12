@@ -17,14 +17,12 @@
 						<tr>
 							<td class="p1">Nama Acara</td>
 							<td>
-								<select name="pubteam_event_id">
+								<select name="pubteam_event_id" readonly disabled>
 									<?php 
 										foreach($list as $eve){
 											if($eve['event_status'] == 1){
 												if($eve['event_id'] == $data['pubteam_event_id']){
 													echo "<option value='".$eve['event_id']."' selected>".$eve['event_name']."</option>";
-												}else{
-													echo "<option value='".$eve['event_id']."'>".$eve['event_name']."</option>";
 												}
 											}
 										}

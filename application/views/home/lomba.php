@@ -34,7 +34,7 @@
 						Babak Final      : 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[0]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[0]['event_price'],0,',','.'); ?>
 					  </p>					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -55,7 +55,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Rabu - Sabtu, 1 - 4 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[1]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[1]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -76,7 +76,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 1 - 2 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[2]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[2]['event_price'],0,',','.'); ?>
 					  </p>					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -97,7 +97,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[3]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[3]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -120,7 +120,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Final : Minggu, 9 April 2017 <br>	
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[4]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[4]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -141,7 +141,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Selasa- Sabtu, 14 - 18 Maret 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[5]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[5]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Online
@@ -163,7 +163,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at - Sabtu, 7 - 8 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[6]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[6]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gymnasium, Universitas Pendidikan Indonesia
@@ -184,7 +184,7 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Jum’at, 7 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo "Rp.".number_format($list[7]['event_price'],0,',','.'); ?>
+						<?php echo "Rp. ".number_format($list[7]['event_price'],0,',','.'); ?>
 					  </p>					  					  
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Ruang A Gymnasium, Universitas Pendidikan Indonesia

@@ -62,14 +62,14 @@
 						<div class="col-md-6">
 							<div class="box box-default">
 								<div class="box-header with-border">
-									<h3 class="box-title">Peserta Acara</h3>
+									<h3 class="box-title">Data Peserta Lomba</h3>
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 									</div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body with-border">
-									<h4 class="box-title">Peserta Acara Terverifikasi</h4>
+									<h4 class="box-title">Total Peserta Lomba </h4>
 								</div>
 								<div class="box-body collapsed-box">
 									<div class="row">
@@ -102,7 +102,7 @@
 							</div>
 							<div class="box collapsed-box">
 								<div class="box-header with-border">
-									<h3 class="box-title">Peserta Acara Belum Verifikasi</h3>
+									<h3 class="box-title">Detail Jumlah Peserta Lomba</h3>
 
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
@@ -110,14 +110,14 @@
 								</div>
 								<div class="box-body collapsed-box">
 									<ul class="nav nav-pills nav-stacked">
-										<li><a href="#">LDG<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">LCW<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">OTIK<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">PCA<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">CSPC<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">LCA<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">RLF<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">KJ<span class="pull-right text-red">12</span></a></li>
+										<li><a href="#">Lomba Desain Grafis<span class="pull-right text-green"><?php echo $valid_ldg ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_ldg ?></span></a></li>
+										<li><a href="#">Lomba Cipta Web<span class="pull-right text-green"><?php echo $valid_lcw ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_lcw ?></span></a></li>
+										<li><a href="#">Olimpiade TIK<span class="pull-right text-green"><?php echo $valid_otik ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_otik ?></span></a></li>
+										<li><a href="#">PC Assembling<span class="pull-right text-green"><?php echo $valid_pca ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_pca ?></span></a></li>
+										<li><a href="#">CS Programming Contest<span class="pull-right text-green"></i><?php echo $valid_cspc ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_cspc ?></span></a></li>
+										<li><a href="#">Lomba Cipta Animasi<span class="pull-right text-green"></i> <?php echo $valid_lca ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_lca ?></span></a></li>
+										<li><a href="#">Robot Line Follower<span class="pull-right text-green"></i> <?php echo $valid_rlf ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_rlf ?></span></a></li>
+										<li><a href="#">Kompetisi Jaringan<span class="pull-right text-green"><?php echo $valid_kj ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_kj ?></span></a></li>
 									</ul>
 									<!-- /.row -->
 								</div>
@@ -129,7 +129,7 @@
 						<div class="col-md-6">
 							<div class="box box-default">
 								<div class="box-header with-border">
-									<h3 class="box-title">Peserta Lomba</h3>
+									<h3 class="box-title">Peserta Acara</h3>
 			
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -150,8 +150,14 @@
 										<!-- /.col -->
 										<div class="col-md-4">
 											<ul class="chart-legend clearfix">
-												<li><i class="fa fa-circle-o text-red"></i> Kategori 1</li>
-												<li><i class="fa fa-circle-o text-green"></i>  Kategori 2</li>
+												<li><i class="fa fa-circle-o text-red"></i> Talkshow</li>
+												<li><i class="fa fa-circle-o text-green"></i>  Seminar Nasional</li>
+												<li><i class="fa fa-circle-o text-yellow"></i> Festival</li>
+												<li><i class="fa fa-circle-o text-aqua"></i>  Donor</li>
+												<li><i class="fa fa-circle-o text-light-blue"></i>  Workshop</li>
+												<li><i class="fa fa-circle-o text-gray"></i>  Dinamik Star</li>
+												<li><i class="fa"></i>  </li>
+												<li><i class="fa"></i>  </li>
 
 											</ul>
 										</div>
@@ -164,7 +170,7 @@
 							<!-- /.box-box default -->
 							<div class="box collapsed-box">
 								<div class="box-header with-border">
-									<h3 class="box-title">Peserta Lomba Belum Verifikasi</h3>
+									<h3 class="box-title">Detail Jumlah Peserta Acara</h3>
 
 									<div class="box-tools pull-right">
 										<button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -174,14 +180,13 @@
 								</div>
 								<div class="box-body collapsed-box">
 									<ul class="nav nav-pills nav-stacked">
-										<li><a href="#">Kategori 1<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 2<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 3<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 4<span class="pull-right text-red">12</span></a></li>
-										<li><a href="#">Kategori 5<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 6<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 7<span class="pull-right text-red"></i> 12</span></a></li>
-										<li><a href="#">Kategori 8<span class="pull-right text-red">12</span></a></li>
+										
+										<li><a href="#">Talkshow<span class="pull-right text-green"><?php echo $valid_talkshow ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_talkshow ?></span></a></li>
+										<li><a href="#">Seminar Nasional<span class="pull-right text-green"><?php echo $valid_semnas ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_semnas ?></span></a></li>
+										<li><a href="#">Festival<span class="pull-right text-green"><?php echo $valid_felose ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_felose ?></span></a></li>
+										<li><a href="#">Donor<span class="pull-right text-green"><?php echo $valid_donor ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_donor ?></span></a></li>
+										<li><a href="#">Workshop<span class="pull-right text-green"></i><?php echo $valid_workshop ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_workshop ?></span></a></li>
+										<li><a href="#">Dinamik Star<span class="pull-right text-green"></i> <?php echo $valid_dstar ?></span><span class="pull-right"> / </span> <span class="pull-right text-red"><?php echo $not_dstar ?></span></a></li>
 									</ul>
 									<!-- /.row -->
 								</div>
@@ -201,4 +206,6 @@
 				<!-- /.content -->
 			</div>
 			<!-- /.content-wrapper -->
+			
+			
 
