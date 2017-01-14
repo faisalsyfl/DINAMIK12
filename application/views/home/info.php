@@ -120,6 +120,7 @@
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U" target="_blank">DINAMIK12 Booklet - Robot Line Follower</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAbFBYdkMzUUpYS1E" target="_blank">DINAMIK12 Booklet - PC Assembling</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tANV9HZWU1eUV3Q2M" target="_blank">DINAMIK12 Booklet - Computer Science Programming Contest</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U" target="_blank">DINAMIK12 Booklet - Robot Line Follower</a><br>
 					  </p>
 					</div>
 					
