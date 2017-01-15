@@ -408,6 +408,9 @@ class Admin extends CI_Controller {
 				
 				
 				
+			}else if($aksi=="delete"){
+				$this->NewsModel->delete($id);
+				redirect(site_url('dashboard/admin/berita'));
 			}
 		}else{
 			/* if no session a.k.a tresspassing*/

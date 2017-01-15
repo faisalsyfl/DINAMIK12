@@ -202,9 +202,28 @@
 		</div>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 news-list">
-				<div class="col-sm-6 col-md-4">
+				<?php if($row!=0){?>
+					<?php foreach($list as $data){ ?>
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail news-item">
+							  <img src="<?php echo base_url("uploads/news/".$data['news_image']); ?>" alt="...">
+							  <div class="caption">
+								<h4 class="news-title"><?php echo $data['news_title']; ?></h4>
+								<p class="news-date">
+								<!--	<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 23 NOV 2016 -->
+								</p>
+								<a href="<?php echo base_url("berita/detail/".$data['news_id']); ?>"><button class="btn-news">SELENGKAPNYA</button></a>
+							  </div>
+							</div>
+						</div>
+					<?php } ?>
+				<?php }else{ ?>
+					Berita Tidak Tersedia
+				<?php } ?>
+
+				<!--<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">TENTANG DINAMIK</h4>
 						<p class="news-date">
@@ -216,7 +235,7 @@
 				</div>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">KEGIATAN DINAMIK</h4>
 						<p class="news-date">
@@ -228,21 +247,22 @@
 				</div>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">PENDAFTARAN DINAMIK</h4>
 						<p class="news-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 9 JAN 2016
 						</p>
-						<a href="<?php echo site_url('/akun'); ?>">
+						<a href="<?php //echo site_url('/akun'); ?>">
 						<button class="btn-news">SELENGKAPNYA</button></a>
 					  </div>
 					</div>
 				</div>
+			-->
 			</div>
 		</div>
 		<div class="row">
-			<a class="news-link" href="<?php echo site_url('/berita'); ?>">BERITA LAINNYA</a>
+			<a class="news-link" href="<?php //echo site_url('/berita'); ?>">BERITA LAINNYA</a>
 		</div>
 	</div>
 	

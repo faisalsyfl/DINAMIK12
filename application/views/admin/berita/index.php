@@ -42,10 +42,27 @@
 			              
 			                <td>
 								<button onclick="location.href='<?php echo site_url('dashboard/admin/newsAction/edit/'.$data['news_id']);?>'" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-			              		 
+			              		<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['news_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
 			                </td>
 			            </tr>
 			        		<?php  }?>
+			        		<script type="text/javascript">
+							    var url="<?php echo site_url();?>";
+							    function deletes(id){
+									swal({
+									  title: "Are you sure?",
+									  text: "You will not be able to recover this team again!",
+									  type: "warning",
+									  showCancelButton: true,
+									  confirmButtonColor: "#DD6B55",
+									  confirmButtonText: "Yes, delete it!",
+									  closeOnConfirm: false
+									},
+									function(){
+										window.location = url+"dashboard/admin/newsAction/delete/"+id;
+									});
+								}
+							</script>		
 			   	</table>
 					
 				</section>

@@ -15,7 +15,7 @@ class NewsModel extends CI_Model {
 		$this->db->select('*,SUBSTRING(news_content, 1, 400) as headline',false);
 		$this->db->from($this->tableName);
 		$this->db->limit($from,$offset);
-
+		$this->db->order_by('news_id', 'desc');
 		return $this->db->get();
 	}
 	
@@ -39,6 +39,7 @@ class NewsModel extends CI_Model {
 		$this->db->from($this->tableName);
 		$this->db->where('news_category',$category);
 		$this->db->limit($from,$offset);
+		$this->db->order_by('news_id', 'desc');
 		return $this->db->get();
 	}
 	public function selectJoinEvent($event = NULL){

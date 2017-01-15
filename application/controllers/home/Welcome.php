@@ -20,8 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		
+		$data['list'] = $this->NewsModel->selectAll(3)->result_array();
+		$data['row'] = $this->NewsModel->selectAll()->num_rows();
+
 		$this->load->view('layout/header');
-		$this->load->view('home/index');
+		$this->load->view('home/index',$data);
 		$this->load->view('layout/footer');
 	}
 }
