@@ -22,11 +22,11 @@
             <?php echo $list['news_content']; ?>
             <hr>
             <p class="news-category" style="font-size: 18px;">
-                Bagikan :
+               <!-- Bagikan :
                 <br>
                 <a href="#" style="color:#fff"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
                 &nbsp;
-                <a href="#" style="color:#fff"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                <a href="#" style="color:#fff"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>-->
             </p>
         </div>
     </div>
