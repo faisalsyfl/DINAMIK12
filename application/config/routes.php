@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['acara'] = 'home/acara'; 
 $route['lomba'] = 'home/lomba'; 
 $route['berita'] = 'home/berita'; 
+$route['galeri'] = 'home/galeri';
 $route['akun'] = 'home/akun'; 
 $route['info'] = 'home/info';
 $route['berita/detail/(:num)']='home/berita/detail/$1';

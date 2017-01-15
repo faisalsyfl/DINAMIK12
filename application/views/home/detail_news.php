@@ -7,7 +7,7 @@
                 <img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
             </h3>
             <div class="news-by">
-                <span class="fa fa-user-o"></span>&nbsp; Oleh <a href="#" style="color:#ffa619">Administrator</a>
+                <span class="fa fa-user-o"></span>&nbsp; Oleh : Panitia Dinamik 12</a>
             </div>
             <div class="news-category">
                 <span class="fa fa-tags"></span>&nbsp; Kategori : <a href="#" style="color:#ffa619"><?php echo $list['news_category']; ?></a>

@@ -29,7 +29,7 @@
                         </div>
                         
                         <div class="news-by">
-                            <span class="fa fa-user-o"></span>&nbsp; Oleh <a href="#" style="color:#ffa619">Administrator</a>
+                            <span class="fa fa-user-o"></span>&nbsp; Oleh : Panitia Dinamik 12</a>
                             &nbsp;
                             <span class="fa fa-tags"></span>&nbsp; Kategori : <a href="<?php echo base_url("berita/category/".$data['news_category']); ?>" style="color:#ffa619"><?php echo $data['news_category'] ?></a>
                         </div>
