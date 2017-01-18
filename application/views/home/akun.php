@@ -56,7 +56,7 @@
 
 								<?php echo form_open('home/Akun/login'); ?>
 								<div class="form-group has-feedback">
-									<input type="text" class="form-control" placeholder="E-mail/Nama pengguna" name="username" value="">
+									<input type="text" class="form-control" placeholder="E-mail/Username" name="username" value="">
 									<?php  
 										/* THIS FIELD VALUE, NOT USED AS FOR NOW */
 										// if($this->input->cookie('username')) echo $this->input->cookie('username'); 
@@ -120,7 +120,7 @@
 							<p class="login-box-msg">Pendaftaran Sekolah (Lomba)</p>
 								<?php echo form_open('home/Akun/regAsSchool'); ?>
 									<div class="form-group has-feedback">
-										<select name="grade" class="form-control">
+										<select name="grade" required class="form-control">
 											<option value="">--Pilih Kategori--</option>
 											<!-- <option value="SD">SD</option> -->
 											<!-- <option value="SMP">SMP</option> -->
@@ -133,7 +133,11 @@
 										<span class="glyphicon glyphicon-home form-control-feedback"></span>
 									</div>
 									<div class="form-group has-feedback">
-										<select name="city" class="form-control">
+										<input type="text" class="form-control" placeholder="Website Sekolah" name="web">
+										<span class="glyphicon glyphicon-globe form-control-feedback"></span>
+									</div>
+									<div class="form-group has-feedback">
+										<select name="city" required class="form-control">
 											<?php
 											echo "<option value=''>--Pilih kota/kabupaten--</option>";
 											foreach($city as $data) 
@@ -142,12 +146,12 @@
 										</select>
 									</div>
 									<div class="form-group has-feedback">
-										<input type="email" class="form-control" placeholder="E-mail Resmi Sekolah" name="email">
+										<input type="email" required class="form-control" placeholder="E-mail Resmi Sekolah" name="email">
 										<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 									</div>
 									
 									<div class="form-group has-feedback">
-										<input type="number" class="form-control" placeholder="Kontak Resmi" name="contact">
+										<input type="number" required class="form-control" placeholder="Kontak Resmi" name="contact">
 										<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 									</div>
 									
@@ -155,7 +159,7 @@
 										<div class="col-xs-8">
 											<div class="checkbox icheck">
 												<label>
-													<input type="checkbox" name="cb" required=""> Saya setuju terhadap <br>
+													<input type="checkbox" name="cb" required> Saya setuju terhadap <br>
 													<a href="#">syarat dan ketentuan.</a>
 												</label>
 											</div>

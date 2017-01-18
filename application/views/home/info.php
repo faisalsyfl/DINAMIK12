@@ -111,6 +111,7 @@
 					 	Silahkan unduh file-file yang dibutuhkan dibawah ini:
 						<br>
 						<br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="<?php echo base_url('assets/img/logo/DINAMIK12%20LOGO.png'); ?>" target="_blank">Logo DINAMIK12</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQkZ6LXFXbjcwcDg" target="_blank">DINAMIK12 Booklet - Dinamik Star</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAVDBkdzZkcGJmVWs" target="_blank">DINAMIK12 Booklet - Kompetisi Jaringan</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQ2tIMzdZRzd6TXM" target="_blank">DINAMIK12 Booklet - Lomba Cipta Animasi</a><br>

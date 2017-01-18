@@ -1,32 +1,3 @@
-/* VIEW COOR ACC */
-CREATE OR REPLACE VIEW v_cor_acc AS
-SELECT 
-	acc.account_id as acc_id,
-	cor.coordinator_id as cor_id,
-	cat.category_name as cat_name,
-	acc.account_username as cor_username,
-    cor.coordinator_name as cor_name,
-    acc.account_email as cor_email,
-	acc.account_category_id as cor_category,
-	acc.account_image as cor_image,
-	cor.coordinator_event_id as cor_event,
-	eve.event_name as eve_event_name
-FROM
-	tb_account acc
-    JOIN
-    tb_coordinator cor
-	JOIN
-	tb_category cat
-	JOIN
-	tb_event eve
-    on 
-    acc.account_id = cor.coordinator_account_id
-	and
-    eve.event_id = cor.coordinator_event_id
-	and
-	cat.category_id = acc.account_category_id
-
-
 	CREATE OR REPLACE VIEW v_acc_cat AS
 SELECT 
 	acc.account_id as acc_id,
@@ -116,4 +87,102 @@ AND
 	pbt.pubteam_event_id = eve.event_id
 AND
 	pbt.pubteam_payment_id = pay.payment_id 
+/* ----------------------------------------------------------------------------------------------------------------------- */
+
+CREATE OR REPLACE VIEW v_cor_acc AS
+SELECT 
+	acc.account_id as acc_id,
+	cor.coordinator_id as cor_id,
+	cat.category_name as cat_name,
+	acc.account_username as cor_username,
+    cor.coordinator_name as cor_name,
+    acc.account_email as cor_email,
+	acc.account_category_id as cor_category,
+	acc.account_image as cor_image,
+	cor.coordinator_event_id as cor_event,
+	eve.event_name as eve_event_name
+FROM
+	tb_account acc
+    JOIN
+    tb_coordinator cor
+	JOIN
+	tb_category cat
+	JOIN
+	tb_event eve
+    on 
+    acc.account_id = cor.coordinator_account_id
+	and
+    eve.event_id = cor.coordinator_event_id
+	and
+	cat.category_id = acc.account_category_id	
+/* -------------------------------------------------------- */
+CREATE OR REPLACE VIEW v_sch_acc AS
+SELECT 	
+	acc.account_id as acc_id,
+	acc.account_email as acc_email,
+	acc.account_username as acc_username,
+	acc.account_log as acc_log,
+	acc.account_status as acc_status,
+	sch.school_id as sch_id,
+	sch.school_name as sch_name,
+	sch.school_grade as sch_grade,
+	sch.school_web as sch_web,
+	sch.school_contact as sch_contact,
+	city.city_name as sch_city
+FROM
+	tb_account acc
+   JOIN
+   tb_school sch
+	JOIN
+	tb_city city
+ON 
+   sch.school_account_id = acc.account_id
+AND
+	sch.school_city_id = city.city_id
+/* ----------------------------------- */
+CREATE OR REPLACE VIEW v_pub_acc AS
+SELECT 	
+	acc.account_id as acc_id,
+	acc.account_email as acc_email,
+	acc.account_username as acc_username,
+	acc.account_log as acc_log,
+	acc.account_status as acc_status,
+	pub.public_name as pub_name,
+	pub.public_address as pub_address,
+	pub.public_contact as pub_contact,
+	city.city_name as sch_city
+FROM
+	tb_account acc
+JOIN
+	tb_public pub
+JOIN
+	tb_city city
+ON 
+	pub.public_account_id = acc.account_id
+AND
+	pub.public_city_id = city.city_id
+	
+	/* ----------------------------------- */
+CREATE OR REPLACE VIEW v_team_acc AS
+SELECT 	
+	acc.account_id as acc_id,
+	acc.account_email as acc_email,
+	acc.account_username as acc_username,
+	acc.account_log as acc_log,
+	acc.account_status as acc_status,
+	pub.public_name as pub_name,
+	pub.public_address as pub_address,
+	pub.public_contact as pub_contact,
+	city.city_name as sch_city
+FROM
+	tb_account acc
+JOIN
+	tb_public pub
+JOIN
+	tb_city city
+ON 
+	pub.public_account_id = acc.account_id
+AND
+	pub.public_city_id = city.city_id
+	
 	

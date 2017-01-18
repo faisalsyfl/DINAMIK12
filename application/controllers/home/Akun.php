@@ -202,6 +202,7 @@ class Akun extends CI_Controller{
 				// var_dump($acc);
 				
 				$sch['school_name'] = $this->input->post('name');
+				$sch['school_web'] = $this->input->post('web');
 				$sch['school_grade'] = $this->input->post('grade');
 				$sch['school_contact'] = $this->input->post('contact');
 				$sch['school_city_id'] = $this->input->post('city');
