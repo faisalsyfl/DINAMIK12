@@ -272,10 +272,10 @@
 						<li class="header"><?php if($_SESSION['category']=='COR') echo "Koor"; else echo "Admin";?> Menu</li>
 						<li class="active"><a href="<?php echo site_url('dashboard/admin/') ?>"><i class="fa fa-home"></i> <span>Beranda</span></a></li>
 						<?php 
-						if($_SESSION['username']!='bendahara' &&
-						$_SESSION['username'] != 'danusbazaar' &&
-						$_SESSION['username'] != 'dokumentasi' &&
-						$_SESSION['username'] != 'publikasi' &&
+						if($_SESSION['username']!='bendahara' ||
+						$_SESSION['username'] != 'danusbazaar' ||
+						$_SESSION['username'] != 'dokumentasi' ||
+						$_SESSION['username'] != 'publikasi' ||
 						$_SESSION['username'] != 'sponsor'){ ?>
 						<li>
 							<a href="<?php echo site_url('dashboard/admin/acaralomba') ?>"><i class="fa fa-star"></i> 
@@ -426,10 +426,11 @@
 						</li>		
 						<?php } ?>	
 						<?php 
-						if($_SESSION['username']!='bendahara' &&
-						$_SESSION['username'] != 'danusbazaar' &&
-						$_SESSION['username'] != 'dokumentasi' &&
-						$_SESSION['username'] != 'publikasi' &&
+						if($_SESSION['username']!='bendahara' ||
+						$_SESSION['username'] != 'kestari' ||
+						$_SESSION['username'] != 'danusbazaar' ||
+						$_SESSION['username'] != 'dokumentasi' ||
+						$_SESSION['username'] != 'publikasi' ||
 						$_SESSION['username'] != 'sponsor'){ ?>																										
 						<li>
 							<a href="#"><i class="fa fa-users"></i> Tim Peserta Lomba
@@ -466,10 +467,11 @@
 						</li>																										
 						<?php } ?>
 						<?php 
-						if($_SESSION['username']!='bendahara' &&
-						$_SESSION['username'] != 'danusbazaar' &&
-						$_SESSION['username'] != 'dokumentasi' &&
-						$_SESSION['username'] != 'publikasi' &&
+						if($_SESSION['username']!='bendahara' ||
+						$_SESSION['username'] != 'kestari' ||
+						$_SESSION['username'] != 'danusbazaar' ||
+						$_SESSION['username'] != 'dokumentasi' ||
+						$_SESSION['username'] != 'publikasi' ||
 						$_SESSION['username'] != 'sponsor'){ ?>								
 						<li>
 							<a href="<?php echo site_url('dashboard/admin/individu'); ?>">
@@ -482,10 +484,11 @@
 						</li>	
 						<?php } ?>
 						<?php 
-						if($_SESSION['username']!='bendahara' &&
-						$_SESSION['username'] != 'danusbazaar' &&
-						$_SESSION['username'] != 'dokumentasi' &&
-						$_SESSION['username'] != 'publikasi' &&
+						if($_SESSION['username']!='bendahara' ||
+						$_SESSION['username'] != 'kestari' ||
+						$_SESSION['username'] != 'danusbazaar' ||
+						$_SESSION['username'] != 'dokumentasi' ||
+						$_SESSION['username'] != 'publikasi' ||
 						$_SESSION['username'] != 'sponsor'){ ?>											
 						<li class="">
 							<a href="#"><i class="fa fa-users"></i>Peserta Acara
