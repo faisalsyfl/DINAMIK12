@@ -15,7 +15,6 @@
 			        <thead>
 			            <tr>
 			                <th>No</th>
-			                <th>Id</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
 			                <th>Pembimbing</th>
@@ -27,7 +26,6 @@
 			        <tfoot>
 			            <tr>
 			                <th>No</th>
-			                <th>Id</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
 			                <th>Pembimbing</th>

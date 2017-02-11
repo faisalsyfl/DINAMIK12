@@ -19,6 +19,8 @@
 			                <th>No</th>
 			                <th>Nama Tim</th>
 			                <th>Kategori Lomba</th>
+			                <th>Sekolah</th>
+			                <th>Pembimbing</th>
 			                <th>Link File</th>
 			                <th>Tanggal File</th>
 			                <th>Status Pembayaran</th>
@@ -28,10 +30,13 @@
 			            <tr>
 			                <th>No</th>
 			                <th>Nama Tim</th>
+			                <th>Kategori Lomba</th>
+			                <th>Sekolah</th>
+			                <th>Pembimbing</th>
 			                <th>Link File</th>
 			                <th>Tanggal File</th>
 			                <th>Status Pembayaran</th>
-			            </tr>
+ 			            </tr>
 			        </tfoot>
 			        <tbody>
 			        		<?php $i=1;foreach($list as $data){ ?>
@@ -39,6 +44,8 @@
 			                <td><?php echo $i++;?></td>
 			                <td><?php echo $data['sct_name'];?></td>
 			                <td><?php echo $data['eve_name'];?></td>
+			                <td><?php echo $data['sch_name'];?></td>
+			                <td><?php echo $data['sct_coach_name'].'/'.$data['sct_coach_contact'];?></td>
 			                <?php if($data['sct_file'] == NULL){?>
 			                	<td style="color:red;">No Upload Yet.</td>
 								<td><?php echo "N/A";?></td>
