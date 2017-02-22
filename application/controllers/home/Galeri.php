@@ -32,7 +32,7 @@ class Galeri extends CI_Controller {
 	public function index()
 	{
 		$userid = "2123678738";
-		$accessToken = "2123678738.1ba89ec.abff9d6bc16c42d890e53343191b2572";
+		$accessToken = "2123678738.1ba89ec.5a8b7e160f5c4ab8bd4960dc5e835dbb";
 		$result = $this->fetchData("https://api.instagram.com/v1/users/{$userid}/media/recent/?access_token={$accessToken}");
 		$result = json_decode($result);
 		$data['result']=$result;

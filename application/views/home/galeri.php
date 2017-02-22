@@ -11,6 +11,7 @@
     <div class="row">
        
 			<?php
+			
 				foreach($result->data as $post){
 			?>
 			 <div class="col-xs-6 col-md-3">
