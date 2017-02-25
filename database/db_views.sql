@@ -185,4 +185,9 @@ ON
 AND
 	pub.public_city_id = city.city_id
 	
-	
+
+select tb_schparticipant.schparticipant_name as 'Nama Peserta',tb_schteam.schteam_coach_name as 'Nama Pembina', tb_schteam.schteam_name as 'Nama Tim',tb_payment.payment_status as 'Status Bayar', tb_school.school_name as 'Nama Sekolah', tb_city.city_name as 'Kota', tb_account.account_email as 'Email Sekolah', tb_schteam.schteam_coach_contact as 'Kontak Pembina', tb_event.event_name as 'Nama Lomba'
+from
+tb_account,tb_school,tb_payment,tb_city,tb_schparticipant,tb_event,tb_schteam
+where
+tb_schteam.schteam_school_id = tb_school.school_id and tb_schteam.schteam_event_id = tb_event.event_id and tb_school.school_city_id = tb_city.city_id and tb_schparticipant.schparticipant_schteam_id = tb_schteam.schteam_id and tb_school.school_account_id = tb_account.account_id and tb_schteam.schteam_payment_id = tb_payment.payment_id

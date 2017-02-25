@@ -26,6 +26,7 @@ class Sekolah extends CI_Controller {
 		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
 
 			$data['list'] = $this->SchoolTModel->viewSchtDash($this->SchoolModel->selectByAccId($_SESSION['userid'])->row_array()['school_id'])->result_array();
+			// var_dump($data['list']);
 			$this->load->view('sekolah/layout/header');
 			$this->load->view('sekolah/daftartim/index',$data);
 			$this->load->view('sekolah/layout/footer');				
@@ -194,7 +195,7 @@ class Sekolah extends CI_Controller {
 		}	
 	}
 
-	public function sekolahAction($id,$string){
+	public function sekolahAction($id,$string,$ida=null){
 		if(isset($_SESSION['logged_in'])  && $_SESSION['category'] == 'SCH'){
 			if($string == "edit"){
 				/* EDIT SEKOLAH TJOI */
@@ -208,6 +209,21 @@ class Sekolah extends CI_Controller {
 				$this->AccountModel->delete($accid);
 
 				redirect(site_url('dashboard/sekolah/'));
+			}else if($string == "lp"){
+				$passgen = $this->UtilityModel->generatePassword();
+				$passgen = implode("",$passgen);
+				$email = $_SESSION['email'];
+				$edited['account_password'] = md5($passgen);
+				
+				$data = $this->AccountModel->selectById($ida)->row_array();
+
+				$this->AccountModel->update($ida, $edited);
+				$data['account_password'] = $passgen;
+				$data['account_username'] = $data['account_username'];
+				print_r($data);
+				$this->sendmail("Akun DINAMIK12", $email, "Lupa Password", $data, "for");
+				redirect(site_url('/akun/success'));
+
 			}
 		}else{
 			/* if no session a.k.a tresspassing*/
@@ -272,4 +288,120 @@ class Sekolah extends CI_Controller {
 			redirect(site_url('/akun'));
 		}	
 	}
+	/**
+	 * SENDS EMAIL
+	 * for forgot pass & regist
+	 * @return  
+	 */
+	public function sendmail($sendername, $receiver, $subj, $data, $param){
+		/*
+			** SEND MAIL **
+		*/
+		$config = Array(
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_port' => 465,
+			'smtp_user' => 'dinamik.cs@upi.edu',
+			'smtp_pass' => '!dinamik12csupi#',
+			'mailtype'  => 'html',
+			'charset'   => 'iso-8859-1'
+		);
+		
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		/* sender  */
+		$from_mail="dinamik.cs@upi.edu";
+		$from_name=$sendername;
+		
+		/* dest */
+		$to_mail = $receiver;	
+		
+		/*mail subject*/
+		$subject = $subj;
+		
+		/* mail body (html format)*/
+		$message="<table style='width:100%; font-family:arial; text-align: center; color:#6d6d6d; border: none; background-color: #d0d4dc;'>
+			<tr style='height:30px;'></tr>
+			<tr style='color:#fff; ; height: 100px; text-align: center;'>
+				<td></td>
+				<td style='width: 700px;background-color: #0a337f;border-bottom: 5px solid #ffa619;'><img src='https://s28.postimg.org/46tpgahzx/logo_white.png' style='width:250px;'></td>
+				<td></td>
+			</tr>
+			<tr style='border-top:'>
+				<td></td>
+				<td style='width: 700px;background-color: #fff; border-top: none;'>
+					<br>
+					<h3 style='color: #0a337f'>Selamat Datang di DINAMIK12</h3>
+					<hr style='width: 500px; border-top: 1px solid #d0d4dc;'>
+					<p>";
+					
+		if($param == "reg"){
+			$message .="
+					<br>
+					Terimakasih telah ikut serta dan mendaftarkan sekolah anda dalam acara DINAMIK12,
+					<br>
+					Silahkan gunakan username dan password dibawah ini untuk masuk<br>
+					<br>
+					Username: <b>".$data['account_username']."</b><br>
+					Password: <b>".$data['account_password']."</b><br>
+					<br>
+					Harap segera ubah password anda ketika anda sudah berhasil masuk.
+					<br>
+					<hr style='width: 500px; border-top: 1px solid #d0d4dc;'>
+					<br>
+					Informasi lebih lanjut :
+					<a href='http://dinamik.cs.upi.edu' target='_blank' style='color:#007eff;'>dinamik.cs.upi.edu</a><br>
+					Jika ada pertanyaan silahkan kirimkan melalui pesan baru ke alamat <a href='mailto:dinamik.cs@upi.edu' style='color:#007eff;' target='_blank'>dinamik.cs@upi.edu</a>
+					<br>
+					Pesan ini dibuat secara otomatis oleh sistem DINAMIK12. Harap tidak membalas pesan ini, terima kasih.
+					<br>
+					<br>";
+		}else{
+			$message .="
+					<br>
+					Atas permintaan anda, kami telah membuat password baru untuk akun anda,
+					<br>
+					detail baru akun anda saat ini adalah : <br>
+					<br>
+					Username: <b>".$data['account_username']."</b><br>
+					Password: <b>".$data['account_password']."</b><br>
+					<br>
+					Harap segera ubah password anda ketika anda sudah berhasil masuk.
+					<br>
+					<hr style='width: 500px; border-top: 1px solid #d0d4dc;'>
+					<br>
+					Informasi lebih lanjut :
+					<a href='http://dinamik.cs.upi.edu' target='_blank' style='color:#007eff;'>dinamik.cs.upi.edu</a><br>
+					Jika ada pertanyaan silahkan kirimkan melalui pesan baru ke alamat <a href='mailto:dinamik.cs@upi.edu' style='color:#007eff;' target='_blank'>dinamik.cs@upi.edu</a>
+					<br>
+					Pesan ini dibuat secara otomatis oleh sistem DINAMIK12. Harap tidak membalas pesan ini, terima kasih.
+					<br>
+					<br>";
+		}
+		
+		$message .="
+					</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr style='height:30px;'></tr>
+		</table>";
+		
+		$this->email->set_newline("\r\n");
+		$this->email->from($from_mail, $from_name);
+		$this->email->to($to_mail);
+		$this->email->subject($subject);	
+		$this->email->message($message);  	
+		$this->email->send();
+		
+		/* 
+		DEBUGGING PURPOSE
+		if($result){
+			echo "success";
+		}else{
+			echo $this->email->print_debugger();
+		} 
+		*/
+	}	
 }

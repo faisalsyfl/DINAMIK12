@@ -14,9 +14,10 @@
 				<section class="content">
 					<p class="school-info">
 						- Ketentuan lomba secara lengkap bisa didownload <b><a href="<?php echo $schteam['event_rule']; ?>" target="_blank">disini</a></b><br>
-						- Logo DINAMIK12 bisa didownload <b><a href="<?php echo base_url('assets/img/logo/DINAMIK12%20LOGO.png');?>" target="_blank">disini</a></b><br>
+						- Logo DINAMIK12 bisa didownload <b><a href="<?php echo base_url('assets/img/logo/DINAMIK12%20LOGO.png');?>" target="_blank">disini</a></b><br><br>
+						- Lomba yang menggunakan fitur dibawah adalah <b>LDG, LCW dan LCA</b>. <br>&nbsp;&nbsp;Selain itu <b>Tidak Memerlukan Fitur Upload dibawah.</b><br>
+						<br>
 						- Untuk file/berkas yang harus diupload silahkan upload di google drive atau jasa penyedia layanan serupa.<br>
-						- Lomba yang tidak memerlukan upload file tidak perlu mengisi<br>
 						- Pastikan file bisa di download melalui link yang dimasukan
 					</p>
 					<p class="school-info">
