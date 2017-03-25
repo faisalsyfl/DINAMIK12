@@ -23,7 +23,8 @@
 			                <th>Pembimbing</th>
 			                <th>Link File</th>
 			                <th>Tanggal File</th>
-			                <th>Status Pembayaran</th>
+			                <th>Username</th>
+			                <th>Act</th>
 			            </tr>
 			        </thead>
 			        <tfoot>
@@ -35,7 +36,8 @@
 			                <th>Pembimbing</th>
 			                <th>Link File</th>
 			                <th>Tanggal File</th>
-			                <th>Status Pembayaran</th>
+			                <th>Username</th>
+			                <th>Act</th>
  			            </tr>
 			        </tfoot>
 			        <tbody>
@@ -53,19 +55,30 @@
 			                	<td><a href="<?php echo $data['sct_file'];?>" title="">View Link</a></td>
 								<td><?php echo $data['sct_file_log'];?></td>
 			                <?php }?>
-			                <?php
-			        				if($data['pay_status'] == 1){
-			        					echo "<td style='color:green;font-weight:bold;'>"."Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
-			        				}else{
-		        						if($data['pay_document']==NULL){
-			        					echo "<td style='color:red;font-weight:bold;'>"."Belum Lunas"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
-				        				}else{
-				        					echo "<td style='color:blue;font-weight:bold;'>"."Dalam Konfirmasi"."(Rp.".number_format($data['eve_price'],0,',','.').")</td>";
-				        				}
-			        				}
-			                ?>
+			                <td><?php echo $data['acc_username']; ?></td>
+			                <td>
+			                	<a class="btn btn-warning" href="javascript:void(0);" onclick="reset(<?php echo $data['acc_id']; ?>);"><span class="glyphicon glyphicon-repeat" aria-hidden="true" ></span></a>
+			                </td>
 			            </tr>
 			        		<?php  }?>
+			        		</tbody>
+			        		<script type="text/javascript">
+							    var url="<?php echo site_url();?>";
+							    function reset(id){
+									swal({
+									  title: "Reset Password Paksa",
+									  text: "Password baru akan Menjadi 'ADMIN'",
+									  type: "warning",
+									  showCancelButton: true,
+									  confirmButtonColor: "#DD6B55",
+									  confirmButtonText: "Ya, Ganti!",
+									  closeOnConfirm: false
+									},
+									function(){
+						          window.location = url+"dashboard/admin/resetpaksa/"+id;
+									});
+									}									
+							</script>	
 			   	</table>
 					
 				</section>

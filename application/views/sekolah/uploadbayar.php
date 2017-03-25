@@ -27,18 +27,17 @@
 						  <input type="checkbox" id="inlineCheckbox1" class="cbbayar" value="<?php echo $data['pay_id']?>" name="pay_id[]	"> <?php echo $data['sct_name'];?>
 						</label>									
 					<?php }} ?>
-					<?php if((count($list)==0)) echo "<h3 style='color:red;'>Anda belum mendaftarkan tim ,silahkan daftar <a href='".site_url('dashboard/sekolah/pendaftarantim')."'>Disini</a></h3>";  ?>					
+					<?php if((count($list)==0)) echo "<h3 style='color:red;'>Anda belum mendaftarkan tim, silahkan daftar <a href='".site_url('dashboard/sekolah/pendaftarantim')."'>Disini</a></h3>";  ?>					
 					<?php if(($i==0)) echo "<h5 style=''>Semua tim anda sudah lunas, untuk mendaftar tim lainnya silahkan kunjungi <a href='".site_url('dashboard/sekolah/pendaftarantim')."'>halaman ini</a></h5>";  ?>					
 					<p class="school-info">
 						<b>Harap periksa kembali informasi tim yang akan dibayarkan, karena data tim sama sekali tidak dapat diubah dan dihapus setelah statusnya sudah dianggap lunas.</b><br>
-						Silahkan masukan bukti pembayaran dibawah ini :
 					</p>
 					  <div class="form-group">
-					    <label>File input</label>
+					    <label>Kirim bukti pembayaran <br>(ukuran file harus kurang dari 2 MB)</label>
 					    <input type="file" name="payment_document">
-					    <p class="help-block">Supported Ext: .jpg .pdf .rar .png .jpeg</p>
+					    <p class="help-block">Supported Ext: .jpg .pdf .png .jpeg .rar</p>
 					  </div>
-					  <textarea name="payment_description" class="form-control" placeholder="Deksripsikan Bukti Pembayaran anda, sertakan tanggal." rows=5></textarea>
+					  <textarea name="payment_description" class="form-control" placeholder="Deksripsikan bukti pembayaran anda, sertakan tanggal." rows=5></textarea>
 					  <br>
 						<input type="submit" class="btn-submit btn btn-primary" id="btn-upload" value="Submit" style="display:none;"><br>
 					</form>

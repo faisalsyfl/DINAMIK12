@@ -64,6 +64,7 @@ $route['berita/category/(:any)']='home/berita/category/$1';
 $route['akun/failedlog'] = 'home/akun/index/1';
 $route['akun/success'] = 'home/akun/index/2';
 $route['akun/success2'] = 'home/akun/index/5';
+$route['akun/success3'] = 'home/akun/index/6';
 $route['akun/failedreg'] = 'home/akun/index/3';
 $route['akun/failedact'] = 'home/akun/index/4';
 $route['akun/masuk'] = 'home/akun/index/0/masuk';

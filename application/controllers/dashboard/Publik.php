@@ -217,17 +217,32 @@ class Publik extends CI_Controller {
 		}	
 	}
 	
-	public function uploadfile($err = NULL)
+	public function uploadfile($pbtid, $err = NULL)
 	{
 			/* if has session */
 		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
 			if($err!=NULL){
 				$data['err'] = $err;
-			}			
+			}
+			$data['pbt'] = $this->PublicTModel->selectById($pbtid)->row_array();
 			$data['list'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
 			$this->load->view('publik/layout/header');
 			$this->load->view('publik/uploadfile',$data);
 			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+
+	public function uploadF(){
+		// var_dump($this->input->post(''));
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			$data['pubteam_file'] = $this->input->post('pubteam_file');
+			date_default_timezone_set("Asia/Bangkok");		
+			$data['pubteam_file_log'] = date("Y-m-d H:i:s");
+			$this->PublicTModel->update($this->input->post('pubteam_id'),$data);
+			redirect(site_url('dashboard/publik/'));
 		}else{
 			/* if no session a.k.a tresspassing*/
 			redirect(site_url('/akun'));

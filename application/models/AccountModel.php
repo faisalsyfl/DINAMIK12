@@ -125,6 +125,11 @@ class AccountModel extends CI_Model {
 		
 		return($x);
 	}
+	
+	public function insertFelose($data){
+		
+		$this->db->insert("tb_felose",$data);
+	}
 }
 
 /* End of file tb_account_model.php */

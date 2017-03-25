@@ -23,10 +23,11 @@
 						</label>									
 					<?php }} ?>
 					<?php if((count($list)==0)) echo "<h3 style='color:red;'>Anda belum mendaftar acara ,silahkan daftar <a href='".site_url('dashboard/publik/pendaftarantim')."'>Disini</a></h3>";  ?>
-					<p class="school-info">
-						Silahkan masukan bukti pembayaran dibawah ini :
+					<<p class="school-info">
+						<b>Harap periksa kembali informasi tim yang akan dibayarkan, karena data tim sama sekali tidak dapat diubah dan dihapus setelah statusnya sudah dianggap lunas.</b><br>
 					</p>
 					  <div class="form-group">
+					    <label>Kirim bukti pembayaran <br>(ukuran file harus kurang dari 2 MB)</label>
 					    <input type="file" name="payment_document">
 					    <p class="help-block">Supported Ext: .jpg .pdf .rar .png .jpeg</p>
 					  </div>

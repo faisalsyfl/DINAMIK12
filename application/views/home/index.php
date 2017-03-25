@@ -101,7 +101,7 @@
 						Dies Natalis Keluarga Besar Ilmu Komputer merupakan perayaan ulang tahun Keluarga Mahasiswa Ilmu Komputer pada tahun ini DINAMIK akan menginjak angka ke-12
 					</p>
 					<br>
-					<a href="<?php echo site_url('/info/view/tentang'); ?>">
+					<a href="<?php echo site_url('/info'); ?>">
 					<button type="button" class="btn-tentang">SELENGKAPNYA</button></a>
 				</div>
 			</div>
@@ -202,28 +202,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1 news-list">
-				<?php if($row!=0){?>
-					<?php foreach($list as $data){ ?>
-						<div class="col-sm-6 col-md-4">
-							<div class="thumbnail news-item">
-							  <img src="<?php echo base_url("uploads/news/".$data['news_image']); ?>" alt="...">
-							  <div class="caption">
-								<h4 class="news-title"><?php echo $data['news_title']; ?></h4>
-								<p class="news-date">
-								<!--	<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 23 NOV 2016 -->
-								</p>
-								<a href="<?php echo base_url("berita/detail/".$data['news_id']); ?>"><button class="btn-news">SELENGKAPNYA</button></a>
-							  </div>
-							</div>
-						</div>
-					<?php } ?>
-				<?php }else{ ?>
-					Berita Tidak Tersedia
-				<?php } ?>
-
-				<!--<div class="col-sm-6 col-md-4">
+				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">TENTANG DINAMIK</h4>
 						<p class="news-date">
@@ -235,7 +216,7 @@
 				</div>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">KEGIATAN DINAMIK</h4>
 						<p class="news-date">
@@ -247,25 +228,23 @@
 				</div>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail news-item">
-					  <img src="<?php //echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
+					  <img src="<?php echo base_url("assets/img/logo/news-placeholder.jpg"); ?>" alt="...">
 					  <div class="caption">
 						<h4 class="news-title">PENDAFTARAN DINAMIK</h4>
 						<p class="news-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 9 JAN 2016
 						</p>
-						<a href="<?php //echo site_url('/akun'); ?>">
+						<a href="<?php echo site_url('/akun'); ?>">
 						<button class="btn-news">SELENGKAPNYA</button></a>
 					  </div>
 					</div>
 				</div>
-			-->
 			</div>
 		</div>
 		<div class="row">
-			<a class="news-link" href="<?php //echo site_url('/berita'); ?>">BERITA LAINNYA</a>
+			<a class="news-link" href="<?php echo site_url('/berita'); ?>">BERITA LAINNYA</a>
 		</div>
 	</div>
-	
 	
 	<!-- Kalender -->
 	<!--
@@ -281,21 +260,6 @@
 	-->
 	<!-- /.container -->
 	
-	<!-- lokasi -->
-	<div id="last" class="container parallax-window-last" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/parallax/keynote.jpg"); ?>">
-		<div class="row">
-			<h3 class="title" style="margin-top: -50px;">
-				<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
-				<b>LOKASI</b>
-				<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
-			</h3>
-		</div>
-		<br>
-		<div class="row">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2460755780944!2d107.59213921419189!3d-6.861084495041789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6b943c2c5ff%3A0xee36226510a79e76!2sUniversitas+Pendidikan+Indonesia+(UPI)!5e0!3m2!1sid!2sid!4v1484408452238" width="600" height="450" frameborder="0" style="border:0; width:90%;" allowfullscreen></iframe>
-		</div>
-    </div><!-- /.container -->
-	
 	<!-- last -->
 	<div id="last" class="container parallax-window-last" data-parallax="scroll" data-image-src="<?php echo base_url("assets/img/parallax/last.jpg"); ?>">
 		<div class="row">
@@ -308,6 +272,4 @@
 			<button type="button" class="btn-daftar">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
-	
-	
 	

@@ -91,22 +91,12 @@
 					<table>
 						<tr>
 							<td>
-								<a class="footer-link" href="<?php echo site_url('/info/view/pendaftaran'); ?>">Alur Pendaftaran</a> 
-							</td>
-						</tr>
-						<tr>
-							<td>
 								<a class="footer-link" href="<?php echo site_url('/info/view/tentang'); ?>">Tentang DINAMIK</a> 
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a class="footer-link" href="<?php echo site_url('/info/view/sk'); ?>">Syarat dan Ketentuan</a> 
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a class="footer-link" href="<?php echo site_url('/info/view/faq'); ?>">FAQ</a> 
+								<a class="footer-link" href="<?php echo site_url('/info/view/pendaftaran'); ?>">Alur Pendaftaran</a> 
 							</td>
 						</tr>
 						<tr>
@@ -114,7 +104,6 @@
 								<a class="footer-link" href="<?php echo site_url('/info/view/unduhan'); ?>">Unduhan</a> 
 							</td>
 						</tr>
-						<!--
 						<tr>
 							<td>
 								<a class="footer-link" href="<?php echo site_url('/info/view/lokasi'); ?>">Lokasi</a> 
@@ -130,7 +119,6 @@
 								<a class="footer-link" href="<?php echo site_url('/info/view/faq'); ?>">FAQ</a> 
 							</td>
 						</tr>
-						-->
 						<tr>
 							<td>
 								<!--<a class="footer-link" href="<?php //echo site_url('/info/view/kontak'); ?>">Hubungi Kami</a> -->

@@ -63,7 +63,22 @@
 			        				echo "<td style='color:green;font-weight:bold;'>".$data['pay_unique_code']."</td>";
 			        				// echo "<td >"."<a href='".site_url('dashboard/Sekolah/detailtim/'.$data['sct_id'])."'>Detail Tim</a>"."</td>";
 			        		 ?>
-		        				<td>	        				
+		        				<td>	  
+								<?php 
+									if($data['eve_name'] == "Dinamik Star"){
+										if($data['pbt_file'] == NULL){?>
+											<a title="Klik untuk melengkapi berkas persyaratan Dinamik Star" href="<?php echo site_url('dashboard/publik/uploadfile/'.$data['pbt_id']) ?>" class="btn btn-danger"><span class="glyphicon glyphicon-file" aria-hidden="true" ></span></a>
+										<?php 
+										}else{
+										?>
+											<a title="Klik untuk mengubah berkas persyaratan Dinamik Star" href="<?php echo site_url('dashboard/publik/uploadfile/'.$data['pbt_id']) ?>" class="btn btn-success"><span class="glyphicon glyphicon-file" aria-hidden="true" ></span></a>
+										<?php
+										}
+									?>
+									
+								<?php
+									}
+								?>     				
 		        				<button class="btn btn-warning" onclick="location.href='<?php echo site_url('dashboard/publik/publikAction/'.$data['pbt_id'].'/edit');?>'"><span class="glyphicon glyphicon-pencil" aria-hidden="true" ></span></button>
 							<?php if($data['pay_status'] != 1){?>
 		        				<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['pbt_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
@@ -92,7 +107,7 @@ function(){
 							</script>		        			
 			        </tbody>
 			   	</table>
-				<a href="<?php echo site_url('dashboard/publik/uploadfile') ?>" class="btn-kembali">Upload File</a>
+				<!--<a href="echo site_url('dashboard/publik/uploadfile') ?>" class="btn-kembali">Upload File</a>-->
 				</section>
 				<!-- /.content -->
 			</div>

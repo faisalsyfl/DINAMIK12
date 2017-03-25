@@ -22,7 +22,8 @@
                 </div>
 				 <div class="form-group">
                   <label for="inputAcara1">Acara</label>
-                  <select class="form-control" name="news_event_id">
+                  <select class="form-control" required name="news_event_id">
+					<option value=""></option>
 					<?php foreach($event_list as $data){ ?>
 						<option value="<?php echo $data['event_id']; ?>"><?php echo $data['event_name']; ?></option>
 						

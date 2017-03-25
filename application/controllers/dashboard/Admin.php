@@ -274,12 +274,14 @@ class Admin extends CI_Controller {
 		if(isset($_SESSION['logged_in']) && ($_SESSION['category'] == 'ADMSU' || $_SESSION['category'] == 'ADM' || $_SESSION['category'] == 'COR')){
 			if($cat==NULL){
 				$data['list'] = $this->PublicTModel->viewPubtDash()->result_array();
+				$data['link'] = NULL;
 				// var_dump($data);
 				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/timacara/index',$data);
 				$this->load->view('admin/layout/footer');
 			}else{
 				$data['list'] = $this->PublicTModel->viewPubtDashByEvent($cat)->result_array();
+				$data['link'] = true;
 				// var_dump($data);
 				$this->load->view('admin/layout/header',$this->head);
 				$this->load->view('admin/timacara/index',$data);
@@ -629,6 +631,11 @@ class Admin extends CI_Controller {
 		}else{
 			redirect(site_url('dashboard/admin/profil/2'));
 		}
-	}				
+	}
+	public function resetpaksa($id){
+		$new['account_password'] = md5("admin");
+		$this->AccountModel->update($id,$new);
+		redirect('dashboard/admin/timlomba/');
+	}					
 }
 	

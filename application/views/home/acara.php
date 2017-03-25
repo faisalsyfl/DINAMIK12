@@ -29,11 +29,11 @@
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Minggu, 2 April 2017
 					  </p>
 					  <p class="event-detail-date">
-						<?php echo "Rp. ".number_format($list[8]['event_price'],0,',','.'); ?>
-					  </p>					  					  
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
+					  </p>						  			  					  
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Gedung Ahmad Sanusi, Universitas Pendidikan Indonesia
-					  </p>
+						<?php echo "Rp. ".number_format($list[9]['event_price'],0,',','.'); ?>
+					  </p>					  					  
 					  <p class="event-detail-text">
 					 	<?php echo $list[8]['event_description']; ?>
 					  </p>
@@ -46,15 +46,22 @@
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Sabtu, 1 April 2017
 					  </p>
-					  <p class="event-detail-date">
+<!-- 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 08.00 - 15.00 WIB
-					  </p>
-					  <p class="event-detail-date">
-						<?php echo "Rp. ".number_format($list[9]['event_price'],0,',','.'); ?>
-					  </p>					  					  
+					  </p> -->
 					  <p class="event-detail-date">
 						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Auditorium FPMIPA-A, Universitas Pendidikan Indonesia
 					  </p>
+					  <p class="event-detail-date">
+						Presale 2 : (1 Mar - 30 Mar) <br>
+						Mahasiswa: <?php echo "Rp. ".number_format($list[8]['event_price']+10000,0,',','.'); ?><br>
+						Umum: <?php echo "Rp. ".number_format($list[8]['event_price']+45000,0,',','.'); ?><br>
+					  </p>		
+					  <p class="event-detail-date">
+						On The Spot <br>
+						Mahasiswa: <?php echo "Rp. ".number_format($list[8]['event_price']+25000,0,',','.'); ?><br>
+						Umum: <?php echo "Rp. ".number_format($list[8]['event_price']+60000,0,',','.'); ?><br>
+					  </p>					  
 					  <p class="event-detail-text">
 					 	<?php echo $list[9]['event_description']; ?>
 					  </p>

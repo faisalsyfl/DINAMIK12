@@ -25,13 +25,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<style>
-		.question {
-			color: #fcbe2a;
-		}
-	</style>
-	
+
   </head>
   
   <body>
@@ -55,7 +49,7 @@
             <li <?php if ( $this->uri->uri_string() == 'lomba' ) echo 'class="active"' ?>><a href="<?php echo site_url('/lomba'); ?>">LOMBA</a></li>
             <li <?php if ( $this->uri->uri_string() == 'acara' ) echo 'class="active"' ?>><a href="<?php echo site_url('/acara'); ?>">ACARA</a></li>
             <li <?php if ( $this->uri->uri_string() == 'berita' ) echo 'class="active"' ?>><a href="<?php echo site_url('/berita'); ?>">BERITA</a></li>
-            <li <?php if ( $this->uri->uri_string() == 'galeri' ) echo 'class="active"' ?>><a href="<?php echo site_url('/galeri'); ?>">GALERI</a></li>
+            <!-- <li <?php if ( $this->uri->uri_string() == 'galeri' ) echo 'class="active"' ?>><a href="<?php echo site_url('/maintenance'); ?>">GALERI</a></li> -->
             <li <?php if ( $this->uri->uri_string() == 'info' ) echo 'class="active"' ?>><a href="<?php echo site_url('/info'); ?>">INFO</a></li>
 			<li <?php if ( $this->uri->uri_string() == 'akun' ) echo 'class="active"' ?>><a href="<?php echo site_url('/akun'); ?>"><span class="glyphicon glyphicon-log-in" style="margin-right: 5px;"></span>AKUN</a></li>
           </ul>

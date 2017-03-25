@@ -250,7 +250,7 @@ class Sekolah extends CI_Controller {
 			$x = 	$this->input->post();
 			var_dump($x);
 			$config['upload_path']          = './uploads/';
-			$config['allowed_types']        = 'jpg|png|pdf|rar';
+			$config['allowed_types']        = 'jpg|png|pdf|rar|jpeg';
 			$config['max_size']             = 0;
 			$config['max_width']            = 0;
 			$config['max_height']           = 0;

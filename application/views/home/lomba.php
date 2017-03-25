@@ -52,7 +52,16 @@
 					  <img src="<?php echo base_url("assets/img/icon_white/lcw.png"); ?>" class="img-contest" align="center"><br><br>
 					  <h3 class="event-detail-title">LOMBA CIPTA WEB</h3>
 					  <p class="event-detail-date">
-						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Rabu - Sabtu, 1 - 4 Maret 2017
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						Pengumpulan Dokumen : 06 - 11 Maret 2017<br>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						Pengumuman Lolos    : 20 Maret 2017<br>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						Pengumpulan Karya    : 25-26 Maret 2017	<br>				
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						Semifinal    : 8 April 2017			<br>
+						<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+						Final    : 9 April 2017													
 					  </p>
 					  <p class="event-detail-date">
 						<?php echo "Rp. ".number_format($list[1]['event_price'],0,',','.'); ?>

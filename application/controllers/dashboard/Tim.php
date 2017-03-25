@@ -92,21 +92,4 @@ class Tim extends CI_Controller {
 			redirect(site_url('/akun'));
 		}	
 	}
-	
-	public function editprofil($err = NULL)
-	{
-			/* if has session */
-		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'SCT'){
-			$data['anggota'] = $this->SchoolPModel->selectJoinVSchTDash($this->SchoolTModel->selectByAccId($_SESSION['userid'])->row_array()['schteam_id'])->result_array();
-			if($err!=NULL){
-				$data['err'] = $err;
-			}						
-			$this->load->view('tim/layout/header');
-			$this->load->view('tim/profil/editprofil',$data);
-			$this->load->view('tim/layout/footer');		
-		}else{
-			/* if no session a.k.a tresspassing*/
-			redirect(site_url('/akun'));
-		}	
-	}
 }

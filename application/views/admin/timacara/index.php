@@ -23,6 +23,12 @@
 			                <th>Email</th>
 			                <th>Kontak</th>
 			                <th>Status Pembayaran</th>
+							<?php if($link == true){
+								?>
+								<th>Berkas</th>
+								<?php
+							}
+							?>
 			            </tr>
 			        </thead>
 			        <tfoot>
@@ -34,6 +40,12 @@
 			                <th>Email</th>
 			                <th>Kontak</th>
 			                <th>Status Pembayaran</th>
+							<?php if($link == true){
+								?>
+								<th>Berkas</th>
+								<?php
+							}
+							?>
 			            </tr>
 			        </tfoot>
 			        <tbody>
@@ -56,6 +68,20 @@
 				        				}
 			        				}
 			                ?>
+							<?php if($link == true){
+								if($data['pbt_file'] != NULL){
+									?>
+										<td><a href="<?php echo $data['pbt_file'];?>" target="_blank">Lengkap (Tautan)</a></td>
+									<?php
+								}else{
+									?>
+										<td>Belum Lengkap</td>
+									<?php
+								}
+								
+							}
+							?>
+							
 			            </tr>
 			        		<?php  }?>
 			   	</table>

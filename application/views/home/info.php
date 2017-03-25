@@ -50,7 +50,7 @@
 							<li> Isi form sesuai dengan tim yang didaftarkan, jika sudah selesai tekan tombol 'daftar'<br>
 								<small>* Username untuk akun tim akan dibuat otomatis sesuai dengan nama tim</small></li>
 							<li> Lihat informasi lengkap tim dengan cara klik tombol 'i' disebelah kanan</li>
-							<li> Lakukan pembayaran sesuai dengan biaya pendaftaran yang tertera melalui <b>Rek. BCA (014) 1480861899 a.n. Sita Kartina</b>, kemudian masukan kode pembayaran pada keterangan saat melakukan transfer</li>
+							<li> Lakukan pembayaran sesuai dengan biaya pendaftaran yang tertera melalui <b>Rek. BCA (014) 1480861899 a.n. Sita Kartina Zulkhijah</b>, kemudian masukan kode pembayaran pada keterangan saat melakukan transfer</li>
 							<li> Upload bukti pembayaran melalui menu 'Upload Bukti' pada dashboard publik</li>
 							<li> Pilih tim mana saja yang sudah membayar biaya pendaftaran, kemudian tuliskan kode pembayaran tiap tim pada deskripsi, pilih file bukti pembayaran kemudian tekan 'submit'</li>
 							<li> Tunggu proses verifikasi untuk bisa login menggunakan akun tim</li>
@@ -100,7 +100,8 @@
 					 	Silahkan unduh file-file yang dibutuhkan dibawah ini:
 						<br>
 						<br>
-						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="<?php echo base_url('assets/img/logo/DINAMIK12%20LOGO.png'); ?>" target="_blank">Logo DINAMIK12</a><br>
+						<span class="glyphicon glyphicon-star" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/file/d/0B6-S3m8s--tAY2hqY2JVU3VWX00/view?usp=sharing" target="_blank">Surat Resmi DINAMIK</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="<?php echo base_url('assets/img/logo/logo.png'); ?>" target="_blank">Logo DINAMIK12</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQkZ6LXFXbjcwcDg" target="_blank">DINAMIK12 Booklet - Dinamik Star</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAVDBkdzZkcGJmVWs" target="_blank">DINAMIK12 Booklet - Kompetisi Jaringan</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAQ2tIMzdZRzd6TXM" target="_blank">DINAMIK12 Booklet - Lomba Cipta Animasi</a><br>
@@ -111,6 +112,8 @@
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tAbFBYdkMzUUpYS1E" target="_blank">DINAMIK12 Booklet - PC Assembling</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tANV9HZWU1eUV3Q2M" target="_blank">DINAMIK12 Booklet - Computer Science Programming Contest</a><br>
 						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U" target="_blank">DINAMIK12 Booklet - Robot Line Follower</a><br>
+						<span class="glyphicon glyphicon-file" style="color: #ffa619;"></span> <a style="color: #fff;" href="https://drive.google.com/file/d/0B6-S3m8s--tANnRkRWlmRzJMNTA/view?usp=sharing" target="_blank">DINAMIK12 Booklet - Felose</a><br>
+
 					  </p>
 					</div>
 					
@@ -180,7 +183,9 @@
 							<li><b>PEMBAYARAN</b><br><br>
 								<b class="question">Dimana saya bisa melihat biaya pendaftaran?</b><br>
 									Biaya pendaftaran untuk tiap lomba / acara sudah ada pada halaman <a href="<?php echo site_url('/lomba'); ?>" style="color: #ffa619;" target="_blank">Lomba</a> / <a href="<?php echo site_url('/acara'); ?>" style="color: #ffa619;" target="_blank">Acara</a>.<br><br>
-								<b class="question">Saya sudah membayar dan mengunggah bukti pembayaran, kenapa status pendaftaran saya belum berubah?</b><br>
+								<b class="question">Saya sudah membayar dan mengunggah bukti pembayaran, tetapi status masih 'Belum Lunas'?</b><br>
+									Silahkan cek kembali format file yang anda upload, pastikan format file nya (.JPG .PDF .PNG .JPEG .RAR).<br><br>
+								<b class="question">Saya sudah membayar dan mengunggah bukti pembayaran, kenapa status pendaftaran saya belum berubah menjadi 'Lunas'?</b><br>
 									Verifikasi pembayaran dilakukan secara manual oleh panitia, harap bersabar menunggu proses tersebut selesai.<br><br>
 								<b class="question">Saya sudah membayar dan terverifikasi, apakah saya dapat mengubah atau menghapus keikutsertaan saya di acara/lomba tersebut dan meminta pengembalian dana?</b><br>
 									Untuk saat ini tidak, namun untuk penghapusan keikutsertaan sudah dipastikan tidak bisa, karena pembayaran yang telah diverifikasi dianggap sebagai akhir proses pendaftaran.<br><br>

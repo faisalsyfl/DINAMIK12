@@ -41,12 +41,12 @@
 			                <td><?php echo $data['event_name'];?></td>
 			              
 			                <td>
-								<button onclick="location.href='<?php echo site_url('dashboard/admin/newsAction/edit/'.$data['news_id']);?>'" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
-			              		<a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['news_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
+								<button onclick="location.href='<?php echo site_url('dashboard/admin/newsAction/edit/'.$data['news_id']);?>'" class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button><a class="btn btn-danger" href="javascript:void(0);" onclick="deletes(<?php echo $data['news_id'];?>);"><span class="glyphicon glyphicon-trash" aria-hidden="true" ></span></a>
+			              		 
 			                </td>
 			            </tr>
 			        		<?php  }?>
-			        		<script type="text/javascript">
+							<script type="text/javascript">
 							    var url="<?php echo site_url();?>";
 							    function deletes(id){
 									swal({

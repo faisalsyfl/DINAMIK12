@@ -58,7 +58,7 @@
 																								
 					</table>
 					<br>
-					<input type="submit" name="submit" value="Selesai" class="btn-edit">
+					<input type="submit" name="submit" value="Edit" class="btn-edit">
 					<a href="<?php echo site_url('dashboard/publik/') ?>" class="btn-kembali">Kembali</a>
 					<?php echo form_close(); ?>
 				</section>

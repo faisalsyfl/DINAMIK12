@@ -24,6 +24,7 @@
 				 <div class="form-group">
                   <label for="inputAcara1">Acara</label>
                   <select class="form-control" name="news_event_id">
+					<option value="">Berita Umum</option>
 					<?php foreach($event_list as $data){ ?>
 						<option value="<?php echo $data['event_id']; ?>"<?php if($data['event_id']==$row['news_event_id']){ echo "selected"; } ?>><?php echo $data['event_name']; ?></option>
 						

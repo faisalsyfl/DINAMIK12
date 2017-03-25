@@ -17,7 +17,8 @@
 						<tr>
 							<td class="p1">Kategori Lomba</td>
 							<td>
-								<select name="schteam_event_id">
+								<select name="schteam_event_id" id="event-id" onchange="checkform()">
+									<option value="" disabled selected>- Kategori Lomba -</option>
 									<?php 
 										foreach($list as $eve){
 											if($eve['event_status'] == 1){
@@ -54,7 +55,7 @@
 						<tr>
 							<td class="p1">Nama Pembimbing</td>
 							<td>
-								<input type="text" name="schteam_coach_name" placeholder="Nama Pembimbing">
+								<input type="text" name="schteam_coach_name" placeholder="Nama Pembimbing" id="nama-p">
 							</td>
 							<td style="">Jika ada</td>
 						</tr>
@@ -70,7 +71,7 @@
 								<input type="text" name="anggota[]" placeholder="Nama Anggota">
 							</td>
 							<td>
-								<a href="#" class="btn-add" id="addanggota">+</a>
+								<div id="btn-add-m"><a href="#" class="btn-add" id="addanggota">+</a></div>
 							</td>
 						</tr>
 						<tr style="" class="tdanggota1">
@@ -82,25 +83,25 @@
 								Harap daftarkan anggota tim sesuai dengan syarat yang ada di dalam booklet lomba terkait.
 							</td>
 						</tr>	
-						<tr style="display:none;" class="tdanggota2">
+						<tr style="display:none;" class="tdanggota2" id="member-2-name">
 							<td class="p1"  >Anggota2</td>
 							<td>
 								<input type="text" name="anggota[]" placeholder="Nama Anggota">
 							</td>
 						</tr>
-						<tr style="display:none;" class="tdanggota2">
+						<tr style="display:none;" class="tdanggota2" id="member-2-id">
 							<td class="p1"  >NISN</td>
 							<td>
 								<input type="text" name="nisn[]" placeholder="NISN Anggota 2">
 							</td>
 						</tr>							
-						<tr style="display:none;" class="tdanggota3">
+						<tr style="display:none;" class="tdanggota3" id="member-3-name">
 							<td class="p1" >Anggota3</td>
 							<td>
 								<input type="text" name="anggota[]" placeholder="Nama Anggota">
 							</td>
 						</tr>
-						<tr style="display:none;" class="tdanggota3"	>
+						<tr style="display:none;" class="tdanggota3" id="member-3-id">
 							<td class="p1"  >NISN</td>
 							<td>
 								<input type="text" name="nisn[]" placeholder="NISN Anggota 3">
@@ -111,6 +112,22 @@
 					<input type="submit" name="submit" value="Daftar" class="btn-edit">
 					<a href="<?php echo site_url('dashboard/sekolah/') ?>" class="btn-kembali">Kembali</a>
 					<?php echo form_close(); ?>
+					
+					<script type="text/javascript" language="javascript">
+						function checkform()
+						{
+							var e = document.getElementById("event-id");
+							var index = e.options[e.selectedIndex].value;
+							//alert(index);
+							if (index == "1" || index == "4" || index == "5") {
+								document.getElementById("btn-add-m").style.display = 'none';
+							}
+							else {
+								document.getElementById("btn-add-m").style.display = 'block';
+							}
+						}
+					</script> 
+					
 				</section>
 				<!-- /.content -->
 			</div>

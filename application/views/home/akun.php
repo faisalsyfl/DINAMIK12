@@ -1,4 +1,4 @@
-<!-- Ionicons -->
+﻿<!-- Ionicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
 <!-- RECONFIG THE STYLE TO MATCH THE HOME -->
@@ -33,6 +33,7 @@
 					<li <?php if(!isset($activetab) || $activetab == "masuk") echo "class='active'"; ?>><a data-toggle="tab" href="#masuk">Masuk</a></li>
 					<li <?php if(isset($activetab) && $activetab == "daftarsekolah") echo "class='active'"; ?>><a data-toggle="tab" href="#daftar">Daftar Akun Sekolah</a></li>
 					<li <?php if(isset($activetab) && $activetab == "daftarumum") echo "class='active'"; ?>><a data-toggle="tab" href="#daftar2">Daftar Akun Umum</a></li>
+					<li <?php if(isset($activetab) && $activetab == "felose") echo "class='active'"; ?>><a data-toggle="tab" href="#felose">Daftar Felose</a></li>
 					<li <?php if(isset($activetab) && $activetab == "lupapass") echo "class='active'"; ?>><a data-toggle="tab" href="#lupasandi">Lupa Kata Sandi</a></li>
 				</ul>
 				
@@ -271,6 +272,39 @@
 							</div>
 							<!-- /.form-box -->
 						</div>
+					</div>
+					
+					<!-- Felose -->
+					<div id="felose" class="tab-pane fade in <?php //if(isset($activetab) && $activetab == "kontak") echo "active"; ?>">
+					  <h3 class="event-detail-title">PENDAFTARAN FELOSE</h3>
+					  <p class="event-detail-text">
+					 	Form pendaftaran Festival Teknologi dan Seni. Baca <a style="color: #f7a12a;" href="https://drive.google.com/file/d/0B6-S3m8s--tANnRkRWlmRzJMNTA/view?usp=sharing" target="_blank">Syarat dan Ketentuan</a>
+					  </p>
+					  <div class="form-group">
+						<?php echo form_open('home/akun/inputFelose'); ?>
+							<h3 class="event-detail-text">Nama</h3>
+							<input type="text" class="form-control" placeholder="Masukan nama lengkap" name="felose_name">
+							<h3 class="event-detail-text">NIM/NIS</h3>
+							<input type="text" class="form-control" placeholder="Masukan Nomor Identitas" name="felose_idn">
+							<h3 class="event-detail-text">Instansi (Sekolah/Perguruan Tinggi)</h3>
+							<input type="text" class="form-control" placeholder="Masukan email" name="felose_instance">
+							<h3 class="event-detail-text">No. Kontak</h3>
+							<input type="text" class="form-control" placeholder="Masukan Nomor Kontak" name="felose_contact">
+							<h3 class="event-detail-text">Email</h3>
+							<input type="text" class="form-control" placeholder="Masukan Email" name="felose_email">
+							<h3 class="event-detail-text">Judul Karya</h3>
+							<input type="text" class="form-control" placeholder="Masukan Judul Karya" name="felose_title">
+							<h3 class="event-detail-text">Jenis Karya</h3>
+							<input type="text" class="form-control" placeholder="Masukan Jenis Karya (misal robotik/web/animasi/aplikasi/visual/poster/kriya dll)" name="felose_type">
+							<h3 class="event-detail-text">Ukuran Karya</h3>
+							<input type="text" class="form-control" placeholder="Masukan Ukuran Karya" name="felose_size">
+							<h3 class="event-detail-text">Deskripsi Karya</h3>
+							<textarea type="text" class="form-control" placeholder="Deskripsi Karya" name="felose_desc"></textarea>
+							
+							<br>
+							<button type="submit" class="btn btn-primary form-control" name="btnDaftar">Daftar</button>
+						<?php echo form_close(); ?>
+					  </div>
 					</div>
 					
 					<!-- Forgot Pass -->

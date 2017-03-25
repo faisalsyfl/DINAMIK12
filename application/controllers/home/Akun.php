@@ -53,11 +53,11 @@ class Akun extends CI_Controller{
 		}else if($report==3){
 			$data['color'] = "danger";
 			$data['h1'] = "Gagal Daftar Akun!";
-			$data['p'] = "Gagal mendaftar akun DINAMIK12, sekolah atau email yang anda gunakan sudah terdaftar, silahkan coba lagi atau hubungi kami";
+			$data['p'] = "Username/Password Salah, Silahkan coba lagi.";
 		}else if($report==1){
 			$data['color'] = "danger";
 			$data['h1'] = "Gagal Masuk!";
-			$data['p'] = "Username atau password salah, silahkan login kembali, gunakan atau hubungi kami";			
+			$data['p'] = "Username/Password Salah, Silahkan coba lagi.";			
 		}else if($report==4){
 			$data['color'] = "danger";
 			$data['h1'] = "Akun belum diverifikasi";
@@ -66,7 +66,12 @@ class Akun extends CI_Controller{
 			$data['color'] = "success";
 			$data['h1'] = "Berhasil Daftar Akun Sekolah!";
 			$data['p'] = "Terimakasih telah membuat Akun Sekolah, Silahkan cek folder Inbox Email anda!";
+		}else if($report==6){
+			$data['color'] = "success";
+			$data['h1'] = "Berhasil Daftar Felose!";
+			$data['p'] = "Terimakasih telah mendaftar sebagai peserta Felose!";
 		}
+		
 		// var_dump($data['city']);
 		$this->load->view('layout/header');
 		$this->load->view('home/akun',$data);
@@ -398,5 +403,15 @@ class Akun extends CI_Controller{
 			echo $this->email->print_debugger();
 		} 
 		*/
+	}
+	
+	public function inputFelose(){
+		$data = $this->input->post();
+		unset($data['btnDaftar']);
+		$this->AccountModel->insertFelose($data);
+		
+		$message = "Pendaftaran berhasil";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		redirect(site_url('akun/success3'));
 	}
 }	
