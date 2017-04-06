@@ -327,6 +327,79 @@
 			<div class="col-md-6 col-md-offset-3">
 				<h3 class="title">
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
+					<b>SUPPORT</b>
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 news-list">
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/1.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/2.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/3.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/4.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/5.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/6.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/7.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/8.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/9.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/10.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/11.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/support/12.jpg"); ?>" alt="...">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="title">
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
 					<b>MEDIA PARTNER</b>
 					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
 				</h3>
@@ -463,7 +536,11 @@
 						<img src="<?php echo base_url("assets/img/medpart/25.jpg"); ?>" alt="...">
 					</div>
 				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/26.jpg"); ?>" alt="...">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
