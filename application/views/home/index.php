@@ -12,12 +12,12 @@
 			<button type="button" class="btn-daftar homeindex">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
-	
+	<!--
 	<div class="container countdown-box text-center">
 		<h3>Nantikan! Sesuatu yang luar biasa akan segera hadir.</h3>
 		<div id="clock"></div>
     </div>
-	
+	-->
 	<!-- Lomba -->
 	<div id="contest" class="container">
 		<div class="row">
@@ -272,4 +272,198 @@
 			<button type="button" class="btn-daftar">DAFTAR</button></a>
 		</div>
     </div><!-- /.container -->
+	
+	<!-- Sponsor -->
+	<div id="news" class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="title">
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
+					<b>SPONSOR</b>
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 news-list">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/1.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/2.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/3.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/4.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/5.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/6.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/sponsor/7.jpg"); ?>" alt="...">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="title">
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-left-or.png"); ?>">
+					<b>MEDIA PARTNER</b>
+					<img class="ss-ornament" src="<?php echo base_url("assets/img/logo/ss-right-or.png"); ?>">
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 news-list">
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/1.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/2.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/3.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/4.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/5.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/6.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<!-- LINE -->
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/7.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/8.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/9.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/10.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/11.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/12.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<!-- LINE -->
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/13.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/14.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/15.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/16.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/17.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/18.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<!-- LINE -->
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/19.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/20.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/21.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/22.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/23.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/24.jpg"); ?>" alt="...">
+					</div>
+				</div>
+				<!-- LINE -->
+				<div class="col-sm-6 col-md-2">
+					<div class="thumbnail">
+						<img src="<?php echo base_url("assets/img/medpart/25.jpg"); ?>" alt="...">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	

@@ -248,4 +248,47 @@ class Publik extends CI_Controller {
 			redirect(site_url('/akun'));
 		}	
 	}
+	
+	public function point($err = NULL)
+	{
+			/* if has session */
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			if($err!=NULL){
+				$data['err'] = $err;
+			}			
+			$data['list'] = $this->PublicModel->selectByAccIdJoin($_SESSION['userid'])->row_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/point',$data);
+			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+	
+	public function tambahpoint(){
+		/* if has session */
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			$data['list'] = $this->EventModel->selectAll(9,8)->result_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/tambahpoint',$data);
+			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
+	
+	public function redeem(){
+		/* if has session */
+		if(isset($_SESSION['logged_in']) && $_SESSION['category'] == 'PUB'){
+			$data['list'] = $this->EventModel->selectAll(9,8)->result_array();
+			$this->load->view('publik/layout/header');
+			$this->load->view('publik/redeem',$data);
+			$this->load->view('publik/layout/footer');		
+		}else{
+			/* if no session a.k.a tresspassing*/
+			redirect(site_url('/akun'));
+		}	
+	}
 }

@@ -270,7 +270,12 @@
 							<a href="<?php echo site_url('dashboard/publik/uploadBukti'); ?>"><i class="fa fa-file"></i> 
 								<span>Upload Bukti</span>
 							</a>
-						</li>						
+						</li>
+						<li>
+							<a href="<?php echo site_url('dashboard/publik/point'); ?>"><i class="fa fa-circle"></i> 
+								<span>Poin</span>
+							</a>
+						</li>
 
 						<!-- <li>
 							<a href="#"><i class="fa fa-calendar"></i> 
