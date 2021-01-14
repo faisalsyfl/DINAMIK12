@@ -67,7 +67,7 @@ INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `ac
 (18, 'dinamik.cs@upi.edu', 'rlf', '499be2dde2d3d0f261a5ef771b197f1d', '2017-01-09 00:40:29', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (19, 'dinamik.cs@upi.edu', 'semnas', 'e225e823c7693b4c2d4daa8aa8b90d84', '2017-01-09 00:40:42', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (20, 'dinamik.cs@upi.edu', 'talkshow', '849a1224a44e6b1142e65d3c21948e52', '2017-01-09 00:40:55', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(21, 'dinamik.cs@upi.edu', 'workshop', 'f94cd03f74eb454ae3779b4ae2f90676', '2017-01-09 00:41:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(21, 'dinamik.cs@upi.edu', 'workshop', 'f94cd03f74eb454ae3779b4ae2f90676', '2017-01-09 00:41:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1);
 
 -- --------------------------------------------------------
 
