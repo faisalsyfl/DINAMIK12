@@ -132,15 +132,6 @@ class Akun extends CI_Controller{
 					    'path'   => '/'
 					);
 					set_cookie($cookie);
-
-					$cookie = array(
-					    'name'   => 'password',
-					    'value'  => $password,
-					    'expire' => '1209600',  // Two weeks
-					    'domain' => '',
-					    'path'   => '/'
-					);
-					set_cookie($cookie);
 				}
 				
 				/* SELECTING WHICH DASHBOARD SHOULD BE DIRECTED */
