@@ -82,58 +82,7 @@ INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `ac
 (19, 'dinamik.cs@upi.edu', 'semnas', 'e225e823c7693b4c2d4daa8aa8b90d84', '2017-01-09 00:40:42', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (20, 'dinamik.cs@upi.edu', 'talkshow', 'b49708a838e92dd6a4d7972d9025a9db', '2017-01-16 02:51:37', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (21, 'dinamik.cs@upi.edu', 'workshop', 'f94cd03f74eb454ae3779b4ae2f90676', '2017-01-09 00:41:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(22, 'dinamik.cs@upi.edu', 'kestari', '30922cca84fcca93467a3435293dff15', '2017-01-16 15:11:38', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(77, 'faishol.amirul27@gmail.com', 'faishol27', 'c46f5f40976b853d35441f92c742533b', '2017-01-14 13:34:29', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(78, 'buanadika902@yahoo.com', 'dika902', '5fb676bfa44fa194d0cc530192454b40', '2017-01-09 01:49:51', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(79, 'shelonboyz136@gmail.com', 'test', 'c8648da0a406f2ad558f539e0c064294', '2017-01-16 23:35:51', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(81, 'anisadestiana17@gmail.com', 'anisadestiana', '12ab90928ba9e3a05694d2e9da46a9db', '2017-01-09 02:47:37', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(82, 'gitamarshelina@gmail.com', 'gitamarshelina', 'd7d4d13c868cc6dd97d05a3ae1744a38', '2017-01-09 02:57:20', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(83, 'tkj@smknukaplongan.sch.id', 'smknukaplongan', 'd6baf72c6ea0a166533ea3b8e631ff33', '2017-01-09 04:14:57', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(84, 'smkpasundan3cimahi@gmail.com', 'smkpasundan3kotacimahi', '1f3c563267dd002f59fbe806daa9fa23', '2017-01-14 01:18:26', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(85, 'kimsuhoo16@gmail.com', 'windafebri', '422ea9bc14dd1c1cf3698d74bab45943', '2017-01-09 09:10:16', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(86, 'faisal.faisal.anwar@gmail.com', 'faisalsyfl', 'd7a273c3becade875278fc5c4391a502', '2017-01-13 14:52:06', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(88, 'info@sman24bdg.sch.id', 'sman24bandung', 'e8440ddb9670bdc40161d7468685ab64', '2017-01-09 12:14:47', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(89, 'coklatsusukrim@gmail.com', 'sma1uganda', '2c5e8541aeadc6f9e9ad7d163092d1c0', '2017-01-09 12:21:28', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(90, 'coklatsusukrim@gmail.com', 'coklatsusukrim', 'eeacafe362ea9f9f468c3eb2614f5b4b', '2017-01-09 12:24:49', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(91, 'detrihf@gmail.com', 'detrihf', '80a1fccdd55703bc6ae540a9043bb95a', '2017-01-09 12:25:56', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(92, 'zathyrazarif.zk@gmail.com', 'bellaaf', 'a57ca233bb3987f7d3e0daeb0ef52141', '2017-01-09 12:27:55', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(94, 'faustaadp@gmail.com', 'faustaadp', '1bb6ae2593689ce3cf2163cc61975580', '2017-01-09 14:53:59', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(96, 'shelonboyz136@gmail.com', 'testumum', 'a8f5f167f44f4964e6c998dee827110c', '2017-01-13 17:51:59', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(99, 'sman22kotabandung@gmail.com', 'sman22bandung', '5c3cd779d0cf6def9d2abb5b7bf3e898', '2017-01-10 07:24:26', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(101, 'ma.yayasanislam@gmail.com', 'mayirajamandala', 'ef60f85b412ff6641ed5cbbef448f478', '2017-01-11 00:11:51', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(102, 'Tikommayirama@gmail.com', 'tikomcommunity', 'e47832ad54d831a45ae4740162a3e1a1', '2017-01-11 00:18:35', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(103, 'divisi_ict@sman3cmi.sch.id', 'smanegeri3cimahi', '35c059828795a27d6bf02a3337ec5b89', '2017-01-11 02:42:35', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(105, 'onmiruyin@gmail.com', 'smalalala', '2a3a221d913c9a3165c0e86d0c3fde67', '2017-01-11 18:08:14', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(106, 'kemakom.dpm@gmail.com', 'haildail', '89b9a2a76c8bd92b695fceaf688bad8c', '2017-01-11 18:15:38', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(107, 'aditnovit@gmail.com', 'aditianovit', '0b14e26a7cecce2544c743c4b8333832', '2017-01-12 00:40:00', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(109, 'tkjsmkbpi@gmail.com', 'smkbpibandung', 'cd4fc49ae24cacb21473ecf933020e65', '2017-01-12 04:12:46', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(110, 'bravolost@gmail.com', 'mashanif123', 'e405208fff0860e7618204866de2b88a', '2017-01-12 08:49:31', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(111, 'fevelines@gmail.com', 'feliciaevelinsianturi', 'a90db968e0a9348375848060b0953b47', '2017-01-12 08:54:02', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(113, 'rafisalahudin248@gmail.com', 'rafishalahudin', '9a2fc2329c20ac6f44b28115c27ee135', '2017-01-12 10:02:19', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(114, 'adsadsa@as', 'asdsad', 'd3aff16a801b4b7d36b4da1094bee345', '2017-01-13 02:59:29', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(118, 'qusshoy@gmail.com', 'qushoyy', '02026f43d24ffed99b62f8a3e221dd41', '2017-01-15 06:08:56', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(119, 'anisadestiana10@gmail.com', 'smkn1', 'e0b3668623767e1e68cea48a03b1a6f1', '2017-01-15 15:44:06', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(120, 'anisadestiana17@gmail.com', 'dionrakaariri', '12ab90928ba9e3a05694d2e9da46a9db', '2017-01-15 14:17:51', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(121, 'anisadestiana17@gmail.com', 'elangrivaldi', '12ab90928ba9e3a05694d2e9da46a9db', '2017-01-15 14:19:10', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(122, 'anisadestiana17@gmail.com', 'riffa', '12ab90928ba9e3a05694d2e9da46a9db', '2017-01-18 04:33:26', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(123, 'anisadestiana17@gmail.com', 'animasicrew', '12ab90928ba9e3a05694d2e9da46a9db', '2017-01-15 14:25:13', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(124, 'dera.apriyadi04@gmail.com', 'smkn1cimahi', '093dbce1b4959c923875b00ec5a15b09', '2017-01-16 01:19:10', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(125, 'alihasanasyari@outlook.com', 'sman17bandung', 'c7eab27e0beca3140251f57a8e40dec2', '2017-01-16 03:12:19', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(126, 'alihasanasyari19@gmail.com', 'alihasanasyari', 'dc4408248653e134630c89d5ebe3947e', '2017-01-16 03:16:51', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(127, 'pisckipratama@gmail.com', 'pisckipratama', 'b5cb49b1a1dba14294a32a58b5291cfc', '2017-01-17 00:18:52', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(128, 'info@smk-angkasa1.sch.id', 'smkangkasa1margahayu', '083d3c2d6ea30c950e1a2a041006260d', '2017-01-17 00:17:50', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(129, 'smktqalhikmah@gmail.com', 'smktakhassusquranal-hikmah', 'd351cb1e258aee61f644918fe01c3899', '2017-01-17 02:46:59', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(130, 'indo@gmail.com', 'indo', '882838be9bb614de4c630fe8f6ab900c', '2017-01-17 14:10:47', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(131, 'rahmiyanti195@gmail.com', 'rahmi', '115c4722c1667cab006fa7c9d9941a3d', '2017-01-18 00:46:03', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(132, 'Mohamadzaelani09@gmail.com', 'mohamad_zaelani', '383988ddb2eb48b8cac1be0adc6af886', '2017-01-18 05:12:18', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(133, 'Uptdsmantan@gmail.com', 'smanegeri1tanjunganom', '76dd35c716ef7f286ce601227bcb127d', '2017-01-18 02:01:42', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(134, 'MZAE00@gmail.com', 'sman1tanjunganom', '383988ddb2eb48b8cac1be0adc6af886', '2017-01-18 05:17:01', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(135, 'mohamadzaelani09@gmail.com', 'zaelani', '383988ddb2eb48b8cac1be0adc6af886', '2017-01-18 05:19:05', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(136, 'smakgadingserpong@bpkpenaburjakarta.or.id', 'smakpenaburgadingserpong', 'd3ad5b1baef994ce64a2442159558c7f', '2017-01-18 10:48:13', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(137, 'phillotunru@gmail.com', 'phillotunru', '6030ea7c198a0071f8f67eb4d672d619', '2017-01-18 10:49:38', 'PUB', '', '/assets/img/icon_dashboard/umum.jpg', 1),
-(138, 'phillohambali@gmail.com', 'smakpenaburgs', '5dc2eac1ea5e856fa1282aaea83dc24c', '2017-01-18 11:12:34', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1),
-(139, 'phillotunru@gmail.com', 'ahole.', '6030ea7c198a0071f8f67eb4d672d619', '2017-01-18 11:16:27', 'SCT', '', '/assets/img/icon_dashboard/tim.jpg', 0),
-(140, 'Simsimart@yahoo.com', 'smaharapanbangsa', '593caa56b937229d87e4ad3c1b73464f', '2017-01-18 11:23:11', 'SCH', '', '/assets/img/icon_dashboard/sekolah.jpg', 1);
+(22, 'dinamik.cs@upi.edu', 'kestari', '30922cca84fcca93467a3435293dff15', '2017-01-16 15:11:38', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -1000,30 +949,6 @@ TRUNCATE TABLE `tb_public`;
 -- Dumping data for table `tb_public`
 --
 
-INSERT INTO `tb_public` (`public_id`, `public_name`, `public_gender`, `public_address`, `public_image`, `public_contact`, `public_city_id`, `public_account_id`) VALUES
-(1, 'faishol27', '', '', '', '085335984174', 388, 77),
-(2, 'Dika902', '', '', '', '085105006504', 308, 78),
-(3, 'anisadestiana', '', '', '', '085798466008', 105, 81),
-(4, 'gitamarshelina', '', '', '', '088218682911', 18, 82),
-(5, 'windafebri', '', '', '', '+6283808642969', 165, 85),
-(6, 'faisalsyfl', '', '', '', '085793434357', 24, 86),
-(8, 'detrihf', '', '', '', '085861250197', 24, 91),
-(9, 'bellaaf', '', '', '', '089-686-932-649', 24, 92),
-(10, 'faustaadp', '', '', '', '081807215030', 475, 94),
-(12, 'testumum', '', '', '', '123123123', 75, 96),
-(14, 'aditianovit', '', '', '', '08999245424', 144, 107),
-(15, 'mashanif123', '', '', '', '085212365048', 105, 110),
-(16, 'Felicia Evelin Sianturi', '', '', '', '082138331777', 151, 111),
-(17, 'rafishalahudin', '', '', '', '083822523876', 24, 113),
-(18, 'asdsad', '', '', '', 'dsadsad', 388, 114),
-(19, 'Qushoyy', '', '', '', '08581487610', 1, 118),
-(20, 'alihasanasyari', '', '', '', '085780905854', 24, 126),
-(21, 'pisckipratama', '', '', '', '0895322000415', 24, 127),
-(22, 'Indo', '', '', '', '0866647957', 4, 130),
-(23, 'rahmi', '', '', '', '081276565290', 339, 131),
-(24, 'Mohamad_zaelani', '', '', '', '085735086473', 291, 132),
-(25, 'phillotunru', '', '', '', '08119581492', 432, 137);
-
 -- --------------------------------------------------------
 
 --
@@ -1069,16 +994,6 @@ TRUNCATE TABLE `tb_pubteam`;
 -- Dumping data for table `tb_pubteam`
 --
 
-INSERT INTO `tb_pubteam` (`pubteam_id`, `pubteam_name`, `pubteam_instance`, `pubteam_email`, `pubteam_contact`, `pubteam_file`, `pubteam_file_log`, `pubteam_public_id`, `pubteam_event_id`, `pubteam_payment_id`) VALUES
-(1, 'Muhammad Faishol Amirul Mukminin', '', 'faishol.amirul27@gmail.com', '085335984174', NULL, '2017-01-14 13:34:59', 1, 11, 1),
-(4, 'Detri Hasna Fadhila', NULL, 'detrihf@gmail.com', '085861250197', NULL, NULL, 8, 14, 5),
-(5, 'Edwina Bella Afifah', NULL, 'zathyrazarif.zk@gmail.com', '089-686-932-649', NULL, NULL, 9, 11, 6),
-(7, 'GG', NULL, 'asdasd@aoign', '123123', NULL, NULL, 12, 9, 8),
-(9, 'Faisal Syaiful Anwar', 'Computer Science UPI', 'faisalsyfl@gmail.com', '085793434357', NULL, NULL, 6, 11, 13),
-(11, 'Piscki Pratama', 'SMK Angkasa 1 Margahayu', 'pisckipratama@gmail.com', '0895322000415', NULL, NULL, 21, 9, 22),
-(12, 'Inso', 'Indo', 'indo@gmail.con', '0875785875', NULL, NULL, 22, 10, 23),
-(13, '', '', '', '', NULL, NULL, 23, 10, 24);
-
 -- --------------------------------------------------------
 
 --
@@ -1117,28 +1032,6 @@ TRUNCATE TABLE `tb_school`;
 -- Dumping data for table `tb_school`
 --
 
-INSERT INTO `tb_school` (`school_id`, `school_name`, `school_grade`, `school_web`, `school_image`, `school_contact`, `school_city_id`, `school_account_id`) VALUES
-(1, 'Test', 'SMK', '', NULL, '123123', 75, 79),
-(3, 'SMK NU Kaplongan', 'SMK', '', NULL, '085224427843', 144, 83),
-(4, 'SMK PASUNDAN 3 KOTA CIMAHI', 'SMK', '', NULL, '085722622860', 104, 84),
-(5, 'SMAN 24 BANDUNG', 'SMA', '', NULL, '0227800196', 24, 88),
-(6, 'SMA 1 Uganda', 'SMA', '', NULL, '08888888888', 12, 89),
-(8, 'SMAN 22 BANDUNG', 'SMA', '', NULL, '081931454161', 18, 99),
-(9, 'Ma yi rajamandala', 'SMA', '', NULL, '085720016745', 23, 101),
-(10, 'SMA NEGERI 3 CIMAHI ', 'SMA', '', NULL, '081320377251', 104, 103),
-(12, 'SMA lalala', 'SMA', '', NULL, '082115093046', 23, 105),
-(14, 'SMK BPI Bandung', 'SMK', '', NULL, '083821081572', 24, 109),
-(16, 'smk n 1 ', 'SMK', '', NULL, '085798466008', 105, 119),
-(17, 'SMKN 1 Cimahi', 'SMK', '', NULL, '089603806762', 104, 124),
-(18, 'SMAN 17 Bandung', 'SMA', '', NULL, '085780905854', 24, 125),
-(19, 'SMK Angkasa 1 Margahayu', 'SMK', '', NULL, '02225416703', 24, 128),
-(20, 'SMK TAKHASSUS QURAN AL - HIKMAH', 'SMK', '', NULL, '02318344860', 105, 129),
-(21, 'SMA NEGERI 1 TANJUNGANOM', 'SMA', '', NULL, 'Kontak Resmi', 291, 133),
-(22, 'SMAN 1 TANJUNGANOM', 'SMA', '', NULL, '', 291, 134),
-(23, 'SMAK Penabur Gading Serpong', 'SMA', '', NULL, '54205137', 432, 136),
-(24, 'Smak Penabur GS', 'SMA', '', NULL, '081381909100', 432, 138),
-(25, 'SMA Harapan Bangsa', 'SMA', '', NULL, '081213000503', 432, 140);
-
 -- --------------------------------------------------------
 
 --
@@ -1174,20 +1067,6 @@ TRUNCATE TABLE `tb_schparticipant`;
 --
 -- Dumping data for table `tb_schparticipant`
 --
-
-INSERT INTO `tb_schparticipant` (`schparticipant_id`, `schparticipant_name`, `schparticipant_nisn`, `schparticipant_birth`, `schparticipant_gender`, `schparticipant_contact`, `schparticipant_address`, `schparticipant_student_id`, `schparticipant_schteam_id`) VALUES
-(1, 'Ahmad Saefullah', '109281928192', NULL, NULL, NULL, NULL, NULL, 1),
-(2, 'Robby Jati Almukarom', '192813718872', NULL, NULL, NULL, NULL, NULL, 1),
-(3, 'Sulaeman Hutabarat', '198281728172', NULL, NULL, NULL, NULL, NULL, 1),
-(6, 'M.fahmi rizaldi', '', NULL, NULL, NULL, NULL, NULL, 4),
-(7, 'a', '95023823', NULL, NULL, NULL, NULL, NULL, 5),
-(8, 'b', '98393842', NULL, NULL, NULL, NULL, NULL, 5),
-(11, 'DION RAKA ARIRI', '', NULL, NULL, NULL, NULL, NULL, 9),
-(12, 'ELANG RIVALDI', '', NULL, NULL, NULL, NULL, NULL, 10),
-(13, 'RIFFA', '', NULL, NULL, NULL, NULL, NULL, 11),
-(14, 'IZET AHMAD FAHREZI', '', NULL, NULL, NULL, NULL, NULL, 12),
-(15, 'DIDO', '', NULL, NULL, NULL, NULL, NULL, 12),
-(16, 'Phillo Hambali Tunru', '0013377812', NULL, NULL, NULL, NULL, NULL, 14);
 
 -- --------------------------------------------------------
 
@@ -1237,17 +1116,6 @@ TRUNCATE TABLE `tb_schteam`;
 --
 -- Dumping data for table `tb_schteam`
 --
-
-INSERT INTO `tb_schteam` (`schteam_id`, `schteam_name`, `schteam_coach_name`, `schteam_coach_contact`, `schteam_file`, `schteam_file_log`, `schteam_status`, `schteam_school_id`, `schteam_event_id`, `schteam_payment_id`, `schteam_account_id`) VALUES
-(1, 'CoklatSusuKrim', 'Bambang Warsita', '0818291821728', NULL, '0000-00-00 00:00:00', 0, 6, 5, 4, 90),
-(4, 'Tikom Community', 'BAGUS YULI SETYAWAN', '085720016745', NULL, '0000-00-00 00:00:00', 0, 9, 4, 12, 102),
-(5, 'Haildail', 'Dian', '081928314251', NULL, '0000-00-00 00:00:00', 0, 12, 1, 14, 106),
-(9, 'DION RAKA ARIRI', 'anisa destiana', '085798466008', NULL, '2017-01-15 14:17:52', 0, 16, 4, 17, 120),
-(10, 'ELANG RIVALDI', '', '', NULL, '2017-01-15 14:19:10', 0, 16, 1, 18, 121),
-(11, 'RIFFA', 'IKRON SUGHEMA, SP,.M.Kom', '08122104464', NULL, '2017-01-15 14:22:58', 0, 16, 8, 19, 122),
-(12, 'ANIMASI CREW', 'ANISA DESTIANA, S.Pd', '085798466008', NULL, '2017-01-15 14:25:13', 0, 16, 6, 20, 123),
-(13, 'zaelani', '', '', NULL, '2017-01-18 05:19:05', 0, 22, 5, 25, 135),
-(14, 'a hole.', 'Christopher Suhamdy', '08117410888', NULL, '2017-01-18 11:16:27', 0, 24, 5, 26, 139);
 
 -- --------------------------------------------------------
 
