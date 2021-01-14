@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2017 at 11:04 PM
--- Server version: 5.5.53-0ubuntu0.14.04.1
+-- Generation Time: Feb 12, 2017 at 05:40 PM
+-- Server version: 5.5.54-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tb_account` (
   PRIMARY KEY (`account_id`),
   KEY `account_category` (`account_category_id`),
   KEY `account_category_2` (`account_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=141 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=701 ;
 
 --
 -- RELATIONS FOR TABLE `tb_account`:
@@ -60,29 +60,29 @@ TRUNCATE TABLE `tb_account`;
 --
 
 INSERT INTO `tb_account` (`account_id`, `account_email`, `account_username`, `account_password`, `account_log`, `account_category_id`, `account_token`, `account_image`, `account_status`) VALUES
-(0, 'dinamik.cs@upi.edu', 'admin', 'c8648da0a406f2ad558f539e0c064294', '2017-01-18 14:29:12', 'ADMSU', '', '/assets/img/icon_dashboard/admin.jpg', 1),
-(1, 'dinamik.cs@upi.edu', 'ketuplak', '1e36cc07dbd5ec0fd229266f3447d496', '2017-01-16 02:27:33', 'ADM', '', '/assets/img/icon_dashboard/admin.jpg', 1),
-(2, 'dinamik.cs@upi.edu', 'acara', '9dfd45cd82e8d72bbb0f1096f1092396', '2017-01-17 10:50:04', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(3, 'dinamik.cs@upi.edu', 'bendahara', '37e49ae212f8124a29bf6206bb79a4fc', '2017-01-17 11:33:10', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(0, 'dinamik.cs@upi.edu', 'admin', 'c8648da0a406f2ad558f539e0c064294', '2017-02-12 07:41:49', 'ADMSU', '', '/assets/img/icon_dashboard/admin.jpg', 1),
+(1, 'dinamik.cs@upi.edu', 'ketuplak', '1e36cc07dbd5ec0fd229266f3447d496', '2017-02-11 09:12:06', 'ADM', '', '/assets/img/icon_dashboard/admin.jpg', 1),
+(2, 'dinamik.cs@upi.edu', 'acara', '8a19a38c1b9fc2ec3c1028152a7f2b5d', '2017-02-11 02:23:16', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(3, 'dinamik.cs@upi.edu', 'bendahara', '37e49ae212f8124a29bf6206bb79a4fc', '2017-02-12 03:39:41', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (4, 'dinamik.cs@upi.edu', 'danusbazaar', 'e2caad71ee1da251f3ff8a05ce501290', '2017-01-09 00:32:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (5, 'dinamik.cs@upi.edu', 'dokumentasi', '1edab3457ccaeb386827140e647f669f', '2017-01-09 00:32:07', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (6, 'dinamik.cs@upi.edu', 'publikasi', '9a969a4b0622c8314a2413b7e59dc09d', '2017-01-09 00:32:23', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (7, 'dinamik.cs@upi.edu', 'sponsor', '662b30e38c7590f06c5dcebf260b6b26', '2017-01-09 00:32:39', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(8, 'dinamik.cs@upi.edu', 'cspc', 'd7a273c3becade875278fc5c4391a502', '2017-01-13 13:50:48', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(8, 'dinamik.cs@upi.edu', 'cspc', 'd7a273c3becade875278fc5c4391a502', '2017-02-10 00:09:05', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (9, 'dinamik.cs@upi.edu', 'humas', 'e9853044bad3f49c8ffa0d4d92d603ed', '2017-01-16 15:10:14', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(10, 'dinamik.cs@upi.edu', 'dstar', 'c8d62f739fce3fc1b842fbbfee58d12b', '2017-01-16 14:12:43', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(10, 'dinamik.cs@upi.edu', 'dstar', 'c8d62f739fce3fc1b842fbbfee58d12b', '2017-02-10 13:22:18', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (11, 'dinamik.cs@upi.edu', 'felose', 'e5b936ba0464f7db4c05e3377163f290', '2017-01-13 17:25:57', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(12, 'dinamik.cs@upi.edu', 'komjar', 'ec19f427fee769ea733461f56f9549b6', '2017-01-09 00:38:55', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(13, 'dinamik.cs@upi.edu', 'lca', '685015a030f717f66adc519e7c0ded8c', '2017-01-16 07:34:21', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(14, 'dinamik.cs@upi.edu', 'lcw', 'daaede32d58103e1d72acd5946fe3a57', '2017-01-17 13:41:33', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(15, 'dinamik.cs@upi.edu', 'ldg', '972bbad20cafb269f83fb92ae6900544', '2017-01-09 00:40:02', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(16, 'dinamik.cs@upi.edu', 'otik', '778fe78e9ea0c5c25c158c549d3569f8', '2017-01-09 00:40:10', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(17, 'dinamik.cs@upi.edu', 'pca', '1fad28b26d377cef981a875bd9a407c8', '2017-01-09 00:40:18', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(18, 'dinamik.cs@upi.edu', 'rlf', '2d758d405e2b5371bc3bc0aa2cbba216', '2017-01-17 12:28:09', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(19, 'dinamik.cs@upi.edu', 'semnas', 'e225e823c7693b4c2d4daa8aa8b90d84', '2017-01-09 00:40:42', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(20, 'dinamik.cs@upi.edu', 'talkshow', 'b49708a838e92dd6a4d7972d9025a9db', '2017-01-16 02:51:37', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(12, 'dinamik.cs@upi.edu', 'komjar', 'ec19f427fee769ea733461f56f9549b6', '2017-02-04 06:07:08', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(13, 'dinamik.cs@upi.edu', 'lca', '685015a030f717f66adc519e7c0ded8c', '2017-02-10 18:25:21', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(14, 'dinamik.cs@upi.edu', 'lcw', 'daaede32d58103e1d72acd5946fe3a57', '2017-02-11 09:32:48', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(15, 'dinamik.cs@upi.edu', 'ldg', '972bbad20cafb269f83fb92ae6900544', '2017-02-10 13:44:24', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(16, 'dinamik.cs@upi.edu', 'otik', '77f959f119f4fb2321e9ce801e2f5163', '2017-02-12 01:08:12', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(17, 'dinamik.cs@upi.edu', 'pca', '1fad28b26d377cef981a875bd9a407c8', '2017-02-12 09:46:33', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(18, 'dinamik.cs@upi.edu', 'rlf', '2d758d405e2b5371bc3bc0aa2cbba216', '2017-02-10 14:46:07', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(19, 'dinamik.cs@upi.edu', 'semnas', 'e225e823c7693b4c2d4daa8aa8b90d84', '2017-02-09 01:22:25', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
+(20, 'dinamik.cs@upi.edu', 'talkshow', 'b49708a838e92dd6a4d7972d9025a9db', '2017-02-09 08:05:00', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
 (21, 'dinamik.cs@upi.edu', 'workshop', 'f94cd03f74eb454ae3779b4ae2f90676', '2017-01-09 00:41:03', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1),
-(22, 'dinamik.cs@upi.edu', 'kestari', '30922cca84fcca93467a3435293dff15', '2017-01-16 15:11:38', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1);
+(22, 'dinamik.cs@upi.edu', 'kestari', '88c8763b57289f7c7bb1e6b22dd7ad99', '2017-02-10 05:40:33', 'COR', '', '/assets/img/icon_dashboard/koordinator.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -684,7 +684,7 @@ CREATE TABLE IF NOT EXISTS `tb_coordinator` (
   PRIMARY KEY (`coordinator_id`),
   KEY `coordinator_event_id` (`coordinator_event_id`),
   KEY `tb_coordinator_ibfk_2` (`coordinator_account_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- RELATIONS FOR TABLE `tb_coordinator`:
@@ -713,7 +713,7 @@ INSERT INTO `tb_coordinator` (`coordinator_id`, `coordinator_name`, `coordinator
 (6, 'Publikasi', NULL, NULL, NULL, 6),
 (7, 'Sponsor', NULL, NULL, NULL, 7),
 (8, 'CSPC', NULL, NULL, 5, 8),
-(9, 'Donor Darah', NULL, NULL, 12, 9),
+(9, 'Humas', NULL, NULL, NULL, 9),
 (10, 'Dinamik Star', NULL, NULL, 14, 10),
 (11, 'Festival Teknologi & Seni', NULL, NULL, 11, 11),
 (12, 'Kompetisi Jaringan', NULL, NULL, 8, 12),
@@ -725,7 +725,8 @@ INSERT INTO `tb_coordinator` (`coordinator_id`, `coordinator_name`, `coordinator
 (18, 'Robot Line Follower', NULL, NULL, 7, 18),
 (19, 'Seminar Nasional', NULL, NULL, 10, 19),
 (20, 'Talkshow', NULL, NULL, 9, 20),
-(21, 'Workshop', NULL, NULL, 13, 21);
+(21, 'Workshop', NULL, NULL, 13, 21),
+(22, 'Kestari', NULL, NULL, NULL, 22);
 
 -- --------------------------------------------------------
 
@@ -762,11 +763,11 @@ INSERT INTO `tb_event` (`event_id`, `event_code`, `event_name`, `event_status`, 
 (4, 'PCA', 'Personal Computer Assembling', 1, 95000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tAbFBYdkMzUUpYS1E', 'Personal Computer Assembling (PCA) merupakan lomba yang menjadi daya tarik dalam DINAMIK. Dari tahun ke tahun PCA selalu menjadi lomba favorit yang diikuti dengan ditandainya jumlah peserta yang dapat mencapai 200 peserta. Lomba ini menekankan ketelitian, kerapihan dan kecepatan dalam perakitan komponen - komponen PC. Sasaran peserta untuk lomba ini yaitu siswa/i SMA/ sederajat se-Nasional.'),
 (5, 'CSPC', 'Computer Science Programming Contest', 1, 50000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tANV9HZWU1eUV3Q2M', 'Computer Science Programming Contest (CSPC) adalah lomba pemrograman yang diselanggarakan di DINAMIK. Lomba ini menekankan kemampuan analisis berpikir dalam pemecahan masalah yang diberikan dalam bentuk soal yang kemudian diinterpretasikan dalam bentuk kode program sehingga menjadi program yang efektif. Lomba ini bertemakan “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran peserta untuk lomba ini yaitu siswa - siswi SMA/SMK sederajat se-Nasional.'),
 (6, 'LCA', 'Lomba Cipta Animasi', 1, 100000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tAQ2tIMzdZRzd6TXM', 'Lomba Cipta Animasi (LCA) adalah salah satu cabang lomba di DINAMIK 12 yang dipertahankan dari lomba tahun sebelumnya. Lomba ini mengkompetisikan kemampuan peserta di bidang multimedia dalam pembuatan film pendek animasi 2D maupun 3D yang bertemakan "Inovasi Teknologi dalam Mendukung Dunia Pendidikan". Peserta dibebaskan menggunakan perangkat lunak apapun dalam proses pembuatannya. Lomba ini ditujukan untuk siswa/i SMA/SMK/sederajat se-Nasional.'),
-(7, 'RLF', 'Robot Line Follower', 1, 110000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U', 'Robot Line Follower merupakan sebuah ajang kompetisi balapan robot dimana robot tersebut  bergerak mengikuti garis secara otomatis, dengan track yang ditentukan. Dengan ketentuan robot dibuat oleh masing-masing peserta. Tema yang diusungkan adalah “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran kompetisi line follower ini adalah seluruh siswa-siswi tingkat SMA/SMK/MA/Sederajat se-Nasional.'),
-(8, 'KJ', 'Kompetisi Jaringan', 1, 50000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tAVDBkdzZkcGJmVWs', 'Kompetisi Jaringan merupakan kompetisi untuk menguji kemampuan peserta dalam pengetahuan mengenai jaringan komputer. Disediakan beragam soal untuk menguji kemampuan peserta termasuk membangun sistem berdasarkan desain yang telah disediakan. Terdapat dua tahap yang di kompetisikan dalam acara ini yaitu bidang pengetahuan jaringan dan konfigurasi jaringan. Kompetisi Jaringan mengusung tema “sub teknologi data”. Sasaran peserta lomba ini yaitu siswa/i SMK se-Jawa Barat.'),
+(7, 'RLF', 'Robot Line Follower', 0, 110000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tARzMzeWVPUjA2N1U', 'Robot Line Follower merupakan sebuah ajang kompetisi balapan robot dimana robot tersebut  bergerak mengikuti garis secara otomatis, dengan track yang ditentukan. Dengan ketentuan robot dibuat oleh masing-masing peserta. Tema yang diusungkan adalah “Mahakarya Teknologi Bangsa Untuk Pendidikan Indonesia”. Sasaran kompetisi line follower ini adalah seluruh siswa-siswi tingkat SMA/SMK/MA/Sederajat se-Nasional.'),
+(8, 'KJ', 'Kompetisi Jaringan', 1, 50000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tAVDBkdzZkcGJmVWs', 'Kompetisi Jaringan merupakan kompetisi untuk menguji kemampuan peserta dalam pengetahuan mengenai jaringan komputer. Disediakan beragam soal untuk menguji kemampuan peserta termasuk membangun sistem berdasarkan desain yang telah disediakan. Terdapat dua tahap yang di kompetisikan dalam acara ini yaitu bidang pengetahuan jaringan dan konfigurasi jaringan. Kompetisi Jaringan mengusung tema “sub teknologi data”. Sasaran peserta lomba ini yaitu siswa/i SMK se-Nasional.'),
 (9, 'TALKSHOW', 'Talkshow Inspiratif', 1, 50000, 50, NULL, 'Talkshow Inspiratif merupakan salah satu dari rangkaian acara DINAMIK 12. Acara ini tentunya menyuguhkan ilmu yang bermanfaat. Dengan bertemakan “Menyelaraskan Teknologi dan Pendidikan Yang Sesuai Dengan Syariat Islam”, pemateri akan memandu peserta untuk mengupas tuntas tema tersebut. Selanjutnya, peserta akan berdiskusi dalam sebuah talkshow inspiratif bersama beberapa orang pemateri. Acara ini terbuka untuk umum.'),
 (10, 'SEMNAS', 'Seminar Nasional', 1, 50000, 50, NULL, 'Seminar Nasional (Semnas) merupakan suatu kegiatan pertemuan skala nasional untuk membahas, menyikapi suatu topik bahasan dan menampilkan satu atau beberapa pembicara. Seminar nasional ini memiliki tema “Penerapan teknologi ‘Big data’ Dalam Transformasi Pendidikan dan Pembelajaran”. Peserta seminar yang hadir harus berpartisipasi secara aktif dan diharapakan terjadi interaksi dua arah antara pembicara dan peserta seminar.'),
-(11, 'FELOSE', 'Festival Teknologi dan Seni', 0, 0, 50, NULL, 'Fesival Teknologi dan Seni atau disebut juga FELOSE merupakan salah satu dari rangkaian acara di DINAMIK 12 yang bertajuk unjuk karya mahasiswa/i ilmu komputer dan pendidikan ilmu komputer, mahasiswa/i se-Jawa Barat, pelajar dan kerjasama IT dengan berbagai instansi dan komunitas di Bandung. Felose ini juga merupakan bentuk pengembangan dari pameran karya pada DINAMIK 11 maupun DINAMIK 10 yang didalamnya dibagi menjadi 2 kategori yaitu Seni murni seperti digital art, kriya, komik, ilustrasi, dsb. dan Teknologi seperti robot, aplikasi, game, dsb. Tema yang diusungkan adalah "Mahakarya Teknologi dan Seni Indonesia". Sasaran dari kegiatan ini adalah mahasiswa, pelajar, dan masyarakat umum.'),
+(11, 'FELOSE', 'Festival Teknologi dan Seni', 1, 0, 50, NULL, 'Fesival Teknologi dan Seni atau disebut juga FELOSE merupakan salah satu dari rangkaian acara di DINAMIK 12 yang bertajuk unjuk karya mahasiswa/i ilmu komputer dan pendidikan ilmu komputer, mahasiswa/i se-Jawa Barat, pelajar dan kerjasama IT dengan berbagai instansi dan komunitas di Bandung. Felose ini juga merupakan bentuk pengembangan dari pameran karya pada DINAMIK 11 maupun DINAMIK 10 yang didalamnya dibagi menjadi 2 kategori yaitu Seni murni seperti digital art, kriya, komik, ilustrasi, dsb. dan Teknologi seperti robot, aplikasi, game, dsb. Tema yang diusungkan adalah "Mahakarya Teknologi dan Seni Indonesia". Sasaran dari kegiatan ini adalah mahasiswa, pelajar, dan masyarakat umum.'),
 (12, 'DONOR', 'Donor Darah', 0, 0, 50, NULL, 'Donor Darah DINAMIK merupakan kegiatan sosial tahunan yang dilaksanakan bertepatan dengan DINAMIK. Pada tahun ini Donor Darah DINAMIK mengusung tema “Blood is a gift of life”. Donor Darah memiliki banyak manfaat antara lain dapat mengetahui golongan darah, mengurangi zat besi yang berlebih dalam tubuh, membakar kalori dalam tubuh, dapat menurunkan resiko penyakit serangan jantung bagi pendonor rutin,  mencegah penuaan dini karena sel-sel darah merah diperbaharui secara berkala dan mencegah resiko kanker. Sasaran dari acara ini yaitu mahasiswa dan masyarakat umum di wilayah Universitas Pendidikan Indonesia dan sekitarnya.'),
 (13, 'WORKSHOP', 'Workshop Digitalisasi Guru', 0, 50000, 50, NULL, 'Workshop Digitalisasi Guru merupakan suatu acara dimana beberapa guru berkumpul untuk memecahkan masalah dan mencari solusinya. Acara ini bertujuan untuk mengajarkan guru dalam menggunakan teknologi pada level 0-2. Acara ini mengusung tema “Digitalisasi Pembelajaran”. Sasaran Workshop Digitalisasi Guru adalah semua guru se-Nasional.'),
 (14, 'DSTAR', 'Dinamik Star', 1, 50000, 50, 'https://drive.google.com/open?id=0B6-S3m8s--tAQkZ6LXFXbjcwcDg', 'DINAMIK Star adalah suatu acara pencarian bakat yang diadakan dalam perayaan DINAMIK (Dies Natalis Mahasiswa Ilmu Komputer) Universitas Pendidikan Indonesia. Pada tahun ini DINAMIK Star mengusung tema “Mahakarya Talenta dalam Balutan Teknologi”. Acara ini diadakan untuk semua kalangan dengan rentang usia 4 hingga 30 tahun. Dalam acara ini tidak membatasi semua bakat yang dimiliki oleh peserta. Dinamik Star ini ditujukan untuk masyarakat umum se-Indonesia.');
@@ -821,20 +822,6 @@ CREATE TABLE IF NOT EXISTS `tb_message` (
   PRIMARY KEY (`message_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
---
--- Truncate table before insert `tb_message`
---
-
-TRUNCATE TABLE `tb_message`;
---
--- Dumping data for table `tb_message`
---
-
-INSERT INTO `tb_message` (`message_id`, `message_name`, `message_email`, `message_content`, `message_status`) VALUES
-(1, 'Developer', 'faisalsyfl@gmail.com', 'WEB NYA KECEH SEKALI', 0),
-(2, 'Test', 'asdasd', 'afasf', 0),
-(3, '', '', '', 0),
-(4, 'wewe', '123123@123123', 'asdasd', 0);
 
 -- --------------------------------------------------------
 
@@ -853,7 +840,7 @@ CREATE TABLE IF NOT EXISTS `tb_news` (
   `news_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`news_id`),
   KEY `news_event_id` (`news_event_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- RELATIONS FOR TABLE `tb_news`:
@@ -881,35 +868,7 @@ CREATE TABLE IF NOT EXISTS `tb_payment` (
   `payment_unique_code` varchar(255) NOT NULL,
   `payment_description` text,
   PRIMARY KEY (`payment_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
-
---
--- Truncate table before insert `tb_payment`
---
-
-TRUNCATE TABLE `tb_payment`;
---
--- Dumping data for table `tb_payment`
---
-
-INSERT INTO `tb_payment` (`payment_id`, `payment_amount`, `payment_document`, `payment_status`, `payment_unique_code`, `payment_description`) VALUES
-(1, 0, NULL, 1, '028495', NULL),
-(4, 50000, NULL, 0, '780512', NULL),
-(5, 50000, NULL, 0, '443084', NULL),
-(6, 0, NULL, 1, '855300', NULL),
-(8, 50000, NULL, 0, '276627', NULL),
-(12, 95000, NULL, 0, '118685', NULL),
-(13, 0, NULL, 1, '120197', NULL),
-(14, 50000, NULL, 0, '577335', NULL),
-(17, 95000, NULL, 0, '294364', NULL),
-(18, 50000, NULL, 0, '711116', NULL),
-(19, 50000, NULL, 0, '197593', NULL),
-(20, 100000, NULL, 0, '676214', NULL),
-(22, 50000, NULL, 0, '780040', NULL),
-(23, 50000, NULL, 0, '628448', NULL),
-(24, 50000, NULL, 0, '593639', NULL),
-(25, 50000, NULL, 0, '732767', NULL),
-(26, 50000, NULL, 0, '774474', NULL);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=481 ;
 
 -- --------------------------------------------------------
 
@@ -930,7 +889,7 @@ CREATE TABLE IF NOT EXISTS `tb_public` (
   PRIMARY KEY (`public_id`),
   KEY `school_city_id` (`public_city_id`),
   KEY `tb_school_ibfk_2` (`public_account_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=86 ;
 
 --
 -- RELATIONS FOR TABLE `tb_public`:
@@ -938,15 +897,6 @@ CREATE TABLE IF NOT EXISTS `tb_public` (
 --       `tb_city` -> `city_id`
 --   `public_account_id`
 --       `tb_account` -> `account_id`
---
-
---
--- Truncate table before insert `tb_public`
---
-
-TRUNCATE TABLE `tb_public`;
---
--- Dumping data for table `tb_public`
 --
 
 -- --------------------------------------------------------
@@ -973,7 +923,7 @@ CREATE TABLE IF NOT EXISTS `tb_pubteam` (
   KEY `pubteam_public_id_3` (`pubteam_public_id`,`pubteam_event_id`,`pubteam_payment_id`),
   KEY `pubteam_payment_id` (`pubteam_payment_id`),
   KEY `pubteam_event_id` (`pubteam_event_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- RELATIONS FOR TABLE `tb_pubteam`:
@@ -984,16 +934,6 @@ CREATE TABLE IF NOT EXISTS `tb_pubteam` (
 --   `pubteam_event_id`
 --       `tb_event` -> `event_id`
 --
-
---
--- Truncate table before insert `tb_pubteam`
---
-
-TRUNCATE TABLE `tb_pubteam`;
---
--- Dumping data for table `tb_pubteam`
---
-
 -- --------------------------------------------------------
 
 --
@@ -1006,6 +946,7 @@ CREATE TABLE IF NOT EXISTS `tb_school` (
   `school_name` varchar(255) NOT NULL,
   `school_grade` varchar(15) NOT NULL,
   `school_web` text NOT NULL,
+  `school_address` text,
   `school_image` text,
   `school_contact` varchar(20) NOT NULL,
   `school_city_id` int(11) NOT NULL,
@@ -1013,7 +954,7 @@ CREATE TABLE IF NOT EXISTS `tb_school` (
   PRIMARY KEY (`school_id`),
   KEY `school_city_id` (`school_city_id`),
   KEY `tb_school_ibfk_2` (`school_account_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=99 ;
 
 --
 -- RELATIONS FOR TABLE `tb_school`:
@@ -1021,15 +962,6 @@ CREATE TABLE IF NOT EXISTS `tb_school` (
 --       `tb_city` -> `city_id`
 --   `school_account_id`
 --       `tb_account` -> `account_id`
---
-
---
--- Truncate table before insert `tb_school`
---
-
-TRUNCATE TABLE `tb_school`;
---
--- Dumping data for table `tb_school`
 --
 
 -- --------------------------------------------------------
@@ -1046,26 +978,18 @@ CREATE TABLE IF NOT EXISTS `tb_schparticipant` (
   `schparticipant_birth` date DEFAULT NULL,
   `schparticipant_gender` char(1) DEFAULT NULL,
   `schparticipant_contact` varchar(20) DEFAULT NULL,
+  `schparticipant_email` text,
   `schparticipant_address` text,
-  `schparticipant_student_id` text,
+  `schparticipant_studentid` text,
   `schparticipant_schteam_id` int(11) NOT NULL,
   PRIMARY KEY (`schparticipant_id`),
   KEY `schparticipant_schteam_id` (`schparticipant_schteam_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=665 ;
 
 --
 -- RELATIONS FOR TABLE `tb_schparticipant`:
 --   `schparticipant_schteam_id`
 --       `tb_schteam` -> `schteam_id`
---
-
---
--- Truncate table before insert `tb_schparticipant`
---
-
-TRUNCATE TABLE `tb_schparticipant`;
---
--- Dumping data for table `tb_schparticipant`
 --
 
 -- --------------------------------------------------------
@@ -1080,6 +1004,7 @@ CREATE TABLE IF NOT EXISTS `tb_schteam` (
   `schteam_name` varchar(255) NOT NULL,
   `schteam_coach_name` varchar(255) DEFAULT NULL,
   `schteam_coach_contact` varchar(20) DEFAULT NULL,
+  `sch_coach_email` text,
   `schteam_file` text,
   `schteam_file_log` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `schteam_status` int(1) NOT NULL COMMENT 'Apakah tim masuk ke penjurian atau tidak',
@@ -1094,7 +1019,7 @@ CREATE TABLE IF NOT EXISTS `tb_schteam` (
   KEY `schteam_payment_id` (`schteam_payment_id`),
   KEY `schteam_event_id` (`schteam_event_id`),
   KEY `tb_tscheam_ibfk_4` (`schteam_account_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=438 ;
 
 --
 -- RELATIONS FOR TABLE `tb_schteam`:
@@ -1110,11 +1035,6 @@ CREATE TABLE IF NOT EXISTS `tb_schteam` (
 
 --
 -- Truncate table before insert `tb_schteam`
---
-
-TRUNCATE TABLE `tb_schteam`;
---
--- Dumping data for table `tb_schteam`
 --
 
 -- --------------------------------------------------------
@@ -1257,6 +1177,7 @@ CREATE TABLE IF NOT EXISTS `v_schteam_dash` (
 ,`sch_name` varchar(255)
 ,`pay_desc` text
 ,`sct_file` text
+,`sct_file_log` timestamp
 );
 -- --------------------------------------------------------
 
@@ -1311,7 +1232,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_schteam_dash`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_schteam_dash` AS select `sct`.`schteam_id` AS `sct_id`,`sct`.`schteam_name` AS `sct_name`,`sct`.`schteam_coach_name` AS `sct_coach_name`,`sct`.`schteam_coach_contact` AS `sct_coach_contact`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`pay`.`payment_status` AS `pay_status`,`pay`.`payment_document` AS `pay_document`,`pay`.`payment_id` AS `pay_id`,`sch`.`school_id` AS `sch_id`,`acc`.`account_id` AS `acc_id`,`pay`.`payment_unique_code` AS `pay_unique_code`,`eve`.`event_id` AS `eve_id`,`sch`.`school_name` AS `sch_name`,`pay`.`payment_description` AS `pay_desc`,`sct`.`schteam_file` AS `sct_file` from ((((`tb_schteam` `sct` join `tb_school` `sch`) join `tb_event` `eve`) join `tb_payment` `pay`) join `tb_account` `acc` on(((`sct`.`schteam_school_id` = `sch`.`school_id`) and (`sct`.`schteam_event_id` = `eve`.`event_id`) and (`sct`.`schteam_payment_id` = `pay`.`payment_id`) and (`sct`.`schteam_account_id` = `acc`.`account_id`))));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_schteam_dash` AS select `sct`.`schteam_id` AS `sct_id`,`sct`.`schteam_name` AS `sct_name`,`sct`.`schteam_coach_name` AS `sct_coach_name`,`sct`.`schteam_coach_contact` AS `sct_coach_contact`,`eve`.`event_name` AS `eve_name`,`eve`.`event_price` AS `eve_price`,`pay`.`payment_status` AS `pay_status`,`pay`.`payment_document` AS `pay_document`,`pay`.`payment_id` AS `pay_id`,`sch`.`school_id` AS `sch_id`,`acc`.`account_id` AS `acc_id`,`pay`.`payment_unique_code` AS `pay_unique_code`,`eve`.`event_id` AS `eve_id`,`sch`.`school_name` AS `sch_name`,`pay`.`payment_description` AS `pay_desc`,`sct`.`schteam_file` AS `sct_file`,`sct`.`schteam_file_log` AS `sct_file_log` from ((((`tb_schteam` `sct` join `tb_school` `sch`) join `tb_event` `eve`) join `tb_payment` `pay`) join `tb_account` `acc` on(((`sct`.`schteam_school_id` = `sch`.`school_id`) and (`sct`.`schteam_event_id` = `eve`.`event_id`) and (`sct`.`schteam_payment_id` = `pay`.`payment_id`) and (`sct`.`schteam_account_id` = `acc`.`account_id`))));
 
 -- --------------------------------------------------------
 
