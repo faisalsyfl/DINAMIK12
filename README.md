@@ -3,7 +3,7 @@
 Developed by Open Source Research Community-OSTRIC, Computer Science Dept., Universitas Pendidikan Indonesia.
 
 Built with CodeIgniter and Bootstrap.
-
+![Home Page](/readme.img/home.png?raw=true "Home Page")
 ![Admin Panel](/readme.img/admpanel.png?raw=true "Admin Panel")
 
 An Indonesian, CodeIgniter-based web apps for DINAMIK12 event. 
