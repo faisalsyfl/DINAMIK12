@@ -821,21 +821,6 @@ CREATE TABLE IF NOT EXISTS `tb_message` (
   PRIMARY KEY (`message_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
---
--- Truncate table before insert `tb_message`
---
-
-TRUNCATE TABLE `tb_message`;
---
--- Dumping data for table `tb_message`
---
-
-INSERT INTO `tb_message` (`message_id`, `message_name`, `message_email`, `message_content`, `message_status`) VALUES
-(1, 'Developer', 'faisalsyfl@gmail.com', 'WEB NYA KECEH SEKALI', 0),
-(2, 'Test', 'asdasd', 'afasf', 0),
-(3, '', '', '', 0),
-(4, 'wewe', '123123@123123', 'asdasd', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -886,30 +871,6 @@ CREATE TABLE IF NOT EXISTS `tb_payment` (
 --
 -- Truncate table before insert `tb_payment`
 --
-
-TRUNCATE TABLE `tb_payment`;
---
--- Dumping data for table `tb_payment`
---
-
-INSERT INTO `tb_payment` (`payment_id`, `payment_amount`, `payment_document`, `payment_status`, `payment_unique_code`, `payment_description`) VALUES
-(1, 0, NULL, 1, '028495', NULL),
-(4, 50000, NULL, 0, '780512', NULL),
-(5, 50000, NULL, 0, '443084', NULL),
-(6, 0, NULL, 1, '855300', NULL),
-(8, 50000, NULL, 0, '276627', NULL),
-(12, 95000, NULL, 0, '118685', NULL),
-(13, 0, NULL, 1, '120197', NULL),
-(14, 50000, NULL, 0, '577335', NULL),
-(17, 95000, NULL, 0, '294364', NULL),
-(18, 50000, NULL, 0, '711116', NULL),
-(19, 50000, NULL, 0, '197593', NULL),
-(20, 100000, NULL, 0, '676214', NULL),
-(22, 50000, NULL, 0, '780040', NULL),
-(23, 50000, NULL, 0, '628448', NULL),
-(24, 50000, NULL, 0, '593639', NULL),
-(25, 50000, NULL, 0, '732767', NULL),
-(26, 50000, NULL, 0, '774474', NULL);
 
 -- --------------------------------------------------------
 
@@ -1023,15 +984,6 @@ CREATE TABLE IF NOT EXISTS `tb_school` (
 --       `tb_account` -> `account_id`
 --
 
---
--- Truncate table before insert `tb_school`
---
-
-TRUNCATE TABLE `tb_school`;
---
--- Dumping data for table `tb_school`
---
-
 -- --------------------------------------------------------
 
 --
@@ -1057,15 +1009,6 @@ CREATE TABLE IF NOT EXISTS `tb_schparticipant` (
 -- RELATIONS FOR TABLE `tb_schparticipant`:
 --   `schparticipant_schteam_id`
 --       `tb_schteam` -> `schteam_id`
---
-
---
--- Truncate table before insert `tb_schparticipant`
---
-
-TRUNCATE TABLE `tb_schparticipant`;
---
--- Dumping data for table `tb_schparticipant`
 --
 
 -- --------------------------------------------------------
@@ -1110,11 +1053,6 @@ CREATE TABLE IF NOT EXISTS `tb_schteam` (
 
 --
 -- Truncate table before insert `tb_schteam`
---
-
-TRUNCATE TABLE `tb_schteam`;
---
--- Dumping data for table `tb_schteam`
 --
 
 -- --------------------------------------------------------
@@ -1169,13 +1107,6 @@ CREATE TABLE IF NOT EXISTS `tb_sponsor` (
   `sponsor_status` tinyint(1) NOT NULL,
   PRIMARY KEY (`sponsor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Truncate table before insert `tb_sponsor`
---
-
-TRUNCATE TABLE `tb_sponsor`;
--- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `v_cor_acc`
